@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Word Counter — Count Words & Characters | FreeToolHub</title>
+<meta name="description" content="Count words, characters, sentences and paragraphs instantly. Free online word counter, no signup needed.">
+<meta name="keywords" content="word counter, character counter, count words online, word count tool">
+<link rel="canonical" href="https://freetoolhub.info/word-counter">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050508;--s1:#0e0e14;--s2:#16161f;--b:rgba(255,255,255,0.06);--c1:#a78bfa;--c2:#38bdf8;--c3:#fb923c;--c4:#4ade80;--w:#f0eeff;--m:#6b6880;--fh:'Bebas Neue',sans-serif;--fb:'Plus Jakarta Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--w);font-family:var(--fb);overflow-x:hidden;}
+#bgc{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;}
+#cd{width:7px;height:7px;background:var(--c1);border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);transition:width .15s,height .15s;}
+#ct{position:fixed;z-index:9998;pointer-events:none;width:32px;height:32px;border:1px solid rgba(167,139,250,.45);border-radius:50%;transform:translate(-50%,-50%);}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.1rem 2.5rem;display:flex;align-items:center;justify-content:space-between;}
+.nb{position:absolute;inset:0;background:rgba(5,5,8,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--b);}
+.logo{position:relative;z-index:1;display:flex;align-items:center;gap:9px;text-decoration:none;}
+.logo svg{width:30px;height:30px;animation:hs 8s linear infinite;}
+@keyframes hs{0%{filter:hue-rotate(0deg);}100%{filter:hue-rotate(360deg);}}
+.lt{font-family:var(--fh);font-size:1.3rem;letter-spacing:.05em;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gs 4s ease infinite;}
+@keyframes gs{0%,100%{background-position:0%50%;}50%{background-position:100%50%;}}
+.ld{animation:dp 1.5s ease infinite;-webkit-text-fill-color:var(--c3);}
+@keyframes dp{0%,100%{transform:scale(1);}50%{transform:scale(1.5);}}
+.back{position:relative;z-index:1;display:flex;align-items:center;gap:5px;color:var(--m);text-decoration:none;font-size:.82rem;font-weight:500;border:1px solid var(--b);padding:.38rem .9rem;border-radius:99px;transition:all .2s;}
+.back:hover{border-color:var(--c1);color:var(--c1);}
+.wrap{max-width:780px;margin:0 auto;padding:6.5rem 1.8rem 4rem;position:relative;z-index:2;}
+.tag{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(167,139,250,.2);background:rgba(167,139,250,.05);padding:.28rem .82rem;border-radius:99px;font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c1);margin-bottom:1.1rem;}
+h1{font-family:var(--fh);font-size:clamp(2.5rem,7vw,4.8rem);letter-spacing:.02em;line-height:.95;margin-bottom:.6rem;}
+.hg{background:linear-gradient(135deg,var(--c1),var(--c2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hd{color:var(--m);}
+.sub{color:var(--m);font-size:.9rem;line-height:1.7;margin-bottom:2rem;max-width:480px;}
+.card{background:var(--s1);border:1px solid var(--b);border-radius:18px;padding:1.8rem;margin-bottom:1.3rem;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c1),transparent);}
+.lbl{font-family:var(--fh);font-size:.67rem;letter-spacing:.12em;text-transform:uppercase;color:var(--m);margin-bottom:.45rem;display:block;}
+textarea,input[type=text],input[type=number],input[type=date]{width:100%;background:var(--s2);border:1px solid var(--b);border-radius:11px;color:var(--w);font-family:var(--fb);font-size:.92rem;padding:.85rem 1.05rem;outline:none;transition:border-color .2s;}
+textarea{resize:vertical;min-height:155px;line-height:1.7;}
+textarea:focus,input:focus{border-color:rgba(167,139,250,.4);}
+textarea::placeholder,input::placeholder{color:var(--m);}
+select{width:100%;background:var(--s2);border:1px solid var(--b);border-radius:10px;color:var(--w);padding:.7rem .95rem;font-family:var(--fb);font-size:.88rem;outline:none;cursor:pointer;transition:border-color .2s;}
+select:focus{border-color:rgba(167,139,250,.4);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:.78rem 1.8rem;background:linear-gradient(135deg,var(--c1),var(--c2));color:var(--bg);border:none;border-radius:11px;font-family:var(--fb);font-weight:700;font-size:.87rem;cursor:pointer;transition:all .22s;position:relative;overflow:hidden;}
+.btn::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--c2),var(--c3));opacity:0;transition:opacity .22s;}
+.btn span{position:relative;z-index:1;}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 22px rgba(167,139,250,.25);}
+.btn:hover::after{opacity:1;}
+.btn.w{width:100%;}
+.bo{display:inline-flex;align-items:center;gap:5px;padding:.74rem 1.3rem;background:transparent;color:var(--m);border:1px solid var(--b);border-radius:11px;font-family:var(--fb);font-weight:600;font-size:.85rem;cursor:pointer;transition:all .2s;}
+.bo:hover{border-color:var(--c1);color:var(--c1);}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:.7rem;margin-bottom:1.1rem;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:.7rem;margin-bottom:1.1rem;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:.7rem;margin-bottom:1.1rem;}
+.sb{background:var(--s2);border:1px solid var(--b);border-radius:13px;padding:.9rem;text-align:center;}
+.sv{font-family:var(--fh);font-size:1.9rem;color:var(--c1);line-height:1;}
+.sl{font-size:.64rem;color:var(--m);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+.res{background:var(--s2);border:1px solid rgba(167,139,250,.15);border-radius:13px;padding:1.3rem;font-size:.91rem;line-height:1.7;color:var(--w);position:relative;}
+.res::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c2),transparent);}
+.row{display:flex;gap:.7rem;flex-wrap:wrap;margin-bottom:1.1rem;align-items:center;}
+.arow{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:.9rem;}
+.err{background:rgba(251,146,60,.09);border:1px solid rgba(251,146,60,.25);border-radius:9px;padding:.65rem .95rem;color:var(--c3);font-size:.82rem;margin-top:.7rem;display:none;}
+.err.on{display:block;}
+.info{background:var(--s1);border:1px solid var(--b);border-radius:15px;padding:1.6rem;margin-top:1.8rem;}
+.info h2{font-family:var(--fh);font-size:1.2rem;letter-spacing:.04em;margin-bottom:.65rem;background:linear-gradient(90deg,var(--w),var(--m));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.info p{color:var(--m);font-size:.85rem;line-height:1.8;margin-bottom:.5rem;}
+.info p:last-child{margin:0;}
+footer{position:relative;z-index:2;border-top:1px solid var(--b);padding:1.8rem 2.5rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.8rem;margin-top:3.5rem;}
+.fl{font-family:var(--fh);font-size:1.05rem;background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.fc{font-size:.74rem;color:var(--m);}
+footer a{color:var(--m);text-decoration:none;font-size:.78rem;transition:color .2s;}
+footer a:hover{color:var(--w);}
+@keyframes fu{from{opacity:0;transform:translateY(18px);}to{opacity:1;transform:translateY(0);}}
+.wrap>*{animation:fu .45s ease both;}
+.wrap>*:nth-child(1){animation-delay:.04s}.wrap>*:nth-child(2){animation-delay:.09s}.wrap>*:nth-child(3){animation-delay:.14s}.wrap>*:nth-child(4){animation-delay:.19s}.wrap>*:nth-child(5){animation-delay:.24s}
+@media(max-width:600px){nav{padding:.9rem 1.1rem;}.wrap{padding:5.5rem 1.1rem 2.5rem;}.g4{grid-template-columns:repeat(2,1fr);}.g3{grid-template-columns:repeat(2,1fr);}.g2{grid-template-columns:1fr;}footer{padding:1.3rem 1.1rem;flex-direction:column;align-items:flex-start;}#cd,#ct{display:none;}body{cursor:auto;}}
+</style>
+</head>
+<body>
+<div id="cd"></div><div id="ct"></div><canvas id="bgc"></canvas>
+<nav>
+  <div class="nb"></div>
+  <a href="index.html" class="logo"><div><svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg></div><div class="lt">FREETOOLHUB<span class="ld">.</span></div></a>
+  <a href="index.html" class="back">← All Tools</a>
+</nav>
+<div class="wrap">
+  <div class="tag">✦ Text Tool</div>
+  <h1>WORD <span class="hg">COUNTER</span></h1>
+  <p class="sub">Count words, characters, sentences and paragraphs in real time as you type or paste.</p>
+  <div class="card">
+    <div class="g4" style="margin-bottom:1.2rem;">
+      <div class="sb"><div class="sv" id="ww">0</div><div class="sl">Words</div></div>
+      <div class="sb"><div class="sv" id="wc">0</div><div class="sl">Chars</div></div>
+      <div class="sb"><div class="sv" id="ws">0</div><div class="sl">Sentences</div></div>
+      <div class="sb"><div class="sv" id="wp">0</div><div class="sl">Paragraphs</div></div>
+    </div>
+    <label class="lbl">Your text</label>
+    <textarea id="wtxt" placeholder="Type or paste your text here..."></textarea>
+    <div class="arow">
+      <button class="btn" id="wcpbtn"><span>Copy Text</span></button>
+      <button class="bo" id="wclbtn">Clear</button>
+    </div>
+  </div>
+  <div class="info">
+    <h2>ABOUT WORD COUNTER</h2>
+    <p>A word counter helps writers, students, bloggers and content creators check the length of their work instantly. Our tool counts words, characters, sentences and paragraphs all at once — updating live as you type.</p>
+    <p>Useful for checking essay limits, SEO content targets, social media character limits, and more.</p>
+  </div>
+</div>
+<script>
+(function(){
+  var t=document.getElementById('wtxt');
+  var ww=document.getElementById('ww'),wc=document.getElementById('wc'),ws=document.getElementById('ws'),wp=document.getElementById('wp');
+  function count(){
+    var v=t.value;
+    ww.textContent=v.trim()===''?'0':v.trim().split(/\s+/).length.toLocaleString();
+    wc.textContent=v.length.toLocaleString();
+    ws.textContent=v.trim()===''?'0':((v.match(/[.!?]+/g)||[]).length).toLocaleString();
+    wp.textContent=v.trim()===''?'0':(v.trim().split(/
+\s*
+/).filter(function(p){return p.trim();}).length||1).toLocaleString();
+  }
+  t.addEventListener('input',count);
+  document.getElementById('wcpbtn').addEventListener('click',function(){
+    if(navigator.clipboard&&t.value){navigator.clipboard.writeText(t.value);}
+    var b=this;b.textContent='Copied!';setTimeout(function(){b.textContent='Copy Text';},1500);
+  });
+  document.getElementById('wclbtn').addEventListener('click',function(){t.value='';count();});
+})();
+</script>
+<footer>
+  <div class="fl">FREETOOLHUB</div>
+  <div style="display:flex;gap:1.3rem;"><a href="privacy.html">Privacy</a><a href="index.html">Home</a></div>
+  <div class="fc">© 2025 FreeToolHub.info</div>
+</footer>
+<script>
+// CURSOR - fixed, no mix-blend-mode
+var isMobile = /Mobi|Android/i.test(navigator.userAgent);
+if(!isMobile){
+  var cd=document.getElementById('cd'),ct=document.getElementById('ct');
+  var mx=window.innerWidth/2,my=window.innerHeight/2,tx=mx,ty=my;
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';},false);
+  (function loop(){tx=tx+(mx-tx)*0.15;ty=ty+(my-ty)*0.15;ct.style.left=Math.round(tx)+'px';ct.style.top=Math.round(ty)+'px';requestAnimationFrame(loop);})();
+}
+
+// PARTICLES - lighter, only on desktop
+if(!isMobile){
+  var cv=document.getElementById('bgc');
+  if(cv){
+    var cx=cv.getContext('2d');
+    cv.width=window.innerWidth;cv.height=window.innerHeight;
+    window.addEventListener('resize',function(){cv.width=window.innerWidth;cv.height=window.innerHeight;});
+    var CL=['rgba(167,139,250,','rgba(56,189,248,','rgba(251,146,60,','rgba(74,222,128,'];
+    var pts=[];
+    for(var i=0;i<45;i++){pts.push({x:Math.random()*cv.width,y:Math.random()*cv.height,r:Math.random()*.9+.2,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,c:CL[i%4],a:Math.random()*.3+.07});}
+    var frame=0;
+    (function draw(){frame++;
+      cx.clearRect(0,0,cv.width,cv.height);
+      for(var i=0;i<pts.length;i++){
+        var p=pts[i];p.x+=p.vx;p.y+=p.vy;
+        if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;
+        if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;
+        cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=p.c+p.a+')';cx.fill();
+        if(frame%2===0){
+          for(var j=i+1;j<pts.length;j++){
+            var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=dx*dx+dy*dy;
+            if(d<7000){d=Math.sqrt(d);cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.strokeStyle=p.c+(0.04*(1-d/84))+')';cx.lineWidth=.4;cx.stroke();}
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    })();
+  }
+}
+</script>
+</body>
+</html>
