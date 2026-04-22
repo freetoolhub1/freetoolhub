@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSG0JLPE2D"></script>
 <script>
@@ -9,6 +10,7 @@
   gtag('js', new Date());
   gtag('config', 'G-RSG0JLPE2D');
 </script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FreeToolHub — Free Online Tools for Everyone</title>
@@ -593,10 +595,11 @@ footer {
   </a>
   <div class="nav-right">
     <ul class="nav-links">
-      <li><a href="#text">Text</a></li>
-      <li><a href="#image">Image</a></li>
-      <li><a href="#calc">Calculators</a></li>
-      <li><a href="#dev">Developer</a></li>
+      <li><a href="#tools" onclick="setTimeout(function(){filterCat('text',document.querySelectorAll('.filt')[1]);},300)">Text</a></li>
+      <li><a href="#tools" onclick="setTimeout(function(){filterCat('image',document.querySelectorAll('.filt')[2]);},300)">Image</a></li>
+      <li><a href="#tools" onclick="setTimeout(function(){filterCat('calc',document.querySelectorAll('.filt')[3]);},300)">Calculators</a></li>
+      <li><a href="#tools" onclick="setTimeout(function(){filterCat('dev',document.querySelectorAll('.filt')[4]);},300)">Developer</a></li>
+      <li><a href="about.html">About</a></li>
     </ul>
     <a href="#tools" class="nav-cta">Explore Tools</a>
   </div>
@@ -811,10 +814,12 @@ footer {
 <footer>
   <div class="foot-logo">FREETOOLHUB</div>
   <ul class="foot-links">
-    <li><a href="privacy.html">Privacy</a></li>
     <li><a href="about.html">About</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="word-counter.html">Word Counter</a></li>
+    <li><a href="qr-code-generator.html">QR Code</a></li>
   </ul>
-  <div class="foot-copy">© 2025 FreeToolHub.info</div>
+  <div class="foot-copy">© 2025 FreeToolHub.info — Free tools for everyone</div>
 </footer>
 
 <script>
