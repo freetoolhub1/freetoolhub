@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Remove Duplicate Lines Online — Free Text Cleaner | FreeToolHub</title>
+<meta name="description" content="Remove duplicate lines from any text or list instantly. Free online duplicate line remover. Paste your text and get a clean list in seconds.">
+<meta name="keywords" content="remove duplicate lines, duplicate line remover, remove duplicates from list, text cleaner, deduplicate text">
+<link rel="canonical" href="https://freetoolhub.info/remove-duplicates">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050508;--surface:#0e0e14;--surface2:#16161f;--border:rgba(255,255,255,0.06);--c1:#a78bfa;--c2:#38bdf8;--c3:#fb923c;--c4:#4ade80;--white:#f0eeff;--muted:#6b6880;--font-head:'Bebas Neue',sans-serif;--font-body:'Plus Jakarta Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--white);font-family:var(--font-body);overflow-x:hidden;cursor:none;min-height:100vh;}
+#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.45;}
+#cursorDot{width:8px;height:8px;background:var(--white);border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+#cursorTrail{position:fixed;z-index:9998;pointer-events:none;width:34px;height:34px;border:1px solid rgba(167,139,250,.5);border-radius:50%;transform:translate(-50%,-50%);transition:transform .12s ease,width .3s,height .3s;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.2rem 3rem;display:flex;align-items:center;justify-content:space-between;}
+.nav-blur{position:absolute;inset:0;background:rgba(5,5,8,.85);backdrop-filter:blur(24px);border-bottom:1px solid var(--border);}
+.logo{position:relative;z-index:1;display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo svg{width:32px;height:32px;animation:lspin 8s linear infinite;}
+@keyframes lspin{0%{filter:hue-rotate(0deg);}100%{filter:hue-rotate(360deg);}}
+.logo-text{font-family:var(--font-head);font-size:1.35rem;letter-spacing:.05em;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gs 4s ease infinite;}
+@keyframes gs{0%,100%{background-position:0% 50%;}50%{background-position:100% 50%;}}
+.logo-dot{animation:dp 1.5s ease infinite;-webkit-text-fill-color:var(--c3);}
+@keyframes dp{0%,100%{transform:scale(1);}50%{transform:scale(1.5);}}
+.back-btn{position:relative;z-index:1;display:flex;align-items:center;gap:6px;color:var(--muted);text-decoration:none;font-size:.83rem;font-weight:500;border:1px solid var(--border);padding:.4rem .95rem;border-radius:99px;transition:all .2s;backdrop-filter:blur(8px);}
+.back-btn:hover{border-color:var(--c1);color:var(--c1);}
+.container{max-width:900px;margin:0 auto;padding:7rem 2rem 4rem;position:relative;z-index:2;}
+.page-tag{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(167,139,250,.22);background:rgba(167,139,250,.06);padding:.3rem .85rem;border-radius:99px;font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c1);margin-bottom:1.2rem;}
+h1{font-family:var(--font-head);font-size:clamp(2.5rem,7vw,5rem);letter-spacing:.02em;line-height:.95;margin-bottom:.7rem;}
+.h1g{background:linear-gradient(135deg,var(--c1),var(--c2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sub{color:var(--muted);font-size:.93rem;line-height:1.7;margin-bottom:2.2rem;max-width:500px;}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:2rem;margin-bottom:1.4rem;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c1),transparent);}
+.lbl{font-family:var(--font-head);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.5rem;display:block;}
+.options-row{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.2rem;}
+.opt-label{display:flex;align-items:center;gap:.5rem;font-size:.85rem;color:var(--muted);cursor:pointer;user-select:none;}
+.opt-label input[type="checkbox"]{width:16px;height:16px;accent-color:var(--c1);cursor:pointer;background:transparent;border:none;padding:0;outline:none;}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.2rem;}
+textarea{width:100%;background:var(--surface2);border:1px solid var(--border);border-radius:12px;color:var(--white);font-family:var(--font-body);font-size:.9rem;padding:.9rem 1.1rem;outline:none;transition:border-color .2s,box-shadow .2s;resize:vertical;min-height:220px;line-height:1.7;}
+textarea:focus{border-color:rgba(167,139,250,.4);box-shadow:0 0 0 3px rgba(167,139,250,.07);}
+textarea::placeholder{color:var(--muted);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:.82rem 2rem;background:linear-gradient(135deg,var(--c1),var(--c2));color:var(--bg);border:none;border-radius:12px;font-family:var(--font-body);font-weight:700;font-size:.88rem;cursor:pointer;transition:all .25s;position:relative;overflow:hidden;}
+.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--c2),var(--c3));opacity:0;transition:opacity .25s;}
+.btn span{position:relative;z-index:1;}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 28px rgba(167,139,250,.28);}
+.btn:hover::before{opacity:1;}
+.btn-out{display:inline-flex;align-items:center;gap:6px;padding:.78rem 1.4rem;background:transparent;color:var(--muted);border:1px solid var(--border);border-radius:12px;font-family:var(--font-body);font-weight:600;font-size:.86rem;cursor:pointer;transition:all .2s;}
+.btn-out:hover{border-color:var(--c1);color:var(--c1);}
+.actions{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1rem;}
+.stats-row{display:flex;gap:2rem;flex-wrap:wrap;}
+.stat-item{font-size:.82rem;color:var(--muted);}
+.stat-item strong{color:var(--white);}
+.stat-item .accent{color:var(--c1);}
+.info{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.7rem;margin-top:2rem;}
+.info h2{font-family:var(--font-head);font-size:1.25rem;letter-spacing:.04em;margin-bottom:.7rem;background:linear-gradient(90deg,var(--white),var(--muted));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.info p{color:var(--muted);font-size:.86rem;line-height:1.8;margin-bottom:.55rem;}
+.info p:last-child{margin:0;}
+footer{position:relative;z-index:2;border-top:1px solid var(--border);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;margin-top:4rem;}
+.flogo{font-family:var(--font-head);font-size:1.1rem;background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.fcopy{font-size:.76rem;color:var(--muted);}
+footer a{color:var(--muted);text-decoration:none;font-size:.8rem;transition:color .2s;}
+footer a:hover{color:var(--white);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+.container>*{animation:fadeUp .5s ease both;}
+.container>*:nth-child(1){animation-delay:.05s}
+.container>*:nth-child(2){animation-delay:.1s}
+.container>*:nth-child(3){animation-delay:.15s}
+.container>*:nth-child(4){animation-delay:.2s}
+@media(max-width:640px){nav{padding:1rem 1.2rem;}.container{padding:5.5rem 1.2rem 3rem;}.two-col{grid-template-columns:1fr;}footer{padding:1.5rem 1.2rem;flex-direction:column;align-items:flex-start;}body{cursor:auto;}#cursorDot,#cursorTrail{display:none;}}
+</style>
+</head>
+<body>
+
+<div id="cursorDot"></div>
+<div id="cursorTrail"></div>
+<canvas id="bgCanvas"></canvas>
+
+<nav>
+  <div class="nav-blur"></div>
+  <a href="index.html" class="logo">
+    <svg viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs>
+      <path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/>
+      <path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/>
+      <circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/>
+    </svg>
+    <div class="logo-text">FREETOOLHUB<span class="logo-dot">.</span></div>
+  </a>
+  <a href="index.html" class="back-btn">← All Tools</a>
+</nav>
+
+<div class="container">
+  <div class="page-tag">✦ Text Tool</div>
+  <h1>REMOVE <span class="h1g">DUPLICATES</span></h1>
+  <p class="sub">Paste any list or text and instantly remove all repeated lines. Clean up emails, keywords, or any data in seconds.</p>
+
+  <div class="card">
+    <div class="options-row">
+      <label class="opt-label">
+        <input type="checkbox" id="ignCase"> Ignore case (ABC = abc)
+      </label>
+      <label class="opt-label">
+        <input type="checkbox" id="trimSp" checked> Trim extra spaces
+      </label>
+      <label class="opt-label">
+        <input type="checkbox" id="remEmp" checked> Remove empty lines
+      </label>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <label class="lbl">Input — paste your list here</label>
+        <textarea id="inputText" placeholder="apple&#10;banana&#10;apple&#10;cherry&#10;banana&#10;cherry"></textarea>
+      </div>
+      <div>
+        <label class="lbl">Result — duplicates removed</label>
+        <textarea id="outputText" readonly placeholder="Result will appear here after clicking the button below..."></textarea>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button class="btn" id="removBtn"><span>Remove Duplicates</span></button>
+      <button class="btn-out" id="copyBtn">Copy Result</button>
+      <button class="btn-out" id="clearBtn">Clear</button>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-item">Input lines: <strong id="siStat">0</strong></div>
+      <div class="stat-item">Output lines: <strong id="soStat">0</strong></div>
+      <div class="stat-item">Duplicates removed: <strong class="accent" id="srStat">0</strong></div>
+    </div>
+  </div>
+
+  <div class="info">
+    <h2>HOW TO USE</h2>
+    <p>Paste any list into the left box — email lists, keywords, names, URLs, anything. Click "Remove Duplicates" and the clean version appears on the right instantly.</p>
+    <p>Use the options to ignore upper/lowercase differences (so "Apple" and "apple" count as the same), trim extra spaces from each line, and remove blank lines from the result.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="flogo">FREETOOLHUB</div>
+  <div style="display:flex;gap:1.5rem;"><a href="privacy.html">Privacy</a><a href="index.html">Home</a></div>
+  <div class="fcopy">© 2025 FreeToolHub.info</div>
+</footer>
+
+<script>
+// ── REMOVE DUPLICATES LOGIC ──
+function updateStats(input, output, removed) {
+  document.getElementById('siStat').textContent = input;
+  document.getElementById('soStat').textContent = output;
+  document.getElementById('srStat').textContent = removed;
+}
+
+document.getElementById('removBtn').addEventListener('click', function() {
+  var rawText = document.getElementById('inputText').value;
+  var ignoreCase = document.getElementById('ignCase').checked;
+  var trimSpaces = document.getElementById('trimSp').checked;
+  var removeEmpty = document.getElementById('remEmp').checked;
+
+  if (!rawText.trim()) {
+    document.getElementById('outputText').value = '';
+    updateStats(0, 0, 0);
+    return;
+  }
+
+  // Split into lines
+  var lines = rawText.split('\n');
+
+  // Trim spaces per line
+  if (trimSpaces) {
+    for (var i = 0; i < lines.length; i++) {
+      lines[i] = lines[i].trim();
+    }
+  }
+
+  // Remove empty lines
+  if (removeEmpty) {
+    var filtered = [];
+    for (var i = 0; i < lines.length; i++) {
+      if (lines[i].length > 0) {
+        filtered.push(lines[i]);
+      }
+    }
+    lines = filtered;
+  }
+
+  var inputCount = lines.length;
+
+  // Remove duplicates
+  var seen = {};
+  var result = [];
+  for (var i = 0; i < lines.length; i++) {
+    var key = ignoreCase ? lines[i].toLowerCase() : lines[i];
+    if (!seen[key]) {
+      seen[key] = true;
+      result.push(lines[i]);
+    }
+  }
+
+  document.getElementById('outputText').value = result.join('\n');
+  updateStats(inputCount, result.length, inputCount - result.length);
+});
+
+document.getElementById('copyBtn').addEventListener('click', function() {
+  var text = document.getElementById('outputText').value;
+  if (!text) return;
+  navigator.clipboard.writeText(text).then(function() {
+    var btn = document.getElementById('copyBtn');
+    btn.textContent = 'Copied!';
+    setTimeout(function() { btn.textContent = 'Copy Result'; }, 1600);
+  }).catch(function() {
+    document.getElementById('outputText').select();
+    document.execCommand('copy');
+  });
+});
+
+document.getElementById('clearBtn').addEventListener('click', function() {
+  document.getElementById('inputText').value = '';
+  document.getElementById('outputText').value = '';
+  updateStats(0, 0, 0);
+});
+
+// ── CURSOR ──
+var dot = document.getElementById('cursorDot');
+var trail = document.getElementById('cursorTrail');
+var mx = 0, my = 0, tx = 0, ty = 0;
+document.addEventListener('mousemove', function(e) {
+  mx = e.clientX; my = e.clientY;
+  dot.style.left = mx + 'px'; dot.style.top = my + 'px';
+});
+(function anim() {
+  tx += (mx - tx) * 0.12; ty += (my - ty) * 0.12;
+  trail.style.left = tx + 'px'; trail.style.top = ty + 'px';
+  requestAnimationFrame(anim);
+})();
+
+// ── PARTICLE CANVAS ──
+var cv = document.getElementById('bgCanvas');
+var ctx = cv.getContext('2d');
+function resize() { cv.width = window.innerWidth; cv.height = window.innerHeight; }
+resize();
+window.addEventListener('resize', resize);
+var COLS = ['rgba(167,139,250,', 'rgba(56,189,248,', 'rgba(251,146,60,', 'rgba(74,222,128,'];
+var pts = [];
+for (var i = 0; i < 55; i++) {
+  pts.push({
+    x: Math.random() * window.innerWidth,
+    y: Math.random() * window.innerHeight,
+    r: Math.random() * 1.2 + 0.3,
+    vx: (Math.random() - 0.5) * 0.22,
+    vy: (Math.random() - 0.5) * 0.22,
+    c: COLS[i % 4],
+    a: Math.random() * 0.35 + 0.08
+  });
+}
+(function draw() {
+  ctx.clearRect(0, 0, cv.width, cv.height);
+  for (var i = 0; i < pts.length; i++) {
+    var p = pts[i];
+    p.x += p.vx; p.y += p.vy;
+    if (p.x < 0) p.x = cv.width; if (p.x > cv.width) p.x = 0;
+    if (p.y < 0) p.y = cv.height; if (p.y > cv.height) p.y = 0;
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = p.c + p.a + ')'; ctx.fill();
+    for (var j = i + 1; j < pts.length; j++) {
+      var q = pts[j];
+      var dx = p.x - q.x, dy = p.y - q.y;
+      var d = Math.sqrt(dx * dx + dy * dy);
+      if (d < 90) {
+        ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(q.x, q.y);
+        ctx.strokeStyle = p.c + (0.055 * (1 - d / 90)) + ')';
+        ctx.lineWidth = 0.5; ctx.stroke();
+      }
+    }
+  }
+  for (var k = 0; k < pts.length; k++) {
+    var pp = pts[k];
+    var ddx = mx - pp.x, ddy = my - pp.y;
+    var dd = Math.sqrt(ddx * ddx + ddy * ddy);
+    if (dd < 110) { pp.x += ddx * 0.009; pp.y += ddy * 0.009; }
+  }
+  requestAnimationFrame(draw);
+})();
+</script>
+</body>
+</html>
