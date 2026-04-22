@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free QR Code Generator — Create QR Codes Instantly Online</title>
+<meta name="description" content="Generate QR codes for any URL, text or contact free. Custom colours and sizes. Download as PNG. No signup needed, works instantly.">
+<meta name="keywords" content="qr code generator, create qr code free, qr code maker online, generate qr code, free qr code">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://freetoolhub.info/qr-code-generator.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Free QR Code Generator — Create QR Codes Instantly Online"><meta property="og:description" content="Generate QR codes for any URL, text or contact free. Custom colours and sizes. Download as PNG. No signup needed, works instantly."><meta property="og:url" content="https://freetoolhub.info/qr-code-generator.html"><meta property="og:site_name" content="FreeToolHub"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Free QR Code Generator — Create QR Codes Instantly Online"><meta name="twitter:description" content="Generate QR codes for any URL, text or contact free. Custom colours and sizes. Download as PNG. No signup needed, works instantly.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSG0JLPE2D"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-RSG0JLPE2D");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050508;--s1:#0e0e14;--s2:#16161f;--br:rgba(255,255,255,.06);--c1:#a78bfa;--c2:#38bdf8;--c3:#fb923c;--c4:#4ade80;--w:#f0eeff;--m:#6b6880;--fh:'Bebas Neue',sans-serif;--fb:'Plus Jakarta Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--w);font-family:var(--fb);overflow-x:hidden;cursor:none;line-height:1.6;}
+img{max-width:100%;height:auto;}
+#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;}
+#cDot{width:8px;height:8px;background:var(--w);border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+#cRing{position:fixed;z-index:9998;pointer-events:none;width:34px;height:34px;border:1px solid rgba(167,139,250,.5);border-radius:50%;transform:translate(-50%,-50%);transition:transform .1s,width .25s,height .25s;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1rem 3rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nb{position:absolute;inset:0;background:rgba(5,5,8,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--br);}
+.logo{position:relative;z-index:1;display:flex;align-items:center;gap:9px;text-decoration:none;}
+.logo svg{animation:lspin 8s linear infinite;}
+@keyframes lspin{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(360deg)}}
+.lt{font-family:var(--fh);font-size:1.25rem;letter-spacing:.05em;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gs 4s ease infinite;}
+@keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.ld{animation:dp 1.5s ease infinite;-webkit-text-fill-color:var(--c3);}
+@keyframes dp{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
+.back{position:relative;z-index:1;display:flex;align-items:center;gap:5px;color:var(--m);text-decoration:none;font-size:.8rem;font-weight:500;border:1px solid var(--br);padding:.38rem .9rem;border-radius:99px;transition:all .2s;}
+.back:hover{border-color:var(--c1);color:var(--c1);}
+.wrap{max-width:820px;margin:0 auto;padding:5.5rem 1.5rem 4rem;position:relative;z-index:2;}
+.bc{display:flex;gap:.4rem;list-style:none;font-size:.72rem;color:var(--m);margin-bottom:1rem;}
+.bc a{color:var(--m);text-decoration:none;}.bc a:hover{color:var(--c1);}
+.bc li{display:flex;align-items:center;gap:.4rem;}
+.ptag{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(167,139,250,.22);background:rgba(167,139,250,.06);padding:.28rem .8rem;border-radius:99px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c1);margin-bottom:1rem;}
+h1{font-family:var(--fh);font-size:clamp(2.2rem,6vw,4rem);letter-spacing:.02em;line-height:.95;margin-bottom:.55rem;}
+.hg{background:linear-gradient(135deg,var(--c1),var(--c2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.psub{color:var(--m);font-size:.9rem;line-height:1.7;margin-bottom:2rem;max-width:520px;}
+.card{background:var(--s1);border:1px solid var(--br);border-radius:18px;padding:1.8rem;margin-bottom:1.2rem;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c1),transparent);}
+.lbl{font-family:var(--fh);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--m);margin-bottom:.45rem;display:block;}
+textarea,input[type=text],input[type=number],input[type=date]{width:100%;background:var(--s2);border:1px solid var(--br);border-radius:10px;color:var(--w);font-family:var(--fb);font-size:.9rem;padding:.8rem 1rem;outline:none;transition:border-color .2s,box-shadow .2s;}
+textarea{resize:vertical;min-height:160px;line-height:1.7;}
+textarea:focus,input:focus{border-color:rgba(167,139,250,.4);box-shadow:0 0 0 3px rgba(167,139,250,.07);}
+textarea::placeholder,input::placeholder{color:var(--m);}
+select{width:100%;background:var(--s2);border:1px solid var(--br);border-radius:10px;color:var(--w);padding:.72rem 1rem;font-family:var(--fb);font-size:.88rem;outline:none;cursor:pointer;transition:border-color .2s;-webkit-appearance:none;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:.78rem 1.8rem;background:linear-gradient(135deg,var(--c1),var(--c2));color:var(--bg);border:none;border-radius:10px;font-family:var(--fb);font-weight:700;font-size:.86rem;cursor:pointer;transition:all .22s;position:relative;overflow:hidden;}
+.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--c2),var(--c3));opacity:0;transition:opacity .22s;}
+.btn span,.btn-txt{position:relative;z-index:1;}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(167,139,250,.25);}
+.btn:hover::before{opacity:1;}
+.btn:active{transform:scale(.98);}
+.btn.full{width:100%;}
+.btn-o{display:inline-flex;align-items:center;gap:5px;padding:.74rem 1.3rem;background:transparent;color:var(--m);border:1px solid var(--br);border-radius:10px;font-family:var(--fb);font-weight:600;font-size:.84rem;cursor:pointer;transition:all .2s;}
+.btn-o:hover{border-color:var(--c1);color:var(--c1);}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.1rem;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.1rem;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:1.1rem;}
+.sbox{background:var(--s2);border:1px solid var(--br);border-radius:12px;padding:.9rem;text-align:center;}
+.sval{font-family:var(--fh);font-size:1.9rem;color:var(--c1);line-height:1;}
+.slbl{font-size:.62rem;color:var(--m);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+.row{display:flex;gap:.65rem;flex-wrap:wrap;margin-bottom:1rem;align-items:center;}
+.err{background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.25);border-radius:9px;padding:.65rem 1rem;color:var(--c3);font-size:.82rem;margin-top:.65rem;display:none;}
+.err.on{display:block;}
+.res{background:var(--s2);border:1px solid rgba(167,139,250,.18);border-radius:12px;padding:1.2rem;font-size:.9rem;line-height:1.7;color:var(--w);min-height:70px;position:relative;}
+.upzone{border:2px dashed rgba(167,139,250,.25);border-radius:14px;padding:2.5rem 1.5rem;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;}
+.upzone:hover,.upzone.drag{border-color:var(--c1);background:rgba(167,139,250,.04);}
+.seo{background:var(--s1);border:1px solid var(--br);border-radius:18px;padding:2rem;margin-top:1.5rem;}
+.seo h2{font-family:var(--fh);font-size:1.3rem;letter-spacing:.04em;margin-bottom:.7rem;margin-top:1.5rem;background:linear-gradient(90deg,var(--w),var(--m));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.seo h2:first-child{margin-top:0;}
+.seo h3{font-size:1rem;font-weight:600;color:var(--c1);margin-bottom:.4rem;margin-top:1.1rem;}
+.seo p{color:var(--m);font-size:.87rem;line-height:1.85;margin-bottom:.7rem;}
+.seo ul,.seo ol{color:var(--m);font-size:.87rem;line-height:1.85;padding-left:1.3rem;margin-bottom:.7rem;}
+.seo li{margin-bottom:.3rem;}
+.seo strong{color:var(--w);font-weight:600;}
+.faq-item{border-bottom:1px solid var(--br);padding:1rem 0;}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{font-size:.9rem;font-weight:600;color:var(--w);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none;}
+.faq-q:hover{color:var(--c1);}
+.faq-ico{color:var(--c1);font-size:1.1rem;flex-shrink:0;transition:transform .2s;line-height:1;}
+.faq-a{font-size:.85rem;color:var(--m);line-height:1.8;margin-top:.6rem;display:none;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-ico{transform:rotate(45deg);}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:.6rem;margin-top:.9rem;}
+.rtool{background:var(--s2);border:1px solid var(--br);border-radius:11px;padding:.85rem 1rem;text-decoration:none;color:var(--m);font-size:.82rem;font-weight:500;display:flex;align-items:center;gap:.55rem;transition:all .2s;}
+.rtool:hover{border-color:var(--c1);color:var(--c1);background:var(--s1);}
+footer{position:relative;z-index:2;border-top:1px solid var(--br);padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;margin-top:3rem;}
+.flogo{font-family:var(--fh);font-size:1rem;background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.flinks{display:flex;gap:1.2rem;list-style:none;}
+.flinks a{color:var(--m);text-decoration:none;font-size:.78rem;transition:color .2s;}
+.flinks a:hover{color:var(--w);}
+.fcopy{font-size:.72rem;color:var(--m);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.wrap>*{animation:fadeUp .4s ease both;}
+.wrap>*:nth-child(1){animation-delay:.04s}.wrap>*:nth-child(2){animation-delay:.08s}
+.wrap>*:nth-child(3){animation-delay:.12s}.wrap>*:nth-child(4){animation-delay:.16s}
+.wrap>*:nth-child(5){animation-delay:.2s}.wrap>*:nth-child(6){animation-delay:.24s}
+@media(max-width:640px){
+  nav{padding:.9rem 1.1rem;height:56px;}
+  .wrap{padding:5rem 1rem 3rem;}
+  .g4{grid-template-columns:repeat(2,1fr);}
+  .g3{grid-template-columns:repeat(2,1fr);}
+  .g2{grid-template-columns:1fr;}
+  footer{padding:1.4rem 1.1rem;flex-direction:column;align-items:flex-start;}
+  body{cursor:auto;}
+  #cDot,#cRing{display:none;}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Free QR Code Generator","description":"Generate QR codes for any URL or text instantly. Custom colours. Download PNG.","url":"https://freetoolhub.info/qr-code-generator.html","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"FreeToolHub","url":"https://freetoolhub.info"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are QR codes generated here free?","acceptedAnswer":{"@type":"Answer","text":"Yes, 100% free for personal and commercial use with no attribution required."}},{"@type":"Question","name":"Can I customise the colour?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the colour pickers to set the QR code colour and background colour before generating."}},{"@type":"Question","name":"Will my QR code expire?","acceptedAnswer":{"@type":"Answer","text":"No. Static QR codes never expire as long as your destination URL is live."}},{"@type":"Question","name":"What size should I use for printing?","acceptedAnswer":{"@type":"Answer","text":"Minimum 300x300px for business cards. Use 600x600px or larger for posters and banners."}},{"@type":"Question","name":"Can I use it on business cards and flyers?","acceptedAnswer":{"@type":"Answer","text":"Yes. Download the PNG and use it in any design software including Canva, Word, or Photoshop."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freetoolhub.info/"},{"@type":"ListItem","position":2,"name":"QR Code Generator","item":"https://freetoolhub.info/qr-code-generator.html"}]}</script>
+</head>
+<body>
+<div id="cDot" aria-hidden="true"></div><div id="cRing" aria-hidden="true"></div><canvas id="bgCanvas" aria-hidden="true"></canvas>
+<nav aria-label="Main navigation">
+  <div class="nb"></div>
+  <a href="index.html" class="logo" aria-label="FreeToolHub Home">
+    <svg width="30" height="30" viewBox="0 0 38 38" fill="none" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg>
+    <div class="lt">FREETOOLHUB<span class="ld">.</span></div>
+  </a>
+  <a href="index.html" class="back">&#8592; All Tools</a>
+</nav>
+<main class="wrap">
+<ol class="bc"><li><a href="index.html">Home</a></li><li>/ QR Code Generator</li></ol>
+<div class="ptag">&#10022; Developer Tool</div>
+<h1>FREE ONLINE <span class="hg">QR CODE GENERATOR</span></h1>
+<p class="psub">Create QR codes for any URL, text, phone, or email. Custom colours and sizes. Download as PNG. Free forever, no signup needed.</p>
+<div class="card">
+  <label class="lbl" for="qrInp">Enter your URL or text</label>
+  <textarea id="qrInp" placeholder="https://freetoolhub.info&#10;&#10;Or any text, phone number, email..." style="min-height:90px;margin-bottom:1.2rem;"></textarea>
+  <div class="g2" style="margin-bottom:1.1rem;">
+    <div><label class="lbl" for="qrSz">QR code size</label>
+      <select id="qrSz"><option value="200">Small - 200x200</option><option value="300" selected>Medium - 300x300</option><option value="400">Large - 400x400</option><option value="600">Extra large - 600x600</option></select></div>
+    <div><label class="lbl" for="qrEc">Error correction</label>
+      <select id="qrEc"><option value="L">Low</option><option value="M" selected>Medium</option><option value="H">High - best for print</option></select></div>
+  </div>
+  <div style="display:flex;gap:1.5rem;align-items:center;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="display:flex;align-items:center;gap:.5rem;"><label style="font-size:.82rem;color:var(--m);" for="qrCol">QR colour</label><input type="color" id="qrCol" value="#000000" style="width:34px;height:34px;border:1px solid var(--br);border-radius:7px;cursor:pointer;padding:2px;background:none;"></div>
+    <div style="display:flex;align-items:center;gap:.5rem;"><label style="font-size:.82rem;color:var(--m);" for="bgCol">Background</label><input type="color" id="bgCol" value="#ffffff" style="width:34px;height:34px;border:1px solid var(--br);border-radius:7px;cursor:pointer;padding:2px;background:none;"></div>
+  </div>
+  <button class="btn full" id="genBtn"><span>Generate QR Code</span></button>
+  <div class="err" id="qrErr">Please enter a URL or text first.</div>
+</div>
+<div class="card" id="qrRes" style="display:none;text-align:center;">
+  <canvas id="qrCv" style="border-radius:10px;max-width:260px;width:100%;border:1px solid var(--br);display:inline-block;"></canvas>
+  <div style="display:flex;gap:.65rem;justify-content:center;margin-top:1.1rem;flex-wrap:wrap;">
+    <button class="btn" id="dlBtn"><span>Download PNG</span></button>
+    <button class="btn-o" id="cpBtn">Copy Image</button>
+  </div>
+  <div style="font-size:.75rem;color:var(--m);margin-top:.65rem;">Scan with any smartphone camera</div>
+</div>
+<div class="seo">
+<h2>What is a QR Code Generator?</h2>
+<p>A <strong>QR code generator</strong> creates scannable barcodes that smartphones can read instantly with their built-in camera. When scanned, they direct users to a URL, show text, dial a number, or open an email. Our free tool creates custom QR codes in seconds.</p>
+<h2>Common Uses for QR Codes</h2>
+<ul>
+<li><strong>Business cards</strong> — link to your website, LinkedIn, or portfolio</li>
+<li><strong>Restaurant menus</strong> — replace physical menus with a digital link</li>
+<li><strong>Marketing materials</strong> — link flyers to landing pages</li>
+<li><strong>Wi-Fi sharing</strong> — let guests connect without typing a password</li>
+<li><strong>Social media</strong> — link to Instagram, TikTok, or YouTube profiles</li>
+</ul>
+<h2>How to Create a QR Code</h2>
+<ol>
+<li>Enter your URL, text, phone number, or email above</li>
+<li>Choose your preferred QR code size</li>
+<li>Optionally customise the QR and background colour</li>
+<li>Click Generate QR Code</li>
+<li>Click Download PNG to save your QR code</li>
+</ol>
+<h2>QR Code Best Practices</h2>
+<h3>Use short URLs</h3>
+<p>Shorter URLs create less complex QR codes that scan faster. Use a URL shortener if your link is very long.</p>
+<h3>Test before printing</h3>
+<p>Always scan your QR code on both iPhone and Android before printing large quantities.</p>
+<h3>Ensure high contrast</h3>
+<p>Use dark colours on light backgrounds for best scannability. Avoid low-contrast combinations.</p>
+</div>
+<div class="card"><div class="lbl">Frequently Asked Questions</div><div class="faq-item"><div class="faq-q">Are QR codes generated here free?<span class="faq-ico">+</span></div><div class="faq-a">Yes, 100% free for personal and commercial use with no attribution required.</div></div><div class="faq-item"><div class="faq-q">Can I customise the colour?<span class="faq-ico">+</span></div><div class="faq-a">Yes. Use the colour pickers to set the QR code colour and background colour before generating.</div></div><div class="faq-item"><div class="faq-q">Will my QR code expire?<span class="faq-ico">+</span></div><div class="faq-a">No. Static QR codes never expire as long as your destination URL is live.</div></div><div class="faq-item"><div class="faq-q">What size should I use for printing?<span class="faq-ico">+</span></div><div class="faq-a">Minimum 300x300px for business cards. Use 600x600px or larger for posters and banners.</div></div><div class="faq-item"><div class="faq-q">Can I use it on business cards and flyers?<span class="faq-ico">+</span></div><div class="faq-a">Yes. Download the PNG and use it in any design software including Canva, Word, or Photoshop.</div></div></div>
+<div class="card"><div class="lbl">Related Tools</div><div class="rel-grid"><a href="password-generator.html" class="rtool">&#x1F510; Password Generator</a><a href="image-resizer.html" class="rtool">&#x1F4D0; Image Resizer</a><a href="image-compressor.html" class="rtool">&#x1F4E6; Image Compressor</a><a href="word-counter.html" class="rtool">&#x1F4DD; Word Counter</a></div></div>
+</main><footer>
+  <div class="flogo">FREETOOLHUB</div>
+  <ul class="flinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="sitemap.html">Sitemap</a></li>
+  </ul>
+  <div class="fcopy">&#169; 2026 FreeToolHub.info</div>
+</footer>
+<script>
+(function(){
+  document.getElementById('genBtn').addEventListener('click',function(){
+    var t=document.getElementById('qrInp').value.trim();
+    var err=document.getElementById('qrErr');
+    err.classList.remove('on');
+    if(!t){err.classList.add('on');return;}
+    var sz=parseInt(document.getElementById('qrSz').value);
+    var ec=document.getElementById('qrEc').value;
+    var qc=document.getElementById('qrCol').value.replace('#','');
+    var bc=document.getElementById('bgCol').value.replace('#','');
+    var cv=document.getElementById('qrCv');
+    cv.width=sz;cv.height=sz;
+    var ctx=cv.getContext('2d');
+    ctx.fillStyle='#'+bc;ctx.fillRect(0,0,sz,sz);
+    var url='https://api.qrserver.com/v1/create-qr-code/?size='+sz+'x'+sz+'&data='+encodeURIComponent(t)+'&ecc='+ec+'&color='+qc+'&bgcolor='+bc;
+    var img=new Image();img.crossOrigin='anonymous';
+    img.onload=function(){ctx.drawImage(img,0,0,sz,sz);document.getElementById('qrRes').style.display='block';};
+    img.onerror=function(){
+      var f=new Image();f.crossOrigin='anonymous';
+      f.onload=function(){ctx.clearRect(0,0,sz,sz);ctx.drawImage(f,0,0,sz,sz);document.getElementById('qrRes').style.display='block';};
+      f.onerror=function(){err.textContent='Network error. Please check your connection.';err.classList.add('on');};
+      f.src='https://chart.googleapis.com/chart?chs='+sz+'x'+sz+'&cht=qr&chl='+encodeURIComponent(t);
+    };
+    img.src=url;
+  });
+  document.getElementById('dlBtn').addEventListener('click',function(){
+    var cv=document.getElementById('qrCv');
+    cv.toBlob(function(blob){
+      var url=URL.createObjectURL(blob);
+      var a=document.createElement('a');a.href=url;a.download='qrcode-freetoolhub.png';
+      document.body.appendChild(a);a.click();
+      setTimeout(function(){URL.revokeObjectURL(url);a.parentNode.removeChild(a);},1000);
+    });
+  });
+  document.getElementById('cpBtn').addEventListener('click',function(){
+    var cv=document.getElementById('qrCv');
+    var btn=document.getElementById('cpBtn');
+    cv.toBlob(function(blob){
+      navigator.clipboard.write([new ClipboardItem({'image/png':blob})]).then(function(){
+        btn.textContent='Copied!';setTimeout(function(){btn.textContent='Copy Image';},2000);
+      }).catch(function(){document.getElementById('dlBtn').click();});
+    });
+  });
+})();
+</script>
+<script>
+(function(){
+  var d=document.getElementById('cDot'),r=document.getElementById('cRing');
+  if(!d)return;
+  var mx=0,my=0,tx=0,ty=0;
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px';});
+  (function loop(){tx+=(mx-tx)*.11;ty+=(my-ty)*.11;r.style.left=tx+'px';r.style.top=ty+'px';requestAnimationFrame(loop);})();
+  var cv=document.getElementById('bgCanvas');
+  if(!cv)return;
+  var cx=cv.getContext('2d');
+  function rsz(){cv.width=innerWidth;cv.height=innerHeight;}rsz();
+  window.addEventListener('resize',rsz);
+  var CL=['rgba(167,139,250,','rgba(56,189,248,','rgba(251,146,60,','rgba(74,222,128,'];
+  var pts=[];
+  for(var i=0;i<50;i++){pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.1+.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,c:CL[i%4],a:Math.random()*.3+.07});}
+  (function draw(){
+    cx.clearRect(0,0,cv.width,cv.height);
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;
+      if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;
+      cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      cx.fillStyle=p.c+p.a+')';cx.fill();
+      for(var j=i+1;j<pts.length;j++){
+        var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<85){cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.strokeStyle=p.c+(0.05*(1-dist/85))+')';cx.lineWidth=.5;cx.stroke();}
+      }
+    }
+    for(var k=0;k<pts.length;k++){var pp=pts[k],ddx=mx-pp.x,ddy=my-pp.y,dd=Math.sqrt(ddx*ddx+ddy*ddy);if(dd<100){pp.x+=ddx*.008;pp.y+=ddy*.008;}}
+    requestAnimationFrame(draw);
+  })();
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=this.closest('.faq-item');
+      var was=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!was)item.classList.add('open');
+    });
+  });
+})();
+</script>
+</body>
+</html>

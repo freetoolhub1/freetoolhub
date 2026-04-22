@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Percentage Calculator — Calculate Percentages Instantly Online</title>
+<meta name="description" content="Free online percentage calculator. Calculate what percent of a number is, percentage change and discounts. Three calculators in one, no signup.">
+<meta name="keywords" content="percentage calculator, percent calculator, calculate percentage, percentage change calculator, discount calculator free">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://freetoolhub.info/percentage-calculator.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Free Percentage Calculator — Calculate Percentages Instantly Online"><meta property="og:description" content="Free online percentage calculator. Calculate what percent of a number is, percentage change and discounts. Three calculators in one, no signup."><meta property="og:url" content="https://freetoolhub.info/percentage-calculator.html"><meta property="og:site_name" content="FreeToolHub"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Free Percentage Calculator — Calculate Percentages Instantly Online"><meta name="twitter:description" content="Free online percentage calculator. Calculate what percent of a number is, percentage change and discounts. Three calculators in one, no signup.">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSG0JLPE2D"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date());gtag("config","G-RSG0JLPE2D");</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#050508;--s1:#0e0e14;--s2:#16161f;--br:rgba(255,255,255,.06);--c1:#a78bfa;--c2:#38bdf8;--c3:#fb923c;--c4:#4ade80;--w:#f0eeff;--m:#6b6880;--fh:'Bebas Neue',sans-serif;--fb:'Plus Jakarta Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:var(--bg);color:var(--w);font-family:var(--fb);overflow-x:hidden;cursor:none;line-height:1.6;}
+img{max-width:100%;height:auto;}
+#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;}
+#cDot{width:8px;height:8px;background:var(--w);border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+#cRing{position:fixed;z-index:9998;pointer-events:none;width:34px;height:34px;border:1px solid rgba(167,139,250,.5);border-radius:50%;transform:translate(-50%,-50%);transition:transform .1s,width .25s,height .25s;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1rem 3rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.nb{position:absolute;inset:0;background:rgba(5,5,8,.88);backdrop-filter:blur(20px);border-bottom:1px solid var(--br);}
+.logo{position:relative;z-index:1;display:flex;align-items:center;gap:9px;text-decoration:none;}
+.logo svg{animation:lspin 8s linear infinite;}
+@keyframes lspin{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(360deg)}}
+.lt{font-family:var(--fh);font-size:1.25rem;letter-spacing:.05em;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gs 4s ease infinite;}
+@keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.ld{animation:dp 1.5s ease infinite;-webkit-text-fill-color:var(--c3);}
+@keyframes dp{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
+.back{position:relative;z-index:1;display:flex;align-items:center;gap:5px;color:var(--m);text-decoration:none;font-size:.8rem;font-weight:500;border:1px solid var(--br);padding:.38rem .9rem;border-radius:99px;transition:all .2s;}
+.back:hover{border-color:var(--c1);color:var(--c1);}
+.wrap{max-width:820px;margin:0 auto;padding:5.5rem 1.5rem 4rem;position:relative;z-index:2;}
+.bc{display:flex;gap:.4rem;list-style:none;font-size:.72rem;color:var(--m);margin-bottom:1rem;}
+.bc a{color:var(--m);text-decoration:none;}.bc a:hover{color:var(--c1);}
+.bc li{display:flex;align-items:center;gap:.4rem;}
+.ptag{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(167,139,250,.22);background:rgba(167,139,250,.06);padding:.28rem .8rem;border-radius:99px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--c1);margin-bottom:1rem;}
+h1{font-family:var(--fh);font-size:clamp(2.2rem,6vw,4rem);letter-spacing:.02em;line-height:.95;margin-bottom:.55rem;}
+.hg{background:linear-gradient(135deg,var(--c1),var(--c2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.psub{color:var(--m);font-size:.9rem;line-height:1.7;margin-bottom:2rem;max-width:520px;}
+.card{background:var(--s1);border:1px solid var(--br);border-radius:18px;padding:1.8rem;margin-bottom:1.2rem;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--c1),transparent);}
+.lbl{font-family:var(--fh);font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--m);margin-bottom:.45rem;display:block;}
+textarea,input[type=text],input[type=number],input[type=date]{width:100%;background:var(--s2);border:1px solid var(--br);border-radius:10px;color:var(--w);font-family:var(--fb);font-size:.9rem;padding:.8rem 1rem;outline:none;transition:border-color .2s,box-shadow .2s;}
+textarea{resize:vertical;min-height:160px;line-height:1.7;}
+textarea:focus,input:focus{border-color:rgba(167,139,250,.4);box-shadow:0 0 0 3px rgba(167,139,250,.07);}
+textarea::placeholder,input::placeholder{color:var(--m);}
+select{width:100%;background:var(--s2);border:1px solid var(--br);border-radius:10px;color:var(--w);padding:.72rem 1rem;font-family:var(--fb);font-size:.88rem;outline:none;cursor:pointer;transition:border-color .2s;-webkit-appearance:none;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:.78rem 1.8rem;background:linear-gradient(135deg,var(--c1),var(--c2));color:var(--bg);border:none;border-radius:10px;font-family:var(--fb);font-weight:700;font-size:.86rem;cursor:pointer;transition:all .22s;position:relative;overflow:hidden;}
+.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--c2),var(--c3));opacity:0;transition:opacity .22s;}
+.btn span,.btn-txt{position:relative;z-index:1;}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(167,139,250,.25);}
+.btn:hover::before{opacity:1;}
+.btn:active{transform:scale(.98);}
+.btn.full{width:100%;}
+.btn-o{display:inline-flex;align-items:center;gap:5px;padding:.74rem 1.3rem;background:transparent;color:var(--m);border:1px solid var(--br);border-radius:10px;font-family:var(--fb);font-weight:600;font-size:.84rem;cursor:pointer;transition:all .2s;}
+.btn-o:hover{border-color:var(--c1);color:var(--c1);}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.1rem;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.1rem;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:1.1rem;}
+.sbox{background:var(--s2);border:1px solid var(--br);border-radius:12px;padding:.9rem;text-align:center;}
+.sval{font-family:var(--fh);font-size:1.9rem;color:var(--c1);line-height:1;}
+.slbl{font-size:.62rem;color:var(--m);text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+.row{display:flex;gap:.65rem;flex-wrap:wrap;margin-bottom:1rem;align-items:center;}
+.err{background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.25);border-radius:9px;padding:.65rem 1rem;color:var(--c3);font-size:.82rem;margin-top:.65rem;display:none;}
+.err.on{display:block;}
+.res{background:var(--s2);border:1px solid rgba(167,139,250,.18);border-radius:12px;padding:1.2rem;font-size:.9rem;line-height:1.7;color:var(--w);min-height:70px;position:relative;}
+.upzone{border:2px dashed rgba(167,139,250,.25);border-radius:14px;padding:2.5rem 1.5rem;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;}
+.upzone:hover,.upzone.drag{border-color:var(--c1);background:rgba(167,139,250,.04);}
+.seo{background:var(--s1);border:1px solid var(--br);border-radius:18px;padding:2rem;margin-top:1.5rem;}
+.seo h2{font-family:var(--fh);font-size:1.3rem;letter-spacing:.04em;margin-bottom:.7rem;margin-top:1.5rem;background:linear-gradient(90deg,var(--w),var(--m));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.seo h2:first-child{margin-top:0;}
+.seo h3{font-size:1rem;font-weight:600;color:var(--c1);margin-bottom:.4rem;margin-top:1.1rem;}
+.seo p{color:var(--m);font-size:.87rem;line-height:1.85;margin-bottom:.7rem;}
+.seo ul,.seo ol{color:var(--m);font-size:.87rem;line-height:1.85;padding-left:1.3rem;margin-bottom:.7rem;}
+.seo li{margin-bottom:.3rem;}
+.seo strong{color:var(--w);font-weight:600;}
+.faq-item{border-bottom:1px solid var(--br);padding:1rem 0;}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{font-size:.9rem;font-weight:600;color:var(--w);cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none;}
+.faq-q:hover{color:var(--c1);}
+.faq-ico{color:var(--c1);font-size:1.1rem;flex-shrink:0;transition:transform .2s;line-height:1;}
+.faq-a{font-size:.85rem;color:var(--m);line-height:1.8;margin-top:.6rem;display:none;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-ico{transform:rotate(45deg);}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:.6rem;margin-top:.9rem;}
+.rtool{background:var(--s2);border:1px solid var(--br);border-radius:11px;padding:.85rem 1rem;text-decoration:none;color:var(--m);font-size:.82rem;font-weight:500;display:flex;align-items:center;gap:.55rem;transition:all .2s;}
+.rtool:hover{border-color:var(--c1);color:var(--c1);background:var(--s1);}
+footer{position:relative;z-index:2;border-top:1px solid var(--br);padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;margin-top:3rem;}
+.flogo{font-family:var(--fh);font-size:1rem;background:linear-gradient(90deg,var(--c1),var(--c2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.flinks{display:flex;gap:1.2rem;list-style:none;}
+.flinks a{color:var(--m);text-decoration:none;font-size:.78rem;transition:color .2s;}
+.flinks a:hover{color:var(--w);}
+.fcopy{font-size:.72rem;color:var(--m);}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.wrap>*{animation:fadeUp .4s ease both;}
+.wrap>*:nth-child(1){animation-delay:.04s}.wrap>*:nth-child(2){animation-delay:.08s}
+.wrap>*:nth-child(3){animation-delay:.12s}.wrap>*:nth-child(4){animation-delay:.16s}
+.wrap>*:nth-child(5){animation-delay:.2s}.wrap>*:nth-child(6){animation-delay:.24s}
+@media(max-width:640px){
+  nav{padding:.9rem 1.1rem;height:56px;}
+  .wrap{padding:5rem 1rem 3rem;}
+  .g4{grid-template-columns:repeat(2,1fr);}
+  .g3{grid-template-columns:repeat(2,1fr);}
+  .g2{grid-template-columns:1fr;}
+  footer{padding:1.4rem 1.1rem;flex-direction:column;align-items:flex-start;}
+  body{cursor:auto;}
+  #cDot,#cRing{display:none;}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Free Percentage Calculator","description":"Three percentage calculators in one. Calculate percentages, change, and discounts instantly.","url":"https://freetoolhub.info/percentage-calculator.html","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"FreeToolHub","url":"https://freetoolhub.info"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What is a percentage?","acceptedAnswer":{"@type":"Answer","text":"A percentage is a number expressed as a fraction of 100. For example 25% means 25 out of every 100."}},{"@type":"Question","name":"How do I calculate 20% of a number?","acceptedAnswer":{"@type":"Answer","text":"Multiply the number by 0.20. For example 20% of 150 = 30. Or use the first calculator above."}},{"@type":"Question","name":"What is percentage change?","acceptedAnswer":{"@type":"Answer","text":"Percentage change measures how much a value has increased or decreased relative to its original value. Formula: ((New - Old) / Old) x 100."}},{"@type":"Question","name":"How do I calculate a discount?","acceptedAnswer":{"@type":"Answer","text":"Use the What is X% of Y calculator. For a 30% discount on 50, enter 30 and 50 to get 15."}},{"@type":"Question","name":"Can I calculate both increase and decrease?","acceptedAnswer":{"@type":"Answer","text":"Yes. The percentage change calculator handles both. Positive result means increase, negative means decrease."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freetoolhub.info/"},{"@type":"ListItem","position":2,"name":"Percentage Calculator","item":"https://freetoolhub.info/percentage-calculator.html"}]}</script>
+</head>
+<body>
+<div id="cDot" aria-hidden="true"></div><div id="cRing" aria-hidden="true"></div><canvas id="bgCanvas" aria-hidden="true"></canvas>
+<nav aria-label="Main navigation">
+  <div class="nb"></div>
+  <a href="index.html" class="logo" aria-label="FreeToolHub Home">
+    <svg width="30" height="30" viewBox="0 0 38 38" fill="none" aria-hidden="true"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg>
+    <div class="lt">FREETOOLHUB<span class="ld">.</span></div>
+  </a>
+  <a href="index.html" class="back">&#8592; All Tools</a>
+</nav>
+<main class="wrap">
+<ol class="bc"><li><a href="index.html">Home</a></li><li>/ Percentage Calculator</li></ol>
+<div class="ptag">&#10022; Calculator</div>
+<h1>FREE ONLINE <span class="hg">PERCENTAGE CALCULATOR</span></h1>
+<p class="psub">Three percentage calculators in one. Calculate percentages, discounts, and percentage change instantly. Free, no signup, works everywhere.</p>
+<div class="card">
+  <label class="lbl">What is X% of Y?</label>
+  <div class="row">
+    <span style="color:var(--m);font-size:.88rem;white-space:nowrap;">What is</span>
+    <input type="number" id="p1" placeholder="25" style="width:90px;">
+    <span style="color:var(--m);font-size:.88rem;">% of</span>
+    <input type="number" id="n1" placeholder="200" style="width:110px;">
+    <button class="btn" id="btn1"><span>Calculate</span></button>
+  </div>
+  <div class="res" id="a1" style="display:none;"></div>
+</div>
+<div class="card">
+  <label class="lbl">X is what percent of Y?</label>
+  <div class="row">
+    <input type="number" id="p2" placeholder="50" style="width:90px;">
+    <span style="color:var(--m);font-size:.88rem;white-space:nowrap;">is what % of</span>
+    <input type="number" id="n2" placeholder="200" style="width:110px;">
+    <button class="btn" id="btn2"><span>Calculate</span></button>
+  </div>
+  <div class="res" id="a2" style="display:none;"></div>
+</div>
+<div class="card">
+  <label class="lbl">Percentage change from X to Y</label>
+  <div class="row">
+    <span style="color:var(--m);font-size:.88rem;white-space:nowrap;">From</span>
+    <input type="number" id="f3" placeholder="80" style="width:90px;">
+    <span style="color:var(--m);font-size:.88rem;">to</span>
+    <input type="number" id="t3" placeholder="100" style="width:90px;">
+    <button class="btn" id="btn3"><span>Calculate</span></button>
+  </div>
+  <div class="res" id="a3" style="display:none;"></div>
+</div>
+<div class="seo">
+<h2>What is a Percentage Calculator?</h2>
+<p>A <strong>percentage calculator</strong> handles common percentage calculations instantly. Whether you need to find what percentage one number is of another, calculate a discount, or work out percentage change, our three-in-one tool covers it all.</p>
+<h2>Three Calculators in One</h2>
+<h3>Calculator 1: What is X% of Y?</h3>
+<p>Use when you know the percentage and the total and want the specific amount. Perfect for calculating tips, discounts, and commissions. Example: What is 15% of 200? Answer: 30.</p>
+<h3>Calculator 2: X is what percent of Y?</h3>
+<p>Use when you know both numbers and want to express them as a percentage. Example: 45 is what percent of 180? Answer: 25%.</p>
+<h3>Calculator 3: Percentage change</h3>
+<p>Measures how much something has increased or decreased. Example: from 80 to 100 is a 25% increase.</p>
+<h2>Everyday Uses</h2>
+<ul>
+<li><strong>Shopping discounts</strong> — calculate sale prices and total savings</li>
+<li><strong>Tax calculations</strong> — work out VAT, sales tax, or income tax</li>
+<li><strong>Grade calculations</strong> — convert test scores to percentages</li>
+<li><strong>Finance</strong> — calculate interest rates and investment returns</li>
+<li><strong>Tipping</strong> — quickly calculate 10%, 15%, or 20% restaurant tips</li>
+</ul>
+</div>
+<div class="card"><div class="lbl">Frequently Asked Questions</div><div class="faq-item"><div class="faq-q">What is a percentage?<span class="faq-ico">+</span></div><div class="faq-a">A percentage is a number expressed as a fraction of 100. For example 25% means 25 out of every 100.</div></div><div class="faq-item"><div class="faq-q">How do I calculate 20% of a number?<span class="faq-ico">+</span></div><div class="faq-a">Multiply the number by 0.20. For example 20% of 150 = 30. Or use the first calculator above.</div></div><div class="faq-item"><div class="faq-q">What is percentage change?<span class="faq-ico">+</span></div><div class="faq-a">Percentage change measures how much a value has increased or decreased relative to its original value. Formula: ((New - Old) / Old) x 100.</div></div><div class="faq-item"><div class="faq-q">How do I calculate a discount?<span class="faq-ico">+</span></div><div class="faq-a">Use the What is X% of Y calculator. For a 30% discount on 50, enter 30 and 50 to get 15.</div></div><div class="faq-item"><div class="faq-q">Can I calculate both increase and decrease?<span class="faq-ico">+</span></div><div class="faq-a">Yes. The percentage change calculator handles both. Positive result means increase, negative means decrease.</div></div></div>
+<div class="card"><div class="lbl">Related Tools</div><div class="rel-grid"><a href="age-calculator.html" class="rtool">&#x1F382; Age Calculator</a><a href="bmi-calculator.html" class="rtool">&#x2696; BMI Calculator</a><a href="word-counter.html" class="rtool">&#x1F4DD; Word Counter</a><a href="password-generator.html" class="rtool">&#x1F510; Password Generator</a></div></div>
+</main><footer>
+  <div class="flogo">FREETOOLHUB</div>
+  <ul class="flinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="sitemap.html">Sitemap</a></li>
+  </ul>
+  <div class="fcopy">&#169; 2026 FreeToolHub.info</div>
+</footer>
+<script>
+(function(){
+  function showRes(id,html){var el=document.getElementById(id);el.style.display='block';el.innerHTML=html;}
+  document.getElementById('btn1').addEventListener('click',function(){
+    var p=parseFloat(document.getElementById('p1').value);
+    var n=parseFloat(document.getElementById('n1').value);
+    if(isNaN(p)||isNaN(n))return;
+    var result=(p/100*n);
+    showRes('a1','<span style="font-family:var(--fh);font-size:2rem;color:var(--c1);">'+result.toFixed(10).replace(/\.?0+$/,'')+'</span>');
+  });
+  document.getElementById('btn2').addEventListener('click',function(){
+    var p=parseFloat(document.getElementById('p2').value);
+    var n=parseFloat(document.getElementById('n2').value);
+    if(!n)return;
+    var result=(p/n)*100;
+    showRes('a2','<span style="font-family:var(--fh);font-size:2rem;color:var(--c1);">'+result.toFixed(10).replace(/\.?0+$/,'')+'%</span>');
+  });
+  document.getElementById('btn3').addEventListener('click',function(){
+    var f=parseFloat(document.getElementById('f3').value);
+    var t=parseFloat(document.getElementById('t3').value);
+    if(!f)return;
+    var ch=((t-f)/Math.abs(f))*100;
+    var col=ch>=0?'var(--c4)':'#f87171';
+    var label=ch>=0?'increase':'decrease';
+    showRes('a3','<span style="font-family:var(--fh);font-size:2rem;color:'+col+';">'+(ch>=0?'+':'')+ch.toFixed(2)+'%</span><span style="font-size:.8rem;color:var(--m);margin-left:.5rem;">'+label+'</span>');
+  });
+})();
+</script>
+<script>
+(function(){
+  var d=document.getElementById('cDot'),r=document.getElementById('cRing');
+  if(!d)return;
+  var mx=0,my=0,tx=0,ty=0;
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px';});
+  (function loop(){tx+=(mx-tx)*.11;ty+=(my-ty)*.11;r.style.left=tx+'px';r.style.top=ty+'px';requestAnimationFrame(loop);})();
+  var cv=document.getElementById('bgCanvas');
+  if(!cv)return;
+  var cx=cv.getContext('2d');
+  function rsz(){cv.width=innerWidth;cv.height=innerHeight;}rsz();
+  window.addEventListener('resize',rsz);
+  var CL=['rgba(167,139,250,','rgba(56,189,248,','rgba(251,146,60,','rgba(74,222,128,'];
+  var pts=[];
+  for(var i=0;i<50;i++){pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.1+.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,c:CL[i%4],a:Math.random()*.3+.07});}
+  (function draw(){
+    cx.clearRect(0,0,cv.width,cv.height);
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;
+      if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;
+      cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);
+      cx.fillStyle=p.c+p.a+')';cx.fill();
+      for(var j=i+1;j<pts.length;j++){
+        var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<85){cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.strokeStyle=p.c+(0.05*(1-dist/85))+')';cx.lineWidth=.5;cx.stroke();}
+      }
+    }
+    for(var k=0;k<pts.length;k++){var pp=pts[k],ddx=mx-pp.x,ddy=my-pp.y,dd=Math.sqrt(ddx*ddx+ddy*ddy);if(dd<100){pp.x+=ddx*.008;pp.y+=ddy*.008;}}
+    requestAnimationFrame(draw);
+  })();
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=this.closest('.faq-item');
+      var was=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!was)item.classList.add('open');
+    });
+  });
+})();
+</script>
+</body>
+</html>
