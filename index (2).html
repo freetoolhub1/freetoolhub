@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>FreeToolHub — Free Online Tools for Everyone | No Signup Needed</title>
+<meta name="description" content="FreeToolHub offers 10 free online tools including word counter, image compressor, password generator, QR code generator, calculators and more. No signup, no download, instant results.">
+<meta name="keywords" content="free online tools, word counter, image compressor, password generator, qr code generator, age calculator, bmi calculator, percentage calculator, case converter, remove duplicates">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://freetoolhub.info/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="FreeToolHub — 10 Free Online Tools, No Signup Needed">
+<meta property="og:description" content="Word counter, image compressor, password generator, QR codes, calculators and more. All free, all instant, no signup required.">
+<meta property="og:url" content="https://freetoolhub.info/">
+<meta property="og:site_name" content="FreeToolHub">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="FreeToolHub — 10 Free Online Tools">
+<meta name="twitter:description" content="Word counter, image compressor, password generator, QR codes and more. Free, instant, no signup.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSG0JLPE2D"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RSG0JLPE2D');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"FreeToolHub","url":"https://freetoolhub.info","description":"Free online tools for everyone. No signup required."}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#050508;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;cursor:none;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+#cDot{width:8px;height:8px;background:#f0eeff;border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+#cRing{width:34px;height:34px;border:1px solid rgba(167,139,250,.5);border-radius:50%;position:fixed;z-index:9998;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s,border-color .25s;}
+#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.45;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:62px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;}
+.nb{position:absolute;inset:0;background:rgba(5,5,8,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);}
+.logo{position:relative;z-index:1;display:flex;align-items:center;gap:9px;cursor:pointer;}
+.logo svg{width:30px;height:30px;animation:lspin 8s linear infinite;flex-shrink:0;}
+@keyframes lspin{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(360deg)}}
+.lt{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:.06em;background:linear-gradient(90deg,#a78bfa,#38bdf8,#fb923c);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gs 4s ease infinite;}
+@keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.ld{animation:dp 1.5s ease infinite;-webkit-text-fill-color:#fb923c;}
+@keyframes dp{0%,100%{transform:scale(1)}50%{transform:scale(1.6)}}
+.nav-links{position:relative;z-index:1;display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{color:#6b6880;font-size:.84rem;font-weight:500;transition:color .2s;}
+.nav-links a:hover{color:#f0eeff;}
+.nav-cta{position:relative;z-index:1;padding:.5rem 1.3rem;border-radius:99px;border:1px solid rgba(167,139,250,.35);background:rgba(167,139,250,.08);color:#a78bfa;font-size:.82rem;font-weight:600;cursor:pointer;transition:all .22s;white-space:nowrap;font-family:'Plus Jakarta Sans',sans-serif;}
+.nav-cta:hover{background:#a78bfa;color:#050508;border-color:#a78bfa;}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:7rem 2rem 4rem;position:relative;z-index:2;}
+.hero-tag{display:inline-flex;align-items:center;gap:7px;border:1px solid rgba(167,139,250,.28);background:rgba(167,139,250,.06);padding:.35rem .95rem;border-radius:99px;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a78bfa;margin-bottom:1.8rem;animation:fadeUp .7s ease both;}
+.eyedot{width:6px;height:6px;border-radius:50%;background:#4ade80;animation:blink 1.6s ease infinite;}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:0}}
+.hero h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(5rem,14vw,12rem);line-height:.92;margin-bottom:.4em;animation:fadeUp .7s .08s ease both;}
+.w1{display:block;background:linear-gradient(135deg,#fff,rgba(255,255,255,.45));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.w2{display:block;background:linear-gradient(135deg,#a78bfa,#38bdf8,#fb923c);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gs 3s ease infinite;}
+.w3{display:block;background:linear-gradient(135deg,rgba(255,255,255,.18),rgba(255,255,255,.55));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hero-sub{color:#6b6880;font-size:1.05rem;max-width:460px;line-height:1.7;margin-bottom:2.5rem;animation:fadeUp .7s .16s ease both;}
+.hero-sub strong{color:#f0eeff;font-weight:500;}
+.hero-btns{display:flex;gap:.9rem;flex-wrap:wrap;justify-content:center;animation:fadeUp .7s .22s ease both;}
+.btn-primary{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:.9rem 2.4rem;background:linear-gradient(135deg,#a78bfa,#38bdf8);color:#050508;border:none;border-radius:99px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s;}
+.btn-primary::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#38bdf8,#fb923c);opacity:0;transition:opacity .22s;}
+.btn-primary span{position:relative;z-index:1;}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(167,139,250,.35);}
+.btn-primary:hover::before{opacity:1;}
+.btn-primary:active{transform:scale(.97);}
+.btn-ghost{display:inline-flex;align-items:center;padding:.9rem 2.4rem;border:1px solid rgba(255,255,255,.1);border-radius:99px;color:#6b6880;font-size:.95rem;font-weight:600;cursor:pointer;background:transparent;transition:all .22s;font-family:'Plus Jakarta Sans',sans-serif;}
+.btn-ghost:hover{border-color:#a78bfa;color:#a78bfa;}
+.hero-stats{display:flex;gap:3rem;margin-top:4.5rem;animation:fadeUp .7s .3s ease both;}
+.hst{text-align:center;}
+.hst-num{font-family:'Bebas Neue',sans-serif;font-size:2.8rem;line-height:1;background:linear-gradient(135deg,#f0eeff,rgba(240,238,255,.4));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.hst-lbl{font-size:.72rem;color:#6b6880;text-transform:uppercase;letter-spacing:.07em;margin-top:3px;}
+.scroll-wrap{position:absolute;bottom:2.5rem;left:50%;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:7px;}
+.scroll-line{width:1px;height:50px;background:rgba(255,255,255,.08);border-radius:99px;overflow:hidden;position:relative;}
+.scroll-fill{position:absolute;top:-50%;left:0;right:0;height:50%;background:linear-gradient(180deg,transparent,#a78bfa);animation:sdrop 2s ease infinite;}
+@keyframes sdrop{0%{top:-50%}100%{top:150%}}
+.scroll-txt{font-size:.62rem;color:#6b6880;letter-spacing:.12em;text-transform:uppercase;}
+.mq-wrap{overflow:hidden;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:1rem 0;background:#0e0e14;position:relative;z-index:2;}
+.mq-track{display:flex;width:max-content;animation:mqroll 22s linear infinite;}
+.mq-item{font-family:'Bebas Neue',sans-serif;font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;padding:0 2rem;white-space:nowrap;color:#6b6880;}
+.mq-item.lit{color:#a78bfa;}
+.mq-sep{color:rgba(255,255,255,.1);padding:0 .3rem;}
+@keyframes mqroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.search-sec{max-width:880px;margin:0 auto;padding:4.5rem 2rem 1.5rem;position:relative;z-index:2;}
+.search-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.6rem,3.5vw,2.5rem);letter-spacing:.04em;margin-bottom:1.2rem;background:linear-gradient(90deg,#f0eeff,#6b6880);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.search-box{display:flex;align-items:center;background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:14px;overflow:hidden;transition:border-color .2s,box-shadow .2s;}
+.search-box:focus-within{border-color:rgba(167,139,250,.4);box-shadow:0 0 0 3px rgba(167,139,250,.07);}
+.search-icon{padding:0 1.1rem;color:#6b6880;font-size:1rem;flex-shrink:0;}
+.search-box input{flex:1;background:none;border:none;outline:none;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.95rem;padding:.95rem 0;}
+.search-box input::placeholder{color:#6b6880;}
+.search-box button{background:linear-gradient(135deg,#a78bfa,#38bdf8);border:none;color:#050508;padding:.72rem 1.6rem;margin:.35rem;border-radius:9px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.84rem;cursor:pointer;transition:opacity .2s;white-space:nowrap;}
+.search-box button:hover{opacity:.85;}
+.filters{display:flex;gap:.5rem;padding:.9rem 2rem 1.5rem;flex-wrap:wrap;max-width:880px;margin:0 auto;position:relative;z-index:2;}
+.filt{padding:.42rem 1.1rem;border-radius:99px;border:1px solid rgba(255,255,255,.06);background:transparent;color:#6b6880;font-family:'Plus Jakarta Sans',sans-serif;font-size:.8rem;font-weight:600;cursor:pointer;transition:all .18s;}
+.filt:hover{border-color:#a78bfa;color:#a78bfa;}
+.filt.active{background:linear-gradient(135deg,#a78bfa,#38bdf8);border-color:transparent;color:#050508;}
+.sec-head{display:flex;align-items:center;gap:1rem;padding:2rem 2rem 1.2rem;max-width:880px;margin:0 auto;position:relative;z-index:2;}
+.sec-label{font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#6b6880;white-space:nowrap;}
+.sec-line{flex:1;height:1px;background:rgba(255,255,255,.06);}
+.sec-num{font-size:.7rem;color:rgba(255,255,255,.08);font-weight:700;border:1px solid rgba(255,255,255,.06);padding:1px 7px;border-radius:99px;}
+.tools-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:1px;background:rgba(255,255,255,.06);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);position:relative;z-index:2;max-width:880px;margin:0 auto;}
+.tool-card{background:#050508;padding:2rem;display:flex;flex-direction:column;gap:.85rem;position:relative;overflow:hidden;transition:background .22s;opacity:0;transform:translateY(18px);transition:opacity .45s ease,transform .45s ease,background .22s;}
+.tool-card::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(167,139,250,.05),rgba(56,189,248,.03));opacity:0;transition:opacity .22s;}
+.tool-card:hover{background:#0e0e14;}
+.tool-card:hover::before{opacity:1;}
+.card-glow{position:absolute;top:-40px;right:-40px;width:110px;height:110px;border-radius:50%;opacity:0;transition:opacity .35s;pointer-events:none;}
+.tool-card:hover .card-glow{opacity:.45;}
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;}
+.tool-icon{width:48px;height:48px;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:1.35rem;border:1px solid rgba(255,255,255,.06);flex-shrink:0;transition:transform .22s;}
+.tool-card:hover .tool-icon{transform:scale(1.08);}
+.card-arrow{color:#6b6880;font-size:1rem;opacity:0;transition:opacity .22s,transform .22s;}
+.tool-card:hover .card-arrow{opacity:1;transform:translate(3px,-3px);color:#a78bfa;}
+.tool-name{font-size:1.05rem;font-weight:700;letter-spacing:-.01em;transition:color .22s;}
+.tool-card:hover .tool-name{color:#a78bfa;}
+.tool-desc{font-size:.83rem;color:#6b6880;line-height:1.6;}
+.tool-badge{display:inline-flex;align-items:center;font-size:.65rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid currentColor;opacity:.65;align-self:flex-start;margin-top:auto;}
+.cta-sec{max-width:880px;margin:4rem auto;padding:0 2rem;position:relative;z-index:2;}
+.cta-inner{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:22px;padding:4.5rem 3.5rem;text-align:center;position:relative;overflow:hidden;}
+.cta-inner::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#a78bfa,transparent);}
+.cta-orb1{position:absolute;top:-80px;left:-60px;width:280px;height:280px;border-radius:50%;background:rgba(167,139,250,.1);filter:blur(70px);pointer-events:none;}
+.cta-orb2{position:absolute;bottom:-60px;right:-40px;width:220px;height:220px;border-radius:50%;background:rgba(56,189,248,.08);filter:blur(60px);pointer-events:none;}
+.cta-title{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,5vw,4rem);letter-spacing:.03em;line-height:.95;background:linear-gradient(135deg,#f0eeff,rgba(240,238,255,.45));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.8rem;position:relative;}
+.cta-sub{color:#6b6880;font-size:.95rem;margin-bottom:2rem;position:relative;}
+.cta-btn{display:inline-flex;align-items:center;gap:6px;padding:.95rem 2.8rem;background:linear-gradient(135deg,#a78bfa,#38bdf8);color:#050508;border:none;border-radius:99px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;position:relative;overflow:hidden;transition:transform .22s,box-shadow .22s;}
+.cta-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#38bdf8,#fb923c);opacity:0;transition:opacity .22s;}
+.cta-btn span{position:relative;z-index:1;}
+.cta-btn:hover{transform:translateY(-2px);box-shadow:0 10px 35px rgba(167,139,250,.4);}
+.cta-btn:hover::before{opacity:1;}
+.cta-btn:active{transform:scale(.97);}
+.trust-badges{display:flex;justify-content:center;gap:1.5rem;margin-top:1.5rem;flex-wrap:wrap;position:relative;}
+.tbadge{display:flex;align-items:center;gap:.4rem;font-size:.75rem;color:#6b6880;}
+.tbadge-dot{width:5px;height:5px;border-radius:50%;background:#4ade80;flex-shrink:0;}
+footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);padding:2rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;}
+.flogo{font-family:'Bebas Neue',sans-serif;font-size:1.05rem;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.flinks{display:flex;gap:1.4rem;list-style:none;}
+.flinks a{color:#6b6880;font-size:.78rem;transition:color .2s;}
+.flinks a:hover{color:#f0eeff;}
+.fcopy{font-size:.72rem;color:#6b6880;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:768px){
+  nav{padding:0 1.2rem;}.nav-links{display:none;}
+  .hero{padding:6rem 1.2rem 3rem;}.hero-stats{gap:1.8rem;}.hst-num{font-size:2rem;}
+  .search-sec,.filters,.sec-head{padding-left:1.2rem;padding-right:1.2rem;}
+  .tools-grid{grid-template-columns:repeat(2,1fr);}
+  .tool-card{padding:1.2rem;}
+  .cta-sec{margin:3rem auto;padding:0 1.2rem;}.cta-inner{padding:3rem 1.5rem;}
+  footer{padding:1.5rem 1.2rem;flex-direction:column;align-items:flex-start;}
+  body{cursor:auto;}#cDot,#cRing{display:none;}
+}
+@media(max-width:400px){.tools-grid{grid-template-columns:1fr;}.hero h1{font-size:4rem;}}
+</style>
+</head>
+<body>
+<div id="cDot"></div>
+<div id="cRing"></div>
+<canvas id="bgCanvas"></canvas>
+<nav>
+  <div class="nb"></div>
+  <div class="logo" id="logoBtn" tabindex="0">
+    <svg viewBox="0 0 38 38" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg>
+    <div class="lt">FREETOOLHUB<span class="ld">.</span></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#tools" id="navText">Text</a></li>
+    <li><a href="#tools" id="navImage">Image</a></li>
+    <li><a href="#tools" id="navCalc">Calculators</a></li>
+    <li><a href="#tools" id="navDev">Developer</a></li>
+    <li><a href="about.html">About</a></li>
+  </ul>
+  <button class="nav-cta" id="navCtaBtn">Explore Tools</button>
+</nav>
+<section class="hero" id="top">
+  <div class="hero-tag"><div class="eyedot"></div>100% Free &#183; No Signup &#183; No Limits</div>
+  <h1><span class="w1">EVERY</span><span class="w2">TOOL</span><span class="w3">YOU NEED</span></h1>
+  <p class="hero-sub"><strong>10 powerful free tools</strong> for text, images, calculators and more &#8212; all instant, all in your browser.</p>
+  <div class="hero-btns">
+    <button class="btn-primary" id="heroBrowse"><span>Browse All Tools &#8594;</span></button>
+    <button class="btn-ghost" id="heroTryWord">Try Word Counter</button>
+  </div>
+  <div class="hero-stats">
+    <div class="hst"><div class="hst-num" id="cnt1">0</div><div class="hst-lbl">Free Tools</div></div>
+    <div class="hst"><div class="hst-num" id="cnt2">0</div><div class="hst-lbl">Users Daily</div></div>
+    <div class="hst"><div class="hst-num" id="cnt3">0</div><div class="hst-lbl">Signups Needed</div></div>
+  </div>
+  <div class="scroll-wrap">
+    <div class="scroll-line"><div class="scroll-fill"></div></div>
+    <div class="scroll-txt">Scroll</div>
+  </div>
+</section>
+<div class="mq-wrap">
+  <div class="mq-track">
+    <span class="mq-item lit">Word Counter</span><span class="mq-sep">&#10022;</span><span class="mq-item">Image Compressor</span><span class="mq-sep">&#10022;</span><span class="mq-item lit">Password Generator</span><span class="mq-sep">&#10022;</span><span class="mq-item">QR Code Generator</span><span class="mq-sep">&#10022;</span><span class="mq-item lit">Age Calculator</span><span class="mq-sep">&#10022;</span><span class="mq-item">BMI Calculator</span><span class="mq-sep">&#10022;</span><span class="mq-item lit">Case Converter</span><span class="mq-sep">&#10022;</span><span class="mq-item">Image Resizer</span><span class="mq-sep">&#10022;</span><span class="mq-item lit">Percentage Calc</span><span class="mq-sep">&#10022;</span><span class="mq-item">Remove Duplicates</span><span class="mq-sep">&#10022;</span><span class="mq-item lit">Word Counter</span><span class="mq-sep">&#10022;</span><span class="mq-item">Image Compressor</span><span class="mq-sep">&#10022;</span><span class="mq-item lit">Password Generator</span><span class="mq-sep">&#10022;</span><span class="mq-item">QR Code Generator</span><span class="mq-sep">&#10022;</span><span class="mq-item lit">Age Calculator</span><span class="mq-sep">&#10022;</span><span class="mq-item">BMI Calculator</span><span class="mq-sep">&#10022;</span><span class="mq-item lit">Case Converter</span><span class="mq-sep">&#10022;</span><span class="mq-item">Image Resizer</span><span class="mq-sep">&#10022;</span><span class="mq-item lit">Percentage Calc</span><span class="mq-sep">&#10022;</span><span class="mq-item">Remove Duplicates</span><span class="mq-sep">&#10022;</span>
+  </div>
+</div>
+<div class="search-sec" id="tools">
+  <div class="search-title">FIND YOUR TOOL</div>
+  <div class="search-box">
+    <div class="search-icon">&#9906;</div>
+    <input type="text" id="searchInput" placeholder="Search tools... word counter, image, calculator..." autocomplete="off">
+    <button id="searchBtn">Search</button>
+  </div>
+</div>
+<div class="filters">
+  <button class="filt active" id="fAll">All Tools</button>
+  <button class="filt" id="fText">&#10022; Text</button>
+  <button class="filt" id="fImage">&#10022; Image</button>
+  <button class="filt" id="fCalc">&#10022; Calculators</button>
+  <button class="filt" id="fDev">&#10022; Developer</button>
+</div>
+<div class="sec-head" id="text-tools"><div class="sec-label">Text Tools</div><div class="sec-line"></div><div class="sec-num">03</div></div>
+<div class="tools-grid" id="toolsGrid">
+  <a href="word-counter.html" class="tool-card" data-cat="text" data-name="word counter character sentences paragraphs text length">
+    <div class="card-glow" style="background:radial-gradient(circle,rgba(167,139,250,.35),transparent);"></div>
+    <div class="card-top"><div class="tool-icon" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.2);">&#x1F4DD;</div><div class="card-arrow">&#8599;</div></div>
+    <div class="tool-name">Word Counter</div>
+    <div class="tool-desc">Count words, characters, sentences and paragraphs in real time as you type.</div>
+    <span class="tool-badge" style="color:#a78bfa;">Text</span>
+  </a>
+  <a href="case-converter.html" class="tool-card" data-cat="text" data-name="case converter uppercase lowercase title sentence">
+    <div class="card-glow" style="background:radial-gradient(circle,rgba(56,189,248,.3),transparent);"></div>
+    <div class="card-top"><div class="tool-icon" style="background:rgba(56,189,248,.1);border-color:rgba(56,189,248,.2);">&#x1F524;</div><div class="card-arrow">&#8599;</div></div>
+    <div class="tool-name">Case Converter</div>
+    <div class="tool-desc">Convert text to UPPERCASE, lowercase, Title Case and Sentence case instantly.</div>
+    <span class="tool-badge" style="color:#38bdf8;">Text</span>
+  </a>
+  <a href="remove-duplicates.html" class="tool-card" data-cat="text" data-name="remove duplicate lines list clean deduplicate">
+    <div class="card-glow" style="background:radial-gradient(circle,rgba(74,222,128,.3),transparent);"></div>
+    <div class="card-top"><div class="tool-icon" style="background:rgba(74,222,128,.1);border-color:rgba(74,222,128,.2);">&#x1F5D1;</div><div class="card-arrow">&#8599;</div></div>
+    <div class="tool-name">Remove Duplicates</div>
+    <div class="tool-desc">Clean any list by removing all repeated lines instantly. Paste and done.</div>
+    <span class="tool-badge" style="color:#4ade80;">Text</span>
+  </a>
+  <a href="image-compressor.html" class="tool-card" data-cat="image" data-name="image compressor compress jpg png reduce file size">
+    <div class="card-glow" style="background:radial-gradient(circle,rgba(251,146,60,.3),transparent);"></div>
+    <div class="card-top"><div class="tool-icon" style="background:rgba(251,146,60,.1);border-color:rgba(251,146,60,.2);">&#x1F4E6;</div><div class="card-arrow">&#8599;</div></div>
+    <div class="tool-name">Image Compressor</div>
+    <div class="tool-desc">Shrink JPG and PNG images without losing quality. Instant browser processing.</div>
+    <span class="tool-badge" style="color:#fb923c;">Image</span>
+  </a>
+  <a href="image-resizer.html" class="tool-card" data-cat="image" data-name="image resizer resize photo pixels dimensions width height">
+    <div class="card-glow" style="background:radial-gradient(circle,rgba(167,139,250,.25),transparent);"></div>
+    <div class="card-top"><div class="tool-icon" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.2);">&#x1F4D0;</div><div class="card-arrow">&#8599;</div></div>
+    <div class="tool-name">Image Resizer</div>
+    <div class="tool-desc">Resize any image to exact pixel dimensions. Download instantly, nothing uploaded.</div>
+    <span class="tool-badge" style="color:#a78bfa;">Image</span>
+  </a>
+  <a href="percentage-calculator.html" class="tool-card" data-cat="calc" data-name="percentage calculator percent discount change increase">
+    <div class="card-glow" style="background:radial-gradient(circle,rgba(56,189,248,.25),transparent);"></div>
+    <div class="card-top"><div class="tool-icon" style="background:rgba(56,189,248,.1);border-color:rgba(56,189,248,.2);font-family:'Bebas Neue',sans-serif;font-size:1.2rem;color:#38bdf8;">%</div><div class="card-arrow">&#8599;</div></div>
+    <div class="tool-name">Percentage Calculator</div>
+    <div class="tool-desc">Three calculators in one &#8212; percent of, X is what %, and percentage change.</div>
+    <span class="tool-badge" style="color:#38bdf8;">Calculator</span>
+  </a>
+  <a href="age-calculator.html" class="tool-card" data-cat="calc" data-name="age calculator date birth years months days birthday">
+    <div class="card-glow" style="background:radial-gradient(circle,rgba(251,146,60,.25),transparent);"></div>
+    <div class="card-top"><div class="tool-icon" style="background:rgba(251,146,60,.1);border-color:rgba(251,146,60,.2);">&#x1F382;</div><div class="card-arrow">&#8599;</div></div>
+    <div class="tool-name">Age Calculator</div>
+    <div class="tool-desc">Find your exact age in years, months, days &#8212; and days until your next birthday.</div>
+    <span class="tool-badge" style="color:#fb923c;">Calculator</span>
+  </a>
+  <a href="bmi-calculator.html" class="tool-card" data-cat="calc" data-name="bmi calculator body mass index weight height health">
+    <div class="card-glow" style="background:radial-gradient(circle,rgba(74,222,128,.25),transparent);"></div>
+    <div class="card-top"><div class="tool-icon" style="background:rgba(74,222,128,.1);border-color:rgba(74,222,128,.2);">&#x2696;</div><div class="card-arrow">&#8599;</div></div>
+    <div class="tool-name">BMI Calculator</div>
+    <div class="tool-desc">Calculate your Body Mass Index and find your healthy weight range instantly.</div>
+    <span class="tool-badge" style="color:#4ade80;">Calculator</span>
+  </a>
+  <a href="password-generator.html" class="tool-card" data-cat="dev" data-name="password generator strong secure random symbols numbers">
+    <div class="card-glow" style="background:radial-gradient(circle,rgba(167,139,250,.25),transparent);"></div>
+    <div class="card-top"><div class="tool-icon" style="background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.2);">&#x1F510;</div><div class="card-arrow">&#8599;</div></div>
+    <div class="tool-name">Password Generator</div>
+    <div class="tool-desc">Generate strong, random passwords with custom length, symbols and numbers.</div>
+    <span class="tool-badge" style="color:#a78bfa;">Developer</span>
+  </a>
+  <a href="qr-code-generator.html" class="tool-card" data-cat="dev" data-name="qr code generator create download url link text">
+    <div class="card-glow" style="background:radial-gradient(circle,rgba(56,189,248,.25),transparent);"></div>
+    <div class="card-top"><div class="tool-icon" style="background:rgba(56,189,248,.1);border-color:rgba(56,189,248,.2);">&#x2B1B;</div><div class="card-arrow">&#8599;</div></div>
+    <div class="tool-name">QR Code Generator</div>
+    <div class="tool-desc">Create QR codes for any URL or text. Custom colours. Download as PNG free.</div>
+    <span class="tool-badge" style="color:#38bdf8;">Developer</span>
+  </a>
+</div>
+<div class="cta-sec">
+  <div class="cta-inner">
+    <div class="cta-orb1"></div><div class="cta-orb2"></div>
+    <div class="cta-title">ALL TOOLS.<br>ALWAYS FREE.</div>
+    <p class="cta-sub">No account. No credit card. No time limits. Free forever.</p>
+    <button class="cta-btn" id="ctaScrollBtn"><span>&#8593; Back to top</span></button>
+    <div class="trust-badges">
+      <div class="tbadge"><div class="tbadge-dot"></div>No signup required</div>
+      <div class="tbadge"><div class="tbadge-dot"></div>No data stored</div>
+      <div class="tbadge"><div class="tbadge-dot"></div>Works on all devices</div>
+      <div class="tbadge"><div class="tbadge-dot"></div>100% browser-based</div>
+    </div>
+  </div>
+</div>
+<footer>
+  <div class="flogo">FREETOOLHUB</div>
+  <ul class="flinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="sitemap.html">Sitemap</a></li>
+  </ul>
+  <div class="fcopy">&#169; 2026 FreeToolHub.info &#8212; Free tools for everyone</div>
+</footer>
+<script>
+(function(){
+  function scrollTo(id){var el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+  function goTop(){window.scrollTo({top:0,behavior:'smooth'});}
+
+  /* Logo */
+  var lb=document.getElementById('logoBtn');
+  lb.addEventListener('click',goTop);
+  lb.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();goTop();}});
+
+  /* Nav CTA */
+  document.getElementById('navCtaBtn').addEventListener('click',function(){scrollTo('tools');});
+
+  /* Hero buttons */
+  document.getElementById('heroBrowse').addEventListener('click',function(){scrollTo('tools');});
+  document.getElementById('heroTryWord').addEventListener('click',function(){window.location.href='word-counter.html';});
+
+  /* Nav links — scroll + filter */
+  function navFilter(cat,btnId){
+    scrollTo('tools');
+    setTimeout(function(){filterCat(cat,document.getElementById(btnId));},350);
+  }
+  document.getElementById('navText').addEventListener('click',function(e){e.preventDefault();navFilter('text','fText');});
+  document.getElementById('navImage').addEventListener('click',function(e){e.preventDefault();navFilter('image','fImage');});
+  document.getElementById('navCalc').addEventListener('click',function(e){e.preventDefault();navFilter('calc','fCalc');});
+  document.getElementById('navDev').addEventListener('click',function(e){e.preventDefault();navFilter('dev','fDev');});
+
+  /* CTA back to top */
+  document.getElementById('ctaScrollBtn').addEventListener('click',goTop);
+
+  /* Search */
+  function doSearch(){
+    var q=document.getElementById('searchInput').value.toLowerCase().trim();
+    var cards=document.querySelectorAll('.tool-card');
+    for(var i=0;i<cards.length;i++){
+      var nm=cards[i].querySelector('.tool-name').textContent.toLowerCase();
+      var dt=cards[i].getAttribute('data-name')||'';
+      cards[i].style.display=(nm.indexOf(q)>-1||dt.indexOf(q)>-1)?'flex':'none';
+    }
+    document.querySelectorAll('.filt').forEach(function(b){b.classList.remove('active');});
+    document.getElementById('fAll').classList.add('active');
+  }
+  document.getElementById('searchBtn').addEventListener('click',doSearch);
+  document.getElementById('searchInput').addEventListener('input',function(){
+    if(this.value==='')filterCat('all',document.getElementById('fAll'));
+    else doSearch();
+  });
+  document.getElementById('searchInput').addEventListener('keydown',function(e){if(e.key==='Enter')doSearch();});
+
+  /* Filter buttons */
+  document.getElementById('fAll').addEventListener('click',function(){filterCat('all',this);});
+  document.getElementById('fText').addEventListener('click',function(){filterCat('text',this);});
+  document.getElementById('fImage').addEventListener('click',function(){filterCat('image',this);});
+  document.getElementById('fCalc').addEventListener('click',function(){filterCat('calc',this);});
+  document.getElementById('fDev').addEventListener('click',function(){filterCat('dev',this);});
+
+  /* Counter animation */
+  function countUp(el,target,suffix,dur){
+    var s=0,step=target/(dur/16);
+    var t=setInterval(function(){s=Math.min(s+step,target);el.textContent=Math.floor(s)+suffix;if(s>=target)clearInterval(t);},16);
+  }
+  var obs=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){
+        countUp(document.getElementById('cnt1'),10,'+',1600);
+        countUp(document.getElementById('cnt2'),500,'+',1800);
+        countUp(document.getElementById('cnt3'),0,'',500);
+        obs.disconnect();
+      }
+    });
+  });
+  obs.observe(document.querySelector('.hero-stats'));
+
+  /* Scroll reveal */
+  var rev=new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){e.target.style.opacity='1';e.target.style.transform='translateY(0)';}
+    });
+  },{threshold:0.06});
+  document.querySelectorAll('.tool-card').forEach(function(c){rev.observe(c);});
+
+  /* Cursor */
+  var dot=document.getElementById('cDot'),ring=document.getElementById('cRing');
+  if(!dot)return;
+  var mx=0,my=0,tx=0,ty=0;
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;dot.style.left=mx+'px';dot.style.top=my+'px';});
+  (function loop(){tx+=(mx-tx)*0.11;ty+=(my-ty)*0.11;ring.style.left=tx+'px';ring.style.top=ty+'px';requestAnimationFrame(loop);})();
+
+  /* Particles */
+  var cv=document.getElementById('bgCanvas'),ctx=cv.getContext('2d');
+  function rsz(){cv.width=innerWidth;cv.height=innerHeight;}rsz();
+  window.addEventListener('resize',rsz);
+  var CL=['rgba(167,139,250,','rgba(56,189,248,','rgba(251,146,60,','rgba(74,222,128,'];
+  var pts=[];
+  for(var i=0;i<55;i++){pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.2+.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,c:CL[i%4],a:Math.random()*.3+.07});}
+  var pmx=innerWidth/2,pmy=innerHeight/2;
+  document.addEventListener('mousemove',function(e){pmx=e.clientX;pmy=e.clientY;});
+  (function draw(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;
+      if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.c+p.a+')';ctx.fill();
+      for(var j=i+1;j<pts.length;j++){
+        var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,d=Math.sqrt(dx*dx+dy*dy);
+        if(d<90){ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.strokeStyle=p.c+(0.05*(1-d/90))+')';ctx.lineWidth=.5;ctx.stroke();}
+      }
+      var ddx=pmx-p.x,ddy=pmy-p.y,dd=Math.sqrt(ddx*ddx+ddy*ddy);
+      if(dd<110){p.x+=ddx*.008;p.y+=ddy*.008;}
+    }
+    requestAnimationFrame(draw);
+  })();
+})();
+
+function filterCat(cat,btn){
+  document.querySelectorAll('.filt').forEach(function(b){b.classList.remove('active');});
+  if(btn)btn.classList.add('active');
+  var cards=document.querySelectorAll('.tool-card');
+  for(var i=0;i<cards.length;i++){
+    var c=cards[i].getAttribute('data-cat');
+    cards[i].style.display=(cat==='all'||c===cat)?'flex':'none';
+  }
+  document.getElementById('searchInput').value='';
+}
+</script>
+</body>
+</html>
