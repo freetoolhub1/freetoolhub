@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Fake Email Generator — Generate Random Email Addresses Instantly</title>
+<meta name="description" content="Generate random fake email addresses for testing and development. Choose quantity and domain. Download as .txt. Free, no signup, works instantly.">
+<meta name="keywords" content="fake email generator, random email generator, test email addresses, generate fake emails, dummy email generator free, email address generator">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://freetoolhub.info/fake-email-generator.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Free Fake Email Generator — Generate Random Email Addresses Instantly"><meta property="og:description" content="Generate random fake email addresses for testing and development. Choose quantity and domain. Download as .txt. Free, no signup, works instantly."><meta property="og:url" content="https://freetoolhub.info/fake-email-generator.html"><meta property="og:site_name" content="FreeToolHub"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Free Fake Email Generator — Generate Random Email Addresses Instantly"><meta name="twitter:description" content="Generate random fake email addresses for testing and development. Choose quantity and domain. Download as .txt. Free, no signup, works instantly.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSG0JLPE2D"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RSG0JLPE2D');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#050508;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;cursor:none;line-height:1.6;min-height:100vh;}
+a{text-decoration:none;color:inherit;}
+#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;}
+#cDot{width:8px;height:8px;background:#f0eeff;border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+#cRing{width:34px;height:34px;border:1px solid rgba(167,139,250,.5);border-radius:50%;position:fixed;z-index:9998;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;}
+.nb{position:absolute;inset:0;background:rgba(5,5,8,.88);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);}
+.logo{position:relative;z-index:1;display:flex;align-items:center;gap:9px;text-decoration:none;}
+.logo svg{animation:lspin 8s linear infinite;}
+@keyframes lspin{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(360deg)}}
+.lt{font-family:'Bebas Neue',sans-serif;font-size:1.25rem;letter-spacing:.06em;background:linear-gradient(90deg,#a78bfa,#38bdf8,#fb923c);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gs 4s ease infinite;}
+@keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.ld{animation:dp 1.5s ease infinite;-webkit-text-fill-color:#fb923c;}
+@keyframes dp{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
+.back{position:relative;z-index:1;display:flex;align-items:center;gap:5px;color:#6b6880;text-decoration:none;font-size:.8rem;font-weight:500;border:1px solid rgba(255,255,255,.06);padding:.38rem .9rem;border-radius:99px;transition:all .2s;}
+.back:hover{border-color:#a78bfa;color:#a78bfa;}
+.wrap{max-width:820px;margin:0 auto;padding:5.5rem 1.5rem 4rem;position:relative;z-index:2;}
+.bc{display:flex;gap:.4rem;list-style:none;font-size:.72rem;color:#6b6880;margin-bottom:1rem;flex-wrap:wrap;}
+.bc a{color:#6b6880;}.bc a:hover{color:#a78bfa;}
+.ptag{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(167,139,250,.22);background:rgba(167,139,250,.06);padding:.28rem .8rem;border-radius:99px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a78bfa;margin-bottom:1rem;}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,6vw,4rem);letter-spacing:.02em;line-height:.95;margin-bottom:.6rem;}
+.hg{background:linear-gradient(135deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.psub{color:#6b6880;font-size:.92rem;line-height:1.7;margin-bottom:2rem;max-width:520px;}
+.card{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:1.8rem;margin-bottom:1.2rem;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#a78bfa,transparent);}
+.lbl{font-family:'Bebas Neue',sans-serif;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#6b6880;margin-bottom:.45rem;display:block;}
+textarea,input[type=text],input[type=number],input[type=email]{width:100%;background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:10px;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;padding:.8rem 1rem;outline:none;transition:border-color .2s,box-shadow .2s;}
+textarea{resize:vertical;min-height:130px;line-height:1.7;}
+textarea:focus,input:focus{border-color:rgba(167,139,250,.4);box-shadow:0 0 0 3px rgba(167,139,250,.07);}
+textarea::placeholder,input::placeholder{color:#6b6880;}
+select{width:100%;background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:10px;color:#f0eeff;padding:.78rem 1rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;outline:none;cursor:pointer;-webkit-appearance:none;transition:border-color .2s;}
+select:focus{border-color:rgba(167,139,250,.4);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:.78rem 1.8rem;background:linear-gradient(135deg,#a78bfa,#38bdf8);color:#050508;border:none;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.86rem;cursor:pointer;transition:all .22s;position:relative;overflow:hidden;}
+.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#38bdf8,#fb923c);opacity:0;transition:opacity .22s;}
+.btn span{position:relative;z-index:1;}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(167,139,250,.28);}
+.btn:hover::before{opacity:1;}
+.btn:active{transform:scale(.98);}
+.btn.full{width:100%;}
+.btn-o{display:inline-flex;align-items:center;gap:5px;padding:.74rem 1.3rem;background:transparent;color:#6b6880;border:1px solid rgba(255,255,255,.06);border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.84rem;cursor:pointer;transition:all .2s;}
+.btn-o:hover{border-color:#a78bfa;color:#a78bfa;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.1rem;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.1rem;}
+.row{display:flex;gap:.65rem;flex-wrap:wrap;margin-bottom:1rem;align-items:center;}
+.sbox{background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:.9rem;text-align:center;}
+.sval{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:#a78bfa;line-height:1;}
+.slbl{font-size:.62rem;color:#6b6880;text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+.res{background:#16161f;border:1px solid rgba(167,139,250,.18);border-radius:12px;padding:1.2rem;font-size:.9rem;line-height:1.7;color:#f0eeff;min-height:60px;position:relative;white-space:pre-wrap;word-break:break-word;}
+.res::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#38bdf8,transparent);}
+.err{background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.25);border-radius:9px;padding:.65rem 1rem;color:#fb923c;font-size:.82rem;margin-top:.65rem;display:none;}
+.err.on{display:block;}
+.badge-pill{display:inline-flex;align-items:center;gap:5px;padding:.3rem .85rem;border-radius:99px;font-size:.75rem;font-weight:600;cursor:pointer;transition:all .18s;border:1px solid rgba(255,255,255,.08);background:#16161f;color:#6b6880;margin:.2rem;}
+.badge-pill:hover,.badge-pill.active{background:rgba(167,139,250,.15);border-color:#a78bfa;color:#a78bfa;}
+.strength-bar{height:8px;border-radius:99px;background:#16161f;margin:1rem 0;overflow:hidden;}
+.strength-fill{height:8px;border-radius:99px;transition:width .4s,background .4s;width:0%;}
+.strength-label{font-size:.82rem;font-weight:600;margin-bottom:.5rem;}
+.seo-block{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:2rem;margin-top:1.5rem;}
+.seo-block h2{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.04em;margin-bottom:.7rem;margin-top:1.5rem;background:linear-gradient(90deg,#f0eeff,#6b6880);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.seo-block h2:first-child{margin-top:0;}
+.seo-block h3{font-size:1rem;font-weight:600;color:#a78bfa;margin-bottom:.35rem;margin-top:1rem;}
+.seo-block p{color:#6b6880;font-size:.87rem;line-height:1.85;margin-bottom:.7rem;}
+.seo-block ul,.seo-block ol{color:#6b6880;font-size:.87rem;line-height:1.85;padding-left:1.3rem;margin-bottom:.7rem;}
+.seo-block li{margin-bottom:.3rem;}
+.seo-block strong{color:#f0eeff;font-weight:600;}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.06);padding:1rem 0;}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{font-size:.9rem;font-weight:600;color:#f0eeff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none;}
+.faq-q:hover{color:#a78bfa;}
+.faq-ico{color:#a78bfa;font-size:1.1rem;flex-shrink:0;transition:transform .2s;line-height:1;}
+.faq-a{font-size:.85rem;color:#6b6880;line-height:1.8;margin-top:.6rem;display:none;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-ico{transform:rotate(45deg);}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:.6rem;margin-top:.9rem;}
+.rtool{background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:11px;padding:.85rem 1rem;text-decoration:none;color:#6b6880;font-size:.82rem;font-weight:500;display:flex;align-items:center;gap:.55rem;transition:all .2s;}
+.rtool:hover{border-color:#a78bfa;color:#a78bfa;background:#0e0e14;}
+.copy-success{background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);border-radius:9px;padding:.65rem 1rem;color:#4ade80;font-size:.82rem;margin-top:.65rem;display:none;}
+.copy-success.on{display:block;}
+footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;margin-top:3rem;}
+.flogo{font-family:'Bebas Neue',sans-serif;font-size:1rem;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.flinks{display:flex;gap:1.2rem;list-style:none;}
+.flinks a{color:#6b6880;text-decoration:none;font-size:.78rem;transition:color .2s;}
+.flinks a:hover{color:#f0eeff;}
+.fcopy{font-size:.72rem;color:#6b6880;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.wrap>*{animation:fadeUp .45s ease both;}
+.wrap>*:nth-child(1){animation-delay:.04s}.wrap>*:nth-child(2){animation-delay:.08s}
+.wrap>*:nth-child(3){animation-delay:.12s}.wrap>*:nth-child(4){animation-delay:.16s}
+.wrap>*:nth-child(5){animation-delay:.2s}.wrap>*:nth-child(6){animation-delay:.24s}
+.wrap>*:nth-child(7){animation-delay:.28s}
+@media(max-width:640px){
+  nav{padding:.9rem 1.1rem;}.wrap{padding:5rem 1rem 3rem;}
+  .g2{grid-template-columns:1fr;}.g3{grid-template-columns:repeat(2,1fr);}
+  footer{padding:1.4rem 1.1rem;flex-direction:column;align-items:flex-start;}
+  body{cursor:auto;}#cDot,#cRing{display:none;}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"Free Fake Email Generator","description":"Generate random fake email addresses for testing and development. Choose quantity and domain. Free, no signup.","url":"https://freetoolhub.info/fake-email-generator.html","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"FreeToolHub","url":"https://freetoolhub.info"}}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Are these fake email addresses real?","acceptedAnswer":{"@type":"Answer","text":"No. These are randomly generated email-format strings for testing, filling forms, or protecting your real email from spam. They are not real mailboxes and cannot receive emails."}},{"@type":"Question","name":"Is it legal to use a fake email address?","acceptedAnswer":{"@type":"Answer","text":"It is legal to use a randomly generated email for testing or protecting your privacy. However, never use fake emails to deceive others, commit fraud, or violate website terms of service."}},{"@type":"Question","name":"What is a fake email generator used for?","acceptedAnswer":{"@type":"Answer","text":"Developers use them to test registration forms and email validation. Regular users use them to avoid spam when signing up to websites they do not fully trust."}},{"@type":"Question","name":"Can I use these emails to sign up to websites?","acceptedAnswer":{"@type":"Answer","text":"These are randomly generated strings only — they are not real mailboxes. For a working temporary inbox, use services like Guerrilla Mail or Temp Mail. Our tool generates realistic-looking test addresses only."}},{"@type":"Question","name":"Can I generate emails with a specific domain?","acceptedAnswer":{"@type":"Answer","text":"Yes. Select your preferred domain from the dropdown, or choose Random for maximum variety. You can generate up to 20 addresses at once."}}]}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freetoolhub.info/"},{"@type":"ListItem","position":2,"name":"Fake Email Generator","item":"https://freetoolhub.info/fake-email-generator.html"}]}</script>
+</head>
+<body>
+<div id="cDot"></div><div id="cRing"></div><canvas id="bgCanvas"></canvas>
+<nav>
+  <div class="nb"></div>
+  <a href="index.html" class="logo"><svg width="30" height="30" viewBox="0 0 38 38" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg><div class="lt">FREETOOLHUB<span class="ld">.</span></div></a>
+  <a href="index.html" class="back">&#8592; All Tools</a>
+</nav>
+<main class="wrap">
+<ol class="bc"><li><a href="index.html">Home</a></li><li style="color:rgba(255,255,255,.1);">/</li><li style="color:#a78bfa;">Fake Email Generator</li></ol>
+<div class="ptag">&#10022; Developer Tool</div>
+<h1>FREE FAKE <span class="hg">EMAIL GENERATOR</span></h1>
+<p class="psub">Generate random fake email addresses instantly for testing, sample data, and form validation. Choose quantity and domain. Free, no signup needed.</p>
+<div class="card">
+  <div class="g2" style="margin-bottom:1.2rem;">
+    <div>
+      <label class="lbl" for="feQty">How many emails?</label>
+      <select id="feQty">
+        <option value="5">5 emails</option>
+        <option value="10" selected>10 emails</option>
+        <option value="20">20 emails</option>
+        <option value="50">50 emails</option>
+      </select>
+    </div>
+    <div>
+      <label class="lbl" for="feDomain">Domain</label>
+      <select id="feDomain">
+        <option value="random">Random (mixed)</option>
+        <option value="gmail.com">gmail.com</option>
+        <option value="yahoo.com">yahoo.com</option>
+        <option value="outlook.com">outlook.com</option>
+        <option value="hotmail.com">hotmail.com</option>
+        <option value="icloud.com">icloud.com</option>
+        <option value="protonmail.com">protonmail.com</option>
+        <option value="test.com">test.com</option>
+      </select>
+    </div>
+  </div>
+  <button class="btn full" id="feGenBtn"><span>&#x1F4E7; Generate Emails</span></button>
+</div>
+<div class="card" id="feResults" style="display:none;">
+  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.9rem;flex-wrap:wrap;gap:.65rem;">
+    <div class="lbl" style="margin:0;">Generated emails &#8212; click any to copy</div>
+    <div style="display:flex;gap:.5rem;">
+      <button class="btn-o" id="feCopyAll">Copy All</button>
+      <button class="btn-o" id="feDownload">Download .txt</button>
+    </div>
+  </div>
+  <div id="feList" style="display:flex;flex-direction:column;gap:.4rem;"></div>
+  <div class="copy-success" id="feCopyMsg">&#10003; Copied!</div>
+</div>
+<div class="seo-block">
+<h2>What is a Fake Email Generator?</h2>
+<p>A <strong>fake email generator</strong> creates randomly generated email addresses in valid format. These are useful for software testing, form validation, protecting your real email from spam, and generating sample data for development projects.</p>
+<h2>When Should You Use a Fake Email Generator?</h2>
+<ul>
+<li><strong>Software testing</strong> — test registration forms, email validation logic, and user databases</li>
+<li><strong>Sample data</strong> — generate realistic email addresses for database seeding or mockups</li>
+<li><strong>Privacy protection</strong> — understand what a real email would look like before sharing yours</li>
+<li><strong>UI/UX design</strong> — populate mockup screens with realistic-looking user data</li>
+<li><strong>QA testing</strong> — test email field validation and error handling in web applications</li>
+</ul>
+<h2>Structure of a Valid Email Address</h2>
+<p>Every valid email has three parts: the local part (before @), the @ symbol, and the domain (after @). Our generator creates realistic combinations of names, numbers, and common domains.</p>
+<h2>Important Note on Privacy</h2>
+<p>These generated addresses are <strong>not real mailboxes</strong> — they cannot send or receive emails. They are purely for generating realistic-looking test data. For a working temporary inbox, use a dedicated service like Guerrilla Mail or Temp Mail.</p>
+</div>
+<div class="card"><div class="lbl">Frequently Asked Questions</div><div class="faq-item"><div class="faq-q">Are these fake email addresses real?<span class="faq-ico">+</span></div><div class="faq-a">No. These are randomly generated email-format strings for testing, filling forms, or protecting your real email from spam. They are not real mailboxes and cannot receive emails.</div></div><div class="faq-item"><div class="faq-q">Is it legal to use a fake email address?<span class="faq-ico">+</span></div><div class="faq-a">It is legal to use a randomly generated email for testing or protecting your privacy. However, never use fake emails to deceive others, commit fraud, or violate website terms of service.</div></div><div class="faq-item"><div class="faq-q">What is a fake email generator used for?<span class="faq-ico">+</span></div><div class="faq-a">Developers use them to test registration forms and email validation. Regular users use them to avoid spam when signing up to websites they do not fully trust.</div></div><div class="faq-item"><div class="faq-q">Can I use these emails to sign up to websites?<span class="faq-ico">+</span></div><div class="faq-a">These are randomly generated strings only — they are not real mailboxes. For a working temporary inbox, use services like Guerrilla Mail or Temp Mail. Our tool generates realistic-looking test addresses only.</div></div><div class="faq-item"><div class="faq-q">Can I generate emails with a specific domain?<span class="faq-ico">+</span></div><div class="faq-a">Yes. Select your preferred domain from the dropdown, or choose Random for maximum variety. You can generate up to 20 addresses at once.</div></div></div>
+<div class="card"><div class="lbl">Related Tools</div><div class="rel-grid"><a href="password-generator.html" class="rtool">&#x1F510; Password Generator</a><a href="password-strength-checker.html" class="rtool">&#x1F6E1; Password Strength</a><a href="qr-code-generator.html" class="rtool">&#x2B1B; QR Code Generator</a><a href="word-counter.html" class="rtool">&#x1F4DD; Word Counter</a></div></div>
+</main><footer>
+  <div class="flogo">FREETOOLHUB</div>
+  <ul class="flinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+    <li><a href="sitemap.html">Sitemap</a></li>
+  </ul>
+  <div class="fcopy">&#169; 2026 FreeToolHub.info</div>
+</footer><script>
+(function(){
+  var firstNames=['alex','jordan','taylor','morgan','casey','riley','sage','river','blake','quinn','avery','reese','cameron','logan','sydney','dakota','charlie','harley','peyton','jamie','hunter','skyler','drew','finley','rowan','parker','emery','remy','stevie','kit'];
+  var lastNames=['smith','jones','taylor','brown','wilson','davis','clark','hall','wright','green','baker','hill','moore','miller','thomas','martin','garcia','white','harris','jackson'];
+  var domains=['gmail.com','yahoo.com','outlook.com','hotmail.com','icloud.com','protonmail.com','live.com','mail.com','ymail.com','gmx.com'];
+
+  function rand(arr){return arr[Math.floor(Math.random()*arr.length)];}
+  function randNum(){return Math.floor(Math.random()*9999);}
+
+  function generateEmail(forceDomain){
+    var domain = forceDomain==='random' ? rand(domains) : forceDomain;
+    var type = Math.floor(Math.random()*5);
+    var local;
+    if(type===0)local=rand(firstNames)+rand(lastNames);
+    else if(type===1)local=rand(firstNames)+'.'+rand(lastNames);
+    else if(type===2)local=rand(firstNames)+randNum();
+    else if(type===3)local=rand(firstNames)+'.'+rand(lastNames)+randNum();
+    else local=rand(firstNames)+'_'+rand(lastNames);
+    return local+'@'+domain;
+  }
+
+  function generate(){
+    var qty=parseInt(document.getElementById('feQty').value);
+    var domain=document.getElementById('feDomain').value;
+    var list=document.getElementById('feList');
+    list.innerHTML='';
+    var emails=[];
+    for(var i=0;i<qty;i++){
+      var email=generateEmail(domain);
+      emails.push(email);
+      var div=document.createElement('div');
+      div.style.cssText='background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:9px;padding:.65rem 1rem;cursor:pointer;transition:all .18s;display:flex;justify-content:space-between;align-items:center;gap:.5rem;font-family:monospace;font-size:.88rem;color:#f0eeff;';
+      div.innerHTML='<span>'+email+'</span><span style="font-size:.7rem;color:#6b6880;flex-shrink:0;">Copy</span>';
+      div.addEventListener('mouseover',function(){this.style.borderColor='rgba(167,139,250,.4)';this.style.background='#1e1e2a';});
+      div.addEventListener('mouseout',function(){this.style.borderColor='rgba(255,255,255,.06)';this.style.background='#16161f';});
+      (function(e){
+        div.addEventListener('click',function(){
+          navigator.clipboard.writeText(e).then(function(){
+            var msg=document.getElementById('feCopyMsg');msg.classList.add('on');
+            setTimeout(function(){msg.classList.remove('on');},1500);
+          });
+        });
+      })(email);
+      list.appendChild(div);
+    }
+    list._emails=emails;
+    document.getElementById('feResults').style.display='block';
+  }
+
+  document.getElementById('feGenBtn').addEventListener('click',generate);
+  document.getElementById('feCopyAll').addEventListener('click',function(){
+    var list=document.getElementById('feList');
+    var emails=list._emails||[];
+    navigator.clipboard.writeText(emails.join('\n')).then(function(){
+      var btn=document.getElementById('feCopyAll');
+      btn.textContent='Copied!';setTimeout(function(){btn.textContent='Copy All';},2000);
+    });
+  });
+  document.getElementById('feDownload').addEventListener('click',function(){
+    var list=document.getElementById('feList');
+    var emails=list._emails||[];
+    var blob=new Blob([emails.join('\n')],{type:'text/plain'});
+    var url=URL.createObjectURL(blob);
+    var a=document.createElement('a');a.href=url;a.download='fake-emails-freetoolhub.txt';
+    document.body.appendChild(a);a.click();
+    setTimeout(function(){URL.revokeObjectURL(url);a.parentNode.removeChild(a);},1000);
+  });
+  generate();
+})();
+</script>
+<script>
+(function(){
+  var d=document.getElementById('cDot'),r=document.getElementById('cRing');
+  if(!d)return;
+  var mx=0,my=0,tx=0,ty=0;
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px';});
+  (function loop(){tx+=(mx-tx)*.11;ty+=(my-ty)*.11;r.style.left=tx+'px';r.style.top=ty+'px';requestAnimationFrame(loop);})();
+  var cv=document.getElementById('bgCanvas');
+  if(!cv)return;
+  var cx=cv.getContext('2d');
+  function rsz(){cv.width=innerWidth;cv.height=innerHeight;}rsz();
+  window.addEventListener('resize',rsz);
+  var CL=['rgba(167,139,250,','rgba(56,189,248,','rgba(251,146,60,','rgba(74,222,128,'];
+  var pts=[];
+  for(var i=0;i<50;i++){pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.1+.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,c:CL[i%4],a:Math.random()*.3+.07});}
+  (function draw(){
+    cx.clearRect(0,0,cv.width,cv.height);
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;
+      if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;
+      cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=p.c+p.a+')';cx.fill();
+      for(var j=i+1;j<pts.length;j++){
+        var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,dist=Math.sqrt(dx*dx+dy*dy);
+        if(dist<85){cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.strokeStyle=p.c+(0.05*(1-dist/85))+')';cx.lineWidth=.5;cx.stroke();}
+      }
+      var ddx=mx-p.x,ddy=my-p.y,dd=Math.sqrt(ddx*ddx+ddy*ddy);
+      if(dd<100){p.x+=ddx*.008;p.y+=ddy*.008;}
+    }
+    requestAnimationFrame(draw);
+  })();
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=this.closest('.faq-item');
+      var was=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!was)item.classList.add('open');
+    });
+  });
+})();
+</script>
+</body>
+</html>
