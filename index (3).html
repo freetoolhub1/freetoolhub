@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FreeToolHub - Free Online Tools for Everyone</title>
+<meta name="description" content="FreeToolHub offers 10+ free online tools including word counter, image compressor, password generator, QR code maker, and more. No signup required.">
+<meta name="keywords" content="free online tools, word counter, password generator, QR code generator, case converter, percentage calculator, age calculator, BMI calculator, JSON formatter, URL encoder">
+<link rel="canonical" href="https://freetoolhub.info/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0f;
+  --surface: #13131a;
+  --surface2: #1c1c27;
+  --border: rgba(255,255,255,0.08);
+  --border2: rgba(255,255,255,0.14);
+  --text: #f0f0f5;
+  --muted: #8888a0;
+  --accent: #6c63ff;
+  --accent3: #43e8a0;
+  --accent-glow: rgba(108,99,255,0.18);
+  --font-head: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; line-height: 1.6; }
+
+nav { position: sticky; top: 0; z-index: 100; background: rgba(10,10,15,0.9); backdrop-filter: blur(16px); border-bottom: 1px solid var(--border); padding: 0 2rem; display: flex; align-items: center; justify-content: space-between; height: 60px; }
+.logo { font-family: var(--font-head); font-size: 20px; font-weight: 800; color: var(--text); text-decoration: none; }
+.logo span { color: var(--accent); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { color: var(--muted); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+.nav-links a:hover { color: var(--text); }
+
+.hero { padding: 80px 2rem 60px; max-width: 900px; margin: 0 auto; text-align: center; animation: fadeUp 0.5s ease both; }
+.hero-badge { display: inline-block; background: var(--accent-glow); border: 1px solid rgba(108,99,255,0.3); color: #a9a4ff; font-size: 12px; padding: 5px 14px; border-radius: 99px; margin-bottom: 1.5rem; font-weight: 500; }
+.hero h1 { font-family: var(--font-head); font-size: clamp(2.2rem, 6vw, 3.8rem); font-weight: 800; line-height: 1.1; letter-spacing: -1.5px; margin-bottom: 1.2rem; }
+.hero h1 em { font-style: normal; color: var(--accent); }
+.hero p { font-size: 17px; color: var(--muted); max-width: 520px; margin: 0 auto 2.5rem; font-weight: 300; }
+.search-bar { display: flex; max-width: 460px; margin: 0 auto; background: var(--surface); border: 1px solid var(--border2); border-radius: 12px; overflow: hidden; }
+.search-bar input { flex: 1; background: none; border: none; padding: 13px 16px; color: var(--text); font-family: var(--font-body); font-size: 14px; outline: none; }
+.search-bar input::placeholder { color: var(--muted); }
+.search-bar button { background: var(--accent); border: none; padding: 12px 20px; color: white; font-size: 13px; font-weight: 500; cursor: pointer; font-family: var(--font-body); }
+
+.tools-section { max-width: 1100px; margin: 0 auto; padding: 0 2rem 80px; }
+.section-label { font-family: var(--font-head); font-size: 11px; font-weight: 600; letter-spacing: 0.12em; color: var(--muted); text-transform: uppercase; margin-bottom: 1.2rem; padding-top: 2rem; }
+.tools-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 12px; }
+.tool-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; cursor: pointer; transition: border-color 0.2s, transform 0.15s; }
+.tool-card:hover { border-color: var(--border2); transform: translateY(-2px); }
+.tool-icon { width: 38px; height: 38px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 17px; margin-bottom: 11px; }
+.tool-name { font-family: var(--font-head); font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 4px; }
+.tool-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+.tool-tag { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 99px; margin-top: 10px; font-weight: 500; }
+
+.tool-area { max-width: 780px; margin: 0 auto 80px; padding: 0 2rem; display: none; }
+.tool-area.open { display: block; }
+.tool-box { background: var(--surface); border: 1px solid var(--border2); border-radius: 18px; padding: 28px; }
+.tool-box h2 { font-family: var(--font-head); font-size: 21px; font-weight: 700; margin-bottom: 5px; }
+.tool-intro { color: var(--muted); font-size: 14px; margin-bottom: 22px; }
+textarea, input[type=text], input[type=number], select { width: 100%; background: var(--bg); border: 1px solid var(--border2); border-radius: 10px; padding: 12px 14px; color: var(--text); font-family: var(--font-body); font-size: 14px; outline: none; resize: vertical; transition: border-color 0.2s; }
+textarea:focus, input[type=text]:focus, input[type=number]:focus, select:focus { border-color: var(--accent); }
+.btn { display: inline-block; background: var(--accent); color: white; border: none; border-radius: 10px; padding: 11px 22px; font-size: 14px; font-weight: 500; font-family: var(--font-body); cursor: pointer; transition: opacity 0.2s; }
+.btn:hover { opacity: 0.85; }
+.btn-outline { background: transparent; border: 1px solid var(--border2); color: var(--text); }
+.btn-outline:hover { border-color: var(--accent); color: var(--accent); opacity: 1; }
+.btn-row { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0; }
+.result-box { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 14px; margin-top: 14px; font-size: 14px; color: var(--text); min-height: 50px; white-space: pre-wrap; word-break: break-all; }
+.stat-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(90px, 1fr)); gap: 10px; margin-top: 16px; }
+.stat { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 12px; text-align: center; }
+.stat-val { font-family: var(--font-head); font-size: 22px; font-weight: 700; color: var(--accent); }
+.stat-label { font-size: 11px; color: var(--muted); margin-top: 2px; }
+.input-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+label { font-size: 13px; color: var(--muted); display: block; margin-bottom: 6px; margin-top: 14px; }
+label:first-child { margin-top: 0; }
+.back-btn { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); font-size: 13px; cursor: pointer; margin-bottom: 16px; background: none; border: none; padding: 0; font-family: var(--font-body); }
+.back-btn:hover { color: var(--text); }
+.copy-msg { color: var(--accent3); font-size: 13px; margin-left: 10px; opacity: 0; transition: opacity 0.3s; }
+.copy-msg.show { opacity: 1; }
+.range-row { display: flex; align-items: center; gap: 12px; }
+input[type=range] { flex: 1; accent-color: var(--accent); }
+.qr-wrap { text-align: center; margin-top: 16px; }
+.qr-wrap canvas { border-radius: 10px; background: white; padding: 12px; }
+.cb-group { display: flex; flex-wrap: wrap; gap: 10px; margin: 10px 0; }
+.cb-group label { display: flex; align-items: center; gap: 6px; color: var(--text); font-size: 13px; margin: 0; cursor: pointer; }
+.cb-group input[type=checkbox] { accent-color: var(--accent); }
+.inline-input { width: auto !important; display: inline-block !important; padding: 6px 10px !important; }
+
+footer { border-top: 1px solid var(--border); padding: 2rem; text-align: center; color: var(--muted); font-size: 13px; }
+
+@keyframes fadeUp { from{opacity:0;transform:translateY(14px)} to{opacity:1;transform:translateY(0)} }
+@media(max-width:600px){.nav-links{display:none}.input-row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="logo">Free<span>Tool</span>Hub</a>
+  <ul class="nav-links">
+    <li><a href="#tools">All Tools</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+
+<div class="hero">
+  <div class="hero-badge">10+ Free Tools — No Signup Required</div>
+  <h1>The free toolbox<br>you'll <em>bookmark</em> today</h1>
+  <p>Fast, free online tools for text, math, passwords, QR codes and more. Works instantly — nothing to install.</p>
+  <div class="search-bar">
+    <input type="text" id="searchInput" placeholder="Search tools..." oninput="filterTools()">
+    <button onclick="filterTools()">Search</button>
+  </div>
+</div>
+
+<section class="tools-section" id="tools">
+  <div class="section-label">Text Tools</div>
+  <div class="tools-grid">
+    <div class="tool-card" onclick="show('wordcounter')" data-tags="word counter characters text sentences">
+      <div class="tool-icon" style="background:rgba(108,99,255,0.15)">📝</div>
+      <div class="tool-name">Word Counter</div>
+      <div class="tool-desc">Count words, characters, sentences and reading time.</div>
+      <span class="tool-tag" style="background:rgba(108,99,255,0.12);color:#a9a4ff">Text</span>
+    </div>
+    <div class="tool-card" onclick="show('caseconvert')" data-tags="case converter uppercase lowercase title">
+      <div class="tool-icon" style="background:rgba(108,99,255,0.15)">🔡</div>
+      <div class="tool-name">Case Converter</div>
+      <div class="tool-desc">Convert to UPPER, lower, Title or Sentence case instantly.</div>
+      <span class="tool-tag" style="background:rgba(108,99,255,0.12);color:#a9a4ff">Text</span>
+    </div>
+    <div class="tool-card" onclick="show('removedupes')" data-tags="remove duplicate lines list clean text">
+      <div class="tool-icon" style="background:rgba(108,99,255,0.15)">🧹</div>
+      <div class="tool-name">Remove Duplicates</div>
+      <div class="tool-desc">Remove duplicate lines from any list or text.</div>
+      <span class="tool-tag" style="background:rgba(108,99,255,0.12);color:#a9a4ff">Text</span>
+    </div>
+  </div>
+
+  <div class="section-label">Calculators</div>
+  <div class="tools-grid">
+    <div class="tool-card" onclick="show('percentage')" data-tags="percentage calculator math percent">
+      <div class="tool-icon" style="background:rgba(255,101,132,0.15)">%</div>
+      <div class="tool-name">Percentage Calculator</div>
+      <div class="tool-desc">Calculate percentages, increases and decreases easily.</div>
+      <span class="tool-tag" style="background:rgba(255,101,132,0.12);color:#ff9aae">Calc</span>
+    </div>
+    <div class="tool-card" onclick="show('age')" data-tags="age calculator birthday date of birth">
+      <div class="tool-icon" style="background:rgba(255,101,132,0.15)">🎂</div>
+      <div class="tool-name">Age Calculator</div>
+      <div class="tool-desc">Find exact age in years, months and days from any date.</div>
+      <span class="tool-tag" style="background:rgba(255,101,132,0.12);color:#ff9aae">Calc</span>
+    </div>
+    <div class="tool-card" onclick="show('bmi')" data-tags="bmi body mass index health weight calculator">
+      <div class="tool-icon" style="background:rgba(255,101,132,0.15)">⚖️</div>
+      <div class="tool-name">BMI Calculator</div>
+      <div class="tool-desc">Calculate Body Mass Index with metric or imperial units.</div>
+      <span class="tool-tag" style="background:rgba(255,101,132,0.12);color:#ff9aae">Calc</span>
+    </div>
+  </div>
+
+  <div class="section-label">Generators &amp; Developer Tools</div>
+  <div class="tools-grid">
+    <div class="tool-card" onclick="show('password')" data-tags="password generator strong secure random">
+      <div class="tool-icon" style="background:rgba(67,232,160,0.1)">🔐</div>
+      <div class="tool-name">Password Generator</div>
+      <div class="tool-desc">Generate strong, random passwords with custom rules.</div>
+      <span class="tool-tag" style="background:rgba(67,232,160,0.1);color:#43e8a0">Utility</span>
+    </div>
+    <div class="tool-card" onclick="show('qrcode')" data-tags="qr code generator link url text barcode">
+      <div class="tool-icon" style="background:rgba(67,232,160,0.1)">▦</div>
+      <div class="tool-name">QR Code Generator</div>
+      <div class="tool-desc">Generate and download a QR code for any URL or text.</div>
+      <span class="tool-tag" style="background:rgba(67,232,160,0.1);color:#43e8a0">Utility</span>
+    </div>
+    <div class="tool-card" onclick="show('jsonformat')" data-tags="json formatter validator beautify minify developer">
+      <div class="tool-icon" style="background:rgba(67,232,160,0.1)">{}</div>
+      <div class="tool-name">JSON Formatter</div>
+      <div class="tool-desc">Beautify, minify and validate JSON data instantly.</div>
+      <span class="tool-tag" style="background:rgba(67,232,160,0.1);color:#43e8a0">Dev</span>
+    </div>
+    <div class="tool-card" onclick="show('urlencode')" data-tags="url encoder decoder encode decode developer">
+      <div class="tool-icon" style="background:rgba(67,232,160,0.1)">🔗</div>
+      <div class="tool-name">URL Encoder / Decoder</div>
+      <div class="tool-desc">Encode or decode URL strings for web use.</div>
+      <span class="tool-tag" style="background:rgba(67,232,160,0.1);color:#43e8a0">Dev</span>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TOOL PANELS ===== -->
+
+<div class="tool-area" id="tool-wordcounter">
+  <button class="back-btn" onclick="hide()">← All tools</button>
+  <div class="tool-box">
+    <h2>📝 Word Counter</h2>
+    <p class="tool-intro">Type or paste text below — stats update as you type.</p>
+    <textarea id="wc-in" rows="8" placeholder="Paste or type your text here..." oninput="countWords()"></textarea>
+    <div class="stat-row">
+      <div class="stat"><div class="stat-val" id="wc-w">0</div><div class="stat-label">Words</div></div>
+      <div class="stat"><div class="stat-val" id="wc-c">0</div><div class="stat-label">Characters</div></div>
+      <div class="stat"><div class="stat-val" id="wc-c2">0</div><div class="stat-label">No spaces</div></div>
+      <div class="stat"><div class="stat-val" id="wc-s">0</div><div class="stat-label">Sentences</div></div>
+      <div class="stat"><div class="stat-val" id="wc-p">0</div><div class="stat-label">Paragraphs</div></div>
+      <div class="stat"><div class="stat-val" id="wc-r">0m</div><div class="stat-label">Read time</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="tool-area" id="tool-caseconvert">
+  <button class="back-btn" onclick="hide()">← All tools</button>
+  <div class="tool-box">
+    <h2>🔡 Case Converter</h2>
+    <p class="tool-intro">Paste text then choose a format.</p>
+    <textarea id="cc-in" rows="5" placeholder="Enter your text here..."></textarea>
+    <div class="btn-row">
+      <button class="btn" onclick="cc('upper')">UPPERCASE</button>
+      <button class="btn btn-outline" onclick="cc('lower')">lowercase</button>
+      <button class="btn btn-outline" onclick="cc('title')">Title Case</button>
+      <button class="btn btn-outline" onclick="cc('sentence')">Sentence case</button>
+    </div>
+    <label>Result:</label>
+    <div class="result-box" id="cc-out">Converted text will appear here.</div>
+    <div class="btn-row"><button class="btn btn-outline" onclick="cp('cc-out','cc-cp')">Copy</button><span class="copy-msg" id="cc-cp">Copied!</span></div>
+  </div>
+</div>
+
+<div class="tool-area" id="tool-removedupes">
+  <button class="back-btn" onclick="hide()">← All tools</button>
+  <div class="tool-box">
+    <h2>🧹 Remove Duplicate Lines</h2>
+    <p class="tool-intro">Paste a list with duplicate lines and we'll clean it up.</p>
+    <textarea id="rd-in" rows="7" placeholder="Line one&#10;Line two&#10;Line one&#10;Line three"></textarea>
+    <div class="btn-row">
+      <button class="btn" onclick="removeDupes()">Remove Duplicates</button>
+      <button class="btn btn-outline" onclick="document.getElementById('rd-in').value='';document.getElementById('rd-out').textContent=''">Clear</button>
+    </div>
+    <label>Result:</label>
+    <div class="result-box" id="rd-out"></div>
+    <div class="btn-row"><button class="btn btn-outline" onclick="cp('rd-out','rd-cp')">Copy</button><span class="copy-msg" id="rd-cp">Copied!</span></div>
+  </div>
+</div>
+
+<div class="tool-area" id="tool-percentage">
+  <button class="back-btn" onclick="hide()">← All tools</button>
+  <div class="tool-box">
+    <h2>% Percentage Calculator</h2>
+    <p class="tool-intro">Three types of percentage calculations.</p>
+    <label>What is <input class="inline-input" type="number" id="p1a" placeholder="X" style="width:70px"> % of <input class="inline-input" type="number" id="p1b" placeholder="number" style="width:100px"> ?</label>
+    <div class="btn-row"><button class="btn" onclick="pct1()">Calculate</button></div>
+    <div class="result-box" id="p1out"></div>
+    <label style="margin-top:20px">What percentage is <input class="inline-input" type="number" id="p2a" placeholder="A" style="width:70px"> of <input class="inline-input" type="number" id="p2b" placeholder="B" style="width:70px"> ?</label>
+    <div class="btn-row"><button class="btn" onclick="pct2()">Calculate</button></div>
+    <div class="result-box" id="p2out"></div>
+    <label style="margin-top:20px">Increase/decrease <input class="inline-input" type="number" id="p3v" placeholder="value" style="width:80px"> by <input class="inline-input" type="number" id="p3p" placeholder="%" style="width:60px"> %</label>
+    <div class="btn-row"><button class="btn" onclick="pct3(1)">Increase</button><button class="btn btn-outline" onclick="pct3(-1)">Decrease</button></div>
+    <div class="result-box" id="p3out"></div>
+  </div>
+</div>
+
+<div class="tool-area" id="tool-age">
+  <button class="back-btn" onclick="hide()">← All tools</button>
+  <div class="tool-box">
+    <h2>🎂 Age Calculator</h2>
+    <p class="tool-intro">Enter your date of birth to find your exact age.</p>
+    <label>Date of birth (DD/MM/YYYY)</label>
+    <input type="text" id="age-in" placeholder="15/06/1990" maxlength="10" oninput="fmtDate(this)">
+    <div class="btn-row"><button class="btn" onclick="calcAge()">Calculate Age</button></div>
+    <div class="stat-row" id="age-stats" style="display:none">
+      <div class="stat"><div class="stat-val" id="ag-y">0</div><div class="stat-label">Years</div></div>
+      <div class="stat"><div class="stat-val" id="ag-m">0</div><div class="stat-label">Months</div></div>
+      <div class="stat"><div class="stat-val" id="ag-d">0</div><div class="stat-label">Days</div></div>
+      <div class="stat"><div class="stat-val" id="ag-n">—</div><div class="stat-label">Next bday</div></div>
+    </div>
+    <div class="result-box" id="age-err" style="display:none"></div>
+  </div>
+</div>
+
+<div class="tool-area" id="tool-bmi">
+  <button class="back-btn" onclick="hide()">← All tools</button>
+  <div class="tool-box">
+    <h2>⚖️ BMI Calculator</h2>
+    <p class="tool-intro">Supports both metric (kg/cm) and imperial (lb/in).</p>
+    <div class="btn-row">
+      <button class="btn" id="bmi-m" onclick="bmiUnit('metric')">Metric (kg/cm)</button>
+      <button class="btn btn-outline" id="bmi-i" onclick="bmiUnit('imperial')">Imperial (lb/in)</button>
+    </div>
+    <div class="input-row">
+      <div><label id="lw">Weight (kg)</label><input type="number" id="bmi-w" placeholder="e.g. 70"></div>
+      <div><label id="lh">Height (cm)</label><input type="number" id="bmi-h" placeholder="e.g. 175"></div>
+    </div>
+    <div class="btn-row"><button class="btn" onclick="calcBMI()">Calculate BMI</button></div>
+    <div class="result-box" id="bmi-out"></div>
+  </div>
+</div>
+
+<div class="tool-area" id="tool-password">
+  <button class="back-btn" onclick="hide()">← All tools</button>
+  <div class="tool-box">
+    <h2>🔐 Password Generator</h2>
+    <p class="tool-intro">Generate a strong, secure random password instantly.</p>
+    <label>Length: <span id="pl-val">16</span> characters</label>
+    <div class="range-row"><input type="range" min="6" max="64" step="1" value="16" id="pl" oninput="document.getElementById('pl-val').textContent=this.value"></div>
+    <div class="cb-group">
+      <label><input type="checkbox" id="pu" checked> Uppercase A-Z</label>
+      <label><input type="checkbox" id="po" checked> Lowercase a-z</label>
+      <label><input type="checkbox" id="pn" checked> Numbers 0-9</label>
+      <label><input type="checkbox" id="ps" checked> Symbols !@#$</label>
+    </div>
+    <div class="btn-row"><button class="btn" onclick="genPass()">Generate Password</button></div>
+    <div class="result-box" id="pass-out" style="font-family:monospace;font-size:16px;letter-spacing:1px"></div>
+    <div class="btn-row"><button class="btn btn-outline" onclick="cp('pass-out','pass-cp')">Copy password</button><span class="copy-msg" id="pass-cp">Copied!</span></div>
+  </div>
+</div>
+
+<div class="tool-area" id="tool-qrcode">
+  <button class="back-btn" onclick="hide()">← All tools</button>
+  <div class="tool-box">
+    <h2>▦ QR Code Generator</h2>
+    <p class="tool-intro">Enter any URL or text to generate a downloadable QR code.</p>
+    <label>URL or text</label>
+    <input type="text" id="qr-in" placeholder="https://freetoolhub.info" value="https://freetoolhub.info">
+    <div class="btn-row"><button class="btn" onclick="genQR()">Generate QR Code</button></div>
+    <div class="qr-wrap" id="qr-wrap" style="display:none">
+      <canvas id="qr-cv"></canvas>
+      <div class="btn-row" style="justify-content:center;margin-top:14px"><button class="btn btn-outline" onclick="dlQR()">Download PNG</button></div>
+    </div>
+  </div>
+</div>
+
+<div class="tool-area" id="tool-jsonformat">
+  <button class="back-btn" onclick="hide()">← All tools</button>
+  <div class="tool-box">
+    <h2>{} JSON Formatter</h2>
+    <p class="tool-intro">Paste JSON data to beautify, minify or validate it.</p>
+    <textarea id="jf-in" rows="7" placeholder='{"name":"John","age":30,"city":"Barcelona"}'></textarea>
+    <div class="btn-row">
+      <button class="btn" onclick="jfmt('pretty')">Beautify</button>
+      <button class="btn btn-outline" onclick="jfmt('mini')">Minify</button>
+      <button class="btn btn-outline" onclick="jfmt('valid')">Validate</button>
+    </div>
+    <label>Result:</label>
+    <div class="result-box" id="jf-out" style="font-family:monospace;font-size:13px"></div>
+    <div class="btn-row"><button class="btn btn-outline" onclick="cp('jf-out','jf-cp')">Copy</button><span class="copy-msg" id="jf-cp">Copied!</span></div>
+  </div>
+</div>
+
+<div class="tool-area" id="tool-urlencode">
+  <button class="back-btn" onclick="hide()">← All tools</button>
+  <div class="tool-box">
+    <h2>🔗 URL Encoder / Decoder</h2>
+    <p class="tool-intro">Encode special characters or decode an encoded URL string.</p>
+    <textarea id="ue-in" rows="4" placeholder="https://example.com/search?q=hello world&lang=en"></textarea>
+    <div class="btn-row">
+      <button class="btn" onclick="ue(true)">Encode URL</button>
+      <button class="btn btn-outline" onclick="ue(false)">Decode URL</button>
+    </div>
+    <label>Result:</label>
+    <div class="result-box" id="ue-out" style="font-family:monospace;font-size:13px"></div>
+    <div class="btn-row"><button class="btn btn-outline" onclick="cp('ue-out','ue-cp')">Copy</button><span class="copy-msg" id="ue-cp">Copied!</span></div>
+  </div>
+</div>
+
+<section id="about" style="max-width:660px;margin:0 auto 80px;padding:0 2rem;text-align:center">
+  <h2 style="font-family:var(--font-head);font-size:1.8rem;font-weight:700;margin-bottom:1rem">Why FreeToolHub?</h2>
+  <p style="color:var(--muted);line-height:1.8">FreeToolHub gives you fast, free online tools with no signup, no ads, and no tracking. Everything runs directly in your browser — your data never leaves your device. New tools added every week.</p>
+</section>
+
+<footer>
+  <strong style="color:var(--text)">FreeToolHub.info</strong> — Free online tools for everyone.<br>
+  <span style="display:block;margin-top:5px">© 2025 FreeToolHub. All tools are completely free to use.</span>
+</footer>
+
+<script src="https://unpkg.com/qrcode@1.5.3/build/qrcode.min.js"></script>
+<script>
+let cur = null;
+let bmi_unit = 'metric';
+
+function show(id) {
+  if(cur) { document.getElementById('tool-'+cur).classList.remove('open'); }
+  cur = id;
+  const el = document.getElementById('tool-'+id);
+  el.classList.add('open');
+  setTimeout(()=>el.scrollIntoView({behavior:'smooth',block:'start'}),50);
+}
+function hide() {
+  if(cur) document.getElementById('tool-'+cur).classList.remove('open');
+  cur = null;
+  document.getElementById('tools').scrollIntoView({behavior:'smooth'});
+}
+function filterTools() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  document.querySelectorAll('.tool-card').forEach(c => {
+    c.style.display = (c.dataset.tags.includes(q) || c.querySelector('.tool-name').textContent.toLowerCase().includes(q)) ? '' : 'none';
+  });
+}
+function cp(srcId, msgId) {
+  navigator.clipboard.writeText(document.getElementById(srcId).innerText).then(()=>{
+    const m = document.getElementById(msgId);
+    m.classList.add('show');
+    setTimeout(()=>m.classList.remove('show'),2000);
+  });
+}
+
+// Word Counter
+function countWords() {
+  const t = document.getElementById('wc-in').value;
+  const w = t.trim()==='' ? 0 : t.trim().split(/\s+/).length;
+  document.getElementById('wc-w').textContent = w;
+  document.getElementById('wc-c').textContent = t.length;
+  document.getElementById('wc-c2').textContent = t.replace(/\s/g,'').length;
+  document.getElementById('wc-s').textContent = (t.match(/[.!?]+/g)||[]).length;
+  document.getElementById('wc-p').textContent = t.trim()==='' ? 0 : t.trim().split(/\n\s*\n/).length;
+  document.getElementById('wc-r').textContent = Math.ceil(w/200)+'m';
+}
+
+// Case Converter
+function cc(type) {
+  const t = document.getElementById('cc-in').value;
+  const map = {
+    upper: ()=>t.toUpperCase(),
+    lower: ()=>t.toLowerCase(),
+    title: ()=>t.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase()),
+    sentence: ()=>t.toLowerCase().replace(/(^\s*\w|[.!?]\s*\w)/g,c=>c.toUpperCase())
+  };
+  document.getElementById('cc-out').textContent = map[type]();
+}
+
+// Remove Dupes
+function removeDupes() {
+  const lines = document.getElementById('rd-in').value.split('\n');
+  const seen = new Set();
+  document.getElementById('rd-out').textContent = lines.filter(l=>{ if(seen.has(l)) return false; seen.add(l); return true; }).join('\n');
+}
+
+// Percentage
+function pct1() {
+  const p=parseFloat(document.getElementById('p1a').value), n=parseFloat(document.getElementById('p1b').value);
+  document.getElementById('p1out').textContent = (!isNaN(p)&&!isNaN(n)) ? p+'% of '+n+' = '+(p/100*n).toFixed(4).replace(/\.?0+$/,'') : 'Enter both values.';
+}
+function pct2() {
+  const a=parseFloat(document.getElementById('p2a').value), b=parseFloat(document.getElementById('p2b').value);
+  document.getElementById('p2out').textContent = (!isNaN(a)&&!isNaN(b)&&b!==0) ? a+' is '+(a/b*100).toFixed(2)+'% of '+b : 'Enter valid values.';
+}
+function pct3(d) {
+  const v=parseFloat(document.getElementById('p3v').value), c=parseFloat(document.getElementById('p3p').value);
+  document.getElementById('p3out').textContent = (!isNaN(v)&&!isNaN(c)) ? v+(d>0?' increased':' decreased')+' by '+c+'% = '+(v+d*(c/100*v)).toFixed(4).replace(/\.?0+$/,'') : 'Enter both values.';
+}
+
+// Age
+function fmtDate(el) {
+  let v=el.value.replace(/\D/g,'');
+  if(v.length>2) v=v.slice(0,2)+'/'+v.slice(2);
+  if(v.length>5) v=v.slice(0,5)+'/'+v.slice(5,9);
+  el.value=v;
+}
+function calcAge() {
+  const parts = document.getElementById('age-in').value.split('/');
+  const err = document.getElementById('age-err');
+  const stats = document.getElementById('age-stats');
+  if(parts.length!==3){err.textContent='Please enter date as DD/MM/YYYY';err.style.display='block';stats.style.display='none';return;}
+  const dob = new Date(+parts[2],+parts[1]-1,+parts[0]);
+  if(isNaN(dob)){err.textContent='Invalid date.';err.style.display='block';stats.style.display='none';return;}
+  const now = new Date();
+  let y=now.getFullYear()-dob.getFullYear(), m=now.getMonth()-dob.getMonth(), d=now.getDate()-dob.getDate();
+  if(d<0){m--;d+=new Date(now.getFullYear(),now.getMonth(),0).getDate();}
+  if(m<0){y--;m+=12;}
+  const next=new Date(now.getFullYear(),dob.getMonth(),dob.getDate());
+  if(next<=now)next.setFullYear(now.getFullYear()+1);
+  document.getElementById('ag-y').textContent=y;
+  document.getElementById('ag-m').textContent=m;
+  document.getElementById('ag-d').textContent=d;
+  document.getElementById('ag-n').textContent=Math.ceil((next-now)/86400000)+'d';
+  stats.style.display='grid';err.style.display='none';
+}
+
+// BMI
+function bmiUnit(u) {
+  bmi_unit=u;
+  document.getElementById('bmi-m').className=u==='metric'?'btn':'btn btn-outline';
+  document.getElementById('bmi-i').className=u==='imperial'?'btn':'btn btn-outline';
+  document.getElementById('lw').textContent=u==='metric'?'Weight (kg)':'Weight (lbs)';
+  document.getElementById('lh').textContent=u==='metric'?'Height (cm)':'Height (inches)';
+}
+function calcBMI() {
+  let w=parseFloat(document.getElementById('bmi-w').value),h=parseFloat(document.getElementById('bmi-h').value);
+  if(isNaN(w)||isNaN(h)){document.getElementById('bmi-out').textContent='Enter both weight and height.';return;}
+  if(bmi_unit==='imperial'){w*=0.453592;h*=2.54;}
+  const b=w/((h/100)**2);
+  const cat=b<18.5?'Underweight':b<25?'Normal weight':b<30?'Overweight':'Obese';
+  const tip=b<18.5?'Consider seeing a nutritionist.':b<25?'Great — keep up the healthy habits!':b<30?'A balanced diet and exercise can help.':'Please consult a healthcare professional.';
+  document.getElementById('bmi-out').textContent='Your BMI: '+b.toFixed(1)+'\nCategory: '+cat+'\n'+tip;
+}
+
+// Password
+function genPass() {
+  const len=parseInt(document.getElementById('pl').value);
+  const U='ABCDEFGHIJKLMNOPQRSTUVWXYZ',L='abcdefghijklmnopqrstuvwxyz',N='0123456789',S='!@#$%^&*()_+-=[]{}|;:,.<>?';
+  let chars='',pw='';
+  if(document.getElementById('pu').checked){chars+=U;pw+=U[~~(Math.random()*U.length)];}
+  if(document.getElementById('po').checked){chars+=L;pw+=L[~~(Math.random()*L.length)];}
+  if(document.getElementById('pn').checked){chars+=N;pw+=N[~~(Math.random()*N.length)];}
+  if(document.getElementById('ps').checked){chars+=S;pw+=S[~~(Math.random()*S.length)];}
+  if(!chars){document.getElementById('pass-out').textContent='Select at least one character type.';return;}
+  while(pw.length<len)pw+=chars[~~(Math.random()*chars.length)];
+  document.getElementById('pass-out').textContent=pw.split('').sort(()=>Math.random()-0.5).join('').slice(0,len);
+}
+
+// QR Code
+function genQR() {
+  const txt=document.getElementById('qr-in').value.trim();
+  if(!txt)return;
+  QRCode.toCanvas(document.getElementById('qr-cv'),txt,{width:200,margin:2},err=>{
+    if(!err)document.getElementById('qr-wrap').style.display='block';
+  });
+}
+function dlQR() {
+  const a=document.createElement('a');a.download='qrcode-freetoolhub.png';a.href=document.getElementById('qr-cv').toDataURL();a.click();
+}
+
+// JSON
+function jfmt(mode) {
+  try {
+    const p=JSON.parse(document.getElementById('jf-in').value);
+    document.getElementById('jf-out').textContent=mode==='pretty'?JSON.stringify(p,null,2):mode==='mini'?JSON.stringify(p):'Valid JSON ✓';
+  }catch(e){document.getElementById('jf-out').textContent='Error: '+e.message;}
+}
+
+// URL encode/decode
+function ue(encode) {
+  try {
+    document.getElementById('ue-out').textContent=encode?encodeURIComponent(document.getElementById('ue-in').value):decodeURIComponent(document.getElementById('ue-in').value);
+  }catch(e){document.getElementById('ue-out').textContent='Error: '+e.message;}
+}
+</script>
+</body>
+</html>
