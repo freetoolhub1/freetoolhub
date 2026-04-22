@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Free Percentage Calculator Online - Calculate Percentages Instantly | FreeToolHub</title>
+<meta name="description" content="Free online percentage calculator. Calculate what percent of a number is, percentage change, and percentage difference. Fast and free.">
+<meta name="keywords" content="percentage calculator, percent calculator, calculate percentage, what percent of, percentage change calculator">
+<link rel="canonical" href="https://freetoolhub.info/percentage-calculator">
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0a0f;--surface:#13131a;--surface2:#1c1c26;--border:rgba(255,255,255,0.08);--accent:#ff6b9d;--text:#f0f0f5;--muted:#888899;--font-head:'Syne',sans-serif;--font-body:'DM Sans',sans-serif;}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--bg);color:var(--text);font-family:var(--font-body);min-height:100vh;}
+nav{position:sticky;top:0;z-index:100;background:rgba(10,10,15,0.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;align-items:center;justify-content:space-between;height:60px;}
+.logo{font-family:var(--font-head);font-size:1.2rem;font-weight:800;text-decoration:none;color:var(--text);}.logo span{color:#7c6fff;}
+.back{color:var(--muted);text-decoration:none;font-size:0.9rem;}.back:hover{color:var(--text);}
+.container{max-width:700px;margin:0 auto;padding:3rem 2rem;}
+h1{font-family:var(--font-head);font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;letter-spacing:-0.03em;margin-bottom:0.5rem;}
+h1 em{font-style:normal;color:var(--accent);}
+.subtitle{color:var(--muted);margin-bottom:2rem;}
+.calc-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:1.8rem;margin-bottom:1.2rem;}
+.calc-title{font-family:var(--font-head);font-size:1rem;font-weight:700;margin-bottom:1.2rem;color:var(--text);}
+.row{display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;margin-bottom:1rem;}
+.row span{color:var(--muted);font-size:0.95rem;white-space:nowrap;}
+input[type=number]{background:var(--surface2);border:1px solid var(--border);border-radius:8px;color:var(--text);padding:0.6rem 0.9rem;font-family:var(--font-body);font-size:1rem;outline:none;width:120px;transition:border-color 0.2s;}
+input[type=number]:focus{border-color:var(--accent);}
+.calc-btn{padding:0.6rem 1.3rem;background:var(--accent);border:none;color:white;border-radius:8px;font-family:var(--font-head);font-weight:700;font-size:0.88rem;cursor:pointer;transition:opacity 0.2s;white-space:nowrap;}
+.calc-btn:hover{opacity:0.85;}
+.answer{font-family:var(--font-head);font-size:1.6rem;font-weight:800;color:var(--accent);margin-top:0.5rem;min-height:2rem;}
+.info-box{background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:1.5rem;margin-top:1rem;}
+.info-box h2{font-family:var(--font-head);font-size:1.2rem;margin-bottom:0.8rem;}
+.info-box p{color:var(--muted);font-size:0.9rem;line-height:1.7;margin-bottom:0.6rem;}
+footer{text-align:center;color:var(--muted);font-size:0.83rem;padding:2rem;border-top:1px solid var(--border);margin-top:3rem;}
+footer a{color:var(--muted);text-decoration:none;}
+@media(max-width:500px){.row{flex-direction:column;align-items:flex-start;}input[type=number]{width:100%;}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="logo">Free<span>Tool</span>Hub</a>
+  <a href="index.html" class="back">← All Tools</a>
+</nav>
+<div class="container">
+  <h1>Percentage <em>Calculator</em></h1>
+  <p class="subtitle">Three calculators in one — find percentages, changes, and more instantly.</p>
+
+  <div class="calc-card">
+    <div class="calc-title">What is X% of Y?</div>
+    <div class="row">
+      <span>What is</span>
+      <input type="number" id="p1" placeholder="25">
+      <span>% of</span>
+      <input type="number" id="n1" placeholder="200">
+      <button class="calc-btn" onclick="calc1()">Calculate</button>
+    </div>
+    <div class="answer" id="ans1"></div>
+  </div>
+
+  <div class="calc-card">
+    <div class="calc-title">X is what percent of Y?</div>
+    <div class="row">
+      <input type="number" id="p2" placeholder="50">
+      <span>is what % of</span>
+      <input type="number" id="n2" placeholder="200">
+      <button class="calc-btn" onclick="calc2()">Calculate</button>
+    </div>
+    <div class="answer" id="ans2"></div>
+  </div>
+
+  <div class="calc-card">
+    <div class="calc-title">Percentage change from X to Y</div>
+    <div class="row">
+      <span>From</span>
+      <input type="number" id="from3" placeholder="80">
+      <span>to</span>
+      <input type="number" id="to3" placeholder="100">
+      <button class="calc-btn" onclick="calc3()">Calculate</button>
+    </div>
+    <div class="answer" id="ans3"></div>
+  </div>
+
+  <div class="info-box">
+    <h2>How to calculate percentages</h2>
+    <p>A percentage is a number expressed as a fraction of 100. For example, 25% means 25 out of every 100.</p>
+    <p>To find X% of Y: multiply Y by X and divide by 100. For example, 25% of 200 = (200 × 25) ÷ 100 = 50.</p>
+    <p>Percentage change is calculated as: ((new value − old value) ÷ old value) × 100. A positive result means an increase, a negative result means a decrease.</p>
+  </div>
+</div>
+<footer><p><a href="index.html">FreeToolHub.info</a> — Free tools, no signup needed. © 2025</p></footer>
+<script>
+function calc1(){
+  const p=+document.getElementById('p1').value, n=+document.getElementById('n1').value;
+  if(isNaN(p)||isNaN(n)){document.getElementById('ans1').textContent='Please enter both numbers';return;}
+  document.getElementById('ans1').textContent = (p/100*n).toFixed(2);
+}
+function calc2(){
+  const p=+document.getElementById('p2').value, n=+document.getElementById('n2').value;
+  if(!n){document.getElementById('ans2').textContent='Please enter both numbers';return;}
+  document.getElementById('ans2').textContent = ((p/n)*100).toFixed(2)+'%';
+}
+function calc3(){
+  const f=+document.getElementById('from3').value, t=+document.getElementById('to3').value;
+  if(!f){document.getElementById('ans3').textContent='Please enter both numbers';return;}
+  const change=((t-f)/Math.abs(f))*100;
+  const sign=change>=0?'+':'';
+  document.getElementById('ans3').textContent = sign+change.toFixed(2)+'%';
+}
+</script>
+</body>
+</html>
