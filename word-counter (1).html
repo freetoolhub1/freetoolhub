@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Word Counter Online — Count Words & Characters Instantly</title>
+<meta name="description" content="Count words, characters, sentences and paragraphs in real time. Free online word counter — no signup, no limits. Works instantly on any device.">
+<meta name="keywords" content="word counter, character counter, count words online, free word counter, word count tool">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://freetoolhub.info/word-counter.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Free Word Counter Online — Count Words & Characters Instantly"><meta property="og:description" content="Count words, characters, sentences and paragraphs in real time. Free online word counter — no signup, no limits. Works instantly on any device."><meta property="og:url" content="https://freetoolhub.info/word-counter.html"><meta property="og:image" content="https://freetoolhub.info/og-word-counter.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="FreeToolHub"><meta property="og:locale" content="en_US"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Free Word Counter Online — Count Words & Characters Instantly"><meta name="twitter:description" content="Count words, characters, sentences and paragraphs in real time. Free online word counter — no signup, no limits. Works instantly on any device."><meta name="twitter:image" content="https://freetoolhub.info/og-word-counter.png">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+<meta name="theme-color" content="#a78bfa">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSG0JLPE2D"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RSG0JLPE2D');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"></noscript>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#050508;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;cursor:none;line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;}
+#cDot{width:8px;height:8px;background:#f0eeff;border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+#cRing{width:34px;height:34px;border:1px solid rgba(167,139,250,.5);border-radius:50%;position:fixed;z-index:9998;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;}
+.nb{position:absolute;inset:0;background:rgba(5,5,8,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);}
+.logo{position:relative;z-index:1;display:flex;align-items:center;gap:9px;text-decoration:none;}
+.logo svg{animation:lspin 8s linear infinite;}
+@keyframes lspin{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(360deg)}}
+.lt{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.06em;background:linear-gradient(90deg,#a78bfa,#38bdf8,#fb923c);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gs 4s ease infinite;}
+@keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.ld{animation:dp 1.5s ease infinite;-webkit-text-fill-color:#fb923c;}
+@keyframes dp{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
+.back{position:relative;z-index:1;color:#6b6880;text-decoration:none;font-size:.8rem;font-weight:500;border:1px solid rgba(255,255,255,.06);padding:.38rem .9rem;border-radius:99px;transition:all .2s;}
+.back:hover{border-color:#a78bfa;color:#a78bfa;}
+.wrap{max-width:820px;margin:0 auto;padding:5.5rem 1.5rem 4rem;position:relative;z-index:2;}
+.bc{display:flex;gap:.4rem;list-style:none;font-size:.72rem;color:#6b6880;margin-bottom:1rem;flex-wrap:wrap;}
+.bc a{color:#6b6880;}.bc a:hover{color:#a78bfa;}
+.ptag{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(167,139,250,.22);background:rgba(167,139,250,.06);padding:.28rem .8rem;border-radius:99px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a78bfa;margin-bottom:1rem;}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,6vw,4rem);letter-spacing:.02em;line-height:.95;margin-bottom:.6rem;}
+.hg{background:linear-gradient(135deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.psub{color:#6b6880;font-size:.9rem;line-height:1.7;margin-bottom:2rem;max-width:520px;}
+.card{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:1.8rem;margin-bottom:1.2rem;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#a78bfa,transparent);}
+.lbl{font-family:'Bebas Neue',sans-serif;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#6b6880;margin-bottom:.45rem;display:block;}
+textarea,input[type=text],input[type=number],input[type=date],input[type=email],input[type=password]{width:100%;background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:10px;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;padding:.8rem 1rem;outline:none;transition:border-color .2s,box-shadow .2s;}
+textarea{resize:vertical;min-height:130px;line-height:1.7;}
+textarea:focus,input:focus{border-color:rgba(167,139,250,.4);box-shadow:0 0 0 3px rgba(167,139,250,.07);}
+textarea::placeholder,input::placeholder{color:#6b6880;}
+select{width:100%;background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:10px;color:#f0eeff;padding:.78rem 1rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;outline:none;cursor:pointer;-webkit-appearance:none;transition:border-color .2s;}
+select:focus{border-color:rgba(167,139,250,.4);}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:.78rem 1.8rem;background:linear-gradient(135deg,#a78bfa,#38bdf8);color:#050508;border:none;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.86rem;cursor:pointer;transition:all .22s;position:relative;overflow:hidden;}
+.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#38bdf8,#fb923c);opacity:0;transition:opacity .22s;}
+.btn span{position:relative;z-index:1;}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(167,139,250,.28);}
+.btn:hover::before{opacity:1;}
+.btn:active{transform:scale(.98);}
+.btn.full{width:100%;}
+.btn-o{display:inline-flex;align-items:center;gap:5px;padding:.74rem 1.3rem;background:transparent;color:#6b6880;border:1px solid rgba(255,255,255,.06);border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.84rem;cursor:pointer;transition:all .2s;}
+.btn-o:hover{border-color:#a78bfa;color:#a78bfa;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.1rem;}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.1rem;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:1.1rem;}
+.row{display:flex;gap:.65rem;flex-wrap:wrap;margin-bottom:1rem;align-items:center;}
+.sbox{background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:.9rem;text-align:center;}
+.sval{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:#a78bfa;line-height:1;}
+.slbl{font-size:.62rem;color:#6b6880;text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
+.res{background:#16161f;border:1px solid rgba(167,139,250,.18);border-radius:12px;padding:1.2rem;font-size:.9rem;line-height:1.7;color:#f0eeff;min-height:60px;position:relative;white-space:pre-wrap;word-break:break-word;}
+.err{background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.25);border-radius:9px;padding:.65rem 1rem;color:#fb923c;font-size:.82rem;margin-top:.65rem;display:none;}
+.err.on{display:block;}
+.upzone{border:2px dashed rgba(167,139,250,.25);border-radius:14px;padding:2.5rem 1.5rem;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;}
+.upzone:hover,.upzone.drag{border-color:#a78bfa;background:rgba(167,139,250,.04);}
+.badge-pill{display:inline-flex;align-items:center;gap:5px;padding:.3rem .85rem;border-radius:99px;font-size:.75rem;font-weight:600;cursor:pointer;transition:all .18s;border:1px solid rgba(255,255,255,.08);background:#16161f;color:#6b6880;margin:.2rem;}
+.badge-pill:hover,.badge-pill.active{background:rgba(167,139,250,.15);border-color:#a78bfa;color:#a78bfa;}
+.copy-ok{background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);border-radius:9px;padding:.65rem 1rem;color:#4ade80;font-size:.82rem;margin-top:.65rem;display:none;}
+.copy-ok.on{display:block;}
+.seo-block{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:2rem;margin-top:1.5rem;}
+.seo-block h2{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.04em;margin-bottom:.7rem;margin-top:1.5rem;background:linear-gradient(90deg,#f0eeff,#6b6880);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.seo-block h2:first-child{margin-top:0;}
+.seo-block h3{font-size:1rem;font-weight:600;color:#a78bfa;margin-bottom:.35rem;margin-top:1rem;}
+.seo-block p{color:#6b6880;font-size:.87rem;line-height:1.85;margin-bottom:.7rem;}
+.seo-block ul,.seo-block ol{color:#6b6880;font-size:.87rem;line-height:1.85;padding-left:1.3rem;margin-bottom:.7rem;}
+.seo-block li{margin-bottom:.3rem;}
+.seo-block strong{color:#f0eeff;font-weight:600;}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.06);padding:1rem 0;}
+.faq-item:last-child{border-bottom:none;}
+.faq-q{font-size:.9rem;font-weight:600;color:#f0eeff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none;}
+.faq-q:hover{color:#a78bfa;}
+.faq-ico{color:#a78bfa;font-size:1.1rem;flex-shrink:0;transition:transform .2s;line-height:1;}
+.faq-a{font-size:.85rem;color:#6b6880;line-height:1.8;margin-top:.6rem;display:none;}
+.faq-item.open .faq-a{display:block;}
+.faq-item.open .faq-ico{transform:rotate(45deg);}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:.6rem;margin-top:.9rem;}
+.rtool{background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:11px;padding:.85rem 1rem;text-decoration:none;color:#6b6880;font-size:.82rem;font-weight:500;display:flex;align-items:center;gap:.55rem;transition:all .2s;}
+.rtool:hover{border-color:#a78bfa;color:#a78bfa;background:#0e0e14;}
+footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;margin-top:3rem;}
+.flogo{font-family:'Bebas Neue',sans-serif;font-size:1rem;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.flinks{display:flex;gap:1.2rem;list-style:none;}
+.flinks a{color:#6b6880;text-decoration:none;font-size:.78rem;transition:color .2s;}
+.flinks a:hover{color:#f0eeff;}
+.fcopy{font-size:.72rem;color:#6b6880;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
+.wrap>*{animation:fadeUp .45s ease both;}
+.wrap>*:nth-child(1){animation-delay:.04s}.wrap>*:nth-child(2){animation-delay:.08s}
+.wrap>*:nth-child(3){animation-delay:.12s}.wrap>*:nth-child(4){animation-delay:.16s}
+.wrap>*:nth-child(5){animation-delay:.2s}.wrap>*:nth-child(6){animation-delay:.24s}
+.wrap>*:nth-child(7){animation-delay:.28s}
+@media(max-width:640px){
+  nav{padding:.9rem 1.1rem;}.wrap{padding:5rem 1rem 3rem;}
+  .g2{grid-template-columns:1fr;}.g3{grid-template-columns:repeat(2,1fr);}.g4{grid-template-columns:repeat(2,1fr);}
+  footer{padding:1.4rem 1.1rem;flex-direction:column;align-items:flex-start;}
+  body{cursor:auto;}#cDot,#cRing{display:none;}
+}
+</style>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Free Word Counter Online","description":"Count words, characters, sentences and paragraphs in real time. Free, no signup.","url":"https://freetoolhub.info/word-counter.html","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"FreeToolHub","url":"https://freetoolhub.info"}},{"@type":"WebPage","name":"Free Word Counter Online","url":"https://freetoolhub.info/word-counter.html","isPartOf":{"@type":"WebSite","url":"https://freetoolhub.info"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://freetoolhub.info/"},{"@type":"ListItem","position":2,"name":"Free Word Counter Online","item":"https://freetoolhub.info/word-counter.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Is this word counter free to use?","acceptedAnswer":{"@type":"Answer","text":"Yes, 100% free forever. No signup, no download, no limits. Use it as many times as you need directly in your browser."}},{"@type":"Question","name":"Does the word counter work in real time?","acceptedAnswer":{"@type":"Answer","text":"Yes. Every stat updates the instant you type or paste — words, characters, sentences and paragraphs all at once."}},{"@type":"Question","name":"Is there a maximum text size?","acceptedAnswer":{"@type":"Answer","text":"No limit. Paste entire books, long articles, or short tweets — the counter handles all of it instantly."}},{"@type":"Question","name":"Is my text stored anywhere?","acceptedAnswer":{"@type":"Answer","text":"No. Everything runs in your browser. Your text never leaves your device and is never saved on any server."}},{"@type":"Question","name":"Can I use this to check social media character limits?","acceptedAnswer":{"@type":"Answer","text":"Yes. The character count is perfect for Twitter (280), Instagram captions, LinkedIn posts and meta descriptions."}}]}]}</script>
+</head>
+<body>
+<div id="cDot"></div><div id="cRing"></div><canvas id="bgCanvas"></canvas>
+<nav><div class="nb"></div><a href="index.html" class="logo"><svg width="28" height="28" viewBox="0 0 38 38" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg><div class="lt">FREETOOLHUB<span class="ld">.</span></div></a><a href="index.html" class="back">&#8592; All Tools</a></nav><main class="wrap"><ol class="bc"><li><a href="index.html">Home</a></li><li style="color:rgba(255,255,255,.1);">/</li><li style="color:#a78bfa;">Word Counter</li></ol><div style="display:flex;flex-wrap:wrap;gap:.65rem;margin-bottom:1.5rem;"><span style="display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;color:#6b6880;"><span style="color:#4ade80;">&#10003;</span>100% Free</span><span style="display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;color:#6b6880;"><span style="color:#4ade80;">&#10003;</span>No Signup</span><span style="display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;color:#6b6880;"><span style="color:#4ade80;">&#10003;</span>No Data Stored</span><span style="display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;color:#6b6880;"><span style="color:#4ade80;">&#10003;</span>Works Instantly</span></div><div class="ptag">&#10022; Text Tool</div><h1>FREE ONLINE <span class="hg">WORD COUNTER</span></h1><p class="psub">Count words, characters, sentences and paragraphs in real time. Free, no signup, no limits — works instantly on any device.</p><div class="card"><div class="g4"><div class="sbox"><div class="sval" id="sw">0</div><div class="slbl">Words</div></div><div class="sbox"><div class="sval" id="sc">0</div><div class="slbl">Characters</div></div><div class="sbox"><div class="sval" id="ss">0</div><div class="slbl">Sentences</div></div><div class="sbox"><div class="sval" id="sp">0</div><div class="slbl">Paragraphs</div></div></div><label class="lbl" for="txt">Your text</label><textarea id="txt" placeholder="Type or paste your text here..."></textarea><div class="row" style="margin-top:.9rem;"><button class="btn" id="copyBtn"><span>Copy Text</span></button><button class="btn-o" id="clearBtn">Clear</button></div></div><div class="seo-block"><h2>What is a Word Counter?</h2><p>A <strong>word counter</strong> calculates the total number of words, characters, sentences and paragraphs in any text instantly. Our free tool updates in real time as you type — no button press needed. Perfect for students checking essay length, bloggers optimising content for SEO, and professionals working to tight deadlines.</p><h2>Who Should Use This Tool?</h2><ul><li><strong>Students</strong> — verify essay word counts before submitting assignments</li><li><strong>Bloggers and writers</strong> — optimise article length for Google rankings</li><li><strong>Social media managers</strong> — stay within platform character limits</li><li><strong>SEO specialists</strong> — keep meta descriptions under 155 characters</li><li><strong>Authors</strong> — track daily writing progress and chapter length</li></ul><h2>Key Features of Our Word Counter</h2><h3>Real-time counting</h3><p>No button needed. All four statistics update the moment you type or paste — words, characters, sentences, and paragraphs simultaneously.</p><h3>No word limit</h3><p>Paste an entire novel chapter, a 10,000-word report, or a single sentence — the counter handles it all with zero slowdown.</p><h2>How to Count Words Online</h2><ol><li>Click inside the text box above</li><li>Type directly or paste with Ctrl+V (Cmd+V on Mac)</li><li>Read your stats instantly — no button to press</li><li>Use Copy to save your text or Clear to start fresh</li></ol><h2>Word Count Tips for SEO and Writing</h2><ul><li>Blog posts between 1,500 and 2,500 words rank best on Google</li><li>Meta descriptions: keep under 155 characters to avoid truncation</li><li>Twitter posts: 280 character maximum</li><li>LinkedIn posts get best engagement under 1,300 characters</li><li>YouTube descriptions: first 200 characters are most important</li></ul></div><div class="card"><div class="lbl">Frequently Asked Questions</div><div class="faq-item"><div class="faq-q">Is this word counter free to use?<span class="faq-ico">+</span></div><div class="faq-a">Yes, 100% free forever. No signup, no download, no limits. Use it as many times as you need directly in your browser.</div></div><div class="faq-item"><div class="faq-q">Does the word counter work in real time?<span class="faq-ico">+</span></div><div class="faq-a">Yes. Every stat updates the instant you type or paste — words, characters, sentences and paragraphs all at once.</div></div><div class="faq-item"><div class="faq-q">Is there a maximum text size?<span class="faq-ico">+</span></div><div class="faq-a">No limit. Paste entire books, long articles, or short tweets — the counter handles all of it instantly.</div></div><div class="faq-item"><div class="faq-q">Is my text stored anywhere?<span class="faq-ico">+</span></div><div class="faq-a">No. Everything runs in your browser. Your text never leaves your device and is never saved on any server.</div></div><div class="faq-item"><div class="faq-q">Can I use this to check social media character limits?<span class="faq-ico">+</span></div><div class="faq-a">Yes. The character count is perfect for Twitter (280), Instagram captions, LinkedIn posts and meta descriptions.</div></div></div><div class="card"><div class="lbl">Related Tools</div><div class="rel-grid"><a href="case-converter.html" class="rtool">&#x1F524; Case Converter</a><a href="remove-duplicates.html" class="rtool">&#x1F5D1; Remove Duplicates</a><a href="remove-line-breaks.html" class="rtool">&#x21A9; Remove Line Breaks</a><a href="text-to-emoji-converter.html" class="rtool">&#x2728; Text to Emoji</a></div></div></main><footer><div class="flogo">FREETOOLHUB</div><ul class="flinks"><li><a href="index.html">Home</a></li><li><a href="about.html">About</a></li><li><a href="privacy.html">Privacy</a></li><li><a href="sitemap.html">Sitemap</a></li></ul><div class="fcopy">&#169; 2026 FreeToolHub.info</div></footer><script>(function(){var ta=document.getElementById("txt");function count(){var t=ta.value;var w=0;if(t.trim()){var parts=t.trim().split(/\s+/);for(var i=0;i<parts.length;i++)if(parts[i].length>0)w++;}document.getElementById("sw").textContent=w.toLocaleString();document.getElementById("sc").textContent=t.length.toLocaleString();var s=0;for(var i=0;i<t.length;i++){var c=t[i];if(c==="."||c==="!"||c==="?")s++;}document.getElementById("ss").textContent=s.toLocaleString();var p=0;if(t.trim()){var ls=t.trim().split("
+");for(var i=0;i<ls.length;i++)if(ls[i].trim().length>0)p++;}if(p===0&&t.trim().length>0)p=1;document.getElementById("sp").textContent=p.toLocaleString();}ta.addEventListener("input",count);ta.addEventListener("paste",function(){setTimeout(count,10);});document.getElementById("copyBtn").addEventListener("click",function(){if(!ta.value)return;navigator.clipboard.writeText(ta.value).then(function(){var b=document.getElementById("copyBtn");b.querySelector("span").textContent="Copied!";setTimeout(function(){b.querySelector("span").textContent="Copy Text";},1600);});});document.getElementById("clearBtn").addEventListener("click",function(){ta.value="";count();});})();</script>
+<script>
+document.addEventListener('DOMContentLoaded',function(){
+  var d=document.getElementById('cDot'),r=document.getElementById('cRing');
+  if(d){
+    var mx=0,my=0,tx=0,ty=0;
+    document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px';});
+    (function loop(){tx+=(mx-tx)*.11;ty+=(my-ty)*.11;r.style.left=tx+'px';r.style.top=ty+'px';requestAnimationFrame(loop);})();
+  }
+  var cv=document.getElementById('bgCanvas');
+  if(cv){
+    var cx=cv.getContext('2d');
+    function rsz(){cv.width=innerWidth;cv.height=innerHeight;}rsz();
+    window.addEventListener('resize',rsz);
+    var CL=['rgba(167,139,250,','rgba(56,189,248,','rgba(251,146,60,','rgba(74,222,128,'];
+    var pts=[];
+    for(var i=0;i<50;i++){pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.1+.3,vx:(Math.random()-.5)*.2,vy:(Math.random()-.5)*.2,c:CL[i%4],a:Math.random()*.3+.07});}
+    var pmx=innerWidth/2,pmy=innerHeight/2;
+    document.addEventListener('mousemove',function(e){pmx=e.clientX;pmy=e.clientY;});
+    (function draw(){
+      cx.clearRect(0,0,cv.width,cv.height);
+      for(var i=0;i<pts.length;i++){
+        var p=pts[i];p.x+=p.vx;p.y+=p.vy;
+        if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;
+        if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;
+        cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=p.c+p.a+')';cx.fill();
+        for(var j=i+1;j<pts.length;j++){
+          var q=pts[j],dx=p.x-q.x,dy=p.y-q.y,dist=Math.sqrt(dx*dx+dy*dy);
+          if(dist<85){cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(q.x,q.y);cx.strokeStyle=p.c+(0.05*(1-dist/85))+')';cx.lineWidth=.5;cx.stroke();}
+        }
+        var ddx=pmx-p.x,ddy=pmy-p.y,dd=Math.sqrt(ddx*ddx+ddy*ddy);
+        if(dd<100){p.x+=ddx*.008;p.y+=ddy*.008;}
+      }
+      requestAnimationFrame(draw);
+    })();
+  }
+  document.querySelectorAll('.faq-q').forEach(function(q){
+    q.addEventListener('click',function(){
+      var item=this.closest('.faq-item');
+      var was=item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});
+      if(!was)item.classList.add('open');
+    });
+  });
+});
+</script>
+</body>
+</html>
