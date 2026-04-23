@@ -1,0 +1,55 @@
+# ============================================
+# robots.txt — FreeToolHub.info
+# Last updated: 2026-04-23
+# ============================================
+
+# Allow all good bots
+User-agent: *
+Allow: /
+
+# Block access to any future admin/system paths
+Disallow: /admin/
+Disallow: /login/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /*.json$
+Disallow: /*.log$
+
+# Allow CSS/JS so Google can render pages
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Sitemap
+Sitemap: https://freetoolhub.info/sitemap.xml
+
+# Crawl-delay for less important bots (not Googlebot — it ignores this)
+User-agent: Bingbot
+Crawl-delay: 10
+
+User-agent: Slurp
+Crawl-delay: 10
+
+User-agent: DuckDuckBot
+Crawl-delay: 5
+
+# Block bad bots and scrapers
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+User-agent: BLEXBot
+Disallow: /
