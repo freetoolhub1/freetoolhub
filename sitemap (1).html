@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Sitemap — FreeToolHub.info</title>
+<meta name="description" content="Complete sitemap of FreeToolHub.info — all 16 free online tools and pages.">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSG0JLPE2D"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RSG0JLPE2D');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{background:#050508;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;min-height:100vh;}
+#cDot{width:8px;height:8px;background:#f0eeff;border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+#cRing{width:34px;height:34px;border:1px solid rgba(167,139,250,.5);border-radius:50%;position:fixed;z-index:9998;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s;}
+#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.35;}
+nav{position:sticky;top:0;z-index:500;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;background:rgba(5,5,8,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;}
+.logo svg{width:28px;height:28px;animation:lspin 8s linear infinite;}
+@keyframes lspin{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(360deg)}}
+.lt{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.06em;background:linear-gradient(90deg,#a78bfa,#38bdf8,#fb923c);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gs 4s ease infinite;}
+@keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+.ld{animation:dp 1.5s ease infinite;-webkit-text-fill-color:#fb923c;}
+@keyframes dp{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
+.back{color:#6b6880;text-decoration:none;font-size:.8rem;font-weight:500;border:1px solid rgba(255,255,255,.06);padding:.38rem .9rem;border-radius:99px;transition:all .2s;}
+.back:hover{border-color:#a78bfa;color:#a78bfa;}
+.hero{background:#0e0e14;border-bottom:1px solid rgba(255,255,255,.06);padding:3rem 2rem;text-align:center;position:relative;z-index:2;}
+.hero::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:400px;height:400px;background:radial-gradient(circle,rgba(167,139,250,.1) 0%,transparent 70%);pointer-events:none;}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,6vw,4rem);letter-spacing:.02em;line-height:.95;margin-bottom:.5rem;background:linear-gradient(135deg,#f0eeff,rgba(240,238,255,.45));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;position:relative;}
+.hero-sub{color:#6b6880;font-size:.9rem;margin-bottom:1.8rem;position:relative;}
+.stats-row{display:inline-flex;gap:2.5rem;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:.9rem 2.5rem;position:relative;}
+.stat{text-align:center;}
+.sn{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;line-height:1;background:linear-gradient(135deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;display:block;}
+.sl{font-size:.62rem;color:#6b6880;text-transform:uppercase;letter-spacing:.08em;margin-top:2px;}
+.home-btn{display:inline-flex;align-items:center;gap:6px;background:linear-gradient(135deg,#a78bfa,#38bdf8);color:#050508;padding:.65rem 1.6rem;border-radius:99px;font-weight:700;font-size:.85rem;text-decoration:none;margin-top:1.6rem;transition:all .2s;position:relative;}
+.home-btn:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(167,139,250,.3);}
+.container{max-width:900px;margin:0 auto;padding:3rem 2rem 5rem;position:relative;z-index:2;}
+table{width:100%;border-collapse:collapse;}
+tbody tr{border-bottom:1px solid rgba(255,255,255,.04);transition:background .15s;}
+tbody tr:last-child{border-bottom:none;}
+tbody tr:hover{background:rgba(167,139,250,.04);}
+td{padding:.75rem 1rem;vertical-align:middle;}
+a{color:#a78bfa;text-decoration:none;transition:color .2s;}
+a:hover{color:#38bdf8;}
+footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;margin-top:2rem;}
+.flogo{font-family:'Bebas Neue',sans-serif;font-size:1rem;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.flinks{display:flex;gap:1.2rem;list-style:none;}
+.flinks a{color:#6b6880;font-size:.76rem;}
+.flinks a:hover{color:#f0eeff;}
+.fcopy{font-size:.7rem;color:#6b6880;}
+@media(max-width:640px){nav{padding:0 1.2rem;}.stats-row{flex-direction:column;gap:1rem;padding:1rem 1.5rem;}.container{padding:2rem 1rem;}footer{padding:1.5rem 1.2rem;flex-direction:column;align-items:flex-start;}body{cursor:auto;}#cDot,#cRing{display:none;}}
+</style>
+</head>
+<body>
+<div id="cDot"></div>
+<div id="cRing"></div>
+<canvas id="bgCanvas"></canvas>
+<nav>
+  <a href="index.html" class="logo">
+    <svg viewBox="0 0 38 38" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg>
+    <div class="lt">FREETOOLHUB<span class="ld">.</span></div>
+  </a>
+  <a href="index.html" class="back">&#8592; Home</a>
+</nav>
+<div class="hero">
+  <h1>SITEMAP</h1>
+  <p class="hero-sub">All 20 pages on FreeToolHub.info &#8212; 16 free tools, no signup required</p>
+  <div class="stats-row">
+    <div class="stat"><span class="sn">20</span><span class="sl">Total pages</span></div>
+    <div class="stat"><span class="sn">16</span><span class="sl">Free tools</span></div>
+    <div class="stat"><span class="sn">0</span><span class="sl">Signups needed</span></div>
+  </div>
+  <br>
+  <a href="index.html" class="home-btn">&#8592; Browse All Tools</a>
+</div>
+<div class="container">
+  
+<div style="margin-bottom:2rem;">
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.8rem;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#6b6880;white-space:nowrap;">Text Tools</div>
+    <div style="flex:1;height:1px;background:rgba(255,255,255,.06);"></div>
+    <div style="font-size:.68rem;color:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.06);padding:1px 7px;border-radius:99px;">5</div>
+  </div>
+  <table style="width:100%;border-collapse:collapse;background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;">
+    <tbody>
+      <tr><td><a href="https://freetoolhub.info/word-counter.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">word-counter.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr><tr><td><a href="https://freetoolhub.info/case-converter.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">case-converter.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr><tr><td><a href="https://freetoolhub.info/remove-duplicates.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">remove-duplicates.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr><tr><td><a href="https://freetoolhub.info/remove-line-breaks.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">remove-line-breaks.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr><tr><td><a href="https://freetoolhub.info/text-to-emoji-converter.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">text-to-emoji-converter.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr>
+    </tbody>
+  </table>
+</div>
+<div style="margin-bottom:2rem;">
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.8rem;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#6b6880;white-space:nowrap;">Image Tools</div>
+    <div style="flex:1;height:1px;background:rgba(255,255,255,.06);"></div>
+    <div style="font-size:.68rem;color:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.06);padding:1px 7px;border-radius:99px;">2</div>
+  </div>
+  <table style="width:100%;border-collapse:collapse;background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;">
+    <tbody>
+      <tr><td><a href="https://freetoolhub.info/image-compressor.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">image-compressor.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr><tr><td><a href="https://freetoolhub.info/image-resizer.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">image-resizer.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr>
+    </tbody>
+  </table>
+</div>
+<div style="margin-bottom:2rem;">
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.8rem;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#6b6880;white-space:nowrap;">Calculators</div>
+    <div style="flex:1;height:1px;background:rgba(255,255,255,.06);"></div>
+    <div style="font-size:.68rem;color:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.06);padding:1px 7px;border-radius:99px;">3</div>
+  </div>
+  <table style="width:100%;border-collapse:collapse;background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;">
+    <tbody>
+      <tr><td><a href="https://freetoolhub.info/percentage-calculator.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">percentage-calculator.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr><tr><td><a href="https://freetoolhub.info/age-calculator.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">age-calculator.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr><tr><td><a href="https://freetoolhub.info/bmi-calculator.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">bmi-calculator.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr>
+    </tbody>
+  </table>
+</div>
+<div style="margin-bottom:2rem;">
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.8rem;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#6b6880;white-space:nowrap;">Developer Tools</div>
+    <div style="flex:1;height:1px;background:rgba(255,255,255,.06);"></div>
+    <div style="font-size:.68rem;color:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.06);padding:1px 7px;border-radius:99px;">4</div>
+  </div>
+  <table style="width:100%;border-collapse:collapse;background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;">
+    <tbody>
+      <tr><td><a href="https://freetoolhub.info/password-generator.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">password-generator.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr><tr><td><a href="https://freetoolhub.info/qr-code-generator.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">qr-code-generator.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr><tr><td><a href="https://freetoolhub.info/password-strength-checker.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">password-strength-checker.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr><tr><td><a href="https://freetoolhub.info/fake-email-generator.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">fake-email-generator.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr>
+    </tbody>
+  </table>
+</div>
+<div style="margin-bottom:2rem;">
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.8rem;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#6b6880;white-space:nowrap;">Content Tools</div>
+    <div style="flex:1;height:1px;background:rgba(255,255,255,.06);"></div>
+    <div style="font-size:.68rem;color:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.06);padding:1px 7px;border-radius:99px;">2</div>
+  </div>
+  <table style="width:100%;border-collapse:collapse;background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;">
+    <tbody>
+      <tr><td><a href="https://freetoolhub.info/youtube-title-generator.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">youtube-title-generator.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr><tr><td><a href="https://freetoolhub.info/instagram-bio-generator.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">instagram-bio-generator.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#38bdf8;font-size:.78rem;font-weight:600;">0.9 Medium</td></tr>
+    </tbody>
+  </table>
+</div>
+<div style="margin-bottom:2rem;">
+  <div style="display:flex;align-items:center;gap:1rem;margin-bottom:.8rem;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#6b6880;white-space:nowrap;">Other Pages</div>
+    <div style="flex:1;height:1px;background:rgba(255,255,255,.06);"></div>
+    <div style="font-size:.68rem;color:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.06);padding:1px 7px;border-radius:99px;">3</div>
+  </div>
+  <table style="width:100%;border-collapse:collapse;background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;">
+    <tbody>
+      <tr><td><a href="https://freetoolhub.info/about.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">about.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#6b6880;font-size:.78rem;font-weight:600;">0.6 Low</td></tr><tr><td><a href="https://freetoolhub.info/privacy.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">privacy.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#6b6880;font-size:.78rem;font-weight:600;">0.3 Low</td></tr><tr><td><a href="https://freetoolhub.info/sitemap.html" style="color:#a78bfa;text-decoration:none;font-family:monospace;font-size:.8rem;">sitemap.html</a></td><td style="font-size:.8rem;color:#6b6880;">2026-04-23</td><td style="color:#6b6880;font-size:.78rem;font-weight:600;">0.3 Low</td></tr>
+    </tbody>
+  </table>
+</div>
+  <div style="margin-top:1.5rem;background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:1.2rem 1.5rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:.75rem;">
+    <div style="font-size:.8rem;color:#6b6880;">XML Sitemap for Google</div>
+    <a href="sitemap.xml" style="font-size:.8rem;color:#a78bfa;font-family:monospace;">freetoolhub.info/sitemap.xml &#8599;</a>
+  </div>
+</div>
+<footer>
+  <div class="flogo">FREETOOLHUB</div>
+  <ul class="flinks">
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="privacy.html">Privacy</a></li>
+  </ul>
+  <div class="fcopy">&#169; 2026 FreeToolHub.info</div>
+</footer>
+<script>
+(function(){
+  var d=document.getElementById('cDot'),r=document.getElementById('cRing');
+  if(!d)return;
+  var mx=0,my=0,tx=0,ty=0;
+  document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px';});
+  (function loop(){tx+=(mx-tx)*.11;ty+=(my-ty)*.11;r.style.left=tx+'px';r.style.top=ty+'px';requestAnimationFrame(loop);})();
+  var cv=document.getElementById('bgCanvas'),ctx=cv.getContext('2d');
+  function rsz(){cv.width=innerWidth;cv.height=innerHeight;}rsz();
+  window.addEventListener('resize',rsz);
+  var CL=['rgba(167,139,250,','rgba(56,189,248,','rgba(251,146,60,','rgba(74,222,128,'];
+  var pts=[];
+  for(var i=0;i<45;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*1.1+.3,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,c:CL[i%4],a:Math.random()*.25+.06});
+  (function draw(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;
+      if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fillStyle=p.c+p.a+')';ctx.fill();
+    }
+    requestAnimationFrame(draw);
+  })();
+})();
+</script>
+</body>
+</html>
