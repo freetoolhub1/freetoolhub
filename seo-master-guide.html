@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SEO Master Guide — FreeToolHub.info</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:#050508;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;line-height:1.6;}
+.wrap{max-width:1100px;margin:0 auto;padding:3rem 2rem;}
+h1{font-family:'Bebas Neue',sans-serif;font-size:3.5rem;background:linear-gradient(135deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem;}
+h2{font-family:'Bebas Neue',sans-serif;font-size:1.6rem;letter-spacing:.04em;color:#f0eeff;margin:2.5rem 0 1rem;}
+h3{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.06em;color:#a78bfa;margin:1.5rem 0 .6rem;}
+p{color:#6b6880;font-size:.88rem;line-height:1.8;margin-bottom:.8rem;}
+code{background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:6px;padding:.15rem .5rem;font-family:monospace;font-size:.82rem;color:#38bdf8;}
+pre{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:1.2rem;overflow-x:auto;font-family:monospace;font-size:.82rem;color:#f0eeff;margin:1rem 0;line-height:1.7;}
+.badge{display:inline-flex;padding:2px 10px;border-radius:99px;font-size:.68rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;}
+.ok{background:rgba(74,222,128,.1);color:#4ade80;border:1px solid rgba(74,222,128,.2);}
+.warn{background:rgba(251,146,60,.1);color:#fb923c;border:1px solid rgba(251,146,60,.2);}
+.info{background:rgba(56,189,248,.1);color:#38bdf8;border:1px solid rgba(56,189,248,.2);}
+table{width:100%;border-collapse:collapse;background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:12px;overflow:hidden;margin:1rem 0;}
+thead tr{background:#16161f;}
+th{padding:.75rem 1rem;text-align:left;font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;font-weight:600;}
+td{padding:.8rem 1rem;border-bottom:1px solid rgba(255,255,255,.04);font-size:.84rem;}
+tr:last-child td{border-bottom:none;}
+tr:hover td{background:rgba(167,139,250,.03);}
+.section{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:2rem;margin-bottom:2rem;}
+.divider{height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,.3),transparent);margin:2.5rem 0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div style="text-align:center;padding:3rem 0 2rem;border-bottom:1px solid rgba(255,255,255,.06);margin-bottom:2rem;">
+  <div style="font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:#a78bfa;margin-bottom:.8rem;">&#10022; Complete SEO Audit</div>
+  <h1>SEO MASTER GUIDE</h1>
+  <p style="color:#6b6880;max-width:500px;margin:.5rem auto 0;">FreeToolHub.info &#8212; All 16 tools. Every meta tag. Every keyword cluster. Every schema. Ready to copy-paste.</p>
+</div>
+
+<!-- ═══ PART 1: GLOBAL FIXES ═══════════════════════════════════════════════ -->
+<h2>&#9312; Global Technical SEO Fixes</h2>
+
+<div class="section">
+<h3>Favicon — Complete Setup</h3>
+<p>Add all of these to the <code>&lt;head&gt;</code> of every page on your site:</p>
+<pre>&lt;!-- Favicon Package --&gt;
+&lt;link rel="icon" type="image/svg+xml" href="/favicon.svg"&gt;
+&lt;link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png"&gt;
+&lt;link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png"&gt;
+&lt;link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png"&gt;
+&lt;link rel="manifest" href="/site.webmanifest"&gt;
+&lt;meta name="theme-color" content="#a78bfa"&gt;
+&lt;meta name="msapplication-TileColor" content="#050508"&gt;</pre>
+<p><span class="badge info">Action</span> Convert <code>favicon.svg</code> to PNG at these sizes: <strong>16x16, 32x32, 180x180, 192x192, 512x512</strong>. Use squoosh.app or Canva. Upload all files to root of GitHub repo.</p>
+</div>
+
+<div class="section">
+<h3>Render-Blocking Resources — Fix</h3>
+<p>Replace your current Google Fonts load with this non-render-blocking version:</p>
+<pre>&lt;!-- Non-blocking Google Fonts --&gt;
+&lt;link rel="preconnect" href="https://fonts.googleapis.com"&gt;
+&lt;link rel="preconnect" href="https://fonts.gstatic.com" crossorigin&gt;
+&lt;link rel="preload" as="style"
+  href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap"
+  onload="this.onload=null;this.rel='stylesheet'"&gt;
+&lt;noscript&gt;
+  &lt;link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&amp;family=Plus+Jakarta+Sans:wght@400;600;700&amp;display=swap"&gt;
+&lt;/noscript&gt;</pre>
+<p><span class="badge info">Action</span> Replace your Google Tag script with the async version (already in your files). Defer any non-critical JS using <code>defer</code> attribute. Inline critical CSS for above-the-fold content.</p>
+</div>
+
+<div class="section">
+<h3>Core Web Vitals Improvements</h3>
+<pre>&lt;!-- Add to every page head --&gt;
+&lt;!-- Preload critical font --&gt;
+&lt;link rel="preload" as="font" type="font/woff2"
+  href="https://fonts.gstatic.com/s/bebasneue/v14/JTUSjIg69CK48gW7PXooxW5rygbi49c.woff2"
+  crossorigin&gt;
+
+&lt;!-- Prevent CLS from font swap --&gt;
+&lt;style&gt;
+  /* Font display swap to prevent layout shift */
+  @font-face {
+    font-family: 'Bebas Neue';
+    font-display: swap;
+  }
+  /* Reserve space for hero image to prevent CLS */
+  .hero { contain: layout style; }
+  /* Add explicit width/height to ALL images */
+&lt;/style&gt;</pre>
+</div>
+
+<div class="section">
+<h3>Performance: JavaScript Deferring</h3>
+<pre>&lt;!-- Google Analytics: already async (correct) --&gt;
+&lt;script async src="https://www.googletagmanager.com/gtag/js?id=G-RSG0JLPE2D"&gt;&lt;/script&gt;
+
+&lt;!-- All other non-critical scripts: use defer --&gt;
+&lt;script defer src="your-script.js"&gt;&lt;/script&gt;
+
+&lt;!-- Inline critical JS only — no external blocking scripts --&gt;
+&lt;!-- Particle canvas, cursor: wrap in DOMContentLoaded --&gt;
+&lt;script&gt;
+document.addEventListener('DOMContentLoaded', function() {
+  // All your particle/cursor code here
+});
+&lt;/script&gt;</pre>
+</div>
+
+<div class="section">
+<h3>Canonical Tags — All 16 Tools</h3>
+<p>Every page must have EXACTLY ONE canonical tag pointing to itself. Use this pattern:</p>
+<pre>&lt;!-- Format: always https, no www, lowercase, exact filename --&gt;
+&lt;link rel="canonical" href="https://freetoolhub.info/PAGENAME.html"&gt;
+
+&lt;!-- Homepage --&gt;
+&lt;link rel="canonical" href="https://freetoolhub.info/"&gt;</pre>
+<p><span class="badge warn">Warning</span> Never use <code>www.freetoolhub.info</code> in canonical tags. Your domain resolves on www but canonical must match Vercel's primary domain.</p>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ PART 2: HOMEPAGE SEO ════════════════════════════════════════════════ -->
+<h2>&#9313; Homepage SEO Package</h2>
+<div class="section">
+<h3>Complete Homepage Head Tags</h3>
+<pre>&lt;title&gt;FreeToolHub — 16 Free Online Tools | No Signup Needed&lt;/title&gt;
+&lt;meta name="description" content="FreeToolHub offers 16 free online tools including word counter, image compressor, password generator, QR code maker, YouTube title generator and more. No signup, instant results."&gt;
+&lt;meta name="keywords" content="free online tools, word counter, image compressor, password generator, qr code generator, youtube title generator, instagram bio, age calculator, bmi calculator"&gt;
+&lt;meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large"&gt;
+&lt;link rel="canonical" href="https://freetoolhub.info/"&gt;
+
+&lt;!-- Open Graph --&gt;
+&lt;meta property="og:type" content="website"&gt;
+&lt;meta property="og:title" content="FreeToolHub — 16 Free Online Tools, No Signup"&gt;
+&lt;meta property="og:description" content="Word counter, image compressor, QR codes, YouTube titles, Instagram bios and more. All 16 tools are 100% free, instant, no account needed."&gt;
+&lt;meta property="og:url" content="https://freetoolhub.info/"&gt;
+&lt;meta property="og:image" content="https://freetoolhub.info/og-homepage.png"&gt;
+&lt;meta property="og:image:width" content="1200"&gt;
+&lt;meta property="og:image:height" content="630"&gt;
+&lt;meta property="og:site_name" content="FreeToolHub"&gt;
+
+&lt;!-- Twitter Card --&gt;
+&lt;meta name="twitter:card" content="summary_large_image"&gt;
+&lt;meta name="twitter:title" content="FreeToolHub — 16 Free Online Tools"&gt;
+&lt;meta name="twitter:description" content="Word counter, QR codes, YouTube titles, Instagram bios, calculators and more. All free, no signup."&gt;
+&lt;meta name="twitter:image" content="https://freetoolhub.info/og-homepage.png"&gt;</pre>
+
+<h3>Homepage Schema (WebSite + Organization + FAQ)</h3>
+<pre>&lt;script type="application/ld+json"&gt;
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "name": "FreeToolHub",
+      "url": "https://freetoolhub.info",
+      "description": "16 free online tools — no signup required",
+      "potentialAction": {
+        "@type": "SearchAction",
+        "target": "https://freetoolhub.info/?s={search_term_string}",
+        "query-input": "required name=search_term_string"
+      }
+    },
+    {
+      "@type": "Organization",
+      "name": "FreeToolHub",
+      "url": "https://freetoolhub.info",
+      "logo": "https://freetoolhub.info/favicon.svg",
+      "description": "Free online tools for everyone",
+      "sameAs": []
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Are all the tools on FreeToolHub really free?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All 16 tools on FreeToolHub are 100% free with no signup, no payment, and no usage limits. Every tool runs entirely in your browser."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do I need to create an account to use FreeToolHub?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No account is needed. All tools work instantly without registration. Just open the tool and start using it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is my data safe on FreeToolHub?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. All tools process data entirely in your browser. No text, images, or passwords are ever sent to our servers or stored anywhere."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What tools does FreeToolHub offer?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "FreeToolHub offers 16 tools: Word Counter, Case Converter, Remove Duplicates, Remove Line Breaks, Text to Emoji, Image Compressor, Image Resizer, Percentage Calculator, Age Calculator, BMI Calculator, Password Generator, QR Code Generator, Password Strength Checker, Fake Email Generator, YouTube Title Generator, and Instagram Bio Generator."
+          }
+        }
+      ]
+    }
+  ]
+}
+&lt;/script&gt;</pre>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ PART 3: TOOL-BY-TOOL SEO ════════════════════════════════════════════ -->
+<h2>&#9314; All 16 Tools — SEO Overview</h2>
+<table>
+  <thead><tr><th>Tool</th><th>Title Tag</th><th>Primary Keyword</th><th>Category</th></tr></thead>
+  <tbody>
+<tr>
+  <td><a href="word-counter.html" style="color:#a78bfa;">Word Counter</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free Word Counter Online — Count Words & Characters Ins...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">word counter</td>
+  <td style="color:#6b6880;font-size:.75rem;">Text Tool</td>
+</tr>
+<tr>
+  <td><a href="case-converter.html" style="color:#a78bfa;">Case Converter</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free Case Converter — UPPERCASE, lowercase, Title Case ...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">case converter</td>
+  <td style="color:#6b6880;font-size:.75rem;">Text Tool</td>
+</tr>
+<tr>
+  <td><a href="remove-duplicates.html" style="color:#a78bfa;">Remove Duplicates</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Remove Duplicate Lines Online — Free Text Deduplication...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">remove duplicate lines</td>
+  <td style="color:#6b6880;font-size:.75rem;">Text Tool</td>
+</tr>
+<tr>
+  <td><a href="remove-line-breaks.html" style="color:#a78bfa;">Remove Line Breaks</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Remove Line Breaks Online — Clean Text Formatting Insta...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">remove line breaks</td>
+  <td style="color:#6b6880;font-size:.75rem;">Text Tool</td>
+</tr>
+<tr>
+  <td><a href="text-to-emoji-converter.html" style="color:#a78bfa;">Text to Emoji Converter</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free Text to Emoji Converter — Add Emojis to Any Text I...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">text to emoji converter</td>
+  <td style="color:#6b6880;font-size:.75rem;">Text Tool</td>
+</tr>
+<tr>
+  <td><a href="image-compressor.html" style="color:#a78bfa;">Image Compressor</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free Image Compressor — Compress JPG & PNG Without Qual...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">image compressor</td>
+  <td style="color:#6b6880;font-size:.75rem;">Image Tool</td>
+</tr>
+<tr>
+  <td><a href="image-resizer.html" style="color:#a78bfa;">Image Resizer</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free Image Resizer Online — Resize Images to Any Pixel ...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">image resizer</td>
+  <td style="color:#6b6880;font-size:.75rem;">Image Tool</td>
+</tr>
+<tr>
+  <td><a href="percentage-calculator.html" style="color:#a78bfa;">Percentage Calculator</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free Percentage Calculator — Calculate Percentages Inst...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">percentage calculator</td>
+  <td style="color:#6b6880;font-size:.75rem;">Calculator</td>
+</tr>
+<tr>
+  <td><a href="age-calculator.html" style="color:#a78bfa;">Age Calculator</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free Age Calculator — Find Your Exact Age in Years, Day...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">age calculator</td>
+  <td style="color:#6b6880;font-size:.75rem;">Calculator</td>
+</tr>
+<tr>
+  <td><a href="bmi-calculator.html" style="color:#a78bfa;">BMI Calculator</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free BMI Calculator — Calculate Body Mass Index Online...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">bmi calculator</td>
+  <td style="color:#6b6880;font-size:.75rem;">Calculator</td>
+</tr>
+<tr>
+  <td><a href="password-generator.html" style="color:#a78bfa;">Password Generator</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free Password Generator — Create Strong Secure Password...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">password generator</td>
+  <td style="color:#6b6880;font-size:.75rem;">Developer Tool</td>
+</tr>
+<tr>
+  <td><a href="qr-code-generator.html" style="color:#a78bfa;">QR Code Generator</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free QR Code Generator — Create QR Codes Instantly Onli...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">qr code generator</td>
+  <td style="color:#6b6880;font-size:.75rem;">Developer Tool</td>
+</tr>
+<tr>
+  <td><a href="password-strength-checker.html" style="color:#a78bfa;">Password Strength Checker</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free Password Strength Checker — Test Password Security...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">password strength checker</td>
+  <td style="color:#6b6880;font-size:.75rem;">Developer Tool</td>
+</tr>
+<tr>
+  <td><a href="fake-email-generator.html" style="color:#a78bfa;">Fake Email Generator</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free Fake Email Generator — Random Test Emails Instantl...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">fake email generator</td>
+  <td style="color:#6b6880;font-size:.75rem;">Developer Tool</td>
+</tr>
+<tr>
+  <td><a href="youtube-title-generator.html" style="color:#a78bfa;">YouTube Title Generator</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free YouTube Title Generator — Viral Title Ideas Instan...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">youtube title generator</td>
+  <td style="color:#6b6880;font-size:.75rem;">Content Tool</td>
+</tr>
+<tr>
+  <td><a href="instagram-bio-generator.html" style="color:#a78bfa;">Instagram Bio Generator</a></td>
+  <td style="color:#6b6880;font-size:.78rem;">Free Instagram Bio Generator — Perfect IG Bio in Second...</td>
+  <td style="color:#38bdf8;font-size:.75rem;">instagram bio generator</td>
+  <td style="color:#6b6880;font-size:.75rem;">Content Tool</td>
+</tr></tbody>
+</table>
+
+<h2>&#9315; Detailed SEO Packages — All 16 Tools</h2>
+
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#a78bfa,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">Word Counter</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #a78bfa;color:#a78bfa;opacity:.8;">Text Tool</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Word Counter Online — Count Words & Characters Instantly</div>
+      <div style="font-size:.68rem;color:#fb923c;margin-top:.3rem;">⚠ 61 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Online Word Counter</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Count words, characters, sentences and paragraphs in real time. Free online word counter — no signup, no limits. Works instantly on any device.</div>
+    <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 143 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">What is a Word Counter?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Who Should Use This Tool?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Key Features of Our Word Counter</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">How to Count Words Online</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Word Count Tips for SEO & Writing</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">word counter</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">character counter</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">count words online</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">free word counter</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">online word count tool</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">words characters sentences counter</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">word count checker</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">count characters free</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">essay word count</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">social media character limit</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">twitter character counter</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">meta description length checker</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">seo content length</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/word-counter.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="case-converter.html" style="color:#a78bfa;">Case Converter</a>, <a href="remove-duplicates.html" style="color:#a78bfa;">Remove Duplicates</a>, <a href="remove-line-breaks.html" style="color:#a78bfa;">Remove Line Breaks</a>, <a href="text-to-emoji-converter.html" style="color:#a78bfa;">Text to Emoji Converter</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#38bdf8,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">Case Converter</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #38bdf8;color:#38bdf8;opacity:.8;">Text Tool</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Case Converter — UPPERCASE, lowercase, Title Case Online</div>
+      <div style="font-size:.68rem;color:#fb923c;margin-top:.3rem;">⚠ 61 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Online Text Case Converter</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Convert text to UPPERCASE, lowercase, Title Case or Sentence case in one click. Free online case converter, no signup needed. Works on any device instantly.</div>
+    <div style="font-size:.68rem;color:#fb923c;margin-top:.3rem;">⚠ 156 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">What is a Case Converter?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">5 Text Case Styles Explained</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">Who Uses a Case Converter?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">How to Convert Text Case Online</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">Common Case Converter Use Cases</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">case converter</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">uppercase converter</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">lowercase converter</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">title case converter</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">text case changer</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">convert text case online</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">sentence case tool</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">capitalize text free</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">change text capitalization</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">text formatting tool</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">fix caps lock text</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">heading case style</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">all caps text</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/case-converter.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="word-counter.html" style="color:#a78bfa;">Word Counter</a>, <a href="remove-duplicates.html" style="color:#a78bfa;">Remove Duplicates</a>, <a href="remove-line-breaks.html" style="color:#a78bfa;">Remove Line Breaks</a>, <a href="text-to-emoji-converter.html" style="color:#a78bfa;">Text to Emoji Converter</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#4ade80,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">Remove Duplicates</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #4ade80;color:#4ade80;opacity:.8;">Text Tool</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Remove Duplicate Lines Online — Free Text Deduplication Tool</div>
+      <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 60 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Remove Duplicate Lines Online Free</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Remove duplicate lines from any list or text instantly. Free online deduplication tool — clean email lists, keywords, and CSV data. No signup required.</div>
+    <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 151 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">What is a Duplicate Line Remover?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">When Do You Need to Remove Duplicates?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">How to Remove Duplicate Lines</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">Deduplication Options Explained</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">Best Uses for a Duplicate Remover</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">remove duplicate lines</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">duplicate line remover</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">deduplicate text online</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">remove duplicates from list</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">clean email list free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">unique line extractor</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">text deduplication tool</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">remove repeated lines</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">deduplicate email list</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">clean keyword list</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">remove duplicate entries</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">filter unique lines</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/remove-duplicates.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="word-counter.html" style="color:#a78bfa;">Word Counter</a>, <a href="case-converter.html" style="color:#a78bfa;">Case Converter</a>, <a href="remove-line-breaks.html" style="color:#a78bfa;">Remove Line Breaks</a>, <a href="text-to-emoji-converter.html" style="color:#a78bfa;">Text to Emoji Converter</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#fb923c,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">Remove Line Breaks</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #fb923c;color:#fb923c;opacity:.8;">Text Tool</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Remove Line Breaks Online — Clean Text Formatting Instantly</div>
+      <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 59 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Remove Line Breaks Tool Online</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Remove unwanted line breaks from PDF copy-paste text, emails, and documents instantly. Free line break remover with 3 cleaning modes. No signup needed.</div>
+    <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 151 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">What Does Remove Line Breaks Do?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">Why PDF Text Has Unwanted Line Breaks</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">3 Cleaning Modes Explained</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">How to Remove Line Breaks Online</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">Best Use Cases for Line Break Removal</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">remove line breaks</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">delete line breaks online</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">line break remover</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">clean text formatting</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">remove carriage returns</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">fix pdf copy paste text</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">strip line breaks free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">join lines of text</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">remove newlines</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">text cleaner tool</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">fix broken paragraphs</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">pdf text formatting fix</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">merge lines of text</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/remove-line-breaks.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="word-counter.html" style="color:#a78bfa;">Word Counter</a>, <a href="remove-duplicates.html" style="color:#a78bfa;">Remove Duplicates</a>, <a href="case-converter.html" style="color:#a78bfa;">Case Converter</a>, <a href="text-to-emoji-converter.html" style="color:#a78bfa;">Text to Emoji Converter</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#a78bfa,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">Text to Emoji Converter</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #a78bfa;color:#a78bfa;opacity:.8;">Text Tool</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Text to Emoji Converter — Add Emojis to Any Text Instantly</div>
+      <div style="font-size:.68rem;color:#fb923c;margin-top:.3rem;">⚠ 63 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Text to Emoji Converter Online</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Convert text to emojis automatically. Add emojis to Instagram captions, tweets and messages. Adjustable density. Free online emoji converter, no signup.</div>
+    <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 152 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">What is a Text to Emoji Converter?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Why Emojis Boost Social Media Engagement</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">How to Add Emojis to Text</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Emoji Density Settings Explained</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Best Platforms for Emoji Text</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">text to emoji converter</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">add emojis to text</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">emoji text generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">convert words to emojis</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">emoji translator online</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">text emoji maker free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">instagram caption emojis</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">emoji adder</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">social media post emoji</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">whatsapp message emojis</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">emoji sentence maker</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">fun text generator</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/text-to-emoji-converter.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="word-counter.html" style="color:#a78bfa;">Word Counter</a>, <a href="case-converter.html" style="color:#a78bfa;">Case Converter</a>, <a href="instagram-bio-generator.html" style="color:#a78bfa;">Instagram Bio Generator</a>, <a href="youtube-title-generator.html" style="color:#a78bfa;">YouTube Title Generator</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#fb923c,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">Image Compressor</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #fb923c;color:#fb923c;opacity:.8;">Image Tool</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Image Compressor — Compress JPG & PNG Without Quality Loss</div>
+      <div style="font-size:.68rem;color:#fb923c;margin-top:.3rem;">⚠ 63 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Online Image Compressor — No Quality Loss</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Compress JPG and PNG images online free. Reduce file size by up to 80% without losing quality. Browser-based, no upload to server, no signup needed.</div>
+    <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 148 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">What is an Image Compressor?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">Why Image Compression Matters for SEO</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">How to Compress an Image Online</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">Understanding Quality Settings</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">Image Compression Best Practices</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">image compressor</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">compress image online free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">reduce image file size</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">compress jpg online</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">compress png free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">image size reducer</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">photo compressor</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">optimize images for web</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">reduce image kb</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">web image optimization</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">pagespeed image compression</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">jpeg optimizer</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">lossless compression free</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/image-compressor.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="image-resizer.html" style="color:#a78bfa;">Image Resizer</a>, <a href="word-counter.html" style="color:#a78bfa;">Word Counter</a>, <a href="qr-code-generator.html" style="color:#a78bfa;">QR Code Generator</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#a78bfa,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">Image Resizer</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #a78bfa;color:#a78bfa;opacity:.8;">Image Tool</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Image Resizer Online — Resize Images to Any Pixel Size</div>
+      <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 59 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Online Image Resizer — Any Dimension</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Resize images to exact pixel dimensions online free. Lock aspect ratio, download as PNG instantly. No server upload — 100% private. No signup needed.</div>
+    <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 149 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">What is an Image Resizer?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Common Social Media Image Sizes</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">How to Resize an Image Online</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Lock Aspect Ratio Explained</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Why Resize Images for Web?</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">image resizer</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">resize image online free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">change image size pixels</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">resize photo online</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">image dimension changer</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">resize jpg png free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">photo resizer no upload</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">instagram image size</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">facebook cover photo size</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">youtube thumbnail size</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">resize image without losing quality</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">crop image online</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/image-resizer.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="image-compressor.html" style="color:#a78bfa;">Image Compressor</a>, <a href="word-counter.html" style="color:#a78bfa;">Word Counter</a>, <a href="qr-code-generator.html" style="color:#a78bfa;">QR Code Generator</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#38bdf8,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">Percentage Calculator</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #38bdf8;color:#38bdf8;opacity:.8;">Calculator</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Percentage Calculator — Calculate Percentages Instantly</div>
+      <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 60 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Online Percentage Calculator — 3-in-1</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Three percentage calculators in one — find percent of a number, X is what % of Y, and percentage change. Free, instant, no signup. Works on all devices.</div>
+    <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 152 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">What is a Percentage Calculator?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">Three Types of Percentage Calculations</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">How to Calculate Percentages Online</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">Real-World Uses for Percentage Math</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">Percentage Formulas Explained</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">percentage calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">percent calculator online</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">calculate percentage free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">percentage change calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">what percent of calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">discount calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">percentage increase decrease</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">percent of a number</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">calculate tip percentage</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">vat calculator</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">percentage off price</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">grade percentage calculator</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">profit margin calculator</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/percentage-calculator.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="age-calculator.html" style="color:#a78bfa;">Age Calculator</a>, <a href="bmi-calculator.html" style="color:#a78bfa;">BMI Calculator</a>, <a href="word-counter.html" style="color:#a78bfa;">Word Counter</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#fb923c,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">Age Calculator</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #fb923c;color:#fb923c;opacity:.8;">Calculator</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Age Calculator — Find Your Exact Age in Years, Days & Months</div>
+      <div style="font-size:.68rem;color:#fb923c;margin-top:.3rem;">⚠ 65 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Online Age Calculator — Exact Age Finder</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Calculate your exact age in years, months and days from your date of birth. Find total weeks lived and days until next birthday. Free, instant, no signup.</div>
+    <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 154 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">What is an Age Calculator?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">How to Calculate Your Exact Age</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">Beyond Years: Months, Weeks and Days</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">Fun Age Facts and Milestones</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">Who Uses an Age Calculator?</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">age calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">calculate age online</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">how old am i calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">exact age calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">date of birth calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">age in days calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">birthday calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">days until birthday</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">age from date of birth</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">how many days old am i</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">how many weeks old</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">age difference calculator</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">chronological age calculator</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/age-calculator.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="percentage-calculator.html" style="color:#a78bfa;">Percentage Calculator</a>, <a href="bmi-calculator.html" style="color:#a78bfa;">BMI Calculator</a>, <a href="word-counter.html" style="color:#a78bfa;">Word Counter</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#4ade80,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">BMI Calculator</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #4ade80;color:#4ade80;opacity:.8;">Calculator</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free BMI Calculator — Calculate Body Mass Index Online</div>
+      <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 54 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Online BMI Calculator — Instant Results</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Calculate your BMI (Body Mass Index) free. Enter height and weight for instant results. Find if you are underweight, healthy, overweight or obese. No signup.</div>
+    <div style="font-size:.68rem;color:#fb923c;margin-top:.3rem;">⚠ 157 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">What is BMI?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">BMI Categories Explained</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">How to Calculate Your BMI</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">Limitations of BMI</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">What to Do After Calculating Your BMI</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">bmi calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">body mass index calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">calculate bmi online free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">bmi checker</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">healthy weight calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">bmi chart for adults</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">am i overweight calculator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">ideal weight calculator</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">bmi for women</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">bmi for men</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">obesity calculator</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">underweight bmi</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">body fat percentage</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/bmi-calculator.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="percentage-calculator.html" style="color:#a78bfa;">Percentage Calculator</a>, <a href="age-calculator.html" style="color:#a78bfa;">Age Calculator</a>, <a href="word-counter.html" style="color:#a78bfa;">Word Counter</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#a78bfa,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">Password Generator</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #a78bfa;color:#a78bfa;opacity:.8;">Developer Tool</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Password Generator — Create Strong Secure Passwords</div>
+      <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 56 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Secure Password Generator Online</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Generate strong, random passwords instantly. Choose length, symbols and numbers. 100% private — your password is never stored or sent anywhere. No signup.</div>
+    <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 154 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Why You Need a Strong Password</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">How Our Password Generator Works</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Password Length and Complexity Guide</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Password Security Best Practices</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">How to Store Generated Passwords Safely</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">password generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">strong password generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">secure password generator free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">random password maker</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">password creator online</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">generate complex password</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">safe password generator</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">password manager</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">two factor authentication</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">cyber security password tips</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">uncrackable password</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">password entropy</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/password-generator.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="password-strength-checker.html" style="color:#a78bfa;">Password Strength Checker</a>, <a href="qr-code-generator.html" style="color:#a78bfa;">QR Code Generator</a>, <a href="fake-email-generator.html" style="color:#a78bfa;">Fake Email Generator</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#38bdf8,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">QR Code Generator</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #38bdf8;color:#38bdf8;opacity:.8;">Developer Tool</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free QR Code Generator — Create QR Codes Instantly Online</div>
+      <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 57 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Online QR Code Generator — Custom Colors</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Generate QR codes for any URL, text or contact free. Custom colours, multiple sizes. Download as PNG. No signup needed — works instantly in your browser.</div>
+    <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 153 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">What is a QR Code Generator?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">Common Uses for QR Codes</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">How to Create a QR Code</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">QR Code Size and Quality Guide</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #38bdf8;">QR Code Design Best Practices</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">qr code generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">free qr code generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">create qr code online</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">qr code maker</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">generate qr code</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">qr code for url free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">custom qr code generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">download qr code png</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">qr code business card</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">qr code menu</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">qr code marketing</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">qr code scanner</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">dynamic qr code</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/qr-code-generator.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="password-generator.html" style="color:#a78bfa;">Password Generator</a>, <a href="image-resizer.html" style="color:#a78bfa;">Image Resizer</a>, <a href="fake-email-generator.html" style="color:#a78bfa;">Fake Email Generator</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#4ade80,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">Password Strength Checker</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #4ade80;color:#4ade80;opacity:.8;">Developer Tool</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Password Strength Checker — Test Password Security</div>
+      <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 55 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Password Strength Checker — Security Score</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Check how strong your password is instantly. Get a security score, crack time estimate and improvement tips. 100% private — never stored or sent. Free.</div>
+    <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 151 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">How Password Strength is Measured</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">What Makes a Password Weak or Strong?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">Understanding Your Security Score</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">Estimated Crack Time Explained</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #4ade80;">How to Make Your Password Stronger</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">password strength checker</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">how strong is my password</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">password security test</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">password strength meter</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">check password strength free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">password score checker</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">is my password secure</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">test password strength</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">password vulnerability</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">brute force attack</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">dictionary attack protection</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">password entropy checker</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">weak password detector</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/password-strength-checker.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="password-generator.html" style="color:#a78bfa;">Password Generator</a>, <a href="qr-code-generator.html" style="color:#a78bfa;">QR Code Generator</a>, <a href="fake-email-generator.html" style="color:#a78bfa;">Fake Email Generator</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#fb923c,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">Fake Email Generator</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #fb923c;color:#fb923c;opacity:.8;">Developer Tool</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Fake Email Generator — Random Test Emails Instantly</div>
+      <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 56 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Fake Email Generator — Bulk Test Addresses</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Generate random fake email addresses for testing and development. Choose quantity and domain. Download as .txt. Free fake email generator, no signup needed.</div>
+    <div style="font-size:.68rem;color:#fb923c;margin-top:.3rem;">⚠ 156 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">What is a Fake Email Generator?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">When Developers Need Fake Emails</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">How to Generate Test Email Addresses</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">Choosing the Right Domain for Test Emails</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">Legal and Ethical Use of Fake Emails</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">fake email generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">random email generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">test email address generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">dummy email generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">generate fake emails bulk</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">email address generator free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">random email creator</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">disposable email</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">temporary email</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">email validation testing</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">dummy data generator</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">sample email addresses</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/fake-email-generator.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="password-generator.html" style="color:#a78bfa;">Password Generator</a>, <a href="password-strength-checker.html" style="color:#a78bfa;">Password Strength Checker</a>, <a href="qr-code-generator.html" style="color:#a78bfa;">QR Code Generator</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#fb923c,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">YouTube Title Generator</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #fb923c;color:#fb923c;opacity:.8;">Content Tool</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free YouTube Title Generator — Viral Title Ideas Instantly</div>
+      <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 58 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free YouTube Title Generator — 10 Ideas Instantly</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Generate 10 click-worthy YouTube title ideas from your topic. Proven high-CTR formulas used by top creators. Free YouTube title generator, no AI, no signup.</div>
+    <div style="font-size:.68rem;color:#fb923c;margin-top:.3rem;">⚠ 156 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">What Makes a YouTube Title Go Viral?</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">Proven YouTube Title Formulas</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">How to Use the YouTube Title Generator</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">YouTube SEO Title Optimization Tips</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #fb923c;">YouTube CTR Benchmarks and How to Beat Them</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">youtube title generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">youtube video title ideas</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">catchy youtube titles</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">youtube seo title generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">viral youtube title maker</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">best youtube title formulas</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">youtube title optimizer</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">youtube ctr optimization</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">youtube algorithm titles</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">youtube thumbnail title pairing</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">video title ideas</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">youtube channel growth tips</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/youtube-title-generator.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="instagram-bio-generator.html" style="color:#a78bfa;">Instagram Bio Generator</a>, <a href="word-counter.html" style="color:#a78bfa;">Word Counter</a>, <a href="text-to-emoji-converter.html" style="color:#a78bfa;">Text to Emoji Converter</a></div>
+  </div>
+</div>
+<div style="background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;">
+  <div style="position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#a78bfa,transparent);"></div>
+  <div style="display:flex;align-items:center;gap:.75rem;margin-bottom:1.2rem;flex-wrap:wrap;">
+    <div style="font-family:'Bebas Neue',sans-serif;font-size:1.4rem;letter-spacing:.03em;color:#f0eeff;">Instagram Bio Generator</div>
+    <span style="font-size:.65rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 9px;border-radius:99px;border:1px solid #a78bfa;color:#a78bfa;opacity:.8;">Content Tool</span>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Title Tag (60 chars max)</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Instagram Bio Generator — Perfect IG Bio in Seconds</div>
+      <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 56 characters</div>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H1 Tag</div>
+      <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Free Instagram Bio Generator — 5 Options Instantly</div>
+    </div>
+  </div>
+  <div style="margin-bottom:1rem;">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Meta Description (155 chars max)</div>
+    <div style="background:#16161f;border-radius:8px;padding:.7rem .9rem;font-size:.82rem;color:#f0eeff;font-family:monospace;">Generate a perfect Instagram bio instantly. Choose niche, tone and get 5 ready-to-copy options with emojis. Free Instagram bio generator, no signup needed.</div>
+    <div style="font-size:.68rem;color:#4ade80;margin-top:.3rem;">✓ 155 characters</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">H2 Structure</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:.3rem;"><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Why Your Instagram Bio Matters</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Elements of a Perfect Instagram Bio</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">How to Generate Your Instagram Bio</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Instagram Bio Tone and Style Guide</li><li style="font-size:.8rem;color:#6b6880;padding:.3rem .6rem;background:#16161f;border-radius:6px;border-left:2px solid #a78bfa;">Instagram Bio SEO and Discoverability Tips</li></ul>
+    </div>
+    <div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.35rem;">Keyword Cluster</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">instagram bio generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">instagram bio ideas</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">good instagram bio</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">creative instagram bio generator</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">instagram profile bio maker</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">aesthetic instagram bio free</span> <span style="font-size:.72rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);padding:2px 8px;border-radius:99px;color:#6b6880;">funny instagram bio generator</span></div>
+      <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-top:.8rem;margin-bottom:.35rem;">LSI Keywords</div>
+      <div style="display:flex;flex-wrap:wrap;gap:.3rem;"><span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">instagram bio for girls</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">instagram bio for boys</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">instagram bio with emoji</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">instagram bio 150 characters</span> <span style="font-size:.72rem;background:rgba(56,189,248,.04);border:1px solid rgba(56,189,248,.1);padding:2px 8px;border-radius:99px;color:#6b6880;">instagram profile optimization</span></div>
+    </div>
+  </div>
+  <div style="margin-top:1rem;padding-top:1rem;border-top:1px solid rgba(255,255,255,.06);">
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;">Canonical URL</div>
+    <div style="font-family:monospace;font-size:.8rem;color:#38bdf8;">https://freetoolhub.info/instagram-bio-generator.html</div>
+    <div style="font-size:.65rem;text-transform:uppercase;letter-spacing:.1em;color:#6b6880;margin-bottom:.4rem;margin-top:.8rem;">Internal Links To</div>
+    <div style="font-size:.82rem;"><a href="youtube-title-generator.html" style="color:#a78bfa;">YouTube Title Generator</a>, <a href="word-counter.html" style="color:#a78bfa;">Word Counter</a>, <a href="text-to-emoji-converter.html" style="color:#a78bfa;">Text to Emoji Converter</a></div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ PART 4: SOCIAL MEDIA PREVIEWS ═══════════════════════════════════════ -->
+<h2>&#9316; OG Image Design Guide — All 17 Images</h2>
+<div class="section">
+<p>Create each OG image at <strong>1200 × 630px</strong>. Use Canva or Figma. Here is the template structure:</p>
+<pre>TEMPLATE STRUCTURE (all images):
+─────────────────────────────────────────
+Background: #050508 (near-black)
+Top-left: FreeToolHub hexagon logo (30x30px) + wordmark
+Top-right: Category badge (e.g. "TEXT TOOL")
+Center: Tool name in Bebas Neue, ~90px, gradient text
+Center-sub: 2-line description, Plus Jakarta Sans 20px, #6b6880
+Bottom: tagline "Free. Instant. No Signup." with green dot
+Bottom-right: freetoolhub.info in monospace
+Left accent: 3px gradient line (purple→cyan)
+─────────────────────────────────────────
+
+HOMEPAGE OG IMAGE:
+  - File: og-homepage.png
+  - Bg: #050508 with subtle purple radial glow center
+  - Headline: "16 FREE TOOLS" (gradient purple→cyan)
+  - Sub: "Word Counter · Image Tools · Calculators · More"
+  - Bottom: "freetoolhub.info — No Signup. Ever."</pre>
+
+<h3>Individual Tool OG Images</h3>
+<pre>og-word-counter.png      — Purple theme, word stats visual
+og-case-converter.png    — Cyan theme, abc→ABC visual  
+og-remove-duplicates.png — Green theme, before/after list
+og-remove-line-breaks.png — Orange theme, broken→clean text
+og-text-to-emoji.png     — Purple theme, text+emoji visual
+og-image-compressor.png  — Orange theme, file size reduction
+og-image-resizer.png     — Purple theme, resize handles visual
+og-percentage-calc.png   — Cyan theme, % formulas
+og-age-calculator.png    — Orange theme, birthday visual
+og-bmi-calculator.png    — Green theme, BMI scale visual
+og-password-generator.png — Purple theme, masked password
+og-qr-code-generator.png — Cyan theme, QR code visual
+og-password-strength.png — Green theme, strength meter
+og-fake-email.png        — Orange theme, email list
+og-youtube-title.png     — Red theme, video title list
+og-instagram-bio.png     — Purple/pink, profile bio preview</pre>
+</div>
+
+<div class="divider"></div>
+
+<!-- ═══ PART 5: PERFORMANCE ══════════════════════════════════════════════════ -->
+<h2>&#9317; Performance Improvements</h2>
+<div class="section">
+<h3>Critical CSS Inlining Pattern</h3>
+<pre>&lt;!-- Inline only the CSS needed for above-the-fold content --&gt;
+&lt;style&gt;
+/* CRITICAL — inlined */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:#050508;color:#f0eeff;font-family:system-ui,sans-serif;}
+nav{position:fixed;top:0;left:0;right:0;height:60px;z-index:500;}
+.hero{min-height:85vh;display:flex;flex-direction:column;justify-content:center;}
+h1{font-size:clamp(3rem,8vw,7rem);line-height:.95;}
+&lt;/style&gt;
+&lt;!-- Full CSS loads after --&gt;
+&lt;link rel="preload" as="style" href="styles.css" onload="this.rel='stylesheet'"&gt;</pre>
+
+<h3>Image Lazy Loading</h3>
+<pre>&lt;!-- Add loading="lazy" to all images below the fold --&gt;
+&lt;img src="preview.png" alt="Tool preview" loading="lazy" width="800" height="450"&gt;
+
+&lt;!-- ALWAYS specify width + height to prevent CLS --&gt;
+&lt;!-- width/height can be CSS-overridden but must be present --&gt;</pre>
+
+<h3>HTML Minification Checklist</h3>
+<pre>✓ Remove HTML comments in production
+✓ Remove whitespace between tags  
+✓ Inline critical CSS, defer rest
+✓ Use defer on all non-critical scripts
+✓ Remove unused CSS classes
+✓ Combine multiple small JS files into one
+✓ Use system fonts as fallback (font-display: swap)
+✓ Compress all PNG/JPG with ImageOptim or squoosh.app
+✓ Use SVG for icons/logos (already doing this)
+✓ Enable Vercel's built-in compression (already on)</pre>
+
+<h3>Vercel Performance Headers</h3>
+<pre># Add to vercel.json in your GitHub repo root:
+{
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-XSS-Protection", "value": "1; mode=block" },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+      ]
+    },
+    {
+      "source": "/(.*)\.(svg|png|jpg|jpeg|webp|ico)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+      ]
+    },
+    {
+      "source": "/(.*)\.(css|js)",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400" }
+      ]
+    }
+  ]
+}</pre>
+</div>
+
+<div style="text-align:center;padding:3rem 0;border-top:1px solid rgba(255,255,255,.06);margin-top:2rem;">
+  <div style="font-family:'Bebas Neue',sans-serif;font-size:1.2rem;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:.5rem;">FREETOOLHUB SEO MASTER GUIDE</div>
+  <div style="font-size:.75rem;color:#6b6880;">Generated 2026-04-23 &#8212; FreeToolHub.info</div>
+</div>
+
+</div>
+</body>
+</html>

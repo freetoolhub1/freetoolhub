@@ -2,17 +2,14 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Free AI Caption Generator — Create Engaging Captions Instantly</title>
-<meta name="description" content="Generate engaging captions for Instagram, Facebook and TikTok with AI. Enter your topic and get 5 ready-to-post captions. Free, no signup.">
-<meta name="keywords" content="caption generator, ai caption generator, instagram caption generator free, social media caption generator, photo caption generator">
-<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<title>Free AI Caption Generator — Create Engaging Captions Instantly — FreeToolHub</title>
+<meta name="description" content="Generate engaging captions for Instagram, TikTok and Facebook with AI. Get 5 ready-to-post captions instantly. Free, no signup.">
+<meta name="keywords" content="caption generator, ai caption generator, instagram caption generator, social media captions, tiktok caption generator">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <link rel="canonical" href="https://www.freetoolhub.info/ai-caption-generator.html">
-<meta property="og:type" content="website"><meta property="og:title" content="Free AI Caption Generator — Create Engaging Captions Instantly"><meta property="og:description" content="Generate engaging captions for Instagram, Facebook and TikTok with AI. Enter your topic and get 5 ready-to-post captions. Free, no signup."><meta property="og:url" content="https://www.freetoolhub.info/ai-caption-generator.html"><meta property="og:image" content="https://www.freetoolhub.info/og-ai-caption-generator.png"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:site_name" content="FreeToolHub"><meta property="og:locale" content="en_US">
-<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Free AI Caption Generator — Create Engaging Captions Instantly"><meta name="twitter:description" content="Generate engaging captions for Instagram, Facebook and TikTok with AI. Enter your topic and get 5 ready-to-post captions. Free, no signup."><meta name="twitter:image" content="https://www.freetoolhub.info/og-ai-caption-generator.png">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg">
-<link rel="apple-touch-icon" sizes="180x180" href="/favicon-180.png">
-<link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#a78bfa">
+<meta property="og:type" content="website"><meta property="og:title" content="Free AI Caption Generator — Create Engaging Captions Instantly"><meta property="og:description" content="Generate engaging captions for Instagram, TikTok and Facebook with AI. Get 5 ready-to-post captions instantly. Free, no signup."><meta property="og:url" content="https://www.freetoolhub.info/ai-caption-generator.html"><meta property="og:site_name" content="FreeToolHub">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Free AI Caption Generator — Create Engaging Captions Instantly"><meta name="twitter:description" content="Generate engaging captions for Instagram, TikTok and Facebook with AI. Get 5 ready-to-post captions instantly. Free, no signup.">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#a78bfa">
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSG0JLPE2D"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RSG0JLPE2D');</script>
@@ -21,207 +18,263 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"></noscript>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Free AI Caption Generator — Create Engaging Captions Instantly","description":"Generate engaging captions for Instagram, TikTok and Facebook with AI. Get 5 ready-to-post captions instantly. Free, no signup.","url":"https://www.freetoolhub.info/ai-caption-generator.html","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolhub.info/"},{"@type":"ListItem","position":2,"name":"Free AI Caption Generator — Create Engaging Captions Instantly","item":"https://www.freetoolhub.info/ai-caption-generator.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many captions do I get?","acceptedAnswer":{"@type":"Answer","text":"5 unique captions per generation. Generate as many times as you want."}},{"@type":"Question","name":"Will captions include emojis?","acceptedAnswer":{"@type":"Answer","text":"Yes, Instagram and TikTok captions include relevant emojis."}},{"@type":"Question","name":"Does it generate hashtags too?","acceptedAnswer":{"@type":"Answer","text":"Use our AI Hashtag Generator separately for hashtags."}},{"@type":"Question","name":"Is there a limit?","acceptedAnswer":{"@type":"Answer","text":"No limit. Generate as many caption sets as you need."}}]}]}</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-html{scroll-behavior:smooth;}
-body{background:#050508;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;overflow-x:hidden;cursor:none;line-height:1.6;}
+body{background:#050508;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;line-height:1.6;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
-#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.4;}
-#cDot{width:8px;height:8px;background:#f0eeff;border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;}
-#cRing{width:34px;height:34px;border:1px solid rgba(167,139,250,.5);border-radius:50%;position:fixed;z-index:9998;pointer-events:none;transform:translate(-50%,-50%);transition:width .25s,height .25s;}
-nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 3rem;}
-.nb{position:absolute;inset:0;background:rgba(5,5,8,.9);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);}
-.logo{position:relative;z-index:1;display:flex;align-items:center;gap:9px;text-decoration:none;}
-.logo svg{animation:lspin 8s linear infinite;}
-@keyframes lspin{0%{filter:hue-rotate(0deg)}100%{filter:hue-rotate(360deg)}}
-.lt{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.06em;background:linear-gradient(90deg,#a78bfa,#38bdf8,#fb923c);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:gs 4s ease infinite;}
-@keyframes gs{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
-.ld{animation:dp 1.5s ease infinite;-webkit-text-fill-color:#fb923c;}
-@keyframes dp{0%,100%{transform:scale(1)}50%{transform:scale(1.5)}}
-.back{position:relative;z-index:1;color:#6b6880;text-decoration:none;font-size:.8rem;font-weight:500;border:1px solid rgba(255,255,255,.06);padding:.38rem .9rem;border-radius:99px;transition:all .2s;}
+#cDot{width:7px;height:7px;background:#f0eeff;border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;}
+#cRing{width:32px;height:32px;border:1.5px solid rgba(167,139,250,.5);border-radius:50%;position:fixed;z-index:9998;pointer-events:none;transform:translate(-50%,-50%);transition:width .2s,height .2s;}
+#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.28;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;gap:1rem;}
+.nb{position:absolute;inset:0;background:rgba(5,5,8,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);}
+.logo{position:relative;z-index:1;display:flex;align-items:center;gap:8px;cursor:pointer;}
+.lt{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.06em;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.back{position:relative;z-index:1;font-size:.76rem;color:#6b6880;border:1px solid rgba(255,255,255,.07);padding:.32rem .8rem;border-radius:99px;transition:all .2s;cursor:pointer;}
 .back:hover{border-color:#a78bfa;color:#a78bfa;}
-.wrap{max-width:820px;margin:0 auto;padding:5.5rem 1.5rem 4rem;position:relative;z-index:2;}
-.bc{display:flex;gap:.4rem;list-style:none;font-size:.72rem;color:#6b6880;margin-bottom:1rem;flex-wrap:wrap;}
-.bc a{color:#6b6880;}.bc a:hover{color:#a78bfa;}
-.ptag{display:inline-flex;align-items:center;gap:5px;border:1px solid rgba(167,139,250,.22);background:rgba(167,139,250,.06);padding:.28rem .8rem;border-radius:99px;font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#a78bfa;margin-bottom:1rem;}
-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.2rem,6vw,4rem);letter-spacing:.02em;line-height:.95;margin-bottom:.6rem;}
+.wrap{max-width:780px;margin:0 auto;padding:80px 1.5rem 5rem;position:relative;z-index:2;}
+.bc{display:flex;align-items:center;gap:.4rem;list-style:none;font-size:.72rem;color:#6b6880;margin-bottom:1.2rem;flex-wrap:wrap;}
+.bc a{color:#6b6880;transition:color .2s;}.bc a:hover{color:#a78bfa;}
+.ptag{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#a78bfa;margin-bottom:.5rem;}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,6vw,3rem);letter-spacing:.02em;line-height:.95;margin-bottom:.8rem;}
 .hg{background:linear-gradient(135deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.psub{color:#6b6880;font-size:.9rem;line-height:1.7;margin-bottom:2rem;max-width:520px;}
-.card{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:1.8rem;margin-bottom:1.2rem;position:relative;overflow:hidden;}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,#a78bfa,transparent);}
-.lbl{font-family:'Bebas Neue',sans-serif;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:#6b6880;margin-bottom:.45rem;display:block;}
-textarea,input[type=text],input[type=number],input[type=date],input[type=email],input[type=password]{width:100%;background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:10px;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.9rem;padding:.8rem 1rem;outline:none;transition:border-color .2s,box-shadow .2s;}
+.psub{font-size:.9rem;color:#6b6880;max-width:600px;line-height:1.8;margin-bottom:1.5rem;}
+.trust-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.4rem;}
+.trust-pill{display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;color:#6b6880;border:1px solid rgba(255,255,255,.06);padding:.28rem .75rem;border-radius:99px;}
+.trust-pill .ck{color:#4ade80;}
+/* CARD */
+.card{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.4rem;margin-bottom:1rem;position:relative;overflow:hidden;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,.3),transparent);}
+.lbl{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6b6880;margin-bottom:.55rem;display:block;}
+/* INPUTS */
+textarea,input[type=text],input[type=number],input[type=date],input[type=email],input[type=password],select{
+  width:100%;background:#16161f;border:1px solid rgba(255,255,255,.08);border-radius:10px;
+  color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;
+  padding:.72rem .9rem;outline:none;transition:border-color .2s,box-shadow .2s;
+  margin-bottom:.6rem;display:block;
+}
+textarea:focus,input:focus,select:focus{border-color:rgba(167,139,250,.5);box-shadow:0 0 0 3px rgba(167,139,250,.08);}
 textarea{resize:vertical;min-height:130px;line-height:1.7;}
-textarea:focus,input:focus{border-color:rgba(167,139,250,.4);box-shadow:0 0 0 3px rgba(167,139,250,.07);}
-textarea::placeholder,input::placeholder{color:#6b6880;}
-select{width:100%;background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:10px;color:#f0eeff;padding:.78rem 1rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;outline:none;cursor:pointer;-webkit-appearance:none;transition:border-color .2s;}
-select:focus{border-color:rgba(167,139,250,.4);}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;padding:.78rem 1.8rem;background:linear-gradient(135deg,#a78bfa,#38bdf8);color:#050508;border:none;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.86rem;cursor:pointer;transition:all .22s;position:relative;overflow:hidden;}
-.btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,#38bdf8,#fb923c);opacity:0;transition:opacity .22s;}
-.btn span{position:relative;z-index:1;}
-.btn:hover{transform:translateY(-1px);box-shadow:0 6px 24px rgba(167,139,250,.28);}
-.btn:hover::before{opacity:1;}
-.btn:active{transform:scale(.98);}
+select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6880' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .9rem center;}
+input[type=color]{height:52px;padding:4px;cursor:pointer;}
+input[type=range]{padding:0;background:transparent;border:none;margin-bottom:0;accent-color:#a78bfa;}
+/* BUTTONS */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.72rem 1.4rem;background:linear-gradient(135deg,#a78bfa,#38bdf8);color:#050508;border:none;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.86rem;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(167,139,250,.3);}
 .btn.full{width:100%;}
-.btn-o{display:inline-flex;align-items:center;gap:5px;padding:.74rem 1.3rem;background:transparent;color:#6b6880;border:1px solid rgba(255,255,255,.06);border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.84rem;cursor:pointer;transition:all .2s;}
-.btn-o:hover{border-color:#a78bfa;color:#a78bfa;}
-.g2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:1.1rem;}
-.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:.75rem;margin-bottom:1.1rem;}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:.75rem;margin-bottom:1.1rem;}
-.row{display:flex;gap:.65rem;flex-wrap:wrap;margin-bottom:1rem;align-items:center;}
-.sbox{background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:12px;padding:.9rem;text-align:center;}
-.sval{font-family:'Bebas Neue',sans-serif;font-size:1.9rem;color:#a78bfa;line-height:1;}
-.slbl{font-size:.62rem;color:#6b6880;text-transform:uppercase;letter-spacing:.07em;margin-top:2px;}
-.res{background:#16161f;border:1px solid rgba(167,139,250,.18);border-radius:12px;padding:1.2rem;font-size:.9rem;line-height:1.7;color:#f0eeff;min-height:60px;position:relative;white-space:pre-wrap;word-break:break-word;}
-.err{background:rgba(251,146,60,.08);border:1px solid rgba(251,146,60,.25);border-radius:9px;padding:.65rem 1rem;color:#fb923c;font-size:.82rem;margin-top:.65rem;display:none;}
+.btn-o{display:inline-flex;align-items:center;justify-content:center;gap:.35rem;padding:.65rem 1.1rem;background:rgba(255,255,255,.04);color:#f0eeff;border:1px solid rgba(255,255,255,.08);border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.84rem;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.btn-o:hover{background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:#a78bfa;}
+.btn-danger{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.2);color:#f87171;}
+/* RESULT BOX */
+.res{background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.9rem 1rem;font-size:.88rem;line-height:1.8;color:#f0eeff;white-space:pre-wrap;word-break:break-word;min-height:60px;}
+/* ERROR */
+.err{display:none;font-size:.8rem;color:#f87171;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.15);border-radius:8px;padding:.55rem .85rem;margin-top:.55rem;}
 .err.on{display:block;}
-.upzone{border:2px dashed rgba(167,139,250,.25);border-radius:14px;padding:2.5rem 1.5rem;text-align:center;cursor:pointer;transition:border-color .2s,background .2s;}
-.upzone:hover,.upzone.drag{border-color:#a78bfa;background:rgba(167,139,250,.04);}
-.badge-pill{display:inline-flex;align-items:center;gap:5px;padding:.3rem .85rem;border-radius:99px;font-size:.75rem;font-weight:600;cursor:pointer;transition:all .18s;border:1px solid rgba(255,255,255,.08);background:#16161f;color:#6b6880;margin:.2rem;}
-.badge-pill:hover,.badge-pill.active{background:rgba(167,139,250,.15);border-color:#a78bfa;color:#a78bfa;}
-.copy-ok{background:rgba(74,222,128,.1);border:1px solid rgba(74,222,128,.25);border-radius:9px;padding:.65rem 1rem;color:#4ade80;font-size:.82rem;margin-top:.65rem;display:none;}
-.copy-ok.on{display:block;}
-.seo-block{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:2rem;margin-top:1.5rem;}
-.seo-block h2{font-family:'Bebas Neue',sans-serif;font-size:1.3rem;letter-spacing:.04em;margin-bottom:.7rem;margin-top:1.5rem;background:linear-gradient(90deg,#f0eeff,#6b6880);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+/* BADGE PILLS */
+.badge-pill{display:inline-flex;align-items:center;padding:.3rem .85rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:99px;font-size:.76rem;font-weight:600;color:#6b6880;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.badge-pill.active,.badge-pill:hover{background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:#a78bfa;}
+/* GRID LAYOUTS */
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem;}
+.row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;}
+/* STAT BOXES */
+.sbox{background:#16161f;border-radius:12px;padding:.9rem;text-align:center;}
+.sval{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:#a78bfa;line-height:1;}
+.slbl{font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:#6b6880;margin-top:.2rem;}
+/* SEO BLOCK */
+.seo-block{background:#0e0e14;border:1px solid rgba(255,255,255,.05);border-radius:14px;padding:1.4rem;margin-bottom:1rem;}
+.seo-block h2{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.03em;margin:1rem 0 .5rem;}
 .seo-block h2:first-child{margin-top:0;}
-.seo-block h3{font-size:1rem;font-weight:600;color:#a78bfa;margin-bottom:.35rem;margin-top:1rem;}
-.seo-block p{color:#6b6880;font-size:.87rem;line-height:1.85;margin-bottom:.7rem;}
-.seo-block ul,.seo-block ol{color:#6b6880;font-size:.87rem;line-height:1.85;padding-left:1.3rem;margin-bottom:.7rem;}
+.seo-block p{font-size:.85rem;color:#6b6880;line-height:1.85;margin-bottom:.65rem;}
+.seo-block ul,.seo-block ol{font-size:.85rem;color:#6b6880;line-height:1.85;padding-left:1.3rem;margin-bottom:.65rem;}
 .seo-block li{margin-bottom:.3rem;}
 .seo-block strong{color:#f0eeff;font-weight:600;}
-.faq-item{border-bottom:1px solid rgba(255,255,255,.06);padding:1rem 0;}
+.seo-block code{background:#16161f;padding:.1rem .4rem;border-radius:5px;font-family:monospace;font-size:.82rem;color:#a78bfa;}
+/* FAQ */
+.faq-section{margin-bottom:1rem;}
+.faq-card{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:1.3rem;}
+.faq-card .faq-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.04em;margin-bottom:.9rem;}
+.faq-item{border-bottom:1px solid rgba(255,255,255,.05);padding:.75rem 0;}
 .faq-item:last-child{border-bottom:none;}
-.faq-q{font-size:.9rem;font-weight:600;color:#f0eeff;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none;}
+.faq-q{font-size:.85rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none;}
 .faq-q:hover{color:#a78bfa;}
-.faq-ico{color:#a78bfa;font-size:1.1rem;flex-shrink:0;transition:transform .2s;line-height:1;}
-.faq-a{font-size:.85rem;color:#6b6880;line-height:1.8;margin-top:.6rem;display:none;}
+.faq-ico{color:#a78bfa;flex-shrink:0;transition:transform .2s;}
+.faq-a{font-size:.82rem;color:#6b6880;line-height:1.8;margin-top:.5rem;display:none;}
 .faq-item.open .faq-a{display:block;}
 .faq-item.open .faq-ico{transform:rotate(45deg);}
-.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(155px,1fr));gap:.6rem;margin-top:.9rem;}
-.rtool{background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:11px;padding:.85rem 1rem;text-decoration:none;color:#6b6880;font-size:.82rem;font-weight:500;display:flex;align-items:center;gap:.55rem;transition:all .2s;}
-.rtool:hover{border-color:#a78bfa;color:#a78bfa;background:#0e0e14;}
-footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);padding:1.8rem 3rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.75rem;margin-top:3rem;}
-.flogo{font-family:'Bebas Neue',sans-serif;font-size:1rem;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.flinks{display:flex;gap:1.2rem;list-style:none;}
-.flinks a{color:#6b6880;text-decoration:none;font-size:.78rem;transition:color .2s;}
+/* RELATED TOOLS */
+.rel-card{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:1.1rem;margin-bottom:1rem;}
+.rel-title{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.04em;margin-bottom:.7rem;}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.4rem;}
+.rtool{background:#16161f;border-radius:9px;padding:.55rem .75rem;font-size:.8rem;color:#6b6880;transition:all .15s;display:block;}
+.rtool:hover{background:rgba(167,139,250,.08);color:#a78bfa;}
+/* SHARE BUTTONS */
+.share-row{display:flex;gap:.4rem;margin-top:.9rem;flex-wrap:wrap;}
+/* FOOTER */
+footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);padding:1.4rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem;}
+.flogo{font-family:'Bebas Neue',sans-serif;font-size:.9rem;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.flinks{display:flex;gap:1rem;list-style:none;flex-wrap:wrap;}
+.flinks a{color:#6b6880;font-size:.75rem;transition:color .2s;}
 .flinks a:hover{color:#f0eeff;}
-.fcopy{font-size:.72rem;color:#6b6880;}
-@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}
-.wrap>*{animation:fadeUp .45s ease both;}
-.wrap>*:nth-child(1){animation-delay:.04s}.wrap>*:nth-child(2){animation-delay:.08s}
-.wrap>*:nth-child(3){animation-delay:.12s}.wrap>*:nth-child(4){animation-delay:.16s}
-.wrap>*:nth-child(5){animation-delay:.2s}.wrap>*:nth-child(6){animation-delay:.24s}
-.wrap>*:nth-child(7){animation-delay:.28s}
+.fcopy{font-size:.7rem;color:#6b6880;}
 @media(max-width:640px){
-  nav{padding:.9rem 1.1rem;}.wrap{padding:5rem 1rem 3rem;}
-  .g2{grid-template-columns:1fr;}.g3{grid-template-columns:repeat(2,1fr);}.g4{grid-template-columns:repeat(2,1fr);}
-  footer{padding:1.4rem 1.1rem;flex-direction:column;align-items:flex-start;}
-  body{cursor:auto;}#cDot,#cRing{display:none;}
+  .g2,.g3,.g4{grid-template-columns:1fr;}
+  .wrap{padding:75px 1rem 4rem;}
+  nav{padding:0 1rem;}
+  footer{padding:1.2rem 1rem;flex-direction:column;align-items:flex-start;}
+  #cDot,#cRing{display:none;}
 }
-</style>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Free AI Caption Generator","description":"Generate engaging captions for Instagram, Facebook and TikTok with AI. Enter your topic and get 5 ready-to-post captions. Free, no signup.","url":"https://www.freetoolhub.info/ai-caption-generator.html","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"provider":{"@type":"Organization","name":"FreeToolHub","url":"https://www.freetoolhub.info"}},{"@type":"WebPage","name":"Free AI Caption Generator","url":"https://www.freetoolhub.info/ai-caption-generator.html","isPartOf":{"@type":"WebSite","url":"https://www.freetoolhub.info"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolhub.info/"},{"@type":"ListItem","position":2,"name":"Free AI Caption Generator","item":"https://www.freetoolhub.info/ai-caption-generator.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many captions do I get?","acceptedAnswer":{"@type":"Answer","text":"You get 5 unique caption options per generation. Regenerate as many times as you want for more options."}},{"@type":"Question","name":"Will captions include emojis?","acceptedAnswer":{"@type":"Answer","text":"Yes, Instagram and TikTok captions include relevant emojis. LinkedIn captions are more professional."}},{"@type":"Question","name":"Can I edit the generated captions?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use the AI output as a starting point and personalise it with your own details and voice."}},{"@type":"Question","name":"Does it generate hashtags too?","acceptedAnswer":{"@type":"Answer","text":"Use our AI Hashtag Generator tool to add hashtags to your captions separately."}},{"@type":"Question","name":"Is there a limit to how many I can generate?","acceptedAnswer":{"@type":"Answer","text":"No limit. Generate as many caption sets as you need completely free."}}]}]}</script>
+@media print{
+  nav,footer,.btn,.btn-o,.share-row,.faq-section,.rel-card,.seo-block,.bc,.ptag,.psub,.trust-row,#bgCanvas,#cDot,#cRing{display:none!important;}
+  body{background:#fff!important;color:#000!important;}
+  .wrap{padding:0!important;}
+  .card{border:1px solid #ddd!important;background:#fff!important;}
+}
+<style>
+.mode-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.8rem 0 1rem;}
+.ai-loader{display:none;text-align:center;padding:1.5rem;color:#6b6880;font-size:.88rem;}
+.ai-loader span{display:inline-block;animation:pulse 1.2s ease infinite;}
+@keyframes pulse{0%,100%{opacity:.4;}50%{opacity:1;}}
+.result-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem;flex-wrap:wrap;gap:.5rem;}
+</style></style>
 </head>
 <body>
 <div id="cDot"></div><div id="cRing"></div><canvas id="bgCanvas"></canvas>
-<nav><div class="nb"></div><a href="/index.html" class="logo"><svg width="28" height="28" viewBox="0 0 38 38" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg><div class="lt">FREETOOLHUB<span class="ld">.</span></div></a><a href="/index.html" class="back">&#8592; All Tools</a></nav>
+<nav><div class="nb"></div><a href="/index.html" class="logo"><svg width="26" height="26" viewBox="0 0 38 38" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg><div class="lt">FREETOOLHUB</div></a><a href="/index.html" class="back">← All Tools</a></nav>
 <main class="wrap">
-<ol class="bc"><li><a href="/index.html">Home</a></li><li style="color:rgba(255,255,255,.1);">/</li><li style="color:#a78bfa;">AI Caption Generator</li></ol>
-<div style="display:flex;flex-wrap:wrap;gap:.65rem;margin-bottom:1.5rem;"><span style="display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;color:#6b6880;"><span style="color:#4ade80;">&#10003;</span>100% Free</span><span style="display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;color:#6b6880;"><span style="color:#4ade80;">&#10003;</span>No Signup</span><span style="display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;color:#6b6880;"><span style="color:#4ade80;">&#10003;</span>No Data Stored</span><span style="display:inline-flex;align-items:center;gap:.4rem;font-size:.75rem;color:#6b6880;"><span style="color:#4ade80;">&#10003;</span>Works Instantly</span></div>
-<div class="ptag">&#10022; AI Tool</div>
-<h1>💬 FREE <span class="hg">AI CAPTION GENERATOR</span></h1>
-<p class="psub">Generate engaging captions for Instagram, Facebook and TikTok with AI. Enter your topic and get 5 ready-to-post captions. Free, no signup.</p>
+<ol class="bc"><li><a href="/index.html">Home</a></li><li>/</li><li style="color:#a78bfa;">Free AI Caption Generator</li></ol>
+<div class="trust-row"><span class="trust-pill"><span class="ck">✓</span>100% Free</span><span class="trust-pill"><span class="ck">✓</span>No Signup</span><span class="trust-pill"><span class="ck">✓</span>No Data Stored</span><span class="trust-pill"><span class="ck">✓</span>Works Instantly</span></div>
+<div class="ptag">✦ Free Online Tool</div>
+<h1>FREE AI <span class="hg">CAPTION GENERATOR</span></h1>
+<p class="psub">Generate engaging captions for Instagram, TikTok and Facebook with AI. Get 5 ready-to-post captions instantly. Free, no signup.</p>
+
 <div class="card">
-  <label class="lbl" for="aiIn">Your input</label>
+  <label class="lbl" for="aiIn">Photo or post description</label>
   <textarea id="aiIn" placeholder="Describe your photo or post topic...
 
 Example: Sunset beach photo from holiday in Bali, feeling relaxed and grateful" style="min-height:140px;"></textarea>
-  <div style="display:flex;gap:.4rem;flex-wrap:wrap;margin:.9rem 0;"><span class="badge-pill  active" data-mode="instagram">Instagram</span><span class="badge-pill" data-mode="facebook">Facebook</span><span class="badge-pill" data-mode="tiktok">TikTok</span><span class="badge-pill" data-mode="linkedin">LinkedIn</span><span class="badge-pill" data-mode="funny">Funny & Witty</span></div>
-  <button class="btn full" id="aiBtn"><span>&#x2728; Generate with AI</span></button>
-  <div id="aiLoad" style="display:none;text-align:center;padding:1.2rem;color:#6b6880;font-size:.85rem;">&#x23F3; AI is working...</div>
-  <div class="err" id="aiErr">Please enter your text first.</div>
+  <div class="mode-row"><span class="badge-pill  active" data-mode="instagram">Instagram</span><span class="badge-pill" data-mode="facebook">Facebook</span><span class="badge-pill" data-mode="tiktok">TikTok</span><span class="badge-pill" data-mode="linkedin">LinkedIn</span><span class="badge-pill" data-mode="funny">Funny & Witty</span></div>
+  <button class="btn full" id="aiBtn">✨ Generate with AI</button>
+  <div class="ai-loader" id="aiLoader"><span>⏳ AI is generating your result...</span></div>
+  <div class="err" id="aiErr">Please enter some text first.</div>
 </div>
 <div class="card" id="aiResult" style="display:none;">
-  <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:.9rem;flex-wrap:wrap;gap:.5rem;">
-    <div class="lbl" style="margin:0;">AI Result</div>
+  <div class="result-header">
+    <span class="lbl" style="margin:0;">AI Result</span>
     <div style="display:flex;gap:.4rem;">
-      <button class="btn-o" id="aiCopy" style="font-size:.78rem;padding:.4rem .9rem;">Copy</button>
-      <button class="btn-o" id="aiClear" style="font-size:.78rem;padding:.4rem .9rem;">Clear</button>
+      <button class="btn-o" id="aiCopy" style="font-size:.78rem;padding:.4rem .85rem;">Copy</button>
+      <button class="btn-o" id="aiClear" style="font-size:.78rem;padding:.4rem .85rem;">Clear</button>
     </div>
   </div>
-  <div class="res" id="aiOut" style="white-space:pre-wrap;"></div>
-  <div style="display:flex;gap:.5rem;margin-top:.9rem;flex-wrap:wrap;"><button class="share-tw btn-o" data-text="Check out this free AI Caption Generator tool — no signup needed!" style="font-size:.75rem;padding:.45rem .9rem;">&#x1F426; Share on Twitter</button><button class="share-wa btn-o" data-text="Check out this free AI Caption Generator tool — no signup needed!" style="font-size:.75rem;padding:.45rem .9rem;">&#x1F4AC; Share on WhatsApp</button></div>
+  <div class="res" id="aiOut" style="white-space:pre-wrap;min-height:80px;"></div>
 </div>
-<div class="seo-block">
-  <h2>Caption Tips That Get More Engagement</h2>
-  <ul><li>Start with a hook — the first line determines whether people tap "more"</li><li>Ask a question to encourage comments and conversation</li><li>Keep Instagram captions under 125 characters to show before "more"</li><li>Use line breaks to make captions easier to read</li><li>End with a clear call to action — save this, tag a friend, visit link in bio</li></ul>
-</div>
-<div class="card"><div class="lbl">Frequently Asked Questions</div><div class="faq-item"><div class="faq-q">How many captions do I get?<span class="faq-ico">+</span></div><div class="faq-a">You get 5 unique caption options per generation. Regenerate as many times as you want for more options.</div></div><div class="faq-item"><div class="faq-q">Will captions include emojis?<span class="faq-ico">+</span></div><div class="faq-a">Yes, Instagram and TikTok captions include relevant emojis. LinkedIn captions are more professional.</div></div><div class="faq-item"><div class="faq-q">Can I edit the generated captions?<span class="faq-ico">+</span></div><div class="faq-a">Yes. Use the AI output as a starting point and personalise it with your own details and voice.</div></div><div class="faq-item"><div class="faq-q">Does it generate hashtags too?<span class="faq-ico">+</span></div><div class="faq-a">Use our AI Hashtag Generator tool to add hashtags to your captions separately.</div></div><div class="faq-item"><div class="faq-q">Is there a limit to how many I can generate?<span class="faq-ico">+</span></div><div class="faq-a">No limit. Generate as many caption sets as you need completely free.</div></div></div>
-<div class="card"><div class="lbl">Related Tools</div><div class="rel-grid"><a href="/ai-hashtag-generator.html" class="rtool">#️⃣ AI Hashtag Generator</a><a href="/instagram-bio-generator.html" class="rtool">📸 Instagram Bio Gen</a><a href="/ai-writing-assistant.html" class="rtool">✍️ AI Writing Assistant</a><a href="/youtube-title-generator.html" class="rtool">🎥 YouTube Title Gen</a></div></div>
-</main><footer><div class="flogo">FREETOOLHUB</div><ul class="flinks"><li><a href="/index.html">Home</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li></ul><div class="fcopy">&#169; 2026 FreeToolHub.info</div></footer>
+<div class="seo-block"><h2>Caption Tips for More Engagement</h2><ul><li>Start with a hook — the first line determines if people tap more</li><li>Ask a question to encourage comments</li><li>Keep Instagram captions under 125 characters before "more"</li><li>End with a clear call to action</li></ul></div>
+<div class="faq-section"><div class="faq-card"><div class="faq-title">Frequently Asked Questions</div><div class="faq-item"><div class="faq-q">How many captions do I get?<span class="faq-ico">+</span></div><div class="faq-a">5 unique captions per generation. Generate as many times as you want.</div></div><div class="faq-item"><div class="faq-q">Will captions include emojis?<span class="faq-ico">+</span></div><div class="faq-a">Yes, Instagram and TikTok captions include relevant emojis.</div></div><div class="faq-item"><div class="faq-q">Does it generate hashtags too?<span class="faq-ico">+</span></div><div class="faq-a">Use our AI Hashtag Generator separately for hashtags.</div></div><div class="faq-item"><div class="faq-q">Is there a limit?<span class="faq-ico">+</span></div><div class="faq-a">No limit. Generate as many caption sets as you need.</div></div></div></div>
+<div class="rel-card"><div class="rel-title">Related Tools</div><div class="rel-grid"><a href="/ai-hashtag-generator.html" class="rtool">#️⃣ AI Hashtag Generator</a><a href="/instagram-bio-generator.html" class="rtool">📸 Instagram Bio Gen</a><a href="/ai-writing-assistant.html" class="rtool">✍️ AI Writing Assistant</a><a href="/youtube-title-generator.html" class="rtool">🎥 YouTube Title Gen</a></div></div>
+</main>
+<footer><div class="flogo">FREETOOLHUB</div><ul class="flinks"><li><a href="/index.html">Home</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li></ul><div class="fcopy">© 2026 FreeToolHub.info</div></footer>
 <script>
-document.addEventListener('DOMContentLoaded',function(){
+(function(){
+  // Cursor
   var d=document.getElementById('cDot'),r=document.getElementById('cRing');
-  if(d){var mx=0,my=0,tx=0,ty=0;document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px';});(function loop(){tx+=(mx-tx)*.11;ty+=(my-ty)*.11;r.style.left=tx+'px';r.style.top=ty+'px';requestAnimationFrame(loop);})();}
+  if(d){var mx=0,my=0,tx=0,ty=0;
+    document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px';});
+    (function loop(){tx+=(mx-tx)*.11;ty+=(my-ty)*.11;r.style.left=tx+'px';r.style.top=ty+'px';requestAnimationFrame(loop);})();
+  }
+  // Particles
   var cv=document.getElementById('bgCanvas');
-  if(cv){var cx=cv.getContext('2d');function rsz(){cv.width=innerWidth;cv.height=innerHeight;}rsz();window.addEventListener('resize',rsz);
-  var CL=['rgba(167,139,250,','rgba(56,189,248,','rgba(251,146,60,','rgba(74,222,128,'];var pts=[];
-  for(var i=0;i<45;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*.9+.3,vx:(Math.random()-.5)*.18,vy:(Math.random()-.5)*.18,c:CL[i%4],a:Math.random()*.25+.05});
-  (function draw(){cx.clearRect(0,0,cv.width,cv.height);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=p.c+p.a+')';cx.fill();}requestAnimationFrame(draw);})();}
+  if(cv){var cx=cv.getContext('2d');
+    function rsz(){cv.width=innerWidth;cv.height=innerHeight;}rsz();window.addEventListener('resize',rsz);
+    var CL=['rgba(167,139,250,','rgba(56,189,248,','rgba(251,146,60,','rgba(74,222,128,'];
+    var pts=[];for(var i=0;i<40;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*.8+.3,vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15,c:CL[i%4],a:Math.random()*.2+.05});
+    (function draw(){cx.clearRect(0,0,cv.width,cv.height);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=p.c+p.a+')';cx.fill();}requestAnimationFrame(draw);})();
+  }
+  // FAQ
   document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var item=this.closest('.faq-item');var was=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!was)item.classList.add('open');});});
-  // Share buttons
-  document.querySelectorAll('.share-tw').forEach(function(b){b.addEventListener('click',function(){window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(this.getAttribute('data-text'))+'&url='+encodeURIComponent(window.location.href),'_blank');});});
-  document.querySelectorAll('.share-wa').forEach(function(b){b.addEventListener('click',function(){window.open('https://wa.me/?text='+encodeURIComponent(this.getAttribute('data-text')+' '+window.location.href),'_blank');});});
-});
+  // Share
+  document.querySelectorAll('.share-tw').forEach(function(b){b.addEventListener('click',function(){window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(this.dataset.text)+'&url='+encodeURIComponent(location.href),'_blank');});});
+  document.querySelectorAll('.share-wa').forEach(function(b){b.addEventListener('click',function(){window.open('https://wa.me/?text='+encodeURIComponent(this.dataset.text+' '+location.href),'_blank');});});
+})();
 </script>
 <script>
-document.addEventListener('DOMContentLoaded',function(){
-  var mode='instagram';
-  var prompts={"instagram":"Generate 5 engaging Instagram captions for the following photo/topic. Include relevant emojis and a call to action. Number each one:
+(function(){
+  var mode = "instagram";
+  var prompts = {
+    "instagram": `Generate 5 engaging Instagram captions for this photo/topic. Include relevant emojis and a call to action. Number each one:
 
-","facebook":"Generate 5 engaging Facebook post captions for the following topic. Conversational and shareable tone. Number each one:
+`,
+"facebook": `Generate 5 engaging Facebook post captions. Conversational and shareable tone. Number each one:
 
-","tiktok":"Generate 5 short punchy TikTok captions for the following topic. Trendy, fun, with hooks. Number each one:
+`,
+"tiktok": `Generate 5 short punchy TikTok captions. Trendy, fun, with hooks. Number each one:
 
-","linkedin":"Generate 5 professional LinkedIn post captions for the following topic. Insightful and value-driven. Number each one:
+`,
+"linkedin": `Generate 5 professional LinkedIn captions. Insightful and value-driven tone. Number each one:
 
-","funny":"Generate 5 funny and witty captions for the following photo/topic. Clever and humorous. Number each one:
+`,
+"funny": `Generate 5 funny and witty captions for this photo/topic. Clever and humorous. Number each one:
 
-"};
+`
+  };
+
   document.querySelectorAll('[data-mode]').forEach(function(b){
-    b.addEventListener('click',function(){
+    b.addEventListener('click', function(){
       document.querySelectorAll('[data-mode]').forEach(function(x){x.classList.remove('active');});
-      this.classList.add('active');mode=this.getAttribute('data-mode');
+      this.classList.add('active');
+      mode = this.dataset.mode;
     });
   });
-  document.getElementById('aiBtn').addEventListener('click',async function(){
-    var txt=document.getElementById('aiIn').value.trim();
-    var err=document.getElementById('aiErr');err.classList.remove('on');
+
+  document.getElementById('aiBtn').addEventListener('click', async function(){
+    var txt = document.getElementById('aiIn').value.trim();
+    var err = document.getElementById('aiErr');
+    err.classList.remove('on');
     if(!txt){err.classList.add('on');return;}
-    document.getElementById('aiLoad').style.display='block';
-    document.getElementById('aiResult').style.display='none';
-    try{
-      var res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:prompts[mode]+txt}]})});
-      var data=await res.json();
-      var out=data.content&&data.content[0]?data.content[0].text:'Could not process. Please try again.';
-      document.getElementById('aiOut').textContent=out;
-      document.getElementById('aiResult').style.display='block';
-    }catch(e){
-      document.getElementById('aiErr').textContent='Connection error. Please try again.';
-      document.getElementById('aiErr').classList.add('on');
+
+    document.getElementById('aiLoader').style.display = 'block';
+    document.getElementById('aiResult').style.display = 'none';
+    this.disabled = true;
+
+    try {
+      var prompt = prompts[mode] + txt;
+      var response = await fetch('https://api.anthropic.com/v1/messages', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+          model: 'claude-sonnet-4-20250514',
+          max_tokens: 1000,
+          messages: [{role:'user', content: prompt}]
+        })
+      });
+      var data = await response.json();
+      if(data.content && data.content[0] && data.content[0].text){
+        document.getElementById('aiOut').textContent = data.content[0].text;
+        document.getElementById('aiResult').style.display = 'block';
+      } else {
+        err.textContent = 'API error. Please try again.';
+        err.classList.add('on');
+      }
+    } catch(e) {
+      err.textContent = 'Connection error. Please check your internet and try again.';
+      err.classList.add('on');
     }
-    document.getElementById('aiLoad').style.display='none';
+    document.getElementById('aiLoader').style.display = 'none';
+    this.disabled = false;
   });
-  document.getElementById('aiCopy').addEventListener('click',function(){
+
+  document.getElementById('aiCopy').addEventListener('click', function(){
     navigator.clipboard.writeText(document.getElementById('aiOut').textContent).then(function(){
-      var b=document.getElementById('aiCopy');b.textContent='Copied!';setTimeout(function(){b.textContent='Copy';},1600);
+      var b = document.getElementById('aiCopy'); b.textContent='✓ Copied!';
+      setTimeout(function(){b.textContent='Copy';}, 1600);
     });
   });
-  document.getElementById('aiClear').addEventListener('click',function(){
+  document.getElementById('aiClear').addEventListener('click', function(){
     document.getElementById('aiIn').value='';
     document.getElementById('aiResult').style.display='none';
     document.getElementById('aiErr').classList.remove('on');
   });
-});
+})();
 </script>
 </body>
 </html>
