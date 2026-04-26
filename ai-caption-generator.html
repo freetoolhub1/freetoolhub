@@ -4,276 +4,325 @@
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Free AI Caption Generator — Create Engaging Captions Instantly — FreeToolHub</title>
 <meta name="description" content="Generate engaging captions for Instagram, TikTok and Facebook with AI. Get 5 ready-to-post captions instantly. Free, no signup.">
-<meta name="keywords" content="caption generator, ai caption generator, instagram caption generator, social media captions, tiktok caption generator">
+<meta name="keywords" content="caption generator, ai caption generator, instagram caption generator, social media captions">
 <meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large">
 <link rel="canonical" href="https://www.freetoolhub.info/ai-caption-generator.html">
 <meta property="og:type" content="website"><meta property="og:title" content="Free AI Caption Generator — Create Engaging Captions Instantly"><meta property="og:description" content="Generate engaging captions for Instagram, TikTok and Facebook with AI. Get 5 ready-to-post captions instantly. Free, no signup."><meta property="og:url" content="https://www.freetoolhub.info/ai-caption-generator.html"><meta property="og:site_name" content="FreeToolHub">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Free AI Caption Generator — Create Engaging Captions Instantly"><meta name="twitter:description" content="Generate engaging captions for Instagram, TikTok and Facebook with AI. Get 5 ready-to-post captions instantly. Free, no signup.">
-<link rel="icon" type="image/svg+xml" href="/favicon.svg"><link rel="manifest" href="/site.webmanifest"><meta name="theme-color" content="#a78bfa">
-<!-- Google tag (gtag.js) -->
+<link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="theme-color" content="#a78bfa">
+<!-- Google tag -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-RSG0JLPE2D"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RSG0JLPE2D');</script>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7670384460580806" crossorigin="anonymous"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"></noscript>
-<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Free AI Caption Generator — Create Engaging Captions Instantly","description":"Generate engaging captions for Instagram, TikTok and Facebook with AI. Get 5 ready-to-post captions instantly. Free, no signup.","url":"https://www.freetoolhub.info/ai-caption-generator.html","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.freetoolhub.info/"},{"@type":"ListItem","position":2,"name":"Free AI Caption Generator — Create Engaging Captions Instantly","item":"https://www.freetoolhub.info/ai-caption-generator.html"}]},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many captions do I get?","acceptedAnswer":{"@type":"Answer","text":"5 unique captions per generation. Generate as many times as you want."}},{"@type":"Question","name":"Will captions include emojis?","acceptedAnswer":{"@type":"Answer","text":"Yes, Instagram and TikTok captions include relevant emojis."}},{"@type":"Question","name":"Does it generate hashtags too?","acceptedAnswer":{"@type":"Answer","text":"Use our AI Hashtag Generator separately for hashtags."}},{"@type":"Question","name":"Is there a limit?","acceptedAnswer":{"@type":"Answer","text":"No limit. Generate as many caption sets as you need."}}]}]}</script>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"></noscript>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Free AI Caption Generator — Create Engaging Captions Instantly","description":"Generate engaging captions for Instagram, TikTok and Facebook with AI. Get 5 ready-to-post captions instantly. Free, no signup.","url":"https://www.freetoolhub.info/ai-caption-generator.html","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many captions do I get?","acceptedAnswer":{"@type":"Answer","text":"5 unique captions per generation. Generate as many times as you want."}},{"@type":"Question","name":"Will captions include emojis?","acceptedAnswer":{"@type":"Answer","text":"Yes, Instagram and TikTok captions include relevant emojis."}},{"@type":"Question","name":"Can I get hashtags too?","acceptedAnswer":{"@type":"Answer","text":"Use our AI Hashtag Generator separately to get matching hashtags."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes. You need a free Anthropic API key from console.anthropic.com."}}]}]}</script>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{background:#050508;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;line-height:1.6;overflow-x:hidden;}
 a{text-decoration:none;color:inherit;}
-#cDot{width:7px;height:7px;background:#f0eeff;border-radius:50%;position:fixed;z-index:9999;pointer-events:none;transform:translate(-50%,-50%);mix-blend-mode:difference;}
-#cRing{width:32px;height:32px;border:1.5px solid rgba(167,139,250,.5);border-radius:50%;position:fixed;z-index:9998;pointer-events:none;transform:translate(-50%,-50%);transition:width .2s,height .2s;}
-#bgCanvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.28;}
-nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;gap:1rem;}
-.nb{position:absolute;inset:0;background:rgba(5,5,8,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);}
-.logo{position:relative;z-index:1;display:flex;align-items:center;gap:8px;cursor:pointer;}
-.lt{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.06em;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.back{position:relative;z-index:1;font-size:.76rem;color:#6b6880;border:1px solid rgba(255,255,255,.07);padding:.32rem .8rem;border-radius:99px;transition:all .2s;cursor:pointer;}
-.back:hover{border-color:#a78bfa;color:#a78bfa;}
-.wrap{max-width:780px;margin:0 auto;padding:80px 1.5rem 5rem;position:relative;z-index:2;}
-.bc{display:flex;align-items:center;gap:.4rem;list-style:none;font-size:.72rem;color:#6b6880;margin-bottom:1.2rem;flex-wrap:wrap;}
-.bc a{color:#6b6880;transition:color .2s;}.bc a:hover{color:#a78bfa;}
-.ptag{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#a78bfa;margin-bottom:.5rem;}
-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(2rem,6vw,3rem);letter-spacing:.02em;line-height:.95;margin-bottom:.8rem;}
+canvas#bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.25;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;gap:1rem;background:rgba(5,5,8,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);}
+.logo{display:flex;align-items:center;gap:8px;}
+.logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.06em;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.back-btn{font-size:.76rem;color:#6b6880;border:1px solid rgba(255,255,255,.07);padding:.32rem .85rem;border-radius:99px;transition:all .2s;cursor:pointer;background:none;}
+.back-btn:hover{border-color:#a78bfa;color:#a78bfa;}
+main{max-width:760px;margin:0 auto;padding:80px 1.5rem 5rem;position:relative;z-index:2;}
+.bc{display:flex;gap:.4rem;list-style:none;font-size:.72rem;color:#6b6880;margin-bottom:1rem;flex-wrap:wrap;}
+.bc a{color:#6b6880;}.bc a:hover{color:#a78bfa;}
+.tag{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#a78bfa;margin-bottom:.5rem;}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,6vw,3rem);letter-spacing:.02em;line-height:.95;margin-bottom:.75rem;}
 .hg{background:linear-gradient(135deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.psub{font-size:.9rem;color:#6b6880;max-width:600px;line-height:1.8;margin-bottom:1.5rem;}
-.trust-row{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:1.4rem;}
-.trust-pill{display:inline-flex;align-items:center;gap:.35rem;font-size:.72rem;color:#6b6880;border:1px solid rgba(255,255,255,.06);padding:.28rem .75rem;border-radius:99px;}
-.trust-pill .ck{color:#4ade80;}
+.sub{font-size:.88rem;color:#6b6880;max-width:580px;line-height:1.8;margin-bottom:1.2rem;}
+.pills{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1rem;}
+/* TRUST ROW */
+.trust{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.2rem;}
+.tp{display:inline-flex;align-items:center;gap:.3rem;font-size:.71rem;color:#6b6880;border:1px solid rgba(255,255,255,.06);padding:.25rem .7rem;border-radius:99px;}
+.tp .ok{color:#4ade80;}
 /* CARD */
-.card{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.4rem;margin-bottom:1rem;position:relative;overflow:hidden;}
-.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,.3),transparent);}
-.lbl{font-size:.68rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6b6880;margin-bottom:.55rem;display:block;}
+.card{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.4rem;margin-bottom:1rem;position:relative;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,.3),transparent);border-radius:16px 16px 0 0;}
+.lbl{font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6b6880;margin-bottom:.5rem;display:block;}
 /* INPUTS */
-textarea,input[type=text],input[type=number],input[type=date],input[type=email],input[type=password],select{
-  width:100%;background:#16161f;border:1px solid rgba(255,255,255,.08);border-radius:10px;
-  color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;
-  padding:.72rem .9rem;outline:none;transition:border-color .2s,box-shadow .2s;
-  margin-bottom:.6rem;display:block;
+input[type=text],input[type=number],input[type=date],input[type=email],input[type=password],textarea,select{
+  display:block;width:100%;background:#16161f;border:1px solid rgba(255,255,255,.08);
+  border-radius:10px;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;
+  font-size:.88rem;padding:.7rem .9rem;outline:none;
+  transition:border-color .2s,box-shadow .2s;margin-bottom:.6rem;
 }
-textarea:focus,input:focus,select:focus{border-color:rgba(167,139,250,.5);box-shadow:0 0 0 3px rgba(167,139,250,.08);}
+input[type=text]:focus,input[type=number]:focus,input[type=date]:focus,input[type=email]:focus,input[type=password]:focus,textarea:focus,select:focus{
+  border-color:rgba(167,139,250,.5);box-shadow:0 0 0 3px rgba(167,139,250,.07);
+}
 textarea{resize:vertical;min-height:130px;line-height:1.7;}
-select{cursor:pointer;appearance:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' fill='none'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b6880' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right .9rem center;}
+select{cursor:pointer;}
 input[type=color]{height:52px;padding:4px;cursor:pointer;}
-input[type=range]{padding:0;background:transparent;border:none;margin-bottom:0;accent-color:#a78bfa;}
+input[type=range]{padding:0;background:none;border:none;margin-bottom:0;accent-color:#a78bfa;width:100%;}
+input[type=checkbox]{accent-color:#a78bfa;width:15px;height:15px;cursor:pointer;margin:0;}
 /* BUTTONS */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.72rem 1.4rem;background:linear-gradient(135deg,#a78bfa,#38bdf8);color:#050508;border:none;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.86rem;cursor:pointer;transition:all .2s;white-space:nowrap;}
 .btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(167,139,250,.3);}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none;}
 .btn.full{width:100%;}
-.btn-o{display:inline-flex;align-items:center;justify-content:center;gap:.35rem;padding:.65rem 1.1rem;background:rgba(255,255,255,.04);color:#f0eeff;border:1px solid rgba(255,255,255,.08);border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.84rem;cursor:pointer;transition:all .2s;white-space:nowrap;}
-.btn-o:hover{background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:#a78bfa;}
-.btn-danger{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.2);color:#f87171;}
-/* RESULT BOX */
-.res{background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.9rem 1rem;font-size:.88rem;line-height:1.8;color:#f0eeff;white-space:pre-wrap;word-break:break-word;min-height:60px;}
+.btn2{display:inline-flex;align-items:center;justify-content:center;gap:.35rem;padding:.65rem 1.1rem;background:rgba(255,255,255,.04);color:#f0eeff;border:1px solid rgba(255,255,255,.08);border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.84rem;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.btn2:hover{background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:#a78bfa;}
+.btn-red{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.2);color:#f87171;border-radius:8px;padding:.45rem .6rem;cursor:pointer;font-size:.84rem;font-family:'Plus Jakarta Sans',sans-serif;display:inline-flex;align-items:center;}
+/* PILL */
+.pill{display:inline-flex;align-items:center;padding:.28rem .82rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:99px;font-size:.76rem;font-weight:600;color:#6b6880;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.pill.on,.pill:hover{background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:#a78bfa;}
+/* OUTPUT BOX */
+.out{background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.9rem 1rem;font-size:.88rem;line-height:1.8;color:#f0eeff;white-space:pre-wrap;word-break:break-word;min-height:60px;}
 /* ERROR */
-.err{display:none;font-size:.8rem;color:#f87171;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.15);border-radius:8px;padding:.55rem .85rem;margin-top:.55rem;}
-.err.on{display:block;}
-/* BADGE PILLS */
-.badge-pill{display:inline-flex;align-items:center;padding:.3rem .85rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:99px;font-size:.76rem;font-weight:600;color:#6b6880;cursor:pointer;transition:all .18s;white-space:nowrap;}
-.badge-pill.active,.badge-pill:hover{background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:#a78bfa;}
-/* GRID LAYOUTS */
+.err{display:none;font-size:.8rem;color:#f87171;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.15);border-radius:8px;padding:.5rem .85rem;margin-top:.5rem;}
+.err.show{display:block;}
+/* GRIDS */
 .g2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
 .g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;}
-.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:.65rem;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;}
 .row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;}
-/* STAT BOXES */
-.sbox{background:#16161f;border-radius:12px;padding:.9rem;text-align:center;}
+/* STATS */
+.stat{background:#16161f;border-radius:12px;padding:.85rem;text-align:center;}
 .sval{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:#a78bfa;line-height:1;}
-.slbl{font-size:.65rem;text-transform:uppercase;letter-spacing:.08em;color:#6b6880;margin-top:.2rem;}
-/* SEO BLOCK */
-.seo-block{background:#0e0e14;border:1px solid rgba(255,255,255,.05);border-radius:14px;padding:1.4rem;margin-bottom:1rem;}
-.seo-block h2{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.03em;margin:1rem 0 .5rem;}
-.seo-block h2:first-child{margin-top:0;}
-.seo-block p{font-size:.85rem;color:#6b6880;line-height:1.85;margin-bottom:.65rem;}
-.seo-block ul,.seo-block ol{font-size:.85rem;color:#6b6880;line-height:1.85;padding-left:1.3rem;margin-bottom:.65rem;}
-.seo-block li{margin-bottom:.3rem;}
-.seo-block strong{color:#f0eeff;font-weight:600;}
-.seo-block code{background:#16161f;padding:.1rem .4rem;border-radius:5px;font-family:monospace;font-size:.82rem;color:#a78bfa;}
+.slbl{font-size:.64rem;text-transform:uppercase;letter-spacing:.08em;color:#6b6880;margin-top:.2rem;}
+/* SEO */
+.seo{background:#0e0e14;border:1px solid rgba(255,255,255,.05);border-radius:14px;padding:1.4rem;margin-bottom:1rem;}
+.seo h2{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:.03em;margin:1rem 0 .45rem;color:#f0eeff;}
+.seo h2:first-child{margin-top:0;}
+.seo p,.seo ul,.seo ol{font-size:.85rem;color:#6b6880;line-height:1.85;margin-bottom:.6rem;}
+.seo ul,.seo ol{padding-left:1.3rem;}
+.seo li{margin-bottom:.3rem;}
+.seo strong{color:#f0eeff;font-weight:600;}
+.seo code{background:#16161f;padding:.1rem .4rem;border-radius:5px;font-family:monospace;font-size:.82rem;color:#a78bfa;}
 /* FAQ */
-.faq-section{margin-bottom:1rem;}
-.faq-card{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:1.3rem;}
-.faq-card .faq-title{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.04em;margin-bottom:.9rem;}
-.faq-item{border-bottom:1px solid rgba(255,255,255,.05);padding:.75rem 0;}
-.faq-item:last-child{border-bottom:none;}
-.faq-q{font-size:.85rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;user-select:none;}
-.faq-q:hover{color:#a78bfa;}
-.faq-ico{color:#a78bfa;flex-shrink:0;transition:transform .2s;}
-.faq-a{font-size:.82rem;color:#6b6880;line-height:1.8;margin-top:.5rem;display:none;}
-.faq-item.open .faq-a{display:block;}
-.faq-item.open .faq-ico{transform:rotate(45deg);}
-/* RELATED TOOLS */
-.rel-card{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:1.1rem;margin-bottom:1rem;}
-.rel-title{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.04em;margin-bottom:.7rem;}
-.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:.4rem;}
-.rtool{background:#16161f;border-radius:9px;padding:.55rem .75rem;font-size:.8rem;color:#6b6880;transition:all .15s;display:block;}
+.faq{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:1.3rem;margin-bottom:1rem;}
+.faq-h{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.04em;margin-bottom:.9rem;}
+.fi{border-bottom:1px solid rgba(255,255,255,.05);padding:.72rem 0;}
+.fi:last-child{border-bottom:none;}
+.fq{font-size:.84rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:.8rem;user-select:none;}
+.fq:hover{color:#a78bfa;}
+.fi-ico{color:#a78bfa;flex-shrink:0;transition:transform .2s;font-size:1.1rem;}
+.fa{font-size:.82rem;color:#6b6880;line-height:1.8;margin-top:.45rem;display:none;}
+.fi.open .fa{display:block;}
+.fi.open .fi-ico{transform:rotate(45deg);}
+/* RELATED */
+.rel{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:1.1rem;margin-bottom:1rem;}
+.rel-h{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.04em;margin-bottom:.65rem;}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.38rem;}
+.rtool{background:#16161f;border-radius:8px;padding:.5rem .7rem;font-size:.79rem;color:#6b6880;transition:all .15s;display:block;}
 .rtool:hover{background:rgba(167,139,250,.08);color:#a78bfa;}
-/* SHARE BUTTONS */
-.share-row{display:flex;gap:.4rem;margin-top:.9rem;flex-wrap:wrap;}
 /* FOOTER */
 footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);padding:1.4rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem;}
-.flogo{font-family:'Bebas Neue',sans-serif;font-size:.9rem;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.flinks{display:flex;gap:1rem;list-style:none;flex-wrap:wrap;}
-.flinks a{color:#6b6880;font-size:.75rem;transition:color .2s;}
-.flinks a:hover{color:#f0eeff;}
-.fcopy{font-size:.7rem;color:#6b6880;}
-@media(max-width:640px){
-  .g2,.g3,.g4{grid-template-columns:1fr;}
-  .wrap{padding:75px 1rem 4rem;}
-  nav{padding:0 1rem;}
-  footer{padding:1.2rem 1rem;flex-direction:column;align-items:flex-start;}
-  #cDot,#cRing{display:none;}
-}
-@media print{
-  nav,footer,.btn,.btn-o,.share-row,.faq-section,.rel-card,.seo-block,.bc,.ptag,.psub,.trust-row,#bgCanvas,#cDot,#cRing{display:none!important;}
-  body{background:#fff!important;color:#000!important;}
-  .wrap{padding:0!important;}
-  .card{border:1px solid #ddd!important;background:#fff!important;}
-}
-<style>
-.mode-row{display:flex;flex-wrap:wrap;gap:.4rem;margin:.8rem 0 1rem;}
-.ai-loader{display:none;text-align:center;padding:1.5rem;color:#6b6880;font-size:.88rem;}
-.ai-loader span{display:inline-block;animation:pulse 1.2s ease infinite;}
-@keyframes pulse{0%,100%{opacity:.4;}50%{opacity:1;}}
-.result-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem;flex-wrap:wrap;gap:.5rem;}
-</style></style>
+.fl{font-family:'Bebas Neue',sans-serif;font-size:.9rem;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.fl-links{display:flex;gap:.9rem;list-style:none;flex-wrap:wrap;}
+.fl-links a{color:#6b6880;font-size:.74rem;transition:color .2s;}
+.fl-links a:hover{color:#f0eeff;}
+.fc{font-size:.7rem;color:#6b6880;}
+/* AI KEY BANNER */
+.key-banner{background:rgba(167,139,250,.06);border:1px solid rgba(167,139,250,.18);border-radius:12px;padding:1rem 1.2rem;margin-bottom:.8rem;display:none;}
+.key-banner.show{display:block;}
+.key-banner p{font-size:.82rem;color:#6b6880;margin-bottom:.6rem;}
+.key-banner a{color:#a78bfa;}
+/* LOADER */
+.loader{display:none;text-align:center;padding:1.5rem;color:#6b6880;font-size:.88rem;}
+.loader.show{display:block;}
+.dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:#a78bfa;margin:0 2px;animation:dot 1.2s ease infinite;}
+.dot:nth-child(2){animation-delay:.2s;}
+.dot:nth-child(3){animation-delay:.4s;}
+@keyframes dot{0%,80%,100%{transform:scale(0);opacity:.4;}40%{transform:scale(1);opacity:1;}}
+/* RESULT HEADER */
+.rh{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem;flex-wrap:wrap;gap:.4rem;}
+/* PRINT */
+@media print{nav,footer,.seo,.faq,.rel,.btn,.btn2,.btn-red,.share-row,.bc,.tag,.sub,.trust,canvas#bg{display:none!important;}body{background:#fff!important;color:#000!important;}main{padding:0!important;}.card{border:1px solid #ddd!important;background:#fff!important;color:#000!important;}.out{background:#f9f9f9!important;color:#000!important;}}
+@media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr;}main{padding:72px 1rem 4rem;}nav{padding:0 1rem;}footer{padding:1.2rem 1rem;flex-direction:column;align-items:flex-start;}}
+</style>
 </head>
 <body>
-<div id="cDot"></div><div id="cRing"></div><canvas id="bgCanvas"></canvas>
-<nav><div class="nb"></div><a href="/index.html" class="logo"><svg width="26" height="26" viewBox="0 0 38 38" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg><div class="lt">FREETOOLHUB</div></a><a href="/index.html" class="back">← All Tools</a></nav>
-<main class="wrap">
-<ol class="bc"><li><a href="/index.html">Home</a></li><li>/</li><li style="color:#a78bfa;">Free AI Caption Generator</li></ol>
-<div class="trust-row"><span class="trust-pill"><span class="ck">✓</span>100% Free</span><span class="trust-pill"><span class="ck">✓</span>No Signup</span><span class="trust-pill"><span class="ck">✓</span>No Data Stored</span><span class="trust-pill"><span class="ck">✓</span>Works Instantly</span></div>
-<div class="ptag">✦ Free Online Tool</div>
+<canvas id="bg"></canvas>
+<nav><a href="/index.html" class="logo"><svg width="26" height="26" viewBox="0 0 38 38" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg><span class="logo-text">FREETOOLHUB</span></a><button class="back-btn" onclick="location.href='/index.html'">← All Tools</button></nav>
+<main>
+<ol class="bc"><li><a href="/index.html">Home</a></li><li>/</li><li style="color:#a78bfa;">Free AI Caption Generator — Create Engaging Captions Instantly</li></ol>
+<div class="trust"><span class="tp"><span class="ok">✓</span>100% Free</span><span class="tp"><span class="ok">✓</span>No Signup</span><span class="tp"><span class="ok">✓</span>No Data Stored</span><span class="tp"><span class="ok">✓</span>Works Instantly</span></div>
+<div class="tag">✦ Free Online Tool</div>
 <h1>FREE AI <span class="hg">CAPTION GENERATOR</span></h1>
-<p class="psub">Generate engaging captions for Instagram, TikTok and Facebook with AI. Get 5 ready-to-post captions instantly. Free, no signup.</p>
+<p class="sub">Generate engaging captions for Instagram, TikTok and Facebook with AI. Get 5 ready-to-post captions instantly. Free, no signup.</p>
 
+
+<div class="key-banner" id="keyBanner">
+  <p><strong style="color:#f0eeff;">🔑 Anthropic API Key Required</strong><br>
+  The AI tools use the Claude API. Enter your free API key from <a href="https://console.anthropic.com" target="_blank">console.anthropic.com</a>. 
+  Your key is saved locally on your device — never sent to us.</p>
+  <div style="display:flex;gap:.5rem;flex-wrap:wrap;">
+    <input type="password" id="keyInput" placeholder="sk-ant-api03-..." style="flex:1;min-width:200px;margin:0;">
+    <button class="btn" onclick="saveKey()" style="flex-shrink:0;">Save & Continue</button>
+  </div>
+  <p style="font-size:.74rem;margin-top:.5rem;">New users get $5 free credits. <a href="https://console.anthropic.com" target="_blank">Get your free key →</a></p>
+</div>
 <div class="card">
   <label class="lbl" for="aiIn">Photo or post description</label>
   <textarea id="aiIn" placeholder="Describe your photo or post topic...
 
 Example: Sunset beach photo from holiday in Bali, feeling relaxed and grateful" style="min-height:140px;"></textarea>
-  <div class="mode-row"><span class="badge-pill  active" data-mode="instagram">Instagram</span><span class="badge-pill" data-mode="facebook">Facebook</span><span class="badge-pill" data-mode="tiktok">TikTok</span><span class="badge-pill" data-mode="linkedin">LinkedIn</span><span class="badge-pill" data-mode="funny">Funny & Witty</span></div>
+  <div class="pills" style="margin:.7rem 0 1rem;"><span class="pill  on" data-m="instagram">Instagram</span><span class="pill" data-m="tiktok">TikTok</span><span class="pill" data-m="facebook">Facebook</span><span class="pill" data-m="linkedin">LinkedIn</span><span class="pill" data-m="funny">Funny & Witty</span></div>
   <button class="btn full" id="aiBtn">✨ Generate with AI</button>
-  <div class="ai-loader" id="aiLoader"><span>⏳ AI is generating your result...</span></div>
+  <div class="loader" id="aiLoad"><span class="dot"></span><span class="dot"></span><span class="dot"></span></div>
   <div class="err" id="aiErr">Please enter some text first.</div>
 </div>
-<div class="card" id="aiResult" style="display:none;">
-  <div class="result-header">
-    <span class="lbl" style="margin:0;">AI Result</span>
-    <div style="display:flex;gap:.4rem;">
-      <button class="btn-o" id="aiCopy" style="font-size:.78rem;padding:.4rem .85rem;">Copy</button>
-      <button class="btn-o" id="aiClear" style="font-size:.78rem;padding:.4rem .85rem;">Clear</button>
+<div id="aiRes" style="display:none;">
+  <div class="card">
+    <div class="rh">
+      <span class="lbl" style="margin:0;">AI Result</span>
+      <div class="row">
+        <button class="btn2" id="aiCopy" style="font-size:.78rem;padding:.38rem .85rem;">Copy</button>
+        <button class="btn2" id="aiClear" style="font-size:.78rem;padding:.38rem .85rem;">Clear</button>
+        <button class="btn2" id="aiRegen" style="font-size:.78rem;padding:.38rem .85rem;">↺ Regenerate</button>
+      </div>
     </div>
+    <div class="out" id="aiOut" style="white-space:pre-wrap;min-height:80px;"></div>
+    <div class="share-row" style="display:flex;gap:.4rem;margin-top:.8rem;flex-wrap:wrap;"><button class="btn2" style="font-size:.76rem;padding:.4rem .85rem;" data-share-tw="Try this free AI Caption Generator tool — no signup needed!">🐦 Twitter</button><button class="btn2" style="font-size:.76rem;padding:.4rem .85rem;" data-share-wa="Try this free AI Caption Generator tool — no signup needed!">💬 WhatsApp</button></div>
   </div>
-  <div class="res" id="aiOut" style="white-space:pre-wrap;min-height:80px;"></div>
 </div>
-<div class="seo-block"><h2>Caption Tips for More Engagement</h2><ul><li>Start with a hook — the first line determines if people tap more</li><li>Ask a question to encourage comments</li><li>Keep Instagram captions under 125 characters before "more"</li><li>End with a clear call to action</li></ul></div>
-<div class="faq-section"><div class="faq-card"><div class="faq-title">Frequently Asked Questions</div><div class="faq-item"><div class="faq-q">How many captions do I get?<span class="faq-ico">+</span></div><div class="faq-a">5 unique captions per generation. Generate as many times as you want.</div></div><div class="faq-item"><div class="faq-q">Will captions include emojis?<span class="faq-ico">+</span></div><div class="faq-a">Yes, Instagram and TikTok captions include relevant emojis.</div></div><div class="faq-item"><div class="faq-q">Does it generate hashtags too?<span class="faq-ico">+</span></div><div class="faq-a">Use our AI Hashtag Generator separately for hashtags.</div></div><div class="faq-item"><div class="faq-q">Is there a limit?<span class="faq-ico">+</span></div><div class="faq-a">No limit. Generate as many caption sets as you need.</div></div></div></div>
-<div class="rel-card"><div class="rel-title">Related Tools</div><div class="rel-grid"><a href="/ai-hashtag-generator.html" class="rtool">#️⃣ AI Hashtag Generator</a><a href="/instagram-bio-generator.html" class="rtool">📸 Instagram Bio Gen</a><a href="/ai-writing-assistant.html" class="rtool">✍️ AI Writing Assistant</a><a href="/youtube-title-generator.html" class="rtool">🎥 YouTube Title Gen</a></div></div>
+<div class="seo"><h2>Caption Tips for More Engagement</h2><ul><li>Start with a hook — the first line determines if people tap "more"</li><li>Ask a question to encourage comments</li><li>Keep Instagram captions under 125 characters before the "more" cutoff</li><li>End with a clear call to action</li></ul></div>
+<div class="faq"><div class="faq-h">Frequently Asked Questions</div><div class="fi"><div class="fq">How many captions do I get?<span class="fi-ico">+</span></div><div class="fa">5 unique captions per generation. Generate as many times as you want.</div></div><div class="fi"><div class="fq">Will captions include emojis?<span class="fi-ico">+</span></div><div class="fa">Yes, Instagram and TikTok captions include relevant emojis.</div></div><div class="fi"><div class="fq">Can I get hashtags too?<span class="fi-ico">+</span></div><div class="fa">Use our AI Hashtag Generator separately to get matching hashtags.</div></div><div class="fi"><div class="fq">Is it free?<span class="fi-ico">+</span></div><div class="fa">Yes. You need a free Anthropic API key from console.anthropic.com.</div></div></div>
+<div class="rel"><div class="rel-h">Related Tools</div><div class="rel-grid"><a href="/ai-hashtag-generator.html" class="rtool">#️⃣ AI Hashtag Generator</a><a href="/instagram-bio-generator.html" class="rtool">📸 Instagram Bio Gen</a><a href="/ai-writing-assistant.html" class="rtool">✍️ AI Writing Assistant</a><a href="/youtube-title-generator.html" class="rtool">🎥 YouTube Titles</a></div></div>
 </main>
-<footer><div class="flogo">FREETOOLHUB</div><ul class="flinks"><li><a href="/index.html">Home</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li></ul><div class="fcopy">© 2026 FreeToolHub.info</div></footer>
+<footer><div class="fl">FREETOOLHUB</div><ul class="fl-links"><li><a href="/index.html">Home</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li></ul><div class="fc">© 2026 FreeToolHub.info</div></footer>
 <script>
 (function(){
-  // Cursor
-  var d=document.getElementById('cDot'),r=document.getElementById('cRing');
-  if(d){var mx=0,my=0,tx=0,ty=0;
-    document.addEventListener('mousemove',function(e){mx=e.clientX;my=e.clientY;d.style.left=mx+'px';d.style.top=my+'px';});
-    (function loop(){tx+=(mx-tx)*.11;ty+=(my-ty)*.11;r.style.left=tx+'px';r.style.top=ty+'px';requestAnimationFrame(loop);})();
-  }
   // Particles
-  var cv=document.getElementById('bgCanvas');
+  var cv=document.getElementById('bg');
   if(cv){var cx=cv.getContext('2d');
     function rsz(){cv.width=innerWidth;cv.height=innerHeight;}rsz();window.addEventListener('resize',rsz);
     var CL=['rgba(167,139,250,','rgba(56,189,248,','rgba(251,146,60,','rgba(74,222,128,'];
-    var pts=[];for(var i=0;i<40;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*.8+.3,vx:(Math.random()-.5)*.15,vy:(Math.random()-.5)*.15,c:CL[i%4],a:Math.random()*.2+.05});
-    (function draw(){cx.clearRect(0,0,cv.width,cv.height);for(var i=0;i<pts.length;i++){var p=pts[i];p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=p.c+p.a+')';cx.fill();}requestAnimationFrame(draw);})();
+    var pts=[];for(var i=0;i<40;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*.8+.3,vx:(Math.random()-.5)*.14,vy:(Math.random()-.5)*.14,c:CL[i%4],a:Math.random()*.18+.04});
+    (function draw(){cx.clearRect(0,0,cv.width,cv.height);pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=p.c+p.a+')';cx.fill();});requestAnimationFrame(draw);})();
   }
-  // FAQ
-  document.querySelectorAll('.faq-q').forEach(function(q){q.addEventListener('click',function(){var item=this.closest('.faq-item');var was=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(function(i){i.classList.remove('open');});if(!was)item.classList.add('open');});});
-  // Share
-  document.querySelectorAll('.share-tw').forEach(function(b){b.addEventListener('click',function(){window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(this.dataset.text)+'&url='+encodeURIComponent(location.href),'_blank');});});
-  document.querySelectorAll('.share-wa').forEach(function(b){b.addEventListener('click',function(){window.open('https://wa.me/?text='+encodeURIComponent(this.dataset.text+' '+location.href),'_blank');});});
+  // FAQ accordion
+  document.querySelectorAll('.fq').forEach(function(q){q.addEventListener('click',function(){var fi=this.closest('.fi');var was=fi.classList.contains('open');document.querySelectorAll('.fi').forEach(function(i){i.classList.remove('open');});if(!was)fi.classList.add('open');});});
+  // Share buttons
+  document.querySelectorAll('[data-share-tw]').forEach(function(b){b.addEventListener('click',function(){window.open('https://twitter.com/intent/tweet?text='+encodeURIComponent(this.dataset.shareTw)+'&url='+encodeURIComponent(location.href),'_blank');});});
+  document.querySelectorAll('[data-share-wa]').forEach(function(b){b.addEventListener('click',function(){window.open('https://wa.me/?text='+encodeURIComponent(this.dataset.shareWa+' '+location.href),'_blank');});});
 })();
 </script>
 <script>
 (function(){
+  
+// API Key management
+var API_KEY = localStorage.getItem('fth_api_key') || '';
+
+function getApiKey() {
+  return localStorage.getItem('fth_api_key') || '';
+}
+
+function showKeyBanner() {
+  document.getElementById('keyBanner').classList.add('show');
+}
+
+function saveKey() {
+  var k = document.getElementById('keyInput').value.trim();
+  if(k.startsWith('sk-ant-')) {
+    localStorage.setItem('fth_api_key', k);
+    document.getElementById('keyBanner').classList.remove('show');
+    document.getElementById('aiBtn').click();
+  } else {
+    alert('Please enter a valid Anthropic API key starting with sk-ant-');
+  }
+}
+
+async function callAI(prompt) {
+  var key = getApiKey();
+  if(!key) { showKeyBanner(); return null; }
+  
+  var response = await fetch('https://api.anthropic.com/v1/messages', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'x-api-key': key,
+      'anthropic-version': '2023-06-01',
+      'anthropic-dangerous-direct-browser-access': 'true'
+    },
+    body: JSON.stringify({
+      model: 'claude-opus-4-5',
+      max_tokens: 1024,
+      messages: [{role: 'user', content: prompt}]
+    })
+  });
+  
+  if(response.status === 401) {
+    localStorage.removeItem('fth_api_key');
+    showKeyBanner();
+    return null;
+  }
+  
+  var data = await response.json();
+  if(data.content && data.content[0] && data.content[0].text) {
+    return data.content[0].text;
+  }
+  return null;
+}
+
+  
   var mode = "instagram";
   var prompts = {
-    "instagram": `Generate 5 engaging Instagram captions for this photo/topic. Include relevant emojis and a call to action. Number each one:
-
-`,
-"facebook": `Generate 5 engaging Facebook post captions. Conversational and shareable tone. Number each one:
-
-`,
-"tiktok": `Generate 5 short punchy TikTok captions. Trendy, fun, with hooks. Number each one:
-
-`,
-"linkedin": `Generate 5 professional LinkedIn captions. Insightful and value-driven tone. Number each one:
-
-`,
-"funny": `Generate 5 funny and witty captions for this photo/topic. Clever and humorous. Number each one:
-
-`
-  };
-
-  document.querySelectorAll('[data-mode]').forEach(function(b){
+  "instagram": 'Generate 5 engaging Instagram captions for this photo/topic. Include relevant emojis and a call to action. Number each one:\n\n',
+  "tiktok": 'Generate 5 short punchy TikTok captions. Trendy, fun, with strong hooks. Number each one:\n\n',
+  "facebook": 'Generate 5 engaging Facebook post captions. Conversational and shareable. Number each one:\n\n',
+  "linkedin": 'Generate 5 professional LinkedIn captions. Insightful and value-driven. Number each one:\n\n',
+  "funny": 'Generate 5 funny and witty captions. Clever and humorous. Number each one:\n\n'
+};
+  
+  // Mode pills
+  document.querySelectorAll('[data-m]').forEach(function(b){
     b.addEventListener('click', function(){
-      document.querySelectorAll('[data-mode]').forEach(function(x){x.classList.remove('active');});
-      this.classList.add('active');
-      mode = this.dataset.mode;
+      document.querySelectorAll('[data-m]').forEach(function(x){x.classList.remove('on');});
+      this.classList.add('on');
+      mode = this.dataset.m;
     });
   });
-
-  document.getElementById('aiBtn').addEventListener('click', async function(){
+  
+  async function generate(){
     var txt = document.getElementById('aiIn').value.trim();
     var err = document.getElementById('aiErr');
-    err.classList.remove('on');
-    if(!txt){err.classList.add('on');return;}
-
-    document.getElementById('aiLoader').style.display = 'block';
-    document.getElementById('aiResult').style.display = 'none';
-    this.disabled = true;
-
+    err.classList.remove('show');
+    if(!txt){ err.classList.add('show'); return; }
+    
+    document.getElementById('aiLoad').classList.add('show');
+    document.getElementById('aiRes').style.display = 'none';
+    document.getElementById('aiBtn').disabled = true;
+    
     try {
-      var prompt = prompts[mode] + txt;
-      var response = await fetch('https://api.anthropic.com/v1/messages', {
-        method: 'POST',
-        headers: {'Content-Type': 'application/json'},
-        body: JSON.stringify({
-          model: 'claude-sonnet-4-20250514',
-          max_tokens: 1000,
-          messages: [{role:'user', content: prompt}]
-        })
-      });
-      var data = await response.json();
-      if(data.content && data.content[0] && data.content[0].text){
-        document.getElementById('aiOut').textContent = data.content[0].text;
-        document.getElementById('aiResult').style.display = 'block';
-      } else {
-        err.textContent = 'API error. Please try again.';
-        err.classList.add('on');
+      var result = await callAI(prompts[mode] + txt);
+      if(result) {
+        document.getElementById('aiOut').textContent = result;
+        document.getElementById('aiRes').style.display = 'block';
       }
     } catch(e) {
-      err.textContent = 'Connection error. Please check your internet and try again.';
-      err.classList.add('on');
+      err.textContent = 'Error: ' + e.message + '. Check your API key.';
+      err.classList.add('show');
     }
-    document.getElementById('aiLoader').style.display = 'none';
-    this.disabled = false;
-  });
-
+    
+    document.getElementById('aiLoad').classList.remove('show');
+    document.getElementById('aiBtn').disabled = false;
+  }
+  
+  document.getElementById('aiBtn').addEventListener('click', generate);
+  document.getElementById('aiRegen').addEventListener('click', generate);
   document.getElementById('aiCopy').addEventListener('click', function(){
     navigator.clipboard.writeText(document.getElementById('aiOut').textContent).then(function(){
-      var b = document.getElementById('aiCopy'); b.textContent='✓ Copied!';
-      setTimeout(function(){b.textContent='Copy';}, 1600);
+      var b=document.getElementById('aiCopy');b.textContent='✓ Copied!';
+      setTimeout(function(){b.textContent='Copy';},1600);
     });
   });
   document.getElementById('aiClear').addEventListener('click', function(){
     document.getElementById('aiIn').value='';
-    document.getElementById('aiResult').style.display='none';
-    document.getElementById('aiErr').classList.remove('on');
+    document.getElementById('aiRes').style.display='none';
+    document.getElementById('aiErr').classList.remove('show');
   });
+  
+  // Show key banner if no key saved
+  if(!getApiKey()) {
+    setTimeout(function(){showKeyBanner();}, 800);
+  }
 })();
 </script>
 </body>
