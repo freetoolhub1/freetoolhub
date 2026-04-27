@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>404 — Page Not Found | FreeToolHub</title>
+<meta name="description" content="Page not found. Find 58 free online tools — word counter, AI grammar checker, image compressor, QR code generator and more at FreeToolHub.">
+<meta name="robots" content="noindex,follow">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="dns-prefetch" href="//fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap"></noscript>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSG0JLPE2D"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RSG0JLPE2D');</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:#050508;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:2rem;text-align:center;overflow:hidden;}
+canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.25;}
+.wrap{position:relative;z-index:1;max-width:560px;}
+.code{font-family:'Bebas Neue',sans-serif;font-size:clamp(6rem,20vw,10rem);line-height:.85;background:linear-gradient(135deg,#a78bfa,#38bdf8,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;letter-spacing:-.02em;}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.4rem,5vw,2rem);letter-spacing:.04em;margin:.5rem 0 .8rem;}
+p{color:#6b6880;font-size:.9rem;line-height:1.8;margin-bottom:2rem;}
+.btn-home{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 2rem;background:linear-gradient(135deg,#a78bfa,#38bdf8);color:#050508;border-radius:12px;font-weight:700;font-size:.9rem;text-decoration:none;transition:all .2s;margin-bottom:2.5rem;}
+.btn-home:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(167,139,250,.3);}
+.tools-label{font-size:.68rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#6b6880;margin-bottom:1rem;}
+.quick-links{display:flex;flex-wrap:wrap;gap:.4rem;justify-content:center;}
+.ql{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:99px;padding:.32rem .9rem;font-size:.78rem;color:#6b6880;text-decoration:none;transition:all .18s;}
+.ql:hover{border-color:rgba(167,139,250,.3);color:#a78bfa;}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<div class="wrap">
+  <div class="code">404</div>
+  <h1>PAGE NOT FOUND</h1>
+  <p>This page does not exist or was moved.<br>But we have 58 free tools waiting for you.</p>
+  <a href="/index.html" class="btn-home">← Go to All Tools</a>
+  <div class="tools-label">Popular tools</div>
+  <div class="quick-links">
+    <a href="/word-counter.html" class="ql">Word Counter</a>
+    <a href="/ai-grammar-checker.html" class="ql">AI Grammar Checker</a>
+    <a href="/image-compressor.html" class="ql">Image Compressor</a>
+    <a href="/password-generator.html" class="ql">Password Generator</a>
+    <a href="/qr-code-generator.html" class="ql">QR Code Generator</a>
+    <a href="/pomodoro-timer.html" class="ql">Pomodoro Timer</a>
+    <a href="/json-formatter.html" class="ql">JSON Formatter</a>
+    <a href="/tip-calculator.html" class="ql">Tip Calculator</a>
+    <a href="/color-picker.html" class="ql">Color Picker</a>
+    <a href="/invoice-generator.html" class="ql">Invoice Generator</a>
+  </div>
+</div>
+<script>
+var cv=document.getElementById('bg'),cx=cv.getContext('2d');
+function r(){cv.width=innerWidth;cv.height=innerHeight;}r();window.addEventListener('resize',r);
+var CL=['rgba(167,139,250,','rgba(56,189,248,','rgba(251,146,60,','rgba(74,222,128,'];
+var pts=[];for(var i=0;i<40;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*.8+.3,vx:(Math.random()-.5)*.14,vy:(Math.random()-.5)*.14,c:CL[i%4],a:Math.random()*.18+.04});
+(function draw(){cx.clearRect(0,0,cv.width,cv.height);pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=p.c+p.a+')';cx.fill();});requestAnimationFrame(draw);})();
+</script>
+</body>
+</html>
