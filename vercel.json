@@ -20,7 +20,7 @@
       ]
     },
     {
-      "source": "/(.*)\\.(ico|png|svg|webp|woff2|gif)",
+      "source": "/(.*)\\.(ico|png|svg|webp|woff2)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -30,14 +30,6 @@
     }
   ],
   "rewrites": [
-    {
-      "source": "/blog",
-      "destination": "/blog/index.html"
-    },
-    {
-      "source": "/blog/",
-      "destination": "/blog/index.html"
-    },
     {
       "source": "/(.*)",
       "destination": "/404.html"
