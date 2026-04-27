@@ -1,18 +1,22 @@
 User-agent: *
 Allow: /
-Disallow: /admin/
-Disallow: /login/
-Disallow: /api/
-Allow: /*.css$
-Allow: /*.js$
-Allow: /*.png$
-Allow: /*.svg$
-Sitemap: https://freetoolhub.info/sitemap.xml
-User-agent: Bingbot
-Crawl-delay: 10
+
+# Block admin and private paths
+Disallow: /cdn-cgi/
+
+# Crawl delay for non-Google bots
 User-agent: AhrefsBot
-Disallow: /
+Crawl-delay: 10
+
 User-agent: SemrushBot
-Disallow: /
+Crawl-delay: 10
+
 User-agent: MJ12bot
-Disallow: /
+Crawl-delay: 10
+
+# Sitemap
+Sitemap: https://www.freetoolhub.info/sitemap.xml
+Sitemap: https://www.freetoolhub.info/sitemap.xml
+
+# Host
+Host: https://www.freetoolhub.info
