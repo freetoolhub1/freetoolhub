@@ -20,20 +20,11 @@
       ]
     },
     {
-      "source": "/(.*)\\.(ico|png|svg|webp|woff2)",
+      "source": "/(.*)\\.(ico|png|svg|webp|woff2|gif)",
       "headers": [
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
-        }
-      ]
-    },
-    {
-      "source": "/(.*)\\.html",
-      "headers": [
-        {
-          "key": "Cache-Control",
-          "value": "public, max-age=3600, s-maxage=86400"
         }
       ]
     }
@@ -46,16 +37,10 @@
     {
       "source": "/blog/",
       "destination": "/blog/index.html"
-    }
-  ],
-  "routes": [
-    {
-      "handle": "filesystem"
     },
     {
-      "src": "/(.*)",
-      "dest": "/404.html",
-      "status": 404
+      "source": "/(.*)",
+      "destination": "/404.html"
     }
   ]
 }
