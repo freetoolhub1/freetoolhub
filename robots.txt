@@ -3,6 +3,10 @@ Allow: /
 
 # Block admin and private paths
 Disallow: /cdn-cgi/
+Disallow: /index-final.html
+Disallow: /index-premium.html
+Disallow: /pinterest-19aba.html
+Disallow: /cookie-banner.html
 
 # Crawl delay for non-Google bots
 User-agent: AhrefsBot
@@ -16,7 +20,3 @@ Crawl-delay: 10
 
 # Sitemap
 Sitemap: https://www.freetoolhub.info/sitemap.xml
-Sitemap: https://www.freetoolhub.info/sitemap.xml
-
-# Host
-Host: https://www.freetoolhub.info
