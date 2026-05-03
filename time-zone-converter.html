@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Time Zone Converter Online</title>
+<meta name="description" content="Convert time between any time zones in the world instantly. Free time zone converter, no signup.">
+<meta name="keywords" content="time zone converter, world clock, timezone converter online, utc converter, time conversion">
+<meta name="robots" content="index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1">
+<meta name="googlebot" content="index,follow,max-snippet:-1,max-image-preview:large">
+<link rel="canonical" href="https://www.freetoolhub.info/time-zone-converter.html">
+<meta property="og:type" content="website"><meta property="og:title" content="Free Time Zone Converter Online"><meta property="og:description" content="Convert time between any time zones in the world instantly. Free time zone converter, no signup."><meta property="og:url" content="https://www.freetoolhub.info/time-zone-converter.html"><meta property="og:site_name" content="FreeToolHub"><meta property="og:image:alt" content="FreeToolHub - Free Time Zone Converter Online">
+<meta name="twitter:site" content="@freetoolhub"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Free Time Zone Converter Online"><meta name="twitter:description" content="Convert time between any time zones in the world instantly. Free time zone converter, no signup.">
+<link rel="icon" href="/favicon.ico" sizes="32x32">
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="shortcut icon" href="/favicon.ico">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta name="theme-color" content="#a78bfa">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RSG0JLPE2D"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-RSG0JLPE2D');</script>
+<script async defer src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7670384460580806" crossorigin="anonymous"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"></noscript>
+<script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"SoftwareApplication","name":"Free Time Zone Converter Online","description":"Convert time between any time zones in the world instantly. Free time zone converter, no signup.","url":"https://www.freetoolhub.info/time-zone-converter.html","applicationCategory":"UtilityApplication","operatingSystem":"Web","offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How many timezones?","acceptedAnswer":{"@type":"Answer","text":"24+ major world timezones including all major cities and capitals."}},{"@type":"Question","name":"Does it handle daylight saving?","acceptedAnswer":{"@type":"Answer","text":"Yes. Uses Intl API which automatically adjusts for DST."}},{"@type":"Question","name":"Can I see current time everywhere?","acceptedAnswer":{"@type":"Answer","text":"Set time to now and convert between zones to see the difference."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes, 100% free."}}]}]}</script>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+body{background:#050508;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;line-height:1.6;overflow-x:hidden;}
+a{text-decoration:none;color:inherit;}
+canvas#bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.22;}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;background:rgba(5,5,8,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);}
+.logo{display:flex;align-items:center;gap:8px;}
+.logo-t{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.06em;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.back{font-size:.76rem;color:#6b6880;border:1px solid rgba(255,255,255,.07);padding:.32rem .85rem;border-radius:99px;transition:all .2s;background:none;cursor:pointer;}
+.back:hover{border-color:#a78bfa;color:#a78bfa;}
+main{max-width:760px;margin:0 auto;padding:80px 1.5rem 5rem;position:relative;z-index:2;}
+.bc{display:flex;gap:.4rem;list-style:none;font-size:.72rem;color:#6b6880;margin-bottom:1rem;flex-wrap:wrap;}
+.bc a{color:#6b6880;}.bc a:hover{color:#a78bfa;}
+.tag{font-size:.62rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#a78bfa;margin-bottom:.5rem;}
+h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(1.9rem,6vw,3rem);letter-spacing:.02em;line-height:.95;margin-bottom:.75rem;}
+.hg{background:linear-gradient(135deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.sub{font-size:.88rem;color:#6b6880;max-width:580px;line-height:1.8;margin-bottom:1.2rem;}
+.trust{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:1.2rem;}
+.tp{display:inline-flex;align-items:center;gap:.3rem;font-size:.71rem;color:#6b6880;border:1px solid rgba(255,255,255,.06);padding:.25rem .7rem;border-radius:99px;}
+.tp .ok{color:#4ade80;}
+.card{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:1.4rem;margin-bottom:1rem;position:relative;}
+.card::before{content:'';position:absolute;top:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,rgba(167,139,250,.3),transparent);border-radius:16px 16px 0 0;}
+.lbl{font-size:.67rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#6b6880;margin-bottom:.5rem;display:block;}
+input[type=text],input[type=number],input[type=date],input[type=email],input[type=password],textarea,select{display:block;width:100%;background:#16161f;border:1px solid rgba(255,255,255,.08);border-radius:10px;color:#f0eeff;font-family:'Plus Jakarta Sans',sans-serif;font-size:.88rem;padding:.7rem .9rem;outline:none;transition:border-color .2s,box-shadow .2s;margin-bottom:.6rem;}
+input:focus,textarea:focus,select:focus{border-color:rgba(167,139,250,.5);box-shadow:0 0 0 3px rgba(167,139,250,.07);}
+textarea{resize:vertical;min-height:130px;line-height:1.7;}
+select{cursor:pointer;}
+input[type=range]{padding:0;background:none;border:none;margin-bottom:0;accent-color:#a78bfa;width:100%;}
+input[type=color]{height:52px;padding:4px;cursor:pointer;}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:.4rem;padding:.72rem 1.4rem;background:linear-gradient(135deg,#a78bfa,#38bdf8);color:#050508;border:none;border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;font-size:.86rem;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(167,139,250,.3);}
+.btn:disabled{opacity:.5;cursor:not-allowed;transform:none;}
+.btn.full{width:100%;}
+.btn2{display:inline-flex;align-items:center;justify-content:center;gap:.35rem;padding:.65rem 1.1rem;background:rgba(255,255,255,.04);color:#f0eeff;border:1px solid rgba(255,255,255,.08);border-radius:10px;font-family:'Plus Jakarta Sans',sans-serif;font-weight:600;font-size:.84rem;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.btn2:hover{background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:#a78bfa;}
+.btn-red{background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.2);color:#f87171;border-radius:8px;padding:.45rem .65rem;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;font-size:.84rem;display:inline-flex;align-items:center;justify-content:center;}
+.pill{display:inline-flex;align-items:center;padding:.28rem .82rem;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:99px;font-size:.76rem;font-weight:600;color:#6b6880;cursor:pointer;transition:all .18s;white-space:nowrap;}
+.pill.on,.pill:hover{background:rgba(167,139,250,.1);border-color:rgba(167,139,250,.3);color:#a78bfa;}
+.out{background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.9rem 1rem;font-size:.88rem;line-height:1.8;color:#f0eeff;white-space:pre-wrap;word-break:break-word;min-height:60px;}
+.err{display:none;font-size:.8rem;color:#f87171;background:rgba(248,113,113,.08);border:1px solid rgba(248,113,113,.15);border-radius:8px;padding:.5rem .85rem;margin-top:.5rem;}
+.err.show{display:block;}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:.75rem;}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:.75rem;}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:.6rem;}
+.row{display:flex;gap:.5rem;flex-wrap:wrap;align-items:center;}
+.stat{background:#16161f;border-radius:12px;padding:.85rem;text-align:center;}
+.sval{font-family:'Bebas Neue',sans-serif;font-size:1.8rem;color:#a78bfa;line-height:1;}
+.slbl{font-size:.64rem;text-transform:uppercase;letter-spacing:.08em;color:#6b6880;margin-top:.2rem;}
+.rh{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem;flex-wrap:wrap;gap:.4rem;}
+.seo{background:#0e0e14;border:1px solid rgba(255,255,255,.05);border-radius:14px;padding:1.4rem;margin-bottom:1rem;}
+.seo h2{font-family:'Bebas Neue',sans-serif;font-size:1.15rem;letter-spacing:.03em;margin:1rem 0 .45rem;color:#f0eeff;}
+.seo h2:first-child{margin-top:0;}
+.seo p,.seo ul,.seo ol{font-size:.85rem;color:#6b6880;line-height:1.85;margin-bottom:.6rem;}
+.seo ul,.seo ol{padding-left:1.3rem;}
+.seo li{margin-bottom:.3rem;}
+.seo strong{color:#f0eeff;font-weight:600;}
+.faq{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:1.3rem;margin-bottom:1rem;}
+.faq-h{font-family:'Bebas Neue',sans-serif;font-size:1.1rem;letter-spacing:.04em;margin-bottom:.9rem;}
+.fi{border-bottom:1px solid rgba(255,255,255,.05);padding:.72rem 0;}
+.fi:last-child{border-bottom:none;}
+.fq{font-size:.84rem;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:.8rem;user-select:none;}
+.fq:hover{color:#a78bfa;}
+.fi-ico{color:#a78bfa;flex-shrink:0;transition:transform .2s;}
+.fa{font-size:.82rem;color:#6b6880;line-height:1.8;margin-top:.45rem;display:none;}
+.fi.open .fa{display:block;}
+.fi.open .fi-ico{transform:rotate(45deg);}
+.rel{background:#0e0e14;border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:1.1rem;margin-bottom:1rem;}
+.rel-h{font-family:'Bebas Neue',sans-serif;font-size:1rem;letter-spacing:.04em;margin-bottom:.65rem;}
+.rel-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:.38rem;}
+.rtool{background:#16161f;border-radius:8px;padding:.5rem .7rem;font-size:.79rem;color:#6b6880;transition:all .15s;display:block;}
+.rtool:hover{background:rgba(167,139,250,.08);color:#a78bfa;}
+footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);padding:1.4rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.6rem;}
+.fl{font-family:'Bebas Neue',sans-serif;font-size:.9rem;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.fl-links{display:flex;gap:.9rem;list-style:none;flex-wrap:wrap;}
+.fl-links a{color:#6b6880;font-size:.74rem;transition:color .2s;}
+.fl-links a:hover{color:#f0eeff;}
+.fc{font-size:.7rem;color:#6b6880;}
+@media print{nav,footer,.seo,.faq,.rel,.btn,.btn2,.btn-red,.row,.bc,.tag,.sub,.trust,canvas#bg{display:none!important;}body{background:#fff!important;color:#000!important;}main{padding:0!important;}.card{border:1px solid #ddd!important;background:#fff!important;}.out{background:#f9f9f9!important;color:#000!important;}}
+@media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr;}main{padding:72px 1rem 4rem;}nav{padding:0 1rem;}footer{padding:1.2rem 1rem;flex-direction:column;}}
+</style>
+</head>
+<body>
+<canvas id="bg"></canvas>
+<nav><a href="/index.html" class="logo"><svg width="26" height="26" viewBox="0 0 38 38" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg><span class="logo-t">FREETOOLHUB</span></a><button class="back" onclick="location.href='/index.html'">← All Tools</button></nav>
+<main>
+<ol class="bc"><li><a href="/index.html">Home</a></li><li>/</li><li style="color:#a78bfa;">Free Time Zone Converter Online</li></ol>
+<div class="trust"><span class="tp"><span class="ok">✓</span>100% Free</span><span class="tp"><span class="ok">✓</span>No Signup</span><span class="tp"><span class="ok">✓</span>No Data Stored</span><span class="tp"><span class="ok">✓</span>Works Instantly</span></div>
+<div class="tag">✦ Free Online Tool</div>
+<h1>FREE <span class="hg">TIME ZONE CONVERTER</span></h1>
+<p class="sub">Convert time between any time zones in the world instantly. Free time zone converter, no signup.</p>
+<div class="card">
+  <div class="g2" style="margin-bottom:.9rem;">
+    <div><label class="lbl" for="tzTime">Time</label><input type="datetime-local" id="tzTime"></div>
+    <div><label class="lbl" for="tzFrom">From timezone</label><select id="tzFrom"></select></div>
+  </div>
+  <label class="lbl" for="tzTo">Convert to</label>
+  <select id="tzTo"></select>
+  <button class="btn full" id="tzBtn" style="margin-top:.5rem;">Convert Time</button>
+</div>
+<div class="card" id="tzRes" style="display:none;">
+  <div class="g2">
+    <div class="stat"><div style="font-size:.7rem;color:#6b6880;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem;" id="tzL1"></div><div class="sval" id="tzT1" style="font-size:1.6rem;"></div><div class="slbl" id="tzD1"></div></div>
+    <div class="stat"><div style="font-size:.7rem;color:#6b6880;text-transform:uppercase;letter-spacing:.06em;margin-bottom:.3rem;" id="tzL2"></div><div class="sval" id="tzT2" style="font-size:1.6rem;color:#38bdf8;"></div><div class="slbl" id="tzD2"></div></div>
+  </div>
+  <div id="tzDiff" style="text-align:center;margin-top:.8rem;font-size:.85rem;color:#6b6880;"></div>
+</div>
+<div class="seo"><h2>Common Time Zone Differences</h2><ul><li>New York to London: +5 hours</li><li>London to Tokyo: +9 hours</li><li>Los Angeles to New York: +3 hours</li><li>Sydney to London: -10 or -11 hours (DST)</li></ul></div>
+<div class="faq"><div class="faq-h">Frequently Asked Questions</div><div class="fi"><div class="fq">How many timezones?<span class="fi-ico">+</span></div><div class="fa">24+ major world timezones including all major cities and capitals.</div></div><div class="fi"><div class="fq">Does it handle daylight saving?<span class="fi-ico">+</span></div><div class="fa">Yes. Uses Intl API which automatically adjusts for DST.</div></div><div class="fi"><div class="fq">Can I see current time everywhere?<span class="fi-ico">+</span></div><div class="fa">Set time to now and convert between zones to see the difference.</div></div><div class="fi"><div class="fq">Is it free?<span class="fi-ico">+</span></div><div class="fa">Yes, 100% free.</div></div></div>
+<div class="rel"><div class="rel-h">Related Tools</div><div class="rel-grid"><a href="/date-calculator.html" class="rtool">📅 Date Calculator</a><a href="/days-between-dates.html" class="rtool">📅 Days Between Dates</a><a href="/stopwatch.html" class="rtool">⏱️ Stopwatch</a><a href="/countdown-timer.html" class="rtool">⏳ Countdown Timer</a></div></div>
+</main>
+<footer><div class="fl">FREETOOLHUB</div><ul class="fl-links"><li><a href="/index.html">Home</a></li><li><a href="/blog.html">Blog</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li></ul><div class="fc">© 2026 FreeToolHub.info — Free tools, zero cost</div></footer>
+<script>
+(function(){
+  var cv=document.getElementById('bg');
+  if(cv){var cx=cv.getContext('2d');
+    function rsz(){cv.width=innerWidth;cv.height=innerHeight;}rsz();window.addEventListener('resize',rsz);
+    var CL=['rgba(167,139,250,','rgba(56,189,248,','rgba(251,146,60,','rgba(74,222,128,'];
+    var pts=[];for(var i=0;i<35;i++)pts.push({x:Math.random()*innerWidth,y:Math.random()*innerHeight,r:Math.random()*.7+.3,vx:(Math.random()-.5)*.13,vy:(Math.random()-.5)*.13,c:CL[i%4],a:Math.random()*.16+.04});
+    (function draw(){cx.clearRect(0,0,cv.width,cv.height);pts.forEach(function(p){p.x+=p.vx;p.y+=p.vy;if(p.x<0)p.x=cv.width;if(p.x>cv.width)p.x=0;if(p.y<0)p.y=cv.height;if(p.y>cv.height)p.y=0;cx.beginPath();cx.arc(p.x,p.y,p.r,0,Math.PI*2);cx.fillStyle=p.c+p.a+')';cx.fill();});requestAnimationFrame(draw);})();
+  }
+  document.querySelectorAll('.fq').forEach(function(q){q.addEventListener('click',function(){var fi=this.closest('.fi');var was=fi.classList.contains('open');document.querySelectorAll('.fi').forEach(function(i){i.classList.remove('open');});if(!was)fi.classList.add('open');});});
+})();
+</script>
+<script>
+(function(){
+  var zones=[{n:'UTC',t:'UTC'},{n:'New York (EST)',t:'America/New_York'},{n:'Los Angeles (PST)',t:'America/Los_Angeles'},{n:'Chicago (CST)',t:'America/Chicago'},{n:'London (GMT)',t:'Europe/London'},{n:'Paris (CET)',t:'Europe/Paris'},{n:'Berlin',t:'Europe/Berlin'},{n:'Moscow',t:'Europe/Moscow'},{n:'Dubai',t:'Asia/Dubai'},{n:'Mumbai (IST)',t:'Asia/Kolkata'},{n:'Karachi',t:'Asia/Karachi'},{n:'Bangkok',t:'Asia/Bangkok'},{n:'Singapore',t:'Asia/Singapore'},{n:'Hong Kong',t:'Asia/Hong_Kong'},{n:'Shanghai',t:'Asia/Shanghai'},{n:'Tokyo',t:'Asia/Tokyo'},{n:'Sydney',t:'Australia/Sydney'},{n:'Auckland',t:'Pacific/Auckland'},{n:'Rio de Janeiro',t:'America/Sao_Paulo'},{n:'Mexico City',t:'America/Mexico_City'},{n:'Toronto',t:'America/Toronto'},{n:'Cairo',t:'Africa/Cairo'},{n:'Lagos',t:'Africa/Lagos'},{n:'Johannesburg',t:'Africa/Johannesburg'}];
+  var sFrom=document.getElementById('tzFrom'),sTo=document.getElementById('tzTo');
+  zones.forEach(function(z){sFrom.add(new Option(z.n,z.t));sTo.add(new Option(z.n,z.t));});
+  // Set defaults
+  sFrom.value=Intl.DateTimeFormat().resolvedOptions().timeZone||'UTC';
+  sTo.value='Europe/London';
+  var n=new Date();n.setSeconds(0,0);
+  document.getElementById('tzTime').value=n.toISOString().slice(0,16);
+  document.getElementById('tzBtn').addEventListener('click',function(){
+    var tv=document.getElementById('tzTime').value;
+    if(!tv)return;
+    var d=new Date(tv);
+    var f=sFrom.value,t=sTo.value;
+    function fmt(d,zone){
+      var opts={timeZone:zone,year:'numeric',month:'short',day:'numeric',hour:'2-digit',minute:'2-digit',hour12:true};
+      var time={timeZone:zone,hour:'2-digit',minute:'2-digit',hour12:true};
+      var date={timeZone:zone,weekday:'short',year:'numeric',month:'short',day:'numeric'};
+      return{time:new Intl.DateTimeFormat('en-US',time).format(d),date:new Intl.DateTimeFormat('en-US',date).format(d)};
+    }
+    var r1=fmt(d,f),r2=fmt(d,t);
+    document.getElementById('tzL1').textContent=zones.find(function(z){return z.t===f;}).n;
+    document.getElementById('tzT1').textContent=r1.time;
+    document.getElementById('tzD1').textContent=r1.date;
+    document.getElementById('tzL2').textContent=zones.find(function(z){return z.t===t;}).n;
+    document.getElementById('tzT2').textContent=r2.time;
+    document.getElementById('tzD2').textContent=r2.date;
+    document.getElementById('tzRes').style.display='block';
+  });
+})();
+</script>
+</body>
+</html>
