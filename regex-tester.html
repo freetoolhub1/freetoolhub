@@ -175,7 +175,8 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
       document.getElementById('rgxHL').innerHTML=html;
       document.getElementById('rgxCnt').textContent=matches.length+' match'+(matches.length!==1?'es':'');
       var list=document.getElementById('rgxList');list.innerHTML='';
-      matches.slice(0,10).forEach(function(m,i){var d=document.createElement('div');d.style.cssText='background:#16161f;border-radius:7px;padding:.4rem .7rem;font-size:.82rem;';d.innerHTML='<span style="color:#6b6880;">Match '+(i+1)+':</span> <code style="color:#a78bfa;background:#0e0e14;padding:.1rem .3rem;border-radius:3px;">'+m.val+'</code> <span style="color:#6b6880;"> at index '+m.index+'</span>';list.appendChild(d);});
+      function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+      matches.slice(0,10).forEach(function(m,i){var d=document.createElement('div');d.style.cssText='background:#16161f;border-radius:7px;padding:.4rem .7rem;font-size:.82rem;';d.innerHTML='<span style="color:#6b6880;">Match '+(i+1)+':</span> <code style="color:#a78bfa;background:#0e0e14;padding:.1rem .3rem;border-radius:3px;">'+esc(m.val)+'</code> <span style="color:#6b6880;"> at index '+m.index+'</span>';list.appendChild(d);});
       if(matches.length>10){var more=document.createElement('div');more.style.cssText='font-size:.78rem;color:#6b6880;text-align:center;';more.textContent='...and '+(matches.length-10)+' more';list.appendChild(more);}
       document.getElementById('rgxRes').style.display='block';
     }catch(e){err.textContent='Error: '+e.message;err.classList.add('show');}

@@ -150,8 +150,14 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
 </script>
 <script>
 (function(){
+  var favDrop=document.getElementById('favDrop');
+  favDrop.addEventListener('dragover',function(e){e.preventDefault();this.style.borderColor='#a78bfa';});
+  favDrop.addEventListener('dragleave',function(){this.style.borderColor='rgba(167,139,250,.3)';});
+  favDrop.addEventListener('drop',function(e){e.preventDefault();this.style.borderColor='rgba(167,139,250,.3)';var f=e.dataTransfer.files[0];if(f&&f.type.indexOf('image/')===0)handleFile(f);});
   document.getElementById('favFile').addEventListener('change',function(){
-    var f=this.files[0];if(!f)return;
+    var f=this.files[0];if(!f)return;handleFile(f);
+  });
+  function handleFile(f){
     var r=new FileReader();
     r.onload=function(e){
       var img=new Image();
@@ -175,7 +181,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
       img.src=e.target.result;
     };
     r.readAsDataURL(f);
-  });
+  }
   document.getElementById('favCopy').addEventListener('click',function(){navigator.clipboard.writeText(document.getElementById('favHTML').textContent).then(function(){var b=document.getElementById('favCopy');b.textContent='✓ Copied!';setTimeout(function(){b.textContent='Copy';},1500);});});
 })();
 </script>

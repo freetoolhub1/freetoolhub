@@ -123,7 +123,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
   <input type="file" id="ocrFile" accept="image/*" style="display:none;">
   <div id="ocrPrev" style="text-align:center;margin-bottom:.6rem;"></div>
   <button class="btn full" id="ocrBtn" style="display:none;">🔍 Extract Text</button>
-  <div class="loader" id="ocrLoad"><span class="dot"></span><span class="dot"></span><span class="dot"></span> Reading text from image...</div>
+  <div id="ocrLoad" style="display:none;font-size:.85rem;color:#6b6880;margin-top:.6rem;">⏳ Reading text from image, please wait...</div>
 </div>
 <div class="card" id="ocrRes" style="display:none;">
   <div class="rh"><span class="lbl" style="margin:0;">Extracted Text</span><button class="btn2" id="ocrCopy" style="font-size:.78rem;padding:.4rem .85rem;">Copy</button></div>
@@ -149,17 +149,22 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
 <script>
 (function(){
   var imgData=null;
+  var drop=document.getElementById('ocrDrop');
+  drop.addEventListener('dragover',function(e){e.preventDefault();this.style.borderColor='#a78bfa';});
+  drop.addEventListener('dragleave',function(){this.style.borderColor='rgba(167,139,250,.3)';});
+  drop.addEventListener('drop',function(e){e.preventDefault();this.style.borderColor='rgba(167,139,250,.3)';var f=e.dataTransfer.files[0];if(f&&f.type.indexOf('image/')===0)loadFile(f);});
   document.getElementById('ocrFile').addEventListener('change',function(){
-    var f=this.files[0];if(!f)return;
+    var f=this.files[0];if(!f)return;loadFile(f);
+  });
+  function loadFile(f){
     var r=new FileReader();
     r.onload=function(e){imgData=e.target.result;document.getElementById('ocrPrev').innerHTML='<img src="'+e.target.result+'" style="max-height:200px;max-width:100%;border-radius:8px;border:1px solid rgba(255,255,255,.06);">';document.getElementById('ocrBtn').style.display='inline-flex';};
     r.readAsDataURL(f);
-  });
+  }
   document.getElementById('ocrBtn').addEventListener('click',function(){
     if(!imgData)return;
-    document.getElementById('ocrLoad').classList.add('show');
+    document.getElementById('ocrLoad').style.display='block';
     document.getElementById('ocrRes').style.display='none';
-    // Load Tesseract.js dynamically
     if(!window.Tesseract){
       var s=document.createElement('script');
       s.src='https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
@@ -169,10 +174,10 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
   });
   function runOCR(){
     Tesseract.recognize(imgData,'eng').then(function(r){
-      document.getElementById('ocrLoad').classList.remove('show');
+      document.getElementById('ocrLoad').style.display='none';
       document.getElementById('ocrOut').textContent=r.data.text||'No text detected. Try clearer image.';
       document.getElementById('ocrRes').style.display='block';
-    }).catch(function(e){document.getElementById('ocrLoad').classList.remove('show');document.getElementById('ocrOut').textContent='Error: '+e.message;document.getElementById('ocrRes').style.display='block';});
+    }).catch(function(e){document.getElementById('ocrLoad').style.display='none';document.getElementById('ocrOut').textContent='Error: '+e.message;document.getElementById('ocrRes').style.display='block';});
   }
   document.getElementById('ocrCopy').addEventListener('click',function(){navigator.clipboard.writeText(document.getElementById('ocrOut').textContent).then(function(){var b=document.getElementById('ocrCopy');b.textContent='✓ Copied!';setTimeout(function(){b.textContent='Copy';},1500);});});
 })();
