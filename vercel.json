@@ -1,36 +1,626 @@
 {
-  "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/sitemap.xml", "destination": "/sitemap.xml" },
-    { "source": "/robots.txt", "destination": "/robots.txt" }
+    {
+      "source": "/image-compressor",
+      "destination": "/image-compressor.html"
+    },
+    {
+      "source": "/border-radius-generator",
+      "destination": "/border-radius-generator.html"
+    },
+    {
+      "source": "/compound-interest-calculator",
+      "destination": "/compound-interest-calculator.html"
+    },
+    {
+      "source": "/invoice-generator",
+      "destination": "/invoice-generator.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog.html"
+    },
+    {
+      "source": "/duplicate-word-remover",
+      "destination": "/duplicate-word-remover.html"
+    },
+    {
+      "source": "/ai-grammar-checker",
+      "destination": "/ai-grammar-checker.html"
+    },
+    {
+      "source": "/password-generator",
+      "destination": "/password-generator.html"
+    },
+    {
+      "source": "/ai-caption-generator",
+      "destination": "/ai-caption-generator.html"
+    },
+    {
+      "source": "/number-to-words",
+      "destination": "/number-to-words.html"
+    },
+    {
+      "source": "/word-counter",
+      "destination": "/word-counter.html"
+    },
+    {
+      "source": "/case-converter",
+      "destination": "/case-converter.html"
+    },
+    {
+      "source": "/fuel-cost-calculator",
+      "destination": "/fuel-cost-calculator.html"
+    },
+    {
+      "source": "/box-shadow-generator",
+      "destination": "/box-shadow-generator.html"
+    },
+    {
+      "source": "/sentence-counter",
+      "destination": "/sentence-counter.html"
+    },
+    {
+      "source": "/text-to-emoji-converter",
+      "destination": "/text-to-emoji-converter.html"
+    },
+    {
+      "source": "/countdown-timer",
+      "destination": "/countdown-timer.html"
+    },
+    {
+      "source": "/slug-generator",
+      "destination": "/slug-generator.html"
+    },
+    {
+      "source": "/ip-address-lookup",
+      "destination": "/ip-address-lookup.html"
+    },
+    {
+      "source": "/color-picker",
+      "destination": "/color-picker.html"
+    },
+    {
+      "source": "/ai-email-subject-generator",
+      "destination": "/ai-email-subject-generator.html"
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html"
+    },
+    {
+      "source": "/character-counter",
+      "destination": "/character-counter.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html"
+    },
+    {
+      "source": "/age-calculator",
+      "destination": "/age-calculator.html"
+    },
+    {
+      "source": "/date-calculator",
+      "destination": "/date-calculator.html"
+    },
+    {
+      "source": "/minute-to-hours",
+      "destination": "/minute-to-hours.html"
+    },
+    {
+      "source": "/json-to-csv",
+      "destination": "/json-to-csv.html"
+    },
+    {
+      "source": "/hex-to-rgb",
+      "destination": "/hex-to-rgb.html"
+    },
+    {
+      "source": "/seo-master-guide",
+      "destination": "/seo-master-guide.html"
+    },
+    {
+      "source": "/pixel-to-rem",
+      "destination": "/pixel-to-rem.html"
+    },
+    {
+      "source": "/image-to-base64",
+      "destination": "/image-to-base64.html"
+    },
+    {
+      "source": "/youtube-title-generator",
+      "destination": "/youtube-title-generator.html"
+    },
+    {
+      "source": "/base64-encoder",
+      "destination": "/base64-encoder.html"
+    },
+    {
+      "source": "/dice-roller",
+      "destination": "/dice-roller.html"
+    },
+    {
+      "source": "/css-minifier",
+      "destination": "/css-minifier.html"
+    },
+    {
+      "source": "/random-number-generator",
+      "destination": "/random-number-generator.html"
+    },
+    {
+      "source": "/favicon-generator",
+      "destination": "/favicon-generator.html"
+    },
+    {
+      "source": "/meta-tag-generator",
+      "destination": "/meta-tag-generator.html"
+    },
+    {
+      "source": "/ai-writing-assistant",
+      "destination": "/ai-writing-assistant.html"
+    },
+    {
+      "source": "/epoch-converter",
+      "destination": "/epoch-converter.html"
+    },
+    {
+      "source": "/json-formatter",
+      "destination": "/json-formatter.html"
+    },
+    {
+      "source": "/color-converter",
+      "destination": "/color-converter.html"
+    },
+    {
+      "source": "/md5-generator",
+      "destination": "/md5-generator.html"
+    },
+    {
+      "source": "/lorem-ipsum-generator",
+      "destination": "/lorem-ipsum-generator.html"
+    },
+    {
+      "source": "/anagram-generator",
+      "destination": "/anagram-generator.html"
+    },
+    {
+      "source": "/electricity-cost-calculator",
+      "destination": "/electricity-cost-calculator.html"
+    },
+    {
+      "source": "/word-scrambler",
+      "destination": "/word-scrambler.html"
+    },
+    {
+      "source": "/index",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/remove-duplicates",
+      "destination": "/remove-duplicates.html"
+    },
+    {
+      "source": "/readability-checker",
+      "destination": "/readability-checker.html"
+    },
+    {
+      "source": "/ai-cover-letter-generator",
+      "destination": "/ai-cover-letter-generator.html"
+    },
+    {
+      "source": "/ai-hashtag-generator",
+      "destination": "/ai-hashtag-generator.html"
+    },
+    {
+      "source": "/word-frequency-counter",
+      "destination": "/word-frequency-counter.html"
+    },
+    {
+      "source": "/ai-text-summariser",
+      "destination": "/ai-text-summariser.html"
+    },
+    {
+      "source": "/calorie-calculator",
+      "destination": "/calorie-calculator.html"
+    },
+    {
+      "source": "/rgb-to-hex",
+      "destination": "/rgb-to-hex.html"
+    },
+    {
+      "source": "/ai-paraphrasing-tool",
+      "destination": "/ai-paraphrasing-tool.html"
+    },
+    {
+      "source": "/temperature-converter",
+      "destination": "/temperature-converter.html"
+    },
+    {
+      "source": "/regex-tester",
+      "destination": "/regex-tester.html"
+    },
+    {
+      "source": "/password-generator-strong",
+      "destination": "/password-generator-strong.html"
+    },
+    {
+      "source": "/word-counter-advanced",
+      "destination": "/word-counter-advanced.html"
+    },
+    {
+      "source": "/loan-calculator",
+      "destination": "/loan-calculator.html"
+    },
+    {
+      "source": "/remove-line-breaks",
+      "destination": "/remove-line-breaks.html"
+    },
+    {
+      "source": "/roman-numeral-converter",
+      "destination": "/roman-numeral-converter.html"
+    },
+    {
+      "source": "/url-encoder",
+      "destination": "/url-encoder.html"
+    },
+    {
+      "source": "/ai-product-description",
+      "destination": "/ai-product-description.html"
+    },
+    {
+      "source": "/gpa-calculator",
+      "destination": "/gpa-calculator.html"
+    },
+    {
+      "source": "/image-resizer",
+      "destination": "/image-resizer.html"
+    },
+    {
+      "source": "/markdown-editor",
+      "destination": "/markdown-editor.html"
+    },
+    {
+      "source": "/random-color-generator",
+      "destination": "/random-color-generator.html"
+    },
+    {
+      "source": "/hash-generator",
+      "destination": "/hash-generator.html"
+    },
+    {
+      "source": "/mortgage-calculator",
+      "destination": "/mortgage-calculator.html"
+    },
+    {
+      "source": "/aspect-ratio-calculator",
+      "destination": "/aspect-ratio-calculator.html"
+    },
+    {
+      "source": "/ai-content-ideas",
+      "destination": "/ai-content-ideas.html"
+    },
+    {
+      "source": "/reading-time-calculator",
+      "destination": "/reading-time-calculator.html"
+    },
+    {
+      "source": "/privacy",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/stopwatch",
+      "destination": "/stopwatch.html"
+    },
+    {
+      "source": "/palindrome-checker",
+      "destination": "/palindrome-checker.html"
+    },
+    {
+      "source": "/discount-calculator",
+      "destination": "/discount-calculator.html"
+    },
+    {
+      "source": "/name-generator",
+      "destination": "/name-generator.html"
+    },
+    {
+      "source": "/days-between-dates",
+      "destination": "/days-between-dates.html"
+    },
+    {
+      "source": "/password-strength-checker",
+      "destination": "/password-strength-checker.html"
+    },
+    {
+      "source": "/currency-converter",
+      "destination": "/currency-converter.html"
+    },
+    {
+      "source": "/binary-converter",
+      "destination": "/binary-converter.html"
+    },
+    {
+      "source": "/sitemap",
+      "destination": "/sitemap.html"
+    },
+    {
+      "source": "/css-gradient-generator",
+      "destination": "/css-gradient-generator.html"
+    },
+    {
+      "source": "/bmi-calculator",
+      "destination": "/bmi-calculator.html"
+    },
+    {
+      "source": "/speed-calculator",
+      "destination": "/speed-calculator.html"
+    },
+    {
+      "source": "/text-diff-checker",
+      "destination": "/text-diff-checker.html"
+    },
+    {
+      "source": "/scientific-calculator",
+      "destination": "/scientific-calculator.html"
+    },
+    {
+      "source": "/qr-code-generator",
+      "destination": "/qr-code-generator.html"
+    },
+    {
+      "source": "/unit-converter",
+      "destination": "/unit-converter.html"
+    },
+    {
+      "source": "/image-to-text",
+      "destination": "/image-to-text.html"
+    },
+    {
+      "source": "/time-zone-converter",
+      "destination": "/time-zone-converter.html"
+    },
+    {
+      "source": "/tip-calculator",
+      "destination": "/tip-calculator.html"
+    },
+    {
+      "source": "/text-to-speech",
+      "destination": "/text-to-speech.html"
+    },
+    {
+      "source": "/list-randomizer",
+      "destination": "/list-randomizer.html"
+    },
+    {
+      "source": "/text-repeater",
+      "destination": "/text-repeater.html"
+    },
+    {
+      "source": "/number-sorter",
+      "destination": "/number-sorter.html"
+    },
+    {
+      "source": "/instagram-bio-generator",
+      "destination": "/instagram-bio-generator.html"
+    },
+    {
+      "source": "/text-to-binary",
+      "destination": "/text-to-binary.html"
+    },
+    {
+      "source": "/percentage-calculator",
+      "destination": "/percentage-calculator.html"
+    },
+    {
+      "source": "/fake-email-generator",
+      "destination": "/fake-email-generator.html"
+    },
+    {
+      "source": "/html-encoder",
+      "destination": "/html-encoder.html"
+    },
+    {
+      "source": "/jwt-decoder",
+      "destination": "/jwt-decoder.html"
+    },
+    {
+      "source": "/pomodoro-timer",
+      "destination": "/pomodoro-timer.html"
+    },
+    {
+      "source": "/blog/best-free-qr-code-generator",
+      "destination": "/blog/best-free-qr-code-generator.html"
+    },
+    {
+      "source": "/blog/how-to-compress-images-for-website",
+      "destination": "/blog/how-to-compress-images-for-website.html"
+    },
+    {
+      "source": "/blog/freelancer-invoicing-guide",
+      "destination": "/blog/freelancer-invoicing-guide.html"
+    },
+    {
+      "source": "/blog/hashtag-strategy-2026",
+      "destination": "/blog/hashtag-strategy-2026.html"
+    },
+    {
+      "source": "/blog/currency-converter-when-to-use",
+      "destination": "/blog/currency-converter-when-to-use.html"
+    },
+    {
+      "source": "/blog/json-beginners-guide",
+      "destination": "/blog/json-beginners-guide.html"
+    },
+    {
+      "source": "/blog/free-qr-code-guide",
+      "destination": "/blog/free-qr-code-guide.html"
+    },
+    {
+      "source": "/blog/how-to-compress-images-free",
+      "destination": "/blog/how-to-compress-images-free.html"
+    },
+    {
+      "source": "/blog/readability-seo-guide",
+      "destination": "/blog/readability-seo-guide.html"
+    },
+    {
+      "source": "/blog/youtube-title-tips",
+      "destination": "/blog/youtube-title-tips.html"
+    },
+    {
+      "source": "/blog/why-word-count-matters-2026",
+      "destination": "/blog/why-word-count-matters-2026.html"
+    },
+    {
+      "source": "/blog/image-compression-guide-2026",
+      "destination": "/blog/image-compression-guide-2026.html"
+    },
+    {
+      "source": "/blog/password-security-guide-2026",
+      "destination": "/blog/password-security-guide-2026.html"
+    },
+    {
+      "source": "/blog/seo-content-strategy-2026",
+      "destination": "/blog/seo-content-strategy-2026.html"
+    },
+    {
+      "source": "/blog/seo-strategy-2026",
+      "destination": "/blog/seo-strategy-2026.html"
+    },
+    {
+      "source": "/blog/pomodoro-technique-deep-work",
+      "destination": "/blog/pomodoro-technique-deep-work.html"
+    },
+    {
+      "source": "/blog/markdown-cheatsheet-and-uses",
+      "destination": "/blog/markdown-cheatsheet-and-uses.html"
+    },
+    {
+      "source": "/blog/understanding-bmi-and-its-limits",
+      "destination": "/blog/understanding-bmi-and-its-limits.html"
+    },
+    {
+      "source": "/blog/qr-code-marketing-2026",
+      "destination": "/blog/qr-code-marketing-2026.html"
+    },
+    {
+      "source": "/blog/free-vs-paid-tools-comparison",
+      "destination": "/blog/free-vs-paid-tools-comparison.html"
+    },
+    {
+      "source": "/blog/how-to-count-words-online",
+      "destination": "/blog/how-to-count-words-online.html"
+    },
+    {
+      "source": "/blog/mobile-friendly-website-checklist",
+      "destination": "/blog/mobile-friendly-website-checklist.html"
+    },
+    {
+      "source": "/blog/how-to-create-strong-password",
+      "destination": "/blog/how-to-create-strong-password.html"
+    },
+    {
+      "source": "/blog/mortgage-math-explained",
+      "destination": "/blog/mortgage-math-explained.html"
+    },
+    {
+      "source": "/blog/compound-interest-explained",
+      "destination": "/blog/compound-interest-explained.html"
+    },
+    {
+      "source": "/blog/ai-writing-tools-guide-2026",
+      "destination": "/blog/ai-writing-tools-guide-2026.html"
+    },
+    {
+      "source": "/blog/how-to-calculate-bmi",
+      "destination": "/blog/how-to-calculate-bmi.html"
+    },
+    {
+      "source": "/blog/pomodoro-technique-guide",
+      "destination": "/blog/pomodoro-technique-guide.html"
+    },
+    {
+      "source": "/blog/best-free-online-tools-2026",
+      "destination": "/blog/best-free-online-tools-2026.html"
+    },
+    {
+      "source": "/blog/ai-writing-tools-revolution-2026",
+      "destination": "/blog/ai-writing-tools-revolution-2026.html"
+    },
+    {
+      "source": "/blog/color-psychology-design-guide",
+      "destination": "/blog/color-psychology-design-guide.html"
+    },
+    {
+      "source": "/blog/time-tracking-actually-works",
+      "destination": "/blog/time-tracking-actually-works.html"
+    },
+    {
+      "source": "/blog/how-to-write-better-blog-posts",
+      "destination": "/blog/how-to-write-better-blog-posts.html"
+    },
+    {
+      "source": "/blog/color-theory-for-non-designers",
+      "destination": "/blog/color-theory-for-non-designers.html"
+    },
+    {
+      "source": "/blog/json-formatter-tutorial",
+      "destination": "/blog/json-formatter-tutorial.html"
+    },
+    {
+      "source": "/blog",
+      "destination": "/blog/index.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        }
       ]
     },
     {
       "source": "/(.*)\\.(ico|png|svg|webp|woff2)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
       ]
     },
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
-        { "key": "Cache-Control", "value": "public, max-age=3600" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=3600"
+        }
       ]
     },
     {
       "source": "/robots.txt",
       "headers": [
-        { "key": "Content-Type", "value": "text/plain; charset=utf-8" }
+        {
+          "key": "Content-Type",
+          "value": "text/plain; charset=utf-8"
+        }
       ]
     }
   ]
