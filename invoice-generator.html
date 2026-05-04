@@ -204,23 +204,27 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
     <div><label class="lbl" for="invNotes">Notes / Payment terms</label><input type="text" id="invNotes" placeholder="e.g. Net 30 days"></div>
   </div>
 
-  <div class="row" style="margin-top:.5rem;">
-    <button class="btn" id="previewBtn" style="flex:1;min-width:130px;">👁️ Preview</button>
-    <button class="btn2" id="printBtn" style="flex:1;min-width:130px;">🖨️ Download PDF</button>
-    <button class="btn2" id="emailBtn" style="flex:1;min-width:130px;">📧 Send by Email</button>
+  <div class="row" style="margin-top:.5rem;flex-wrap:wrap;">
+    <button class="btn" id="previewBtn" style="flex:1;min-width:120px;">👁️ Preview</button>
+    <button class="btn2" id="downloadBtn" style="flex:1;min-width:120px;">⬇️ Download PDF</button>
+    <button class="btn2" id="printBtn" style="flex:1;min-width:120px;">🖨️ Print Invoice</button>
+    <button class="btn2" id="emailBtn" style="flex:1;min-width:120px;">📧 Send by Email</button>
   </div>
+  <p id="emailNote" style="display:none;margin-top:.5rem;font-size:.78rem;color:#a78bfa;text-align:center;">PDF saved to your downloads — please attach it to your email before sending.</p>
 </div>
 
 <div id="invPreviewBox" style="display:none;"></div>
 
 <div class="seo"><h2>What a Professional Invoice Must Include</h2><ul><li><strong>Invoice number</strong> — unique identifier for tracking and tax purposes</li><li><strong>Your business details</strong> — name, address, email and payment details</li><li><strong>Client details</strong> — who you are billing</li><li><strong>Issue date and due date</strong> — when issued and when payment is expected</li><li><strong>Line items</strong> — description, quantity, rate and amount for each service</li><li><strong>Subtotal, tax and total</strong> — clearly broken down</li></ul></div>
 
-<div class="faq"><div class="faq-h">Frequently Asked Questions</div><div class="fi"><div class="fq">Can I download as PDF?<span class="fi-ico">+</span></div><div class="fa">Yes. Click 'Download PDF' and your browser's print dialog will open. Choose 'Save as PDF' as the destination.</div></div><div class="fi"><div class="fq">Can I email the invoice?<span class="fi-ico">+</span></div><div class="fa">Yes. Click 'Send by Email' and your email client will open with the invoice details pre-filled in the email body.</div></div><div class="fi"><div class="fq">Is my data saved?<span class="fi-ico">+</span></div><div class="fa">No. Everything stays in your browser. Refresh the page and data is cleared. Nothing is sent to our servers.</div></div><div class="fi"><div class="fq">Can I add unlimited line items?<span class="fi-ico">+</span></div><div class="fa">Yes. Click '+ Add Line Item' as many times as needed.</div></div><div class="fi"><div class="fq">What currencies are supported?<span class="fi-ico">+</span></div><div class="fa">USD, GBP, EUR, INR and KRW.</div></div></div>
+<div class="faq"><div class="faq-h">Frequently Asked Questions</div><div class="fi"><div class="fq">Can I download as PDF?<span class="fi-ico">+</span></div><div class="fa">Yes. Click 'Download PDF' and the invoice saves instantly as a .pdf file to your downloads folder — no print dialog, no extra steps.</div></div><div class="fi"><div class="fq">How do I print the invoice?<span class="fi-ico">+</span></div><div class="fa">Click 'Print Invoice'. A clean print window opens showing only the invoice. Your browser's print dialog appears and the window closes automatically after printing.</div></div><div class="fi"><div class="fq">Can I email the invoice?<span class="fi-ico">+</span></div><div class="fa">Yes. Click 'Send by Email' — the PDF downloads automatically to your device, then your email client opens. Attach the saved PDF to your email before sending.</div></div><div class="fi"><div class="fq">Is my data saved?<span class="fi-ico">+</span></div><div class="fa">No. Everything stays in your browser. Refresh the page and data is cleared. Nothing is sent to our servers.</div></div><div class="fi"><div class="fq">Can I add unlimited line items?<span class="fi-ico">+</span></div><div class="fa">Yes. Click '+ Add Line Item' as many times as needed.</div></div><div class="fi"><div class="fq">What currencies are supported?<span class="fi-ico">+</span></div><div class="fa">USD, GBP, EUR, INR and KRW.</div></div></div>
 
 <div class="rel"><div class="rel-h">Related Tools</div><div class="rel-grid"><a href="/compound-interest-calculator.html" class="rtool">📈 Compound Interest</a><a href="/mortgage-calculator.html" class="rtool">🏠 Mortgage Calc</a><a href="/percentage-calculator.html" class="rtool">% Percentage Calc</a><a href="/tip-calculator.html" class="rtool">💰 Tip Calculator</a></div></div>
 
 </main>
 <footer><div class="fl">FREETOOLHUB</div><ul class="fl-links"><li><a href="/index.html">Home</a></li><li><a href="/about.html">About</a></li><li><a href="/contact.html">Contact</a></li><li><a href="/privacy.html">Privacy</a></li></ul><div class="fc">© 2026 FreeToolHub.info</div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js" defer></script>
 <script>
 (function(){
   // Particles
@@ -379,33 +383,116 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
     box.scrollIntoView({behavior:'smooth', block:'nearest'});
   });
 
-  document.getElementById('printBtn').addEventListener('click', function(){
-    var d = getInvoiceData();
+  function generatePDF(d, callback){
+    if(typeof html2canvas === 'undefined' || typeof window.jspdf === 'undefined'){
+      if(callback) callback(null, d);
+      return;
+    }
     var box = document.getElementById('invPreviewBox');
     box.innerHTML = buildHTML(d);
     box.style.display = 'block';
-    setTimeout(function(){ window.print(); }, 300);
+    setTimeout(function(){
+      html2canvas(box, {
+        scale: 2,
+        backgroundColor: '#ffffff',
+        useCORS: true,
+        logging: false
+      }).then(function(canvas){
+        var jsPDF = window.jspdf.jsPDF;
+        var pdf = new jsPDF({orientation:'portrait', unit:'mm', format:'a4'});
+        var pW = pdf.internal.pageSize.getWidth();
+        var pH = pdf.internal.pageSize.getHeight();
+        var margin = 10;
+        var contentW = pW - margin * 2;
+        var pxPerMm = canvas.width / contentW;
+        var totalH = canvas.height / pxPerMm;
+        var pageH = pH - margin * 2;
+        var pages = Math.ceil(totalH / pageH);
+        for(var i = 0; i < pages; i++){
+          if(i > 0) pdf.addPage();
+          pdf.addImage(canvas.toDataURL('image/png'), 'PNG', margin, margin - i * pageH, contentW, totalH);
+        }
+        if(callback) callback(pdf, d);
+      }).catch(function(){ if(callback) callback(null, d); });
+    }, 150);
+  }
+
+  document.getElementById('downloadBtn').addEventListener('click', function(){
+    var btn = this;
+    var d = getInvoiceData();
+    btn.disabled = true;
+    btn.textContent = '⏳ Generating…';
+    generatePDF(d, function(pdf){
+      btn.disabled = false;
+      btn.textContent = '⬇️ Download PDF';
+      if(pdf){
+        pdf.save('invoice-' + d.num + '.pdf');
+      } else {
+        alert('PDF generation failed. Please try the Print option and save as PDF.');
+      }
+    });
+  });
+
+  document.getElementById('printBtn').addEventListener('click', function(){
+    var d = getInvoiceData();
+    var invoiceHTML = buildHTML(d);
+    var popup = window.open('', '_blank', 'width=900,height=700,scrollbars=yes');
+    if(!popup){
+      alert('Please allow popups for this site to use the print function.');
+      return;
+    }
+    popup.document.write(
+      '<!DOCTYPE html><html lang="en"><head>'
+      + '<meta charset="UTF-8"><title>Invoice ' + d.num + '</title>'
+      + '<style>'
+      + 'body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#1a1a2e;'
+      + 'padding:2rem;margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;}'
+      + '@page{margin:0.5in;}'
+      + '@media print{body{padding:0;}}'
+      + '</style></head><body>'
+      + invoiceHTML
+      + '<scr'+'ipt>window.onload=function(){window.print();'
+      + 'window.onafterprint=function(){window.close();};};<\/scr'+'ipt>'
+      + '</body></html>'
+    );
+    popup.document.close();
   });
 
   document.getElementById('emailBtn').addEventListener('click', function(){
+    var btn = this;
     var d = getInvoiceData();
-    var lines = items.map(function(i){
-      return i.desc + ' — Qty: ' + i.qty + ' × ' + d.curr + parseFloat(i.rate).toFixed(2) + ' = ' + d.curr + (i.qty*i.rate).toFixed(2);
-    }).join('%0A');
-    var body = 'Dear ' + d.to + ',%0A%0A'
-      + 'Please find invoice ' + d.num + ' below.%0A%0A'
-      + lines + '%0A%0A'
-      + 'Subtotal: ' + d.curr + d.sub.toFixed(2) + '%0A'
-      + (d.tax > 0 ? 'Tax (' + d.tax + '%): ' + d.curr + d.taxAmt.toFixed(2) + '%0A' : '')
-      + 'Total Due: ' + d.curr + d.total.toFixed(2) + '%0A%0A'
-      + 'Due Date: ' + d.due + '%0A'
-      + (d.notes ? 'Payment Terms: ' + d.notes + '%0A' : '')
-      + '%0AThank you for your business.%0A%0ABest regards,%0A' + d.from;
-    
-    var mailTo = 'mailto:' + (d.toEmail||'') 
-      + '?subject=' + encodeURIComponent('Invoice ' + d.num + ' from ' + d.from)
-      + '&body=' + body;
-    window.location.href = mailTo;
+    btn.disabled = true;
+    btn.textContent = '⏳ Preparing…';
+
+    function openMailto(){
+      var lines = items.map(function(i){
+        return encodeURIComponent(i.desc + ' — Qty: ' + i.qty + ' × ' + d.curr + parseFloat(i.rate).toFixed(2) + ' = ' + d.curr + (i.qty*i.rate).toFixed(2));
+      }).join('%0A');
+      var body = 'Dear ' + encodeURIComponent(d.to) + ',%0A%0A'
+        + 'Please find invoice ' + encodeURIComponent(d.num) + ' details below.%0A%0A'
+        + lines + '%0A%0A'
+        + 'Subtotal: ' + encodeURIComponent(d.curr + d.sub.toFixed(2)) + '%0A'
+        + (d.tax > 0 ? 'Tax (' + d.tax + '%): ' + encodeURIComponent(d.curr + d.taxAmt.toFixed(2)) + '%0A' : '')
+        + 'Total Due: ' + encodeURIComponent(d.curr + d.total.toFixed(2)) + '%0A%0A'
+        + 'Due Date: ' + encodeURIComponent(d.due) + '%0A'
+        + (d.notes ? 'Payment Terms: ' + encodeURIComponent(d.notes) + '%0A' : '')
+        + '%0AThank you for your business.%0A%0ABest regards,%0A' + encodeURIComponent(d.from);
+      window.location.href = 'mailto:' + (d.toEmail||'')
+        + '?subject=' + encodeURIComponent('Invoice ' + d.num + ' from ' + d.from)
+        + '&body=' + body;
+      btn.disabled = false;
+      btn.textContent = '📧 Send by Email';
+      document.getElementById('emailNote').style.display = 'block';
+    }
+
+    generatePDF(d, function(pdf){
+      if(pdf){
+        pdf.save('invoice-' + d.num + '.pdf');
+        setTimeout(openMailto, 600);
+      } else {
+        openMailto();
+      }
+    });
   });
 })();
 </script>
