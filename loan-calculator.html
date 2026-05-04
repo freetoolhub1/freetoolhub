@@ -161,9 +161,9 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
     var rate=parseFloat(document.getElementById('lnRate').value);
     var n=parseInt(document.getElementById('lnTerm').value);
     var err=document.getElementById('lnErr');err.classList.remove('show');
-    if(!p||!rate){err.classList.add('show');return;}
+    if(!p||p<=0||isNaN(rate)||rate<0||!n||n<=0){err.classList.add('show');return;}
     var r=rate/100/12;
-    var payment=p*(r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
+    var payment=r===0?p/n:p*(r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
     var total=payment*n;var interest=total-p;
     function fmt(v){return'$'+Math.round(v).toLocaleString();}
     document.getElementById('lnPayment').textContent=fmt(payment);

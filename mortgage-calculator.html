@@ -187,10 +187,10 @@ document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('mcBtn').addEventListener('click',function(){
     var loan=parseFloat(document.getElementById('mcLoan').value);var rate=parseFloat(document.getElementById('mcRate').value);var term=parseInt(document.getElementById('mcTerm').value);var down=parseFloat(document.getElementById('mcDown').value)||0;
     var err=document.getElementById('mcErr');err.classList.remove('on');
-    if(!loan||!rate){err.classList.add('on');return;}
+    if(!loan||loan<=0||isNaN(rate)||rate<0||!term||term<=0){err.classList.add('on');return;}
     var principal=loan-down;if(principal<=0){err.classList.add('on');return;}
     var r=rate/100/12;var n=term*12;
-    var payment=principal*(r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
+    var payment=r===0?principal/n:principal*(r*Math.pow(1+r,n))/(Math.pow(1+r,n)-1);
     var total=payment*n;var interest=total-principal;
     document.getElementById('mcPayment').textContent=fmt(payment);
     document.getElementById('mcTotal').textContent=fmt(total);
