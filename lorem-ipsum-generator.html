@@ -232,7 +232,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
 
   document.getElementById('liBtn').addEventListener('click',function(){
     var type=document.getElementById('liType').value;
-    var count=parseInt(document.getElementById('liCount').value)||3;
+    var count=Math.min(50,Math.max(1,parseInt(document.getElementById('liCount').value)||3));
     var start=document.getElementById('liStart').value;
     var lines=[];
 

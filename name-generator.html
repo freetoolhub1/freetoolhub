@@ -250,7 +250,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
   });
 
   document.getElementById('ngBtn').addEventListener('click',function(){
-    var count = parseInt(document.getElementById('ngCount').value)||12;
+    var count = Math.min(50,Math.max(1,parseInt(document.getElementById('ngCount').value)||12));
     var generated = [];
 
     for(var i=0;i<count;i++){
