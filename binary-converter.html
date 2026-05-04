@@ -189,7 +189,7 @@ document.addEventListener('DOMContentLoaded',function(){
       else if(mode==='t2b'){result=inp.split('').map(function(c){return c.charCodeAt(0).toString(2).padStart(8,'0');}).join(' ');}
       else if(mode==='b2t'){result=inp.trim().split(' ').map(function(b){return String.fromCharCode(parseInt(b,2));}).join('');}
       else if(mode==='d2h'){var n=parseInt(inp);if(isNaN(n))throw new Error('');result='0x'+n.toString(16).toUpperCase();explain='Decimal '+n+' = Hex '+result;}
-      else if(mode==='h2d'){var h=inp.replace('0x','').replace('0X','');result=parseInt(h,16).toString();explain='Hex '+inp+' = Decimal '+result;}
+      else if(mode==='h2d'){var h=inp.replace('0x','').replace('0X','');if(!/^[0-9a-fA-F]+$/.test(h))throw new Error('');var hv=parseInt(h,16);result=hv.toString();explain='Hex '+inp+' = Decimal '+result;}
     }catch(e){err.classList.add('on');return;}
     document.getElementById('bcOut').textContent=result;
     document.getElementById('bcExplain').textContent=explain;
