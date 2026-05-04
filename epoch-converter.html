@@ -158,7 +158,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
   document.getElementById('epBtn').addEventListener('click',function(){
     var out='';
     if(mode==='ts'){var ts=parseInt(document.getElementById('epT').value);if(!ts)return;var d=new Date(ts*1000);out='Local:  '+d.toLocaleString()+'\nUTC:    '+d.toUTCString()+'\nISO:    '+d.toISOString()+'\nTimestamp: '+ts+'\nMs:     '+ts*1000;}
-    else if(mode==='dt'){var dv=document.getElementById('epD').value;if(!dv)return;var d2=new Date(dv);var ts2=Math.floor(d2.getTime()/1000);out='Timestamp: '+ts2+'\nMs:     '+d2.getTime()+'\nLocal:  '+d2.toLocaleString()+'\nUTC:    '+d2.toUTCString();}
+    else if(mode==='dt'){var dv=document.getElementById('epD').value;if(!dv)return;var d2=new Date(dv);if(isNaN(d2.getTime()))return;var ts2=Math.floor(d2.getTime()/1000);out='Timestamp: '+ts2+'\nMs:     '+d2.getTime()+'\nLocal:  '+d2.toLocaleString()+'\nUTC:    '+d2.toUTCString();}
     else{var now=Math.floor(Date.now()/1000);out='Timestamp: '+now+'\nMs:     '+Date.now()+'\nLocal:  '+new Date().toLocaleString()+'\nUTC:    '+new Date().toUTCString();}
     document.getElementById('epOut').textContent=out;
     document.getElementById('epRes').style.display='block';

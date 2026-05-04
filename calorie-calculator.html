@@ -200,7 +200,7 @@ document.addEventListener('DOMContentLoaded',function(){
     var height=parseFloat(document.getElementById('calHeight').value);
     var activity=parseFloat(document.getElementById('calActivity').value);
     var err=document.getElementById('calErr');err.classList.remove('on');
-    if(!age||!weight||!height){err.classList.add('on');return;}
+    if(!age||age<=0||!weight||weight<=0||!height||height<=0){err.classList.add('on');return;}
     if(wu==='lbs')weight*=0.453592;
     if(hu==='in')height*=2.54;
     var bmr=gender==='male'?(10*weight)+(6.25*height)-(5*age)+5:(10*weight)+(6.25*height)-(5*age)-161;
