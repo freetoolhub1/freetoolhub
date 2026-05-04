@@ -326,43 +326,44 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
     };
   }
 
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
   function buildHTML(d){
-    var c = d.curr;
+    var c = esc(d.curr);
     var itemRows = items.map(function(i){
       return '<tr>'
-        +'<td style="padding:.6rem .5rem;border-bottom:1px solid #eee;font-size:.88rem;">'+i.desc+'</td>'
-        +'<td style="padding:.6rem .5rem;border-bottom:1px solid #eee;text-align:center;font-size:.88rem;">'+i.qty+'</td>'
+        +'<td style="padding:.6rem .5rem;border-bottom:1px solid #eee;font-size:.88rem;">'+esc(i.desc)+'</td>'
+        +'<td style="padding:.6rem .5rem;border-bottom:1px solid #eee;text-align:center;font-size:.88rem;">'+esc(i.qty)+'</td>'
         +'<td style="padding:.6rem .5rem;border-bottom:1px solid #eee;text-align:right;font-size:.88rem;">'+c+parseFloat(i.rate).toFixed(2)+'</td>'
         +'<td style="padding:.6rem .5rem;border-bottom:1px solid #eee;text-align:right;font-weight:700;font-size:.88rem;color:#a78bfa;">'+c+(i.qty*i.rate).toFixed(2)+'</td>'
         +'</tr>';
     }).join('');
-    
+
     return '<div style="max-width:680px;margin:0 auto;">'
     +'<div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:2rem;">'
     +'<div>'
-    +'<div style="font-size:1.4rem;font-weight:800;color:#050508;">'+d.from+'</div>'
-    +(d.fromAddr?'<div style="font-size:.82rem;color:#555;margin-top:.2rem;">'+d.fromAddr+'</div>':'')
-    +(d.fromEmail?'<div style="font-size:.82rem;color:#555;">'+d.fromEmail+'</div>':'')
-    +(d.fromPhone?'<div style="font-size:.82rem;color:#555;">'+d.fromPhone+'</div>':'')
+    +'<div style="font-size:1.4rem;font-weight:800;color:#050508;">'+esc(d.from)+'</div>'
+    +(d.fromAddr?'<div style="font-size:.82rem;color:#555;margin-top:.2rem;">'+esc(d.fromAddr)+'</div>':'')
+    +(d.fromEmail?'<div style="font-size:.82rem;color:#555;">'+esc(d.fromEmail)+'</div>':'')
+    +(d.fromPhone?'<div style="font-size:.82rem;color:#555;">'+esc(d.fromPhone)+'</div>':'')
     +'</div>'
     +'<div style="text-align:right;">'
     +'<div style="font-size:2.2rem;font-weight:900;letter-spacing:.08em;color:#a78bfa;">INVOICE</div>'
-    +'<div style="font-size:.88rem;color:#888;">#'+d.num+'</div>'
+    +'<div style="font-size:.88rem;color:#888;">#'+esc(d.num)+'</div>'
     +'</div>'
     +'</div>'
     +'<div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;background:#f8f8fc;border-radius:10px;padding:1rem;margin-bottom:1.5rem;">'
     +'<div>'
     +'<div style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.3rem;">Bill To</div>'
-    +'<div style="font-weight:700;color:#1a1a2e;">'+d.to+'</div>'
-    +(d.toAddr?'<div style="font-size:.82rem;color:#555;">'+d.toAddr+'</div>':'')
-    +(d.toEmail?'<div style="font-size:.82rem;color:#555;">'+d.toEmail+'</div>':'')
-    +(d.toPhone?'<div style="font-size:.82rem;color:#555;">'+d.toPhone+'</div>':'')
+    +'<div style="font-weight:700;color:#1a1a2e;">'+esc(d.to)+'</div>'
+    +(d.toAddr?'<div style="font-size:.82rem;color:#555;">'+esc(d.toAddr)+'</div>':'')
+    +(d.toEmail?'<div style="font-size:.82rem;color:#555;">'+esc(d.toEmail)+'</div>':'')
+    +(d.toPhone?'<div style="font-size:.82rem;color:#555;">'+esc(d.toPhone)+'</div>':'')
     +'</div>'
     +'<div style="text-align:right;">'
     +'<div style="font-size:.65rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#999;margin-bottom:.3rem;">Details</div>'
-    +'<div style="font-size:.83rem;color:#555;">Issued: '+d.date+'</div>'
-    +'<div style="font-size:.83rem;color:#555;">Due: '+d.due+'</div>'
-    +(d.notes?'<div style="font-size:.83rem;color:#a78bfa;margin-top:.2rem;">'+d.notes+'</div>':'')
+    +'<div style="font-size:.83rem;color:#555;">Issued: '+esc(d.date)+'</div>'
+    +'<div style="font-size:.83rem;color:#555;">Due: '+esc(d.due)+'</div>'
+    +(d.notes?'<div style="font-size:.83rem;color:#a78bfa;margin-top:.2rem;">'+esc(d.notes)+'</div>':'')
     +'</div>'
     +'</div>'
     +'<table style="width:100%;border-collapse:collapse;margin-bottom:1.5rem;">'
