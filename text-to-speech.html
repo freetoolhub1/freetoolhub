@@ -147,6 +147,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
 </script>
 <script>
 (function(){
+  if(!window.speechSynthesis){document.getElementById('ttsPlay').disabled=true;document.getElementById('ttsStatus').textContent='⚠️ Browser does not support text to speech. Try Chrome or Edge.';return;}
   var sel=document.getElementById('ttsVoice');
   function loadVoices(){
     var voices=speechSynthesis.getVoices();

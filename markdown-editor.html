@@ -214,7 +214,7 @@ function hello() {
       .replace(/~~(.+?)~~/g,'<del>$1</del>')
       .replace(/^\> (.+)$/gm,'<blockquote>$1</blockquote>')
       .replace(/^---$/gm,'<hr>')
-      .replace(/\[([^\]]+)\]\(([^)]+)\)/g,'<a href="$2" target="_blank">$1</a>')
+      .replace(/\[([^\]]+)\]\(([^)]+)\)/g,function(m,text,url){var safe=/^(https?:\/\/|\/|#)/.test(url.trim())?url:'#';return '<a href="'+safe+'" target="_blank" rel="noopener">'+text+'</a>';})
       .replace(/^[\*\-] (.+)$/gm,'<li>$1</li>')
       .replace(/(<li>.*<\/li>)/s,'<ul>$1</ul>')
       .replace(/^\d+\. (.+)$/gm,'<li>$1</li>')
