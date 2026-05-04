@@ -175,7 +175,7 @@ document.addEventListener('DOMContentLoaded',function(){
 document.addEventListener('DOMContentLoaded',function(){
   document.getElementById('trBtn').addEventListener('click',function(){
     var txt=document.getElementById('trIn').value;if(!txt)return;
-    var n=parseInt(document.getElementById('trCount').value)||5;
+    var n=Math.min(1000,Math.max(1,parseInt(document.getElementById('trCount').value)||5));
     var sep=document.getElementById('trSep').value;
     var arr=[];for(var i=0;i<n;i++)arr.push(txt);
     document.getElementById('trOut').textContent=arr.join(sep);
