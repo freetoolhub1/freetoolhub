@@ -32,7 +32,7 @@ canvas#bg{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.25;}
 nav{position:fixed;top:0;left:0;right:0;z-index:500;height:60px;display:flex;align-items:center;justify-content:space-between;padding:0 2rem;gap:1rem;background:rgba(5,5,8,.92);backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06);}
 .logo{display:flex;align-items:center;gap:8px;}
 .logo-text{font-family:'Bebas Neue',sans-serif;font-size:1.2rem;letter-spacing:.06em;background:linear-gradient(90deg,#a78bfa,#38bdf8);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
-.back-btn{font-size:.76rem;color:#6b6880;border:1px solid rgba(255,255,255,.07);padding:.32rem .85rem;border-radius:99px;transition:all .2s;cursor:pointer;background:none;}
+.back-btn{font-size:.76rem;color:#6b6880;border:1px solid rgba(255,255,255,.07);padding:.32rem .85rem;border-radius:99px;transition:all .2s;cursor:pointer;background:none;text-decoration:none;display:inline-flex;align-items:center;}
 .back-btn:hover{border-color:#a78bfa;color:#a78bfa;}
 main{max-width:760px;margin:0 auto;padding:80px 1.5rem 5rem;position:relative;z-index:2;}
 .bc{display:flex;gap:.4rem;list-style:none;font-size:.72rem;color:#6b6880;margin-bottom:1rem;flex-wrap:wrap;}
@@ -144,7 +144,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
 </head>
 <body>
 <canvas id="bg"></canvas>
-<nav><a href="/index.html" class="logo"><svg width="26" height="26" viewBox="0 0 38 38" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg><span class="logo-text">FREETOOLHUB</span></a><button class="back-btn" onclick="location.href='/index.html'">← All Tools</button></nav>
+<nav><a href="/index.html" class="logo"><svg width="26" height="26" viewBox="0 0 38 38" fill="none"><defs><linearGradient id="lg1" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse"><stop offset="0%" stop-color="#a78bfa"/><stop offset="50%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#fb923c"/></linearGradient></defs><path d="M19 3L33 11V27L19 35L5 27V11L19 3Z" stroke="url(#lg1)" stroke-width="1.5" fill="none"/><path d="M19 9L27 13.5V22.5L19 27L11 22.5V13.5L19 9Z" fill="url(#lg1)" opacity="0.3"/><circle cx="19" cy="19" r="3.5" fill="url(#lg1)"/></svg><span class="logo-text">FREETOOLHUB</span></a><a href="/index.html" class="back-btn">← All Tools</a></nav>
 <main>
 <ol class="bc"><li><a href="/index.html">Home</a></li><li>/</li><li style="color:#a78bfa;">Free AI Hashtag Generator — Get 30 Trending Hashtags Instantly</li></ol>
 <div class="trust"><span class="tp"><span class="ok">✓</span>100% Free</span><span class="tp"><span class="ok">✓</span>No Signup</span><span class="tp"><span class="ok">✓</span>No Data Stored</span><span class="tp"><span class="ok">✓</span>Works Instantly</span></div>
