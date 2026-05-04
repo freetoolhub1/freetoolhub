@@ -1,698 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-  <!-- Homepage -->
-  <url>
-    <loc>https://www.freetoolhub.info/</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Static pages -->
-  <url>
-    <loc>https://www.freetoolhub.info/about</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/contact</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/privacy</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
-  <!-- TEXT TOOLS -->
-  <url>
-    <loc>https://www.freetoolhub.info/word-counter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/character-counter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/word-counter-advanced</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/case-converter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/text-to-speech</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/lorem-ipsum-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/text-diff-checker</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/remove-line-breaks</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/duplicate-word-remover</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/remove-duplicates</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/text-repeater</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/slug-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/readability-checker</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/reading-time-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/sentence-counter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/word-frequency-counter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/word-scrambler</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/anagram-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/palindrome-checker</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/text-to-binary</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/text-to-emoji-converter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- IMAGE TOOLS -->
-  <url>
-    <loc>https://www.freetoolhub.info/image-compressor</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/image-resizer</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/image-to-base64</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/image-to-text</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/favicon-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/qr-code-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- DEVELOPER TOOLS -->
-  <url>
-    <loc>https://www.freetoolhub.info/json-formatter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/base64-encoder</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/url-encoder</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/html-encoder</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/hash-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/md5-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/jwt-decoder</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/json-to-csv</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/regex-tester</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/css-minifier</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/css-gradient-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/border-radius-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/box-shadow-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/color-picker</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/color-converter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/hex-to-rgb</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/rgb-to-hex</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/random-color-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/binary-converter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/markdown-editor</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/meta-tag-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/epoch-converter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/ip-address-lookup</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/pixel-to-rem</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- CALCULATOR TOOLS -->
-  <url>
-    <loc>https://www.freetoolhub.info/bmi-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/age-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/percentage-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/scientific-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/compound-interest-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/mortgage-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/loan-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/currency-converter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/unit-converter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/temperature-converter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/calorie-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/discount-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/tip-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/gpa-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/fuel-cost-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/electricity-cost-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/aspect-ratio-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/speed-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/date-calculator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/days-between-dates</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/roman-numeral-converter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/number-to-words</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- PRODUCTIVITY TOOLS -->
-  <url>
-    <loc>https://www.freetoolhub.info/password-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/password-generator-strong</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/password-strength-checker</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/pomodoro-timer</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/stopwatch</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/countdown-timer</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/invoice-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/fake-email-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/name-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/instagram-bio-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/youtube-title-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.85</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/list-randomizer</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/random-number-generator</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/dice-roller</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/time-zone-converter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/minute-to-hours</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/number-sorter</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.75</priority>
-  </url>
-
-  <!-- BLOG POSTS -->
-  <url>
-    <loc>https://www.freetoolhub.info/blog/best-free-online-tools-2026</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/how-to-count-words-online</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/how-to-create-strong-password</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/how-to-compress-images-free</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/how-to-calculate-bmi</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/json-beginners-guide</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/markdown-cheatsheet-and-uses</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/qr-code-marketing-2026</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/pomodoro-technique-guide</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/compound-interest-explained</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/password-security-guide-2026</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/image-compression-guide-2026</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/seo-content-strategy-2026</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/youtube-title-tips</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/readability-seo-guide</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/mortgage-math-explained</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/freelancer-invoicing-guide</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://www.freetoolhub.info/blog/currency-converter-when-to-use</loc>
-    <lastmod>2026-05-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-
+<url><loc>https://www.freetoolhub.info/</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
+<url><loc>https://www.freetoolhub.info/about</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+<url><loc>https://www.freetoolhub.info/contact</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+<url><loc>https://www.freetoolhub.info/privacy</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.5</priority></url>
+<url><loc>https://www.freetoolhub.info/blog</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/word-counter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://www.freetoolhub.info/character-counter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/word-counter-advanced</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/case-converter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/text-to-speech</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/lorem-ipsum-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/text-diff-checker</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/remove-line-breaks</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/duplicate-word-remover</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/remove-duplicates</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/text-repeater</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/slug-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/readability-checker</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/reading-time-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/sentence-counter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/word-frequency-counter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/word-scrambler</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/anagram-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/palindrome-checker</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/text-to-binary</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/text-to-emoji-converter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/image-compressor</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://www.freetoolhub.info/image-resizer</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/image-to-base64</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/image-to-text</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/favicon-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/qr-code-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://www.freetoolhub.info/json-formatter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://www.freetoolhub.info/base64-encoder</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/url-encoder</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/html-encoder</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/hash-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/md5-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/jwt-decoder</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/json-to-csv</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/regex-tester</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/css-minifier</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/css-gradient-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/border-radius-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/box-shadow-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/color-picker</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/color-converter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/hex-to-rgb</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/rgb-to-hex</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/random-color-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/binary-converter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/markdown-editor</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/meta-tag-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/epoch-converter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/ip-address-lookup</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/pixel-to-rem</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/bmi-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://www.freetoolhub.info/age-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://www.freetoolhub.info/percentage-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/scientific-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/compound-interest-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/mortgage-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/loan-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/currency-converter</loc><lastmod>2026-05-03</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+<url><loc>https://www.freetoolhub.info/unit-converter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/temperature-converter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/calorie-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/discount-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/tip-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/gpa-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/fuel-cost-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/electricity-cost-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/aspect-ratio-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/speed-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/date-calculator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/days-between-dates</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/roman-numeral-converter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/number-to-words</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/password-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
+<url><loc>https://www.freetoolhub.info/password-generator-strong</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/password-strength-checker</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/pomodoro-timer</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/stopwatch</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/countdown-timer</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/invoice-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/fake-email-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/name-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/instagram-bio-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/youtube-title-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.85</priority></url>
+<url><loc>https://www.freetoolhub.info/list-randomizer</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/random-number-generator</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/dice-roller</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/time-zone-converter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+<url><loc>https://www.freetoolhub.info/minute-to-hours</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/number-sorter</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.75</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/best-free-online-tools-2026</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/how-to-count-words-online</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/how-to-create-strong-password</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/how-to-compress-images-free</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/how-to-calculate-bmi</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/json-beginners-guide</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/markdown-cheatsheet-and-uses</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/qr-code-marketing-2026</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/pomodoro-technique-guide</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/compound-interest-explained</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/password-security-guide-2026</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/image-compression-guide-2026</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/seo-content-strategy-2026</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/youtube-title-tips</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/readability-seo-guide</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/mortgage-math-explained</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/freelancer-invoicing-guide</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.freetoolhub.info/blog/currency-converter-when-to-use</loc><lastmod>2026-05-03</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
 </urlset>
