@@ -136,8 +136,15 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
 @keyframes dot{0%,80%,100%{transform:scale(0);opacity:.4;}40%{transform:scale(1);opacity:1;}}
 /* RESULT HEADER */
 .rh{display:flex;justify-content:space-between;align-items:center;margin-bottom:.8rem;flex-wrap:wrap;gap:.4rem;}
-/* PRINT */
-@media print{nav,footer,.seo,.faq,.rel,.btn,.btn2,.btn-red,.share-row,.bc,.tag,.sub,.trust,canvas#bg{display:none!important;}body{background:#fff!important;color:#000!important;}main{padding:0!important;}.card{border:1px solid #ddd!important;background:#fff!important;color:#000!important;}.out{background:#f9f9f9!important;color:#000!important;}}
+/* PRINT — show ONLY the invoice preview box, hide everything else */
+@media print{
+  canvas,nav,footer,.seo,.faq,.rel,.btn,.btn2,.btn-red,.bc,.tag,.sub,.trust,.share-row,
+  h1,.card,.row,#emailNote,main>*:not(#invPreviewBox){display:none!important;}
+  body{background:#fff!important;margin:0!important;padding:0!important;}
+  main{padding:0!important;margin:0!important;background:#fff!important;}
+  #invPreviewBox{display:block!important;background:#fff!important;color:#1a1a2e!important;
+    border:none!important;padding:0!important;margin:0!important;border-radius:0!important;}
+}
 @media(max-width:640px){.g2,.g3,.g4{grid-template-columns:1fr;}main{padding:72px 1rem 4rem;}nav{padding:0 1rem;}footer{padding:1.2rem 1rem;flex-direction:column;align-items:flex-start;}}
 </style>
 <style>
@@ -210,7 +217,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
     <button class="btn2" id="printBtn" style="flex:1;min-width:120px;">🖨️ Print Invoice</button>
     <button class="btn2" id="emailBtn" style="flex:1;min-width:120px;">📧 Send by Email</button>
   </div>
-  <p id="emailNote" style="display:none;margin-top:.5rem;font-size:.78rem;color:#a78bfa;text-align:center;">PDF saved to your downloads — please attach it to your email before sending.</p>
+  <p id="emailNote" style="display:none;margin-top:.5rem;font-size:.78rem;color:#a78bfa;text-align:center;">Email opened with invoice details. To attach a PDF, click Download PDF first, then attach the file in your email app.</p>
 </div>
 
 <div id="invPreviewBox" style="display:none;"></div>
@@ -417,6 +424,8 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
     }, 150);
   }
 
+  var isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
   document.getElementById('downloadBtn').addEventListener('click', function(){
     var btn = this;
     var d = getInvoiceData();
@@ -426,36 +435,29 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
       btn.disabled = false;
       btn.textContent = '⬇️ Download PDF';
       if(pdf){
-        pdf.save('invoice-' + d.num + '.pdf');
+        if(isIOS){
+          // iOS Safari: open PDF in new tab — tap Share → Save to Files
+          pdf.output('dataurlnewwindow');
+        } else {
+          pdf.save('invoice-' + d.num + '.pdf');
+        }
       } else {
-        alert('PDF generation failed. Please try the Print option and save as PDF.');
+        // Libraries not loaded — fall back to print-only invoice
+        var box = document.getElementById('invPreviewBox');
+        box.innerHTML = buildHTML(d);
+        box.style.display = 'block';
+        window.print();
       }
     });
   });
 
   document.getElementById('printBtn').addEventListener('click', function(){
     var d = getInvoiceData();
-    var invoiceHTML = buildHTML(d);
-    var popup = window.open('', '_blank', 'width=900,height=700,scrollbars=yes');
-    if(!popup){
-      alert('Please allow popups for this site to use the print function.');
-      return;
-    }
-    popup.document.write(
-      '<!DOCTYPE html><html lang="en"><head>'
-      + '<meta charset="UTF-8"><title>Invoice ' + d.num + '</title>'
-      + '<style>'
-      + 'body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#1a1a2e;'
-      + 'padding:2rem;margin:0;-webkit-print-color-adjust:exact;print-color-adjust:exact;}'
-      + '@page{margin:0.5in;}'
-      + '@media print{body{padding:0;}}'
-      + '</style></head><body>'
-      + invoiceHTML
-      + '<scr'+'ipt>window.onload=function(){window.print();'
-      + 'window.onafterprint=function(){window.close();};};<\/scr'+'ipt>'
-      + '</body></html>'
-    );
-    popup.document.close();
+    var box = document.getElementById('invPreviewBox');
+    box.innerHTML = buildHTML(d);
+    box.style.display = 'block';
+    // Small delay so the browser renders the preview before printing
+    setTimeout(function(){ window.print(); }, 120);
   });
 
   document.getElementById('emailBtn').addEventListener('click', function(){
@@ -463,36 +465,24 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
     var d = getInvoiceData();
     btn.disabled = true;
     btn.textContent = '⏳ Preparing…';
-
-    function openMailto(){
-      var lines = items.map(function(i){
-        return encodeURIComponent(i.desc + ' — Qty: ' + i.qty + ' × ' + d.curr + parseFloat(i.rate).toFixed(2) + ' = ' + d.curr + (i.qty*i.rate).toFixed(2));
-      }).join('%0A');
-      var body = 'Dear ' + encodeURIComponent(d.to) + ',%0A%0A'
-        + 'Please find invoice ' + encodeURIComponent(d.num) + ' details below.%0A%0A'
-        + lines + '%0A%0A'
-        + 'Subtotal: ' + encodeURIComponent(d.curr + d.sub.toFixed(2)) + '%0A'
-        + (d.tax > 0 ? 'Tax (' + d.tax + '%): ' + encodeURIComponent(d.curr + d.taxAmt.toFixed(2)) + '%0A' : '')
-        + 'Total Due: ' + encodeURIComponent(d.curr + d.total.toFixed(2)) + '%0A%0A'
-        + 'Due Date: ' + encodeURIComponent(d.due) + '%0A'
-        + (d.notes ? 'Payment Terms: ' + encodeURIComponent(d.notes) + '%0A' : '')
-        + '%0AThank you for your business.%0A%0ABest regards,%0A' + encodeURIComponent(d.from);
-      window.location.href = 'mailto:' + (d.toEmail||'')
-        + '?subject=' + encodeURIComponent('Invoice ' + d.num + ' from ' + d.from)
-        + '&body=' + body;
-      btn.disabled = false;
-      btn.textContent = '📧 Send by Email';
-      document.getElementById('emailNote').style.display = 'block';
-    }
-
-    generatePDF(d, function(pdf){
-      if(pdf){
-        pdf.save('invoice-' + d.num + '.pdf');
-        setTimeout(openMailto, 600);
-      } else {
-        openMailto();
-      }
-    });
+    var lines = items.map(function(i){
+      return encodeURIComponent(i.desc + ' — Qty: ' + i.qty + ' \xd7 ' + d.curr + parseFloat(i.rate).toFixed(2) + ' = ' + d.curr + (i.qty*i.rate).toFixed(2));
+    }).join('%0A');
+    var body = 'Dear ' + encodeURIComponent(d.to) + ',%0A%0A'
+      + 'Please find invoice ' + encodeURIComponent(d.num) + ' details below.%0A%0A'
+      + lines + '%0A%0A'
+      + 'Subtotal: ' + encodeURIComponent(d.curr + d.sub.toFixed(2)) + '%0A'
+      + (d.tax > 0 ? 'Tax (' + d.tax + '%): ' + encodeURIComponent(d.curr + d.taxAmt.toFixed(2)) + '%0A' : '')
+      + 'Total Due: ' + encodeURIComponent(d.curr + d.total.toFixed(2)) + '%0A%0A'
+      + 'Due Date: ' + encodeURIComponent(d.due) + '%0A'
+      + (d.notes ? 'Payment Terms: ' + encodeURIComponent(d.notes) + '%0A' : '')
+      + '%0AThank you for your business.%0A%0ABest regards,%0A' + encodeURIComponent(d.from);
+    window.location.href = 'mailto:' + (d.toEmail||'')
+      + '?subject=' + encodeURIComponent('Invoice ' + d.num + ' from ' + d.from)
+      + '&body=' + body;
+    btn.disabled = false;
+    btn.textContent = '📧 Send by Email';
+    document.getElementById('emailNote').style.display = 'block';
   });
 })();
 </script>
