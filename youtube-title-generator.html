@@ -204,6 +204,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
     p.addEventListener('click',function(){document.querySelectorAll('[data-style]').forEach(function(b){b.classList.remove('active');});this.classList.add('active');selectedStyle=this.getAttribute('data-style');});
   });
   function titleCase(s){return s.split(' ').map(function(w){return w.charAt(0).toUpperCase()+w.slice(1);}).join(' ');}
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function generate(){
     var topic=document.getElementById('ytTopic').value.trim();
     var err=document.getElementById('ytErr');err.classList.remove('on');
@@ -221,7 +222,7 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
       var cc=title.length;var col=cc>60?'#fb923c':'#4ade80';
       var div=document.createElement('div');
       div.style.cssText='background:#16161f;border:1px solid rgba(255,255,255,.06);border-radius:10px;padding:.85rem 1.1rem;cursor:pointer;transition:all .18s;display:flex;justify-content:space-between;align-items:center;gap:1rem;';
-      div.innerHTML='<span style="font-size:.88rem;color:#f0eeff;flex:1;">'+title+'</span><span style="font-size:.68rem;color:'+col+';white-space:nowrap;flex-shrink:0;">'+cc+' chars</span>';
+      div.innerHTML='<span style="font-size:.88rem;color:#f0eeff;flex:1;">'+esc(title)+'</span><span style="font-size:.68rem;color:'+col+';white-space:nowrap;flex-shrink:0;">'+cc+' chars</span>';
       div.addEventListener('mouseover',function(){this.style.borderColor='rgba(167,139,250,.4)';this.style.background='#1e1e2a';});
       div.addEventListener('mouseout',function(){this.style.borderColor='rgba(255,255,255,.06)';this.style.background='#16161f';});
       (function(t){div.addEventListener('click',function(){navigator.clipboard.writeText(t).then(function(){var msg=document.getElementById('ytCopyMsg');msg.style.display='block';setTimeout(function(){msg.style.display='none';},2000);});});})(title);

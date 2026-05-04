@@ -205,9 +205,10 @@ footer{position:relative;z-index:2;border-top:1px solid rgba(255,255,255,.06);pa
   var emojis={fitness:['&#x1F4AA;','&#x1F3CB;','&#x1F525;','&#x1F3C3;'],travel:['&#x2708;','&#x1F30D;','&#x1F9F3;','&#x1F304;'],food:['&#x1F373;','&#x1F35C;','&#x1F9C1;','&#x1F374;'],photo:['&#x1F4F7;','&#x1F3A8;','&#x1F4F8;','&#x2728;'],business:['&#x1F4BC;','&#x1F4C8;','&#x1F3AF;','&#x2714;'],def:['&#x2728;','&#x1F31F;','&#x1F4AB;','&#x1F680;']};
   function getEmojis(n){var l=n.toLowerCase();if(l.indexOf('fit')>-1||l.indexOf('gym')>-1)return emojis.fitness;if(l.indexOf('travel')>-1||l.indexOf('trip')>-1)return emojis.travel;if(l.indexOf('food')>-1||l.indexOf('cook')>-1||l.indexOf('chef')>-1)return emojis.food;if(l.indexOf('photo')>-1||l.indexOf('video')>-1||l.indexOf('design')>-1)return emojis.photo;if(l.indexOf('busi')>-1||l.indexOf('market')>-1||l.indexOf('coach')>-1)return emojis.business;return emojis.def;}
   function rand(a){return a[Math.floor(Math.random()*a.length)];}
+  function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
   function generate(){
-    var name=document.getElementById('igName').value.trim();var niche=document.getElementById('igNiche').value.trim();
-    var cta=document.getElementById('igCta').value.trim()||'Link below &#x1F447;';
+    var name=esc(document.getElementById('igName').value.trim());var niche=esc(document.getElementById('igNiche').value.trim());
+    var cta=esc(document.getElementById('igCta').value.trim())||'Link below &#x1F447;';
     var err=document.getElementById('igErr');err.classList.remove('on');
     if(!name||!niche){err.classList.add('on');return;}
     var field=niche.split(' ')[0];var em=getEmojis(niche);
