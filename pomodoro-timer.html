@@ -193,9 +193,9 @@ document.addEventListener('DOMContentLoaded',function(){
   function setDisplay(){document.getElementById('pomTime').textContent=fmt(secs);document.title=fmt(secs)+' — Pomodoro — FreeToolHub';}
   function setMode(m){
     mode=m;
-    if(m==='work'){secs=parseInt(document.getElementById('pWork').value||25)*60;document.getElementById('pomLabel').textContent='Work Session';document.getElementById('pomTime').style.color='#f0eeff';}
-    else if(m==='short'){secs=parseInt(document.getElementById('pShort').value||5)*60;document.getElementById('pomLabel').textContent='Short Break ☕';document.getElementById('pomTime').style.color='#4ade80';}
-    else{secs=parseInt(document.getElementById('pLong').value||15)*60;document.getElementById('pomLabel').textContent='Long Break 🌿';document.getElementById('pomTime').style.color='#38bdf8';}
+    if(m==='work'){secs=Math.min(60,Math.max(1,parseInt(document.getElementById('pWork').value)||25))*60;document.getElementById('pomLabel').textContent='Work Session';document.getElementById('pomTime').style.color='#f0eeff';}
+    else if(m==='short'){secs=Math.min(30,Math.max(1,parseInt(document.getElementById('pShort').value)||5))*60;document.getElementById('pomLabel').textContent='Short Break ☕';document.getElementById('pomTime').style.color='#4ade80';}
+    else{secs=Math.min(60,Math.max(5,parseInt(document.getElementById('pLong').value)||15))*60;document.getElementById('pomLabel').textContent='Long Break 🌿';document.getElementById('pomTime').style.color='#38bdf8';}
     document.querySelectorAll('[data-pmode]').forEach(function(b){b.classList.toggle('active',b.getAttribute('data-pmode')===m);});
     setDisplay();
   }
